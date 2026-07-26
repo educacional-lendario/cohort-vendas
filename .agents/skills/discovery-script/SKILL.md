@@ -118,3 +118,5 @@ Gere **dois arquivos com o mesmo conteúdo**:
 
 1. `discovery-script-{negocio}.md` com os 6 blocos completos (Passo 1A) e, se houver, a análise de refino em cima de calls reais (Passo 1B) com recomendações específicas por bloco. Feche com o handoff: *"Este script alimenta a Skill 5 (/playbook-vendas-vivo) — as objeções que aparecerem durante o discovery viram o primeiro lote de entradas do playbook de objeções."*
 2. `discovery-script-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com os 6 blocos como cards sequenciais (numerados, com a intenção do bloco em destaque) — pensado para o vendedor consultar durante a call, não só ler uma vez.
+
+**Depois de entregar os dois arquivos, diga isto diretamente ao aluno no chat (não deixe só escrito dentro do documento):** *"Discovery script pronto — os dois arquivos estão aí. Próximo passo: rode `/playbook-vendas-vivo` pra transformar as objeções que aparecerem em respostas documentadas."*
