@@ -8,11 +8,24 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 1 de 4** da Aula 1 do Cohort de Vendas ("Processo Comercial & Playbook com IA"). Ela abre o fluxo: o processo desenhado aqui é o esqueleto onde as outras três skills encaixam (qualificação, discovery, objeções).
+Esta é a **Skill 1 de 6** da Aula 1 do Cohort de Vendas ("Processo Comercial & Playbook com IA"). Ela abre o fluxo: o processo desenhado aqui é o esqueleto onde as outras cinco skills encaixam (régua de comunicação, qualificação, discovery, objeções, escada de ofertas).
 
-**Sequência completa:** `/desenho-processo-comercial` (você está aqui) → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo`.
+**Sequência completa:** `/desenho-processo-comercial` (você está aqui) → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 1/4 (Processo Comercial). Próxima vai ser /qualificacao-bant-gpct."*
+Quando começar, anuncie: *"Você está na Skill 1/6 (Processo Comercial). Próxima vai ser /regua-comunicacao-comercial."*
+
+---
+
+## Se o aluno se perder
+
+Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
+
+1. **Onde ele está:** Skill 1 de 6 da Aula 1 (Cohort de Vendas) — Desenho do Processo Comercial.
+2. **Por que está aqui:** é a primeira skill da aula — sem etapas e critérios de saída definidos aqui, nenhuma das outras cinco tem onde encaixar (a régua de comunicação, a qualificação e o discovery dependem das etapas desenhadas nesta skill).
+3. **O que está construindo:** `processo-comercial-{negocio}.md` + `processo-comercial-{negocio}.html`.
+4. **Pendências para fechar com nota 10:** confirme se você já tem as 5 respostas do Passo 0 (ticket, ciclo, decisores, B2B/C2C, se já existe processo hoje); sem isso, o processo fica genérico.
+
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
 
 ---
 
@@ -86,14 +99,16 @@ Recomende revisão trimestral do processo como cadência mínima, mesmo sem gati
 
 Alerte o usuário sobre o trade-off: critérios de saída rígidos demais fazem o vendedor "jogar" o CRM (preencher campo só pra mover o card); critérios frouxos demais transformam toda reunião de pipeline em contação de história, sem dado confiável. A régua: só exigir informação que muda o comportamento do vendedor ou a qualidade do forecast — nada de campo por preencher enquanto se filosofa.
 
-## Passo 4 — Entregar o output
+## Passo 4 — Entregar o output (sempre em dois formatos)
 
-Gere um documento único `processo-comercial-{negocio}.md` com:
+Gere **dois arquivos com o mesmo conteúdo**, nunca só um:
 
-1. Perfil do negócio (ticket, ciclo, decisores, B2B/B2C) do Passo 0.
-2. Tabela de etapas com critério de saída VCA de cada uma.
-3. Lista de gatilhos de deal e de processo.
-4. Cadência de revisão recomendada.
-5. Handoff explícito: *"Este processo alimenta a Skill 2 (/qualificacao-bant-gpct) — o critério de saída da etapa de Qualificação vira o gate de entrada da qualificação BANT/GPCT."*
+1. `processo-comercial-{negocio}.md` — markdown com:
+   - Perfil do negócio (ticket, ciclo, decisores, B2B/B2C) do Passo 0.
+   - Tabela de etapas com critério de saída VCA de cada uma.
+   - Lista de gatilhos de deal e de processo.
+   - Cadência de revisão recomendada.
+   - Handoff explícito: *"Este processo alimenta a Skill 2 (/regua-comunicacao-comercial) — cada etapa aqui vira uma linha da régua de comunicação, e a etapa de Qualificação vira o gate de entrada da Skill 3 (/qualificacao-bant-gpct)."*
+2. `processo-comercial-{negocio}.html` — a mesma informação em página autocontida, visual escuro com ouro (mesmos tokens de cor do `GUIA-DO-ALUNO.html`: fundo `#0A0A0A`, texto `#E5E5E5`, destaque `#C9B298`), com hero (título + 1 frase de contexto), a tabela de etapas renderizada como tabela HTML de verdade (não bloco de código), e a lista de gatilhos em cards. Objetivo: o aluno consegue mandar esse HTML para o time dele sem precisar explicar nada — o documento se explica sozinho.
 
 Sempre indique quando uma recomendação é best practice de mercado (cite a fonte, ex.: "modelo de 7 etapas com exit criteria é o padrão em [fonte]") versus adaptação sua ao caso do usuário — nunca apresente as duas coisas com o mesmo peso de certeza.

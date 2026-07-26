@@ -8,11 +8,24 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 3 de 4** da Aula 1 do Cohort de Vendas. Recebe o roteiro de qualificação da Skill 2 (`/qualificacao-bant-gpct`) e aprofunda os blocos de Challenges/Goals num discovery completo, com refino contínuo assistido por IA.
+Esta é a **Skill 4 de 6** da Aula 1 do Cohort de Vendas. Recebe o roteiro de qualificação da Skill 3 (`/qualificacao-bant-gpct`) e aprofunda os blocos de Challenges/Goals num discovery completo, com refino contínuo assistido por IA. Usa também o canal e o tom definidos na Skill 2 (`/regua-comunicacao-comercial`) para a etapa de discovery.
 
-**Sequência completa:** `/desenho-processo-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` (você está aqui) → `/playbook-vendas-vivo`.
+**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` (você está aqui) → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 3/4 (Discovery Script). Próxima vai ser /playbook-vendas-vivo."*
+Quando começar, anuncie: *"Você está na Skill 4/6 (Discovery Script). Próxima vai ser /playbook-vendas-vivo."*
+
+---
+
+## Se o aluno se perder
+
+Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
+
+1. **Onde ele está:** Skill 4 de 6 da Aula 1 (Cohort de Vendas) — Discovery Script com IA.
+2. **Por que está aqui:** a qualificação (Skill 3) filtra QUEM merece uma conversa aprofundada; esta skill constrói a conversa em si — sem discovery estruturado, a dor nunca vira número, e sem número não tem venda consultiva.
+3. **O que está construindo:** `discovery-script-{negocio}.md` + `discovery-script-{negocio}.html`.
+4. **Pendências para fechar com nota 10:** confirme se ele tem gravação/transcrição de call real para refinar (Passo 1B) ou se vai criar do zero (Passo 1A) — os dois exigem informação diferente, pergunte antes de assumir.
+
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
 
 ---
 
@@ -84,6 +97,9 @@ Compare múltiplas calls quando houver mais de uma — padrões que se repetem e
 
 Se o comprador ainda não está "consciente do problema" (não veio pra call já sabendo o que precisa), ou se há múltiplos stakeholders a envolver aos poucos, avise o usuário que discovery em etapas costuma performar melhor que tentar fechar tudo numa call: a primeira call confirma que o problema existe, o e-mail de acompanhamento resume o que foi ouvido e traz uma pergunta mais afiada, a segunda call aprofunda. Isso vale sobretudo pra venda consultiva complexa (perfil B2B do diagnóstico da Skill 1) — venda transacional/B2C tende a comprimir isso numa call só.
 
-## Passo 3 — Entregar o output
+## Passo 3 — Entregar o output (sempre em dois formatos)
 
-Gere `discovery-script-{negocio}.md` com os 6 blocos completos (Passo 1A) e, se houver, a análise de refino em cima de calls reais (Passo 1B) com recomendações específicas por bloco. Feche com o handoff: *"Este script alimenta a Skill 4 (/playbook-vendas-vivo) — as objeções que aparecerem durante o discovery viram o primeiro lote de entradas do playbook de objeções."*
+Gere **dois arquivos com o mesmo conteúdo**:
+
+1. `discovery-script-{negocio}.md` com os 6 blocos completos (Passo 1A) e, se houver, a análise de refino em cima de calls reais (Passo 1B) com recomendações específicas por bloco. Feche com o handoff: *"Este script alimenta a Skill 5 (/playbook-vendas-vivo) — as objeções que aparecerem durante o discovery viram o primeiro lote de entradas do playbook de objeções."*
+2. `discovery-script-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com os 6 blocos como cards sequenciais (numerados, com a intenção do bloco em destaque) — pensado para o vendedor consultar durante a call, não só ler uma vez.
