@@ -8,11 +8,11 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 4 de 6** da Aula 1 do Cohort de Vendas. Recebe o roteiro de qualificação da Skill 3 (`/qualificacao-bant-gpct`) e aprofunda os blocos de Challenges/Goals num discovery completo, com refino contínuo assistido por IA. Usa também o canal e o tom definidos na Skill 2 (`/regua-comunicacao-comercial`) para a etapa de discovery.
+Esta é a **Skill 4 de 7** da Aula 1 do Cohort de Vendas. Recebe o roteiro de qualificação da Skill 3 (`/qualificacao-bant-gpct`) e aprofunda os blocos de Challenges/Goals num discovery completo, com refino contínuo assistido por IA. Usa também o canal e o tom definidos na Skill 2 (`/regua-comunicacao-comercial`) para a etapa de discovery.
 
-**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` (você está aqui) → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus).
+**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` (você está aqui) → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus) → `/social-selling-comercial` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 4/6 (Discovery Script). Próxima vai ser /playbook-vendas-vivo."*
+Quando começar, anuncie: *"Você está na Skill 4/7 (Discovery Script). Próxima vai ser /playbook-vendas-vivo."*
 
 ---
 
@@ -20,12 +20,12 @@ Quando começar, anuncie: *"Você está na Skill 4/6 (Discovery Script). Próxim
 
 Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
 
-1. **Onde ele está:** Skill 4 de 6 da Aula 1 (Cohort de Vendas) — Discovery Script com IA.
+1. **Onde ele está:** Skill 4 de 7 da Aula 1 (Cohort de Vendas) — Discovery Script com IA.
 2. **Por que está aqui:** a qualificação (Skill 3) filtra QUEM merece uma conversa aprofundada; esta skill constrói a conversa em si — sem discovery estruturado, a dor nunca vira número, e sem número não tem venda consultiva.
 3. **O que está construindo:** `discovery-script-{negocio}.md` + `discovery-script-{negocio}.html`.
 4. **Pendências para fechar com nota 10:** confirme se ele tem gravação/transcrição de call real para refinar (Passo 1B) ou se vai criar do zero (Passo 1A) — os dois exigem informação diferente, pergunte antes de assumir.
 
-Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 7 skills da aula" e "Fluxo da aula").
 
 ---
 

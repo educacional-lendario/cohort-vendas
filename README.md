@@ -14,7 +14,7 @@ Bem-vindo ao repositório da **Aula 1** do Cohort de Vendas. Este repo contém t
 
 👉 **[`GUIA-DO-ALUNO.html`](./GUIA-DO-ALUNO.html)** — clica e abre. Tem tudo o que você precisa saber para começar (5 minutos de leitura).
 
-**Se você se perder no meio de uma skill** — não sabe mais onde está, por que está fazendo aquilo, ou o que falta pra fechar o material — peça pra qualquer skill *"me mostra onde eu estou"*. Todas as 6 têm essa resposta pronta, com base no `GUIA-DO-ALUNO.html`.
+**Se você se perder no meio de uma skill** — não sabe mais onde está, por que está fazendo aquilo, ou o que falta pra fechar o material — peça pra qualquer skill *"me mostra onde eu estou"*. Todas as 7 têm essa resposta pronta, com base no `GUIA-DO-ALUNO.html`.
 
 Se preferir markdown puro, o conteúdo está abaixo.
 
@@ -22,22 +22,23 @@ Se preferir markdown puro, o conteúdo está abaixo.
 
 ## O que você ganha na Aula 1
 
-6 skills para o Claude Code que constroem, em sequência, o esqueleto comercial do seu negócio (as 5 primeiras compõem o fluxo principal; a 6ª é bônus, para quem já tem mais de uma oferta):
+7 skills para o Claude Code que constroem, em sequência, o esqueleto comercial do seu negócio (as 5 primeiras compõem o fluxo principal; as 2 últimas são bônus, para quem já tem mais de uma oferta ou prospecta por rede social):
 
 | # | Skill | O que faz | Output |
 |---|---|---|---|
-| 1 | `/desenho-processo-comercial` | Diagnostica seu modelo de venda (ticket, ciclo, decisores, B2B/B2C, com vendedor ou autoatendimento, nicho regulado ou não) e desenha as etapas do funil com critério de saída verificável (VCA) e gatilhos de risco em 2 níveis | `processo-comercial-{negocio}.md` + `.html` |
+| 1 | `/desenho-processo-comercial` | Diagnostica seu modelo de venda (ticket, ciclo, decisores, B2B/B2C, com vendedor ou autoatendimento, origem dos leads, nicho regulado ou não) e desenha as etapas do funil com critério de saída verificável (VCA) e gatilhos de risco em 2 níveis | `processo-comercial-{negocio}.md` + `.html` |
 | 2 | `/regua-comunicacao-comercial` | Define quem fala (humano, IA ou os dois), o que dizer e por qual canal em cada etapa, com funil de reforço por tempo parado e o mecanismo único de conversão do seu negócio | `regua-comunicacao-{negocio}.md` + `.html` |
 | 3 | `/qualificacao-bant-gpct` | Escolhe o mix certo entre BANT e GPCT para o seu tipo de venda, monta o ICP nas dimensões certas (B2B ou B2C) e gera o roteiro de qualificação com escala de pontuação consistente | `qualificacao-{negocio}.md` + `.html` |
 | 4 | `/discovery-script` | Gera o script de discovery em 6 blocos modulares (SPIN + Funil de Dor + quantificação de gap), ou refina um script existente comparando com calls reais gravadas/transcritas | `discovery-script-{negocio}.md` + `.html` |
 | 5 | `/playbook-vendas-vivo` | Classifica objeções em 6 tipos, gera resposta com o framework certo por tipo (D.E.E.P., Empatia Tática, Feel-Felt-Found) em todos os canais, e define a cadência que mantém o playbook vivo | `playbook-objecoes-{negocio}.md` + `.html` |
 | 6 · bônus | `/escada-de-ofertas` | Desenha a jornada de ascensão entre produtos/ofertas diferentes (não confundir com o funil comercial — este é o funil de vendas do portfólio inteiro) | `escada-de-ofertas-{negocio}.md` + `.html` |
+| 7 · bônus | `/social-selling-comercial` | Monta a sequência de prospecção direto pela rede social (LinkedIn para B2B, Instagram/TikTok para B2C/alto ticket pessoal), antes do lead entrar no funil comercial | `social-selling-{negocio}.md` + `.html` |
 
 **Tese-mãe da Aula 1:** desenhar o processo, dar voz a ele com a régua de comunicação, calibrar a qualificação e construir o playbook — para o aluno sair com o problema comercial resolvido, não com mais um framework na cabeça. Toda entrega sai em markdown **e** HTML, organizada o suficiente pra não sobrar dúvida.
 
 ### Mentes por trás da aula
 
-Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes por trás desta skill" dentro de cada `SKILL.md`). No total, 8 mentes do squad interno de vendas (`squads/sales/`) e origens de mercado entram nesta aula:
+Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes por trás desta skill" dentro de cada `SKILL.md`). No total, 9 mentes do squad interno de vendas (`squads/sales/`) e origens de mercado entram nesta aula:
 
 | Mente | Framework | Onde aparece |
 |---|---|---|
@@ -46,11 +47,12 @@ Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes p
 | Keenan | Gap Selling | Qualificação, Discovery Script |
 | Chris Voss | Empatia Tática (Never Split the Difference) | Playbook de Objeções |
 | Chet Holmes | Dream 100 + Stadium Pitch (Ultimate Sales Machine) | Processo Comercial, Escada de Ofertas |
-| Jeb Blount | Fanatical Prospecting + Objections | Régua de Comunicação, Playbook de Objeções |
+| Jeb Blount | Fanatical Prospecting + Objections | Régua de Comunicação, Playbook de Objeções, Social Selling |
 | Aaron Ross | Predictable Revenue (Seeds/Nets/Spears) | Processo Comercial, Régua de Comunicação |
 | Challenger Sale (Dixon & Adamson) | Commercial Teaching | Discovery Script, Playbook de Objeções |
+| Juliano Torriani | Social Selling 2.0 (funil de DM sem tráfego pago) | Social Selling |
 
-Chet Holmes, Jeb Blount, Aaron Ross e Challenger Sale entram aqui como reforço pontual — a aplicação mais profunda deles é na **Aula 3 (FUPs, Cadência e SDR, com Adavio)**, que é onde prospecção e cadência viram o assunto central.
+Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale e Juliano Torriani entram aqui como reforço pontual — a aplicação mais profunda de prospecção e cadência é na **Aula 3 (FUPs, Cadência e SDR, com Adavio)**.
 
 ---
 
@@ -73,7 +75,7 @@ Pré-requisito: [Claude Code](https://docs.claude.com/claude-code) instalado.
    ```bash
    claude
    ```
-2. As 6 skills em `.claude/skills/` carregam **sozinhas** — não tem passo de instalação separado.
+2. As 7 skills em `.claude/skills/` carregam **sozinhas** — não tem passo de instalação separado.
 3. Teste digitando `/desenho-processo-comercial`. Se aparecer o menu da skill, está funcionando.
 
 ### Opção B — Codex CLI
@@ -96,7 +98,7 @@ Funciona pior que com skills nativas (a IA não sabe automaticamente qual arquiv
 
 ---
 
-## Fluxo da aula (5 blocos principais + 1 bônus, ~50 min cada)
+## Fluxo da aula (5 blocos principais + 2 bônus, ~50 min cada)
 
 ### Bloco 1 — Processo Comercial com `/desenho-processo-comercial`
 
@@ -138,7 +140,7 @@ Gera o script em 6 blocos (abertura, situação, problema, implicação + gap, p
 
 Classifica cada objeção em um dos 6 tipos (preço, urgência, confiança, concorrente, autoridade, desalinhamento interno), gera a resposta com o framework certo em call/WhatsApp/e-mail, e define a cadência de revisão que mantém o playbook vivo.
 
-### Bônus — Escada de Ofertas com `/escada-de-ofertas`
+### Bônus 1 — Escada de Ofertas com `/escada-de-ofertas`
 
 ```
 /escada-de-ofertas
@@ -146,7 +148,15 @@ Classifica cada objeção em um dos 6 tipos (preço, urgência, confiança, conc
 
 Só se aplica se você tem mais de um produto/oferta. Desenha a jornada de ascensão entre eles — um problema de portfólio, diferente do funil comercial dos blocos anteriores.
 
-**Output final:** pacote comercial completo — processo, régua de comunicação, qualificação, discovery e playbook (+ escada de ofertas, se aplicável) — pronto para rodar e para alimentar a Aula 2 (CRM, Integrações e Gestão de Pipeline).
+### Bônus 2 — Social Selling com `/social-selling-comercial`
+
+```
+/social-selling-comercial
+```
+
+Só se aplica se rede social é (ou vai ser) canal de prospecção ativa. Monta a sequência de LinkedIn (B2B) ou Instagram/TikTok (B2C/alto ticket) que aquece o lead antes dele entrar no funil comercial.
+
+**Output final:** pacote comercial completo — processo, régua de comunicação, qualificação, discovery e playbook (+ escada de ofertas e social selling, se aplicáveis) — pronto para rodar e para alimentar a Aula 2 (CRM, Integrações e Gestão de Pipeline).
 
 ---
 
@@ -159,13 +169,14 @@ Só se aplica se você tem mais de um produto/oferta. Desenha a jornada de ascen
 ├── GUIA-DO-ALUNO.html              guia visual interativo (leia primeiro)
 ├── .env.example                    template de variáveis (opcional para esta aula)
 ├── .claude/
-│   └── skills/                     as 6 skills, fonte canônica (Claude Code carrega automático)
+│   └── skills/                     as 7 skills, fonte canônica (Claude Code carrega automático)
 │       ├── desenho-processo-comercial/
 │       ├── regua-comunicacao-comercial/
 │       ├── qualificacao-bant-gpct/
 │       ├── discovery-script/
 │       ├── playbook-vendas-vivo/
-│       └── escada-de-ofertas/      bônus
+│       ├── escada-de-ofertas/      bônus
+│       └── social-selling-comercial/  bônus
 ├── .agents/
 │   └── skills/                     espelho literal para Codex e outros agentes
 ├── templates/                      templates em branco dos outputs
@@ -232,6 +243,10 @@ Saúde, estética, finanças/investimento, jurídico e psicologia têm restriç�
 ### Sem vendedor não é motivo pra pular o processo
 
 Negócio 100% autoatendimento (e-commerce, app, assinatura sem humano no meio) também tem funil — só que as etapas são toques digitais (visitou, iniciou compra, comprou) e os gatilhos são de abandono, não de vendedor parado. A Skill 1 já pergunta isso no Passo 0.
+
+### Social selling amplifica, nunca substitui os outros canais
+
+Se você prospecta por LinkedIn ou Instagram/TikTok, a sequência de rede social (Skill 7) serve pra abrir a conversa. A partir do primeiro "sim" do lead, ele entra na régua de comunicação normal (Skill 2) — não fica preso à sequência de DM pra sempre, e social selling nunca substitui WhatsApp/e-mail/ligação como canal de qualificação.
 
 ---
 

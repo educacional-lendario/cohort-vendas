@@ -8,11 +8,11 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 2 de 6** da Aula 1 do Cohort de Vendas. Recebe as etapas e critérios de saída desenhados na Skill 1 (`/desenho-processo-comercial`) e define, para cada uma, o que dizer, por qual canal e com que cadência — a voz que dá vida ao esqueleto desenhado ali.
+Esta é a **Skill 2 de 7** da Aula 1 do Cohort de Vendas. Recebe as etapas e critérios de saída desenhados na Skill 1 (`/desenho-processo-comercial`) e define, para cada uma, o que dizer, por qual canal e com que cadência — a voz que dá vida ao esqueleto desenhado ali.
 
-**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` (você está aqui) → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus).
+**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` (você está aqui) → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus) → `/social-selling-comercial` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 2/6 (Régua de Comunicação). Próxima vai ser /qualificacao-bant-gpct."*
+Quando começar, anuncie: *"Você está na Skill 2/7 (Régua de Comunicação). Próxima vai ser /qualificacao-bant-gpct."*
 
 ---
 
@@ -20,12 +20,12 @@ Quando começar, anuncie: *"Você está na Skill 2/6 (Régua de Comunicação). 
 
 Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
 
-1. **Onde ele está:** Skill 2 de 6 da Aula 1 (Cohort de Vendas) — Régua de Comunicação por Etapa.
+1. **Onde ele está:** Skill 2 de 7 da Aula 1 (Cohort de Vendas) — Régua de Comunicação por Etapa.
 2. **Por que está aqui:** o processo (Skill 1) define QUANDO um deal muda de etapa; esta skill define O QUE DIZER e POR ONDE em cada etapa — sem ela, o vendedor sabe onde o deal está mas não sabe o que fazer com ele.
 3. **O que está construindo:** `regua-comunicacao-{negocio}.md` + `regua-comunicacao-{negocio}.html`.
 4. **Pendências para fechar com nota 10:** confirme se ele já rodou a Skill 1 (etapas do processo) — sem isso, peça pelo menos a lista de etapas antes de montar a régua; confirme também quais canais o negócio realmente usa hoje (não invente canal que ele não opera).
 
-Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 7 skills da aula" e "Fluxo da aula").
 
 ---
 

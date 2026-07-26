@@ -1,6 +1,6 @@
 # Workflow da Aula 1 — Processo Comercial & Playbook com IA
 
-Mapa mental da Aula 1 traduzido em workflow executável. As 6 skills deste repo, orquestradas em sequência (5 no fluxo principal, 1 bônus).
+Mapa mental da Aula 1 traduzido em workflow executável. As 7 skills deste repo, orquestradas em sequência (5 no fluxo principal, 2 bônus).
 
 ## A grande imagem
 
@@ -18,6 +18,7 @@ VOCE
  |    +-- /discovery-script               (SPIN + Funil de Dor + Gap, com IA)
  |    +-- /playbook-vendas-vivo           (objecoes classificadas + cadencia viva, multi-canal)
  |    +-- /escada-de-ofertas (bonus)      (jornada entre produtos — funil de vendas, nao comercial)
+ |    +-- /social-selling-comercial (bonus) (prospeccao por LinkedIn/Instagram, antes do funil comercial)
  |
  +-- AULA 2: CRM, Integracoes e Pipeline  (Bruno — proxima)
  +-- AULA 3: FUPs, Cadencia e SDR         (Adavio)
@@ -30,7 +31,7 @@ VOCE
 
 ## Output da Aula 1 (o que você sai entregando)
 
-Um pacote de 5 documentos prontos (6 se o negócio tiver mais de uma oferta), cada um em **markdown + HTML**:
+Um pacote de 5 documentos prontos (até 7 se o negócio tiver mais de uma oferta e prospectar por rede social), cada um em **markdown + HTML**:
 
 1. **Processo comercial** (etapas + critério de saída VCA + gatilhos de deal e de processo) — `processo-comercial-{negocio}.md` + `.html`
 2. **Régua de comunicação** (quem fala, o que fala, por canal, funil de reforço por tempo parado, mecanismo único de conversão) — `regua-comunicacao-{negocio}.md` + `.html`
@@ -38,10 +39,11 @@ Um pacote de 5 documentos prontos (6 se o negócio tiver mais de uma oferta), ca
 4. **Discovery script** (6 blocos modulares, criado ou refinado com call real) — `discovery-script-{negocio}.md` + `.html`
 5. **Playbook de objeções vivo** (biblioteca classificada em 6 tipos, multi-canal, + battlecard + cadência de revisão) — `playbook-objecoes-{negocio}.md` + `.html`
 6. **Escada de ofertas** (bônus, se aplicável) — `escada-de-ofertas-{negocio}.md` + `.html`
+7. **Social selling** (bônus, se aplicável) — `social-selling-{negocio}.md` + `.html`
 
 Esse pacote vira input direto da **Aula 2 (CRM, Integrações e Gestão de Pipeline)**: as etapas viram os estágios configurados no CRM, e a régua de comunicação vira a especificação das automações/templates de mensagem.
 
-## Ordem de execução (5 blocos principais de ~50 min + 1 bônus)
+## Ordem de execução (5 blocos principais de ~50 min + 2 bônus)
 
 ### Bloco 1 — Processo Comercial
 
@@ -80,11 +82,17 @@ Esse pacote vira input direto da **Aula 2 (CRM, Integrações e Gestão de Pipel
 4. Define cadência de revisão (trimestral mínima, mais rápida sob gatilho) com dono nomeado
 5. Output: `playbook-objecoes-{negocio}.md` + `.html`
 
-### Bônus — Escada de Ofertas
+### Bônus 1 — Escada de Ofertas
 
 1. `/escada-de-ofertas` → só roda se o negócio já tem mais de um produto/oferta
 2. Mapeia os degraus, o critério de qualificação por degrau e o discurso de ascensão
 3. Output: `escada-de-ofertas-{negocio}.md` + `.html`
+
+### Bônus 2 — Social Selling
+
+1. `/social-selling-comercial` → só roda se rede social é canal de prospecção ativa
+2. Diagnostica LinkedIn (B2B, sequência Jeb Blount) vs Instagram/TikTok (B2C/alto ticket, Social Selling 2.0), valida o checkpoint de prontidão do perfil, monta a sequência de toques
+3. Output: `social-selling-{negocio}.md` + `.html`
 
 ## Conexão entre as skills
 
@@ -107,11 +115,16 @@ Esse pacote vira input direto da **Aula 2 (CRM, Integrações e Gestão de Pipel
                                                                           --> Aula 2 (CRM, Integracoes e Pipeline)
 
 /escada-de-ofertas (bonus, paralelo — opera no nivel do portfolio, nao do deal)
+
+/social-selling-comercial (bonus, ANTES do funil comercial — prospeccao ativa por rede social)
+    \
+     v output: social-selling-{negocio}.md
+    --> assim que o lead responde, entra no funil comercial (Skill 1) e na regua normal (Skill 2)
 ```
 
 ## Reaproveitamento do squad interno de vendas
 
-As 6 skills desta aula não reinventam frameworks de venda do zero — elas traduzem o squad `squads/sales/` (14 agentes, 4 tiers) para o contexto de qualificação com vocabulário BANT/GPCT e régua de comunicação, que é o que o mercado usa. Quando o Claude Code tiver acesso a esse squad, é possível aprofundar cada bloco:
+As 7 skills desta aula não reinventam frameworks de venda do zero — elas traduzem o squad `squads/sales/` (14 agentes, 4 tiers) para o contexto de qualificação com vocabulário BANT/GPCT e régua de comunicação, que é o que o mercado usa. Quando o Claude Code tiver acesso a esse squad, é possível aprofundar cada bloco:
 
 - **Desenho de processo (priorização de contas)** → `@sales-chief *diagnose` (6 dimensões + detecção automática de nicho) + `/sales:chet-holmes *dream-100` (Dream 100: foco em contas-alvo)
 - **Origem de leads e especialização de papéis (régua de comunicação)** → `/sales:aaron-ross *sdr-playbook` (Seeds/Nets/Spears, especialização SDR/AE/CSM)
@@ -124,7 +137,7 @@ As 6 skills desta aula não reinventam frameworks de venda do zero — elas trad
 
 Fluxo consultivo completo de referência (do squad): `@sales-chief *diagnose` → `neil-rackham *spin-discovery` → `keenan *gap-analysis` → `david-sandler *pain-funnel` → `chris-voss *negotiate` → `david-sandler *sandler-close`.
 
-**As 8 mentes citadas nas 6 skills desta aula** (ver seção "Mentes por trás desta skill" em cada `SKILL.md`): Neil Rackham (SPIN), David Sandler (Pain Funnel + Sandler Close), Keenan (Gap Selling), Chris Voss (Empatia Tática), Chet Holmes (Dream 100 + Stadium Pitch), Jeb Blount (Fanatical Prospecting + Objections), Aaron Ross (Predictable Revenue + Seeds/Nets/Spears), Challenger Sale — Dixon & Adamson (Commercial Teaching). Os 4 últimos (Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale) são Tier 2-3 do squad e ficam mais a fundo na **Aula 3 (FUPs, Cadência e SDR, com Adavio)** — aqui entram como reforço pontual, não como técnica central.
+**As 9 mentes citadas nas 7 skills desta aula** (ver seção "Mentes por trás desta skill" em cada `SKILL.md`): Neil Rackham (SPIN), David Sandler (Pain Funnel + Sandler Close), Keenan (Gap Selling), Chris Voss (Empatia Tática), Chet Holmes (Dream 100 + Stadium Pitch), Jeb Blount (Fanatical Prospecting + Objections), Aaron Ross (Predictable Revenue + Seeds/Nets/Spears), Challenger Sale — Dixon & Adamson (Commercial Teaching), Juliano Torriani (Social Selling 2.0). Os 5 últimos são Tier 2-3 do squad ou origem de mercado e ficam mais a fundo na **Aula 3 (FUPs, Cadência e SDR, com Adavio)** — aqui entram como reforço pontual, não como técnica central.
 
 ## Regras da Aula 1
 
@@ -143,7 +156,7 @@ Fluxo consultivo completo de referência (do squad): `@sales-chief *diagnose` �
 
 ## Ferramentas necessárias
 
-- **Claude Code** com as 6 skills instaladas (fonte canônica: `.claude/skills/`) — opção recomendada, zero setup além do clone
+- **Claude Code** com as 7 skills instaladas (fonte canônica: `.claude/skills/`) — opção recomendada, zero setup além do clone
 - **Codex CLI** também funciona: lê `AGENTS.md` na raiz e as skills espelhadas em `.agents/skills/`
 - Sem nenhuma das duas ferramentas: cada `SKILL.md` funciona como prompt colável em qualquer IA de chat (ver `AGENTS.md`, seção final)
 - Nenhuma chave de API é obrigatória para esta aula — as skills são geração e refino assistidos por IA em cima do que o aluno já sabe do próprio negócio ou de gravações/transcrições que ele fornecer

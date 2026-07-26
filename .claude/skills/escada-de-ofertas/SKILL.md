@@ -8,11 +8,11 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 6 de 6 — bônus** da Aula 1 do Cohort de Vendas. Diferente das cinco anteriores (que operam no nível do **funil comercial**: o pipeline de UM deal específico), esta skill opera no nível do **funil de vendas do negócio como um todo**: como o portfólio de produtos/ofertas se conecta numa jornada de ascensão. São conceitos complementares, não concorrentes — um lead entra pela escada de ofertas (este documento) e, ao decidir comprar um degrau específico, esse deal passa a ser acompanhado pelo funil comercial (Skill 1).
+Esta é a **Skill 6 de 7 — bônus** da Aula 1 do Cohort de Vendas. Diferente das cinco primeiras (que operam no nível do **funil comercial**: o pipeline de UM deal específico), esta skill opera no nível do **funil de vendas do negócio como um todo**: como o portfólio de produtos/ofertas se conecta numa jornada de ascensão. São conceitos complementares, não concorrentes — um lead entra pela escada de ofertas (este documento) e, ao decidir comprar um degrau específico, esse deal passa a ser acompanhado pelo funil comercial (Skill 1).
 
-**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (você está aqui, bônus).
+**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (você está aqui, bônus) → `/social-selling-comercial` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 6/6 (Escada de Ofertas) — a última da Aula 1, e é bônus: só faz sentido se o seu negócio tem mais de uma oferta/produto em níveis diferentes."*
+Quando começar, anuncie: *"Você está na Skill 6/7 (Escada de Ofertas) — bônus, junto com a Skill 7 (Social Selling): só faz sentido se o seu negócio tem mais de uma oferta/produto em níveis diferentes."*
 
 ---
 
@@ -20,12 +20,12 @@ Quando começar, anuncie: *"Você está na Skill 6/6 (Escada de Ofertas) — a �
 
 Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
 
-1. **Onde ele está:** Skill 6 de 6 da Aula 1 (Cohort de Vendas) — Escada de Ofertas (bônus).
+1. **Onde ele está:** Skill 6 de 7 da Aula 1 (Cohort de Vendas) — Escada de Ofertas (bônus).
 2. **Por que está aqui:** as cinco skills anteriores resolvem o processo de UM deal (funil comercial); esta resolve a confusão de "qual produto oferecer pra qual cliente" quando o negócio tem mais de uma oferta — é um problema diferente, de portfólio, não de pipeline.
 3. **O que está construindo:** `escada-de-ofertas-{negocio}.md` + `escada-de-ofertas-{negocio}.html`.
 4. **Pendências para fechar com nota 10:** confirme antes de tudo se o negócio TEM mais de uma oferta em níveis diferentes — se só existe um produto, avise que esta skill não se aplica ainda e não force o exercício.
 
-Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 7 skills da aula" e "Fluxo da aula").
 
 ---
 

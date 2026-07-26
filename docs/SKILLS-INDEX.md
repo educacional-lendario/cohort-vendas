@@ -10,6 +10,7 @@ Mapa de nomes canônicos e aliases comuns, para suporte responder rápido quando
 | 4 | `/discovery-script` | `/discovery`, `/script-de-discovery`, `/roteiro-de-descoberta` | Gera ou refina o script de discovery em 6 blocos (SPIN + Funil de Dor + Gap) |
 | 5 | `/playbook-vendas-vivo` | `/playbook`, `/objecoes`, `/playbook-de-objecoes`, `/biblioteca-de-objecoes` | Classifica objeções em 6 tipos e monta a biblioteca de respostas multi-canal com cadência de revisão |
 | 6 (bônus) | `/escada-de-ofertas` | `/escada-de-produtos`, `/value-ladder`, `/jornada-de-produtos`, `/funil-de-vendas` (o nome que mais confunde com a Skill 1) | Desenha a jornada de ascensão entre produtos/ofertas — nível de portfólio, não de pipeline |
+| 7 (bônus) | `/social-selling-comercial` | `/social-selling`, `/prospeccao-redes-sociais`, `/vender-por-dm`, `/linkedin-outreach` | Monta a sequência de prospecção por rede social (LinkedIn ou Instagram/TikTok) antes do lead entrar no funil comercial |
 
 ## Cuidado com a confusão "funil comercial" x "funil de vendas"
 
@@ -20,7 +21,7 @@ O aluno vai perguntar isso. Responda sempre assim: **funil comercial** (Skill 1,
 `/desenho-processo-comercial` não depende de nenhuma outra. As demais funcionam standalone, mas rendem mais quando rodadas em sequência (cada uma puxa contexto da anterior, se existir):
 
 ```
-desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant-gpct → discovery-script → playbook-vendas-vivo → escada-de-ofertas (bônus, independente das demais)
+desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant-gpct → discovery-script → playbook-vendas-vivo → escada-de-ofertas (bônus, independente das demais) → social-selling-comercial (bônus, independente das demais — na verdade acontece ANTES da Skill 1 na prática, mas é ensinada por último)
 ```
 
 ## Perguntas frequentes de suporte
@@ -37,8 +38,10 @@ desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant
 
 **"Meu nicho é saúde/estética/finanças/jurídico/psicologia, isso muda alguma coisa?"** — sim. A Skill 1 (Passo 0.5) marca a flag `nicho_regulado: sim` e todas as skills seguintes calibram a linguagem (sem "garantido"/"cura", sem depoimento de paciente/cliente em médico/psicologia/jurídico). O aluno só responde uma vez.
 
+**"Eu prospecto pelo Instagram/LinkedIn, tem processo pra isso?"** — sim, é a Skill 7 (`/social-selling-comercial`). LinkedIn usa a sequência de Jeb Blount (5 toques em ~2 semanas); Instagram/TikTok usa o Social Selling 2.0 de Torriani (achar lead por palavra-chave, pré-aquecer, abrir sem vender, conduzir até o agendamento). Não confundir com a régua de comunicação (Skill 2), que cobre o pós-contato.
+
 **"O aluno disse que se perdeu no meio de uma skill"** — todas as 6 skills têm uma seção "Se o aluno se perder" que responde onde ele está, por que está ali, o que está construindo e o que falta para a entrega ficar 10/10. Se mesmo assim ele continuar confuso, mande abrir o `GUIA-DO-ALUNO.html` do zero.
 
 ## Saída dupla (regra de todas as skills)
 
-Todas as 6 skills entregam o output em **markdown + HTML** ao final, nunca só um dos dois. O HTML reaproveita os mesmos tokens visuais do `GUIA-DO-ALUNO.html` (fundo escuro, ouro de destaque) para manter consistência visual em todo o material da aula.
+Todas as 7 skills entregam o output em **markdown + HTML** ao final, nunca só um dos dois. O HTML reaproveita os mesmos tokens visuais do `GUIA-DO-ALUNO.html` (fundo escuro, ouro de destaque) para manter consistência visual em todo o material da aula.

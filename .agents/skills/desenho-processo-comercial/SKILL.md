@@ -8,11 +8,11 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 1 de 6** da Aula 1 do Cohort de Vendas ("Processo Comercial & Playbook com IA"). Ela abre o fluxo: o processo desenhado aqui é o esqueleto onde as outras cinco skills encaixam (régua de comunicação, qualificação, discovery, objeções, escada de ofertas).
+Esta é a **Skill 1 de 7** da Aula 1 do Cohort de Vendas ("Processo Comercial & Playbook com IA"). Ela abre o fluxo: o processo desenhado aqui é o esqueleto onde as outras seis skills encaixam (régua de comunicação, qualificação, discovery, objeções, escada de ofertas, social selling).
 
-**Sequência completa:** `/desenho-processo-comercial` (você está aqui) → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus).
+**Sequência completa:** `/desenho-processo-comercial` (você está aqui) → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus) → `/social-selling-comercial` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 1/6 (Processo Comercial). Próxima vai ser /regua-comunicacao-comercial."*
+Quando começar, anuncie: *"Você está na Skill 1/7 (Processo Comercial). Próxima vai ser /regua-comunicacao-comercial."*
 
 ---
 
@@ -20,12 +20,12 @@ Quando começar, anuncie: *"Você está na Skill 1/6 (Processo Comercial). Próx
 
 Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
 
-1. **Onde ele está:** Skill 1 de 6 da Aula 1 (Cohort de Vendas) — Desenho do Processo Comercial.
-2. **Por que está aqui:** é a primeira skill da aula — sem etapas e critérios de saída definidos aqui, nenhuma das outras cinco tem onde encaixar (a régua de comunicação, a qualificação e o discovery dependem das etapas desenhadas nesta skill).
+1. **Onde ele está:** Skill 1 de 7 da Aula 1 (Cohort de Vendas) — Desenho do Processo Comercial.
+2. **Por que está aqui:** é a primeira skill da aula — sem etapas e critérios de saída definidos aqui, nenhuma das outras seis tem onde encaixar (a régua de comunicação, a qualificação e o discovery dependem das etapas desenhadas nesta skill).
 3. **O que está construindo:** `processo-comercial-{negocio}.md` + `processo-comercial-{negocio}.html`.
 4. **Pendências para fechar com nota 10:** confirme se você já tem as 8 respostas do Passo 0 (ticket, ciclo, decisores, B2B/B2C, se tem vendedor ou é autoatendimento, nicho/mercado, origem dos leads, se já existe processo hoje); sem isso, o processo fica genérico e o gate de compliance do Passo 0.5 não roda.
 
-Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 7 skills da aula" e "Fluxo da aula").
 
 ---
 

@@ -8,11 +8,11 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 5 de 6** da Aula 1 do Cohort de Vendas — fecha o fluxo principal (a Skill 6, `/escada-de-ofertas`, é bônus e opera em outro nível). Recebe as objeções que apareceram no discovery (Skill 4) e em qualquer etapa do processo desenhado na Skill 1, e as transforma em playbook vivo, com cadência de manutenção. Reaproveita o **mecanismo único de conversão** definido na Skill 2 (`/regua-comunicacao-comercial`) para que as respostas soem com a mesma voz em qualquer canal.
+Esta é a **Skill 5 de 7** da Aula 1 do Cohort de Vendas — fecha o fluxo principal (a Skill 6, `/escada-de-ofertas`, é bônus e opera em outro nível). Recebe as objeções que apareceram no discovery (Skill 4) e em qualquer etapa do processo desenhado na Skill 1, e as transforma em playbook vivo, com cadência de manutenção. Reaproveita o **mecanismo único de conversão** definido na Skill 2 (`/regua-comunicacao-comercial`) para que as respostas soem com a mesma voz em qualquer canal.
 
-**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` (você está aqui) → `/escada-de-ofertas` (bônus).
+**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` → `/discovery-script` → `/playbook-vendas-vivo` (você está aqui) → `/escada-de-ofertas` (bônus) → `/social-selling-comercial` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 5/6 (Playbook de Vendas Vivo) — fecha o fluxo principal da Aula 1. Depois, se quiser, tem a Skill 6/6 bônus (/escada-de-ofertas)."*
+Quando começar, anuncie: *"Você está na Skill 5/7 (Playbook de Vendas Vivo) — fecha o fluxo principal da Aula 1. Depois, se quiser, tem as skills bônus 6/7 (/escada-de-ofertas) e 7/7 (/social-selling-comercial)."*
 
 ---
 
@@ -20,12 +20,12 @@ Quando começar, anuncie: *"Você está na Skill 5/6 (Playbook de Vendas Vivo) �
 
 Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
 
-1. **Onde ele está:** Skill 5 de 6 da Aula 1 (Cohort de Vendas) — Playbook de Vendas Vivo.
+1. **Onde ele está:** Skill 5 de 7 da Aula 1 (Cohort de Vendas) — Playbook de Vendas Vivo.
 2. **Por que está aqui:** as quatro skills anteriores constroem o processo, a comunicação, a qualificação e o discovery; esta fecha o pacote transformando cada objeção real em resposta documentada e testável, com dono e cadência de revisão.
 3. **O que está construindo:** `playbook-objecoes-{negocio}.md` + `playbook-objecoes-{negocio}.html`.
 4. **Pendências para fechar com nota 10:** confirme se ele tem objeções reais para alimentar (Passo 0, opção 1 ou 3) — sem isso o playbook fica no modo "ponto de partida a validar", e é importante ele saber que isso não é definitivo ainda.
 
-Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 7 skills da aula" e "Fluxo da aula").
 
 ---
 
@@ -134,4 +134,4 @@ Gere **dois arquivos com o mesmo conteúdo**:
 1. `playbook-objecoes-{negocio}.md` com: a biblioteca completa multi-canal (Passo 3), a cadência de manutenção acordada com dono nomeado (Passo 4), e um resumo de 1 página ("battlecard") com as 5 objeções mais frequentes prontas para consulta rápida antes de uma call.
 2. `playbook-objecoes-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com a biblioteca em tabela filtrável visualmente por tipo (mesmo que a filtragem seja só visual/cor, não interativa) e o battlecard das 5 objeções mais frequentes destacado no topo.
 
-Feche a Aula 1 com o resumo do pacote completo entregue: processo comercial desenhado, régua de comunicação com mecanismo único definido, ICP e qualificação calibrados, discovery script criado/refinado, e playbook de objeções vivo multi-canal — juntos resolvem o problema comercial ponta a ponta, para qualquer nicho, B2B ou B2C. Lembre o aluno da Skill 6 bônus (`/escada-de-ofertas`), que opera em outro nível — não o pipeline de um deal, mas a arquitetura de produtos do negócio.
+Feche a Aula 1 com o resumo do pacote completo entregue: processo comercial desenhado, régua de comunicação com mecanismo único definido, ICP e qualificação calibrados, discovery script criado/refinado, e playbook de objeções vivo multi-canal — juntos resolvem o problema comercial ponta a ponta, para qualquer nicho, B2B ou B2C. Lembre o aluno das duas skills bônus que ainda restam: Skill 6 (`/escada-de-ofertas`, arquitetura de produtos) e Skill 7 (`/social-selling-comercial`, prospecção por rede social).

@@ -10,7 +10,7 @@ Todas as skills canônicas estão em **`.claude/skills/{nome}/SKILL.md`**. A pas
 
 O aluno sempre começa por **`/desenho-processo-comercial`** (`.claude/skills/desenho-processo-comercial/SKILL.md`). Não existe skill de setup separada nesta aula — a primeira skill já pergunta tudo que precisa (ticket, ciclo, decisores, B2B/B2C) antes de desenhar qualquer coisa.
 
-## As 6 skills, em ordem
+## As 7 skills, em ordem
 
 1. `desenho-processo-comercial` — etapas do funil com critério de saída verificável
 2. `regua-comunicacao-comercial` — quem fala, o que fala, por qual canal, mecanismo único de conversão
@@ -18,6 +18,7 @@ O aluno sempre começa por **`/desenho-processo-comercial`** (`.claude/skills/de
 4. `discovery-script` — script de discovery em 6 blocos, com IA
 5. `playbook-vendas-vivo` — biblioteca de objeções multi-canal, viva
 6. `escada-de-ofertas` (bônus) — jornada entre produtos, só se o negócio tiver mais de uma oferta
+7. `social-selling-comercial` (bônus) — prospecção por LinkedIn/Instagram, só se rede social for canal ativo
 
 ## Regras gerais (valem em qualquer agente)
 
@@ -26,6 +27,7 @@ O aluno sempre começa por **`/desenho-processo-comercial`** (`.claude/skills/de
 - Português do Brasil com acentuação correta. Sem emoji, sem travessão, sem tom de guru nos entregáveis.
 - Nunca invente dado, caso real, ou objeção que o aluno não forneceu — quando faltar informação, pergunte ou marque como "ponto de partida a validar".
 - O funil comercial (Skill 1) e a escada de ofertas (Skill 6) são conceitos diferentes — nunca confundir um com o outro numa resposta.
+- Social selling (Skill 7) acontece ANTES do lead entrar no funil comercial — é prospecção ativa por rede social, não substitui a régua de comunicação (Skill 2) depois que o lead responde.
 - A Skill 1 gera duas flags que todas as skills seguintes devem herdar (perguntar de novo só se o aluno não tiver rodado a Skill 1): `nicho_regulado` (saúde/estética/finanças/jurídico/psicologia — muda a linguagem em toda mensagem, régua e resposta de objeção) e `modelo` (com-vendedor/autoatendimento — muda se existe conversa 1:1 ou só toque digital).
 
 ## Se o seu agente não lê `.claude/` nem `.agents/`

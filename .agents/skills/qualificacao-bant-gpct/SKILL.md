@@ -8,11 +8,11 @@ user_invocable: true
 
 ## Posição na Aula 1
 
-Esta é a **Skill 3 de 6** da Aula 1 do Cohort de Vendas — o núcleo da aula. Recebe o critério de saída da etapa de Qualificação desenhado na Skill 1 (`/desenho-processo-comercial`) e a régua de mensagens da Skill 2 (`/regua-comunicacao-comercial`), e os transforma em roteiro de qualificação aplicável.
+Esta é a **Skill 3 de 7** da Aula 1 do Cohort de Vendas — o núcleo da aula. Recebe o critério de saída da etapa de Qualificação desenhado na Skill 1 (`/desenho-processo-comercial`) e a régua de mensagens da Skill 2 (`/regua-comunicacao-comercial`), e os transforma em roteiro de qualificação aplicável.
 
-**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` (você está aqui) → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus).
+**Sequência completa:** `/desenho-processo-comercial` → `/regua-comunicacao-comercial` → `/qualificacao-bant-gpct` (você está aqui) → `/discovery-script` → `/playbook-vendas-vivo` → `/escada-de-ofertas` (bônus) → `/social-selling-comercial` (bônus).
 
-Quando começar, anuncie: *"Você está na Skill 3/6 (Qualificação BANT/GPCT). Próxima vai ser /discovery-script."*
+Quando começar, anuncie: *"Você está na Skill 3/7 (Qualificação BANT/GPCT). Próxima vai ser /discovery-script."*
 
 ---
 
@@ -20,12 +20,12 @@ Quando começar, anuncie: *"Você está na Skill 3/6 (Qualificação BANT/GPCT).
 
 Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo isso" ou parecer inseguro sobre o que está construindo, pare e responda com isto antes de continuar:
 
-1. **Onde ele está:** Skill 3 de 6 da Aula 1 (Cohort de Vendas) — Qualificação BANT/GPCT.
+1. **Onde ele está:** Skill 3 de 7 da Aula 1 (Cohort de Vendas) — Qualificação BANT/GPCT.
 2. **Por que está aqui:** o processo (Skill 1) definiu QUANDO um lead avança; esta skill define COMO decidir isso de forma consistente — sem ela, "qualificar" vira achismo de cada vendedor.
 3. **O que está construindo:** `qualificacao-{negocio}.md` + `qualificacao-{negocio}.html`.
 4. **Pendências para fechar com nota 10:** confirme se ele já rodou a Skill 1 (perfil do negócio) — sem isso, pergunte as 8 perguntas do Passo 0 daquela skill aqui mesmo; confirme também se ele já tem ICP prévio de outra pesquisa (evita retrabalho).
 
-Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 7 skills da aula" e "Fluxo da aula").
 
 ---
 
