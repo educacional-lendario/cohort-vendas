@@ -47,6 +47,8 @@ Pergunte como seguir:
 
 Nunca invente objeção "genérica de mercado" e apresente como se fosse específica do negócio do usuário sem avisar que é ponto de partida a validar.
 
+Puxe também a flag `nicho_regulado` da Skill 1 (`/desenho-processo-comercial`), se já rodada — ela muda a técnica de resposta no Passo 2. Se não foi rodada, pergunte: *"seu nicho é regulado (saúde, estética, finanças/investimento, jurídico, psicologia)?"* antes de gerar qualquer resposta com prova social.
+
 ## Passo 1 — Classificar cada objeção (os 6 tipos)
 
 Antes de responder qualquer objeção, classifique-a. Isso não é burocracia — é o que evita responder a objeção errada:
@@ -80,10 +82,14 @@ Use o framework que casa com o tipo (Passo 1), sempre em sequência — nunca pu
 **Feel-Felt-Found — para objeções de confiança social ("nunca ouvi falar de vocês"):**
 "Entendo como você se sente. Outros clientes [nome do segmento] sentiram o mesmo antes de começar. O que eles descobriram foi [resultado real, com caso específico]."
 
+> **Se `nicho_regulado` for sim:** troque "resultado real, com caso específico" por "com dedicação, muitos relatam [benefício em linguagem de possibilidade, nunca garantia]". Em médico (CFM), psicologia (CRP) e jurídico (OAB), Feel-Felt-Found **não pode citar depoimento de paciente/cliente** — substitua por credencial (registro no conselho) e método, nunca por caso de terceiro.
+
 **Reformulação de valor — para objeções de preço genuínas:**
 Nunca responder preço com desconto reflexo. Voltar à quantificação de gap feita no discovery (Skill 3): "Você mencionou que isso custa [X] hoje. O investimento é [Y] — o retorno esperado é [múltiplo], em quanto tempo?"
 
-Para cada objeção documentada, gere: a resposta no framework certo, **e** um caso real (se o usuário fornecer) que sirva de prova concreta — resposta sem caso é teoria, caso sem resposta estruturada é anedota. Os dois juntos é o que vira treinamento de time.
+> **Se `nicho_regulado` for sim:** nunca prometa retorno/resultado como certeza numérica ("o retorno esperado é X") — reformule como possibilidade, sem número de resultado garantido, especialmente em finanças/investimento (evite qualquer linguagem que soe "renda garantida").
+
+Para cada objeção documentada, gere: a resposta no framework certo, **e** um caso real (se o usuário fornecer) que sirva de prova concreta — resposta sem caso é teoria, caso sem resposta estruturada é anedota. Os dois juntos é o que vira treinamento de time. Se o nicho for regulado (médico/psicologia/jurídico), substitua "caso real de cliente" por "credencial + método", conforme a vedação do Passo 0.
 
 ## Passo 3 — Montar a biblioteca pesquisável (todos os canais, uma só voz)
 

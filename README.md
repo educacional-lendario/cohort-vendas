@@ -26,7 +26,7 @@ Se preferir markdown puro, o conteúdo está abaixo.
 
 | # | Skill | O que faz | Output |
 |---|---|---|---|
-| 1 | `/desenho-processo-comercial` | Diagnostica seu modelo de venda (ticket, ciclo, decisores, B2B/B2C) e desenha as etapas do funil com critério de saída verificável (VCA) e gatilhos de risco em 2 níveis | `processo-comercial-{negocio}.md` + `.html` |
+| 1 | `/desenho-processo-comercial` | Diagnostica seu modelo de venda (ticket, ciclo, decisores, B2B/B2C, com vendedor ou autoatendimento, nicho regulado ou não) e desenha as etapas do funil com critério de saída verificável (VCA) e gatilhos de risco em 2 níveis | `processo-comercial-{negocio}.md` + `.html` |
 | 2 | `/regua-comunicacao-comercial` | Define quem fala (humano, IA ou os dois), o que dizer e por qual canal em cada etapa, com funil de reforço por tempo parado e o mecanismo único de conversão do seu negócio | `regua-comunicacao-{negocio}.md` + `.html` |
 | 3 | `/qualificacao-bant-gpct` | Escolhe o mix certo entre BANT e GPCT para o seu tipo de venda, monta o ICP nas dimensões certas (B2B ou B2C) e gera o roteiro de qualificação com escala de pontuação consistente | `qualificacao-{negocio}.md` + `.html` |
 | 4 | `/discovery-script` | Gera o script de discovery em 6 blocos modulares (SPIN + Funil de Dor + quantificação de gap), ou refina um script existente comparando com calls reais gravadas/transcritas | `discovery-script-{negocio}.md` + `.html` |
@@ -207,6 +207,14 @@ Rode manual em 10-15 casos reais, audite a consistência entre pessoas diferente
 ### Funil comercial e funil de vendas (escada de ofertas) são coisas diferentes
 
 O funil comercial acompanha o status de um deal específico. A escada de ofertas mapeia como o cliente sobe entre produtos diferentes ao longo do tempo. Não confunda os dois documentos.
+
+### Nicho regulado muda a linguagem, não o processo
+
+Saúde, estética, finanças/investimento, jurídico e psicologia têm restrição de conselho profissional (nada de "garantido", "cura" ou depoimento de paciente/cliente como prova em médico/psicologia/jurídico). O Passo 0.5 da Skill 1 detecta isso uma vez e as skills seguintes herdam a flag — você não precisa repetir a explicação a cada skill.
+
+### Sem vendedor não é motivo pra pular o processo
+
+Negócio 100% autoatendimento (e-commerce, app, assinatura sem humano no meio) também tem funil — só que as etapas são toques digitais (visitou, iniciou compra, comprou) e os gatilhos são de abandono, não de vendedor parado. A Skill 1 já pergunta isso no Passo 0.
 
 ---
 

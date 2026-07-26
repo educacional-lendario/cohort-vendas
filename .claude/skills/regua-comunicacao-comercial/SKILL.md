@@ -33,9 +33,9 @@ Você é o arquiteto da régua de comunicação comercial. Sua função é respo
 
 Princípio central: **nunca repita a mensagem idêntica.** Mensagem igual em D+1 e D+2 é ignorada com frequência cada vez maior — cada toque de reforço precisa de ângulo diferente (pergunta, oferta de valor, urgência), não de reenvio do mesmo texto. Segundo princípio: **automação nunca fala por cima de humano ativo.** Se o vendedor já está numa etapa negociando ativamente com o lead, nenhuma régua automática deve disparar mensagem concorrente na mesma janela — quem está com a mão no deal tem prioridade.
 
-## Passo 0 — Puxar as etapas (gate de entrada)
+## Passo 0 — Puxar as etapas e as flags (gate de entrada)
 
-Puxe as etapas e critérios de saída da Skill 1 (`/desenho-processo-comercial`), se já rodada. Se não, peça pelo menos a lista de etapas do funil do usuário antes de continuar — régua de comunicação sem etapa definida não tem onde ancorar. Pergunte também:
+Puxe as etapas, critérios de saída, e as flags `nicho_regulado` e `modelo` (com-vendedor/autoatendimento) da Skill 1 (`/desenho-processo-comercial`), se já rodada. Se não, peça pelo menos a lista de etapas do funil e as duas flags antes de continuar — régua de comunicação sem etapa definida não tem onde ancorar, e sem saber se o nicho é regulado você pode sugerir uma mensagem que vira problema legal. Pergunte também:
 
 > Quais canais vocês realmente usam hoje pra falar com lead? (WhatsApp, e-mail, ligação, DM de rede social, outro) — não vou sugerir canal que vocês não operam.
 
@@ -44,10 +44,22 @@ Puxe as etapas e critérios de saída da Skill 1 (`/desenho-processo-comercial`)
 Para cada etapa do funil (herdada do Passo 0), classifique quem atua:
 
 - **Humano** — só o vendedor dono do deal age; nenhuma automação dispara aqui (normalmente etapas de negociação avançada, onde a conversa já é 1:1 e sem template).
-- **Automação/IA** — disparo automático por regra de tempo (ex.: lead sem resposta há X dias); typical em etapas de topo de funil (primeiro contato, reforço de contato sem resposta).
+- **Automação/IA** — disparo automático por regra de tempo (ex.: lead sem resposta há X dias); típico em etapas de topo de funil (primeiro contato, reforço de contato sem resposta).
 - **Ambos** — automação atua enquanto o humano não estiver engajado ativamente; no momento em que o humano sinaliza que está conduzindo, a automação para de disparar nessa etapa para aquele lead específico.
+- **Automação apenas, sem humano** — perfil "autoatendimento/zero-toque" (herdado da Skill 1): todas as etapas são automação (e-mail transacional, remarketing, notificação de carrinho abandonado). Não force uma etapa "humana" que não existe nesse modelo de negócio.
 
-Documente a regra de prioridade explicitamente: *"Automação nunca dispara por cima de humano ativo — é o vendedor quem sinaliza que está com a mão no deal, não a automação que decide parar sozinha."*
+Documente a regra de prioridade explicitamente: *"Automação nunca dispara por cima de humano ativo — é o vendedor quem sinaliza que está com a mão no deal, não a automação que decide parar sozinha."* (Regra não se aplica ao perfil autoatendimento — lá não existe humano disputando prioridade.)
+
+## Passo 1.5 — Calibrar linguagem se o nicho for regulado
+
+Se a flag `nicho_regulado` herdada da Skill 1 for **sim**, toda mensagem da régua (qualquer etapa, qualquer canal) segue estas regras antes de ser escrita:
+
+- Nunca prometer "cura", "garantido", "resultado em X dias", "renda garantida", "sem esforço" — nem em mensagem de reforço, nem em mensagem de "último contato".
+- Usar linguagem de possibilidade: "pode ajudar", "muitas pessoas relatam", "com dedicação".
+- **Médico (CFM), psicologia (CRP), jurídico (OAB):** nenhuma mensagem da régua pode citar depoimento de paciente/cliente como prova social — nem informal, nem em WhatsApp. Use credencial, método ou conteúdo educativo como gancho de reengajamento em vez de prova social.
+- Isso vale inclusive para o "mecanismo único de conversão" do Passo 3 — o nome e a descrição do método não podem prometer o que a regulação proíbe.
+
+Se `nicho_regulado` for não, pule esta etapa sem comentário.
 
 ## Passo 2 — Construir a régua de mensagens por etapa
 

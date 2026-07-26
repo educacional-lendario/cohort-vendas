@@ -35,7 +35,11 @@ Princípio central: **a IA entra em duas pontas — geração e refino — nunca
 
 ## Passo 0 — Puxar contexto e escolher o modo
 
-Puxe da Skill 2 (`/qualificacao-bant-gpct`, se já rodada): ICP, o mix BANT/GPCT escolhido, e os blocos de Goals/Challenges já esboçados. Se a Skill 2 não foi rodada, peça pelo menos: quem é o comprador (ICP resumido), o que ele vende, e se já tem alguma call gravada/transcrita para refinar (ou se está criando do zero).
+Puxe da Skill 3 (`/qualificacao-bant-gpct`, se já rodada): ICP, o mix BANT/GPCT escolhido, os blocos de Goals/Challenges já esboçados, o modelo de atendimento (com vendedor ou autoatendimento) e a flag `nicho_regulado`. Se a Skill 3 não foi rodada, peça pelo menos: quem é o comprador (ICP resumido), o que ele vende, e se já tem alguma call gravada/transcrita para refinar (ou se está criando do zero).
+
+**Se o modelo for "autoatendimento/zero-toque":** avise o usuário que discovery call estruturado não se aplica — não existe conversa 1:1 nesse modelo. Sugira pular para a Skill 5 (`/playbook-vendas-vivo`), que cobre objeções em formato assíncrono (FAQ, página de objeções, e-mail), e não force a criação de um script de call que nunca vai acontecer.
+
+**Se `nicho_regulado` for sim:** os blocos 4 e 5 (implicação + quantificação de gap) evitam formular a pergunta como se o resultado fosse certeza — pergunte pelo objetivo do cliente, não prometa o resultado nas perguntas.
 
 Pergunte como seguir:
 

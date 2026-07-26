@@ -33,6 +33,10 @@ desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant
 
 **"A /escada-de-ofertas não fez sentido pro meu caso"** — normal, é bônus e só se aplica a quem tem mais de um produto/oferta em níveis diferentes. Se o aluno só tem um produto, oriente a pular esta skill.
 
+**"Meu negócio é 100% autoatendimento, não tenho vendedor"** — funciona. A Skill 1 pergunta isso no Passo 0 e trata como perfil próprio: etapas viram toques digitais (visitou, iniciou compra, comprou), gatilhos viram abandono. A Skill 4 (discovery) avisa que não se aplica nesse modelo e sugere pular direto pra Skill 5.
+
+**"Meu nicho é saúde/estética/finanças/jurídico/psicologia, isso muda alguma coisa?"** — sim. A Skill 1 (Passo 0.5) marca a flag `nicho_regulado: sim` e todas as skills seguintes calibram a linguagem (sem "garantido"/"cura", sem depoimento de paciente/cliente em médico/psicologia/jurídico). O aluno só responde uma vez.
+
 **"O aluno disse que se perdeu no meio de uma skill"** — todas as 6 skills têm uma seção "Se o aluno se perder" que responde onde ele está, por que está ali, o que está construindo e o que falta para a entrega ficar 10/10. Se mesmo assim ele continuar confuso, mande abrir o `GUIA-DO-ALUNO.html` do zero.
 
 ## Saída dupla (regra de todas as skills)

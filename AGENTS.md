@@ -26,6 +26,7 @@ O aluno sempre começa por **`/desenho-processo-comercial`** (`.claude/skills/de
 - Português do Brasil com acentuação correta. Sem emoji, sem travessão, sem tom de guru nos entregáveis.
 - Nunca invente dado, caso real, ou objeção que o aluno não forneceu — quando faltar informação, pergunte ou marque como "ponto de partida a validar".
 - O funil comercial (Skill 1) e a escada de ofertas (Skill 6) são conceitos diferentes — nunca confundir um com o outro numa resposta.
+- A Skill 1 gera duas flags que todas as skills seguintes devem herdar (perguntar de novo só se o aluno não tiver rodado a Skill 1): `nicho_regulado` (saúde/estética/finanças/jurídico/psicologia — muda a linguagem em toda mensagem, régua e resposta de objeção) e `modelo` (com-vendedor/autoatendimento — muda se existe conversa 1:1 ou só toque digital).
 
 ## Se o seu agente não lê `.claude/` nem `.agents/`
 
