@@ -113,14 +113,18 @@ Esse pacote vira input direto da **Aula 2 (CRM, Integrações e Gestão de Pipel
 
 As 6 skills desta aula não reinventam frameworks de venda do zero — elas traduzem o squad `squads/sales/` (14 agentes, 4 tiers) para o contexto de qualificação com vocabulário BANT/GPCT e régua de comunicação, que é o que o mercado usa. Quando o Claude Code tiver acesso a esse squad, é possível aprofundar cada bloco:
 
-- **Desenho de processo** → `@sales-chief *diagnose` (6 dimensões + detecção automática de nicho)
-- **Discovery** → `/sales:neil-rackham *spin-discovery` (SPIN Selling completo)
+- **Desenho de processo (priorização de contas)** → `@sales-chief *diagnose` (6 dimensões + detecção automática de nicho) + `/sales:chet-holmes *dream-100` (Dream 100: foco em contas-alvo)
+- **Origem de leads e especialização de papéis (régua de comunicação)** → `/sales:aaron-ross *sdr-playbook` (Seeds/Nets/Spears, especialização SDR/AE/CSM)
+- **Prospecção e disciplina de cadência (régua de comunicação)** → `/sales:jeb-blount *prospect-plan` (Fanatical Prospecting)
+- **Discovery** → `/sales:neil-rackham *spin-discovery` (SPIN Selling completo) + `/sales:challenger-sale *teaching-pitch` (Commercial Teaching, venda B2B complexa)
 - **Quantificação de dor** → `/sales:keenan *gap-analysis` (Gap Selling: estado atual vs desejado)
 - **Aprofundamento de dor e budget/decisão** → `/sales:david-sandler *pain-funnel`
-- **Negociação e objeções de risco/confiança** → `/sales:chris-voss *negotiate`
+- **Objeções e negociação** → `/sales:chris-voss *negotiate` + `/sales:jeb-blount *handle-objection` (livro *Objections*)
 - **Fechamento** → `/sales:david-sandler *sandler-close`
 
 Fluxo consultivo completo de referência (do squad): `@sales-chief *diagnose` → `neil-rackham *spin-discovery` → `keenan *gap-analysis` → `david-sandler *pain-funnel` → `chris-voss *negotiate` → `david-sandler *sandler-close`.
+
+**As 8 mentes citadas nas 6 skills desta aula** (ver seção "Mentes por trás desta skill" em cada `SKILL.md`): Neil Rackham (SPIN), David Sandler (Pain Funnel + Sandler Close), Keenan (Gap Selling), Chris Voss (Empatia Tática), Chet Holmes (Dream 100 + Stadium Pitch), Jeb Blount (Fanatical Prospecting + Objections), Aaron Ross (Predictable Revenue + Seeds/Nets/Spears), Challenger Sale — Dixon & Adamson (Commercial Teaching). Os 4 últimos (Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale) são Tier 2-3 do squad e ficam mais a fundo na **Aula 3 (FUPs, Cadência e SDR, com Adavio)** — aqui entram como reforço pontual, não como técnica central.
 
 ## Regras da Aula 1
 

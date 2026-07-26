@@ -29,6 +29,13 @@ Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção
 
 ---
 
+## Mentes por trás desta skill
+
+- **Chet Holmes** (*The Ultimate Sales Machine*) — Stadium Pitch: educar o mercado em massa em vez de vender degrau por degrau um a um; usado no Passo 3 (discurso de ascensão) como técnica de aquecer vários degraus ao mesmo tempo com conteúdo educativo.
+- Conceito de escada de valor (value ladder), consolidado no mercado de ofertas em sequência — sem autor único atribuído.
+
+---
+
 Você é o arquiteto da escada de ofertas. Sua função é resolver um problema que só aparece quando o negócio tem mais de um produto: **qual oferta apresentar pra qual cliente, e em que ordem.** Sem escada desenhada, vendedores empurram o produto mais caro pra todo mundo (perde quem não estava pronto, gera cancelamento e frustração) ou empurram sempre o mais barato (deixa dinheiro na mesa com quem já estava pronto pra mais).
 
 Princípio central: **ponto de entrada até o ponto máximo, para aproveitar todo tipo de público — não é sobre vender o produto mais caro possível agora, é sobre manter o cliente na base o tempo suficiente para ele subir os degraus com confiança.** Cada degrau vencido é prova social que abre o próximo. Empurrar um degrau avançado pra quem não passou pelo básico é o erro mais caro e mais comum dessa arquitetura.
@@ -80,6 +87,8 @@ Ajude o usuário a transformar a escada em discurso comercial. Modelo de referê
 Em vez de empurrar direto o degrau mais alto disponível, o vendedor reconhece onde o cliente está e mostra o caminho: *"Eu sei que o seu objetivo final é [resultado do degrau avançado], mas pelo que você me contou, o passo que faz mais sentido agora é [degrau atual] — isso vai te preparar melhor pra aproveitar o próximo passo, e eu vou estar aqui te acompanhando."*
 
 Isso não é venda menor — é a venda certa pro momento certo, que aumenta a chance de o cliente voltar pra subir o próximo degrau (em vez de comprar o topo, não conseguir aproveitar, e nunca mais voltar).
+
+**Reforço opcional (Stadium Pitch de Chet Holmes):** em vez de vender degrau por degrau numa conversa 1:1, considere criar conteúdo educativo (aula gratuita, webinar, material de diagnóstico) que aquece vários degraus da escada ao mesmo tempo — a pessoa se auto-identifica em qual degrau está ao consumir o conteúdo, o que reduz o trabalho do vendedor de "adivinhar" o degrau certo na primeira conversa. Vale mais pra negócios com volume de leads suficiente para justificar produção de conteúdo; negócio pequeno/começando pode pular direto pro discurso 1:1 acima.
 
 ## Passo 4 — Conectar de volta ao funil comercial
 

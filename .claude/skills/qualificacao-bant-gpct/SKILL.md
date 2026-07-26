@@ -23,9 +23,18 @@ Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo
 1. **Onde ele está:** Skill 3 de 6 da Aula 1 (Cohort de Vendas) — Qualificação BANT/GPCT.
 2. **Por que está aqui:** o processo (Skill 1) definiu QUANDO um lead avança; esta skill define COMO decidir isso de forma consistente — sem ela, "qualificar" vira achismo de cada vendedor.
 3. **O que está construindo:** `qualificacao-{negocio}.md` + `qualificacao-{negocio}.html`.
-4. **Pendências para fechar com nota 10:** confirme se ele já rodou a Skill 1 (perfil do negócio) — sem isso, pergunte as 7 perguntas do Passo 0 daquela skill aqui mesmo; confirme também se ele já tem ICP prévio de outra pesquisa (evita retrabalho).
+4. **Pendências para fechar com nota 10:** confirme se ele já rodou a Skill 1 (perfil do negócio) — sem isso, pergunte as 8 perguntas do Passo 0 daquela skill aqui mesmo; confirme também se ele já tem ICP prévio de outra pesquisa (evita retrabalho).
 
 Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+
+---
+
+## Mentes por trás desta skill
+
+- **BANT** — origem IBM, anos 60 (qualificação rápida para venda transacional).
+- **GPCT / GPCTBA-C&I** — origem HubSpot (qualificação consultiva para venda de médio/alto ticket).
+- **Keenan** (*Gap Selling*) — quantificação de estado atual vs. estado desejado, usada no Passo 3 (bloco Challenges).
+- **Jeb Blount** (*Sales EQ*) — disciplina de nunca deixar a qualificação virar interrogatório mecânico: pergunta é conversa, não checklist.
 
 ---
 
@@ -37,7 +46,7 @@ Princípio central, baseado em como os dois frameworks nasceram e evoluíram: **
 
 ## Passo 0 — Puxar contexto da Skill 1 (ou levantar do zero)
 
-Se o usuário já rodou `/desenho-processo-comercial`, puxe do documento gerado: ticket médio, ciclo de venda, número de decisores, B2B ou B2C, modelo de atendimento (com vendedor ou autoatendimento), a flag `nicho_regulado`, e o critério de saída da etapa "Qualificação" definido lá. Se não rodou, faça as mesmas 7 perguntas do Passo 0 daquela skill antes de continuar — qualificação sem saber o tipo de venda é chute.
+Se o usuário já rodou `/desenho-processo-comercial`, puxe do documento gerado: ticket médio, ciclo de venda, número de decisores, B2B ou B2C, modelo de atendimento (com vendedor ou autoatendimento), a flag `nicho_regulado`, e o critério de saída da etapa "Qualificação" definido lá. Se não rodou, faça as mesmas 8 perguntas do Passo 0 daquela skill antes de continuar — qualificação sem saber o tipo de venda é chute.
 
 **Se o modelo for "autoatendimento/zero-toque":** não existe vendedor fazendo perguntas de qualificação em tempo real — a "qualificação" vira filtro automático (ex.: quiz na página, segmentação por comportamento, gate de checkout). Adapte o roteiro do Passo 3 para perguntas que um formulário ou quiz digital consegue fazer, não perguntas de conversa 1:1.
 

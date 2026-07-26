@@ -35,6 +35,23 @@ Se preferir markdown puro, o conteúdo está abaixo.
 
 **Tese-mãe da Aula 1:** desenhar o processo, dar voz a ele com a régua de comunicação, calibrar a qualificação e construir o playbook — para o aluno sair com o problema comercial resolvido, não com mais um framework na cabeça. Toda entrega sai em markdown **e** HTML, organizada o suficiente pra não sobrar dúvida.
 
+### Mentes por trás da aula
+
+Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes por trás desta skill" dentro de cada `SKILL.md`). No total, 8 mentes do squad interno de vendas (`squads/sales/`) e origens de mercado entram nesta aula:
+
+| Mente | Framework | Onde aparece |
+|---|---|---|
+| Neil Rackham | SPIN Selling | Discovery Script |
+| David Sandler | Sandler Selling System (Pain Funnel) | Discovery Script |
+| Keenan | Gap Selling | Qualificação, Discovery Script |
+| Chris Voss | Empatia Tática (Never Split the Difference) | Playbook de Objeções |
+| Chet Holmes | Dream 100 + Stadium Pitch (Ultimate Sales Machine) | Processo Comercial, Escada de Ofertas |
+| Jeb Blount | Fanatical Prospecting + Objections | Régua de Comunicação, Playbook de Objeções |
+| Aaron Ross | Predictable Revenue (Seeds/Nets/Spears) | Processo Comercial, Régua de Comunicação |
+| Challenger Sale (Dixon & Adamson) | Commercial Teaching | Discovery Script, Playbook de Objeções |
+
+Chet Holmes, Jeb Blount, Aaron Ross e Challenger Sale entram aqui como reforço pontual — a aplicação mais profunda deles é na **Aula 3 (FUPs, Cadência e SDR, com Adavio)**, que é onde prospecção e cadência viram o assunto central.
+
 ---
 
 ## Setup em 5 minutos

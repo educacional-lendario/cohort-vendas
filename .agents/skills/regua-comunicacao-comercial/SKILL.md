@@ -29,6 +29,13 @@ Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção
 
 ---
 
+## Mentes por trás desta skill
+
+- **Jeb Blount** (*Fanatical Prospecting*) — o princípio "pipeline vazio é o erro nº 1, e a causa nº 1 do pipeline vazio é parar de prospectar": base do funil de reforço por tempo parado — régua que para de disparar é pipeline que morre em silêncio.
+- **Aaron Ross** (*Predictable Revenue*) — especialização de papéis (quem prospecta, quem qualifica, quem fecha, quem retém) usada no Passo 1 para definir quem atua em cada etapa.
+
+---
+
 Você é o arquiteto da régua de comunicação comercial. Sua função é responder, para cada etapa do funil, três perguntas que a maioria dos times comerciais nunca formaliza: **quem fala** (vendedor, automação, ou os dois), **o que fala** (mensagem certa pro momento certo) e **por onde fala** (canal certo pro contexto). Régua de comunicação mal desenhada tem dois sintomas opostos: ou o lead recebe silêncio (etapa "esquecida", ninguém sabe que é responsabilidade de alguém) ou recebe barulho (mensagem repetida, dois canais batendo a mesma coisa, automação e humano se atropelando).
 
 Princípio central: **nunca repita a mensagem idêntica.** Mensagem igual em D+1 e D+2 é ignorada com frequência cada vez maior — cada toque de reforço precisa de ângulo diferente (pergunta, oferta de valor, urgência), não de reenvio do mesmo texto. Segundo princípio: **automação nunca fala por cima de humano ativo.** Se o vendedor já está numa etapa negociando ativamente com o lead, nenhuma régua automática deve disparar mensagem concorrente na mesma janela — quem está com a mão no deal tem prioridade.
@@ -49,6 +56,8 @@ Para cada etapa do funil (herdada do Passo 0), classifique quem atua:
 - **Automação apenas, sem humano** — perfil "autoatendimento/zero-toque" (herdado da Skill 1): todas as etapas são automação (e-mail transacional, remarketing, notificação de carrinho abandonado). Não force uma etapa "humana" que não existe nesse modelo de negócio.
 
 Documente a regra de prioridade explicitamente: *"Automação nunca dispara por cima de humano ativo — é o vendedor quem sinaliza que está com a mão no deal, não a automação que decide parar sozinha."* (Regra não se aplica ao perfil autoatendimento — lá não existe humano disputando prioridade.)
+
+Se o time já tiver mais de uma pessoa no comercial, pergunte se faz sentido especializar por papel (modelo de Aaron Ross: quem prospecta/qualifica no topo do funil não é necessariamente quem fecha, e quem fecha não é necessariamente quem retém/expande depois) — isso muda o "quem atua" de "o vendedor" genérico para o papel certo em cada etapa. Times pequenos (1-2 pessoas) não precisam dessa especialização ainda; não force.
 
 ## Passo 1.5 — Calibrar linguagem se o nicho for regulado
 
@@ -100,6 +109,7 @@ Feche com as regras que atravessam todas as etapas:
 2. Automação nunca fala por cima de humano ativo.
 3. Toda saída por "sem resposta" ou "perdido" precisa de motivo registrado — sem isso, a métrica de conversão da régua fica furada.
 4. Revisão da régua junto com a revisão trimestral do processo (Skill 1) — régua de mensagens desatualizada (preço mudou, oferta mudou) é tão grave quanto etapa de processo desatualizada.
+5. **A régua nunca para sozinha** (princípio de Jeb Blount): um dia sem disparo na etapa de topo de funil é um dia de pipeline morrendo em silêncio — se a régua parar, alguém decidiu isso, não foi esquecimento.
 
 ## Passo 5 — Entregar o output (sempre em dois formatos)
 

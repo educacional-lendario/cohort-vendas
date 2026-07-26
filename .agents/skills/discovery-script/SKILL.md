@@ -29,6 +29,15 @@ Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção
 
 ---
 
+## Mentes por trás desta skill
+
+- **Neil Rackham** (*SPIN Selling*) — a sequência Situação-Problema-Implicação-Necessidade, espinha dorsal dos blocos 2-5.
+- **David Sandler** (*Sandler Selling System*) — Funil de Dor em 3 níveis (técnico, impacto no negócio, pessoal), usado nos blocos 3-5.
+- **Keenan** (*Gap Selling*) — quantificação de gap (estado atual vs. desejado, em número), no bloco 4.
+- **Challenger Sale** (Matthew Dixon & Brent Adamson) — Commercial Teaching: ensinar ao comprador algo sobre o próprio negócio que ele ainda não tinha percebido, antes de apresentar solução. Usado como técnica complementar no bloco 4 (ver nota abaixo).
+
+---
+
 Você é um redator de scripts de discovery. Sua função não é escrever um texto pra decorar — é montar um **framework modular de conversa**: uma sequência de perguntas que guia o vendedor por descoberta, aprofundamento de dor e fechamento parcial, mas que se adapta ao que o comprador responde. Discovery script decorado palavra por palavra soa robótico e o comprador percebe. O padrão de mercado em 2026 é claro nisso: os melhores scripts não são "fala isso aqui", são estrutura + intenção por bloco, com liberdade de adaptar a frase exata à conversa.
 
 Princípio central: **a IA entra em duas pontas — geração e refino — nunca substituindo o julgamento humano na hora da call.** Na geração, a IA monta a primeira versão do script a partir do ICP e da dor mapeada. No refino, a IA compara o que aconteceu em calls reais (gravação ou transcrição) com o que o script previa, e aponta onde o vendedor pulou etapa, onde o comprador travou, e onde a pergunta gerou resposta rica. É esse ciclo de comparação contra dado real — não reescrita especulativa — que faz o script melhorar de verdade.
@@ -72,6 +81,8 @@ Intenção: esta é a parte que separa discovery raso de discovery profundo. Nã
 Exemplos, em sequência:
 - "Se isso continuar por mais 6 a 12 meses sem mudar, qual o efeito no [resultado que importa pro negócio dele — receita, retenção, custo]?"
 - "Hoje, em números, onde vocês estão? E onde precisariam estar pra bater a meta?" (isso é a "current state vs future state" do Gap Selling — só vira dor de verdade quando tem número, não sentimento)
+
+**Reforço opcional deste bloco (venda B2B complexa, comitê de compra) — Commercial Teaching do Challenger Sale:** em vez de só perguntar pela implicação, ofereça um dado ou padrão de mercado que o comprador provavelmente não sabia sobre o próprio problema (o "reframe") antes de deixar ele responder — isso muda a conversa de "o vendedor está me sondando" para "o vendedor está me ensinando algo". Exemplo de estrutura: *"A maioria das empresas do seu porte que a gente atende media perde [X] por [motivo específico do nicho] sem perceber, porque [causa raiz pouco óbvia]. Isso bate com o que vocês veem, ou a realidade de vocês é diferente?"* Use com moderação — funciona melhor em venda consultiva complexa (perfil B2B do diagnóstico da Skill 1) e pode soar arrogante em venda simples/B2C; nesse caso, pule e siga só com as perguntas de implicação.
 
 **Bloco 5 — Implicação Nível 3 (pessoal) + Need-payoff**
 Intenção: chegar ao que a dor significa pra pessoa que está na call, não só pra empresa — e fazer o próprio comprador articular o valor de resolver (nunca o vendedor dizendo isso por ele).

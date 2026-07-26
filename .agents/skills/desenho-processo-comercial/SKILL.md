@@ -23,9 +23,17 @@ Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo
 1. **Onde ele está:** Skill 1 de 6 da Aula 1 (Cohort de Vendas) — Desenho do Processo Comercial.
 2. **Por que está aqui:** é a primeira skill da aula — sem etapas e critérios de saída definidos aqui, nenhuma das outras cinco tem onde encaixar (a régua de comunicação, a qualificação e o discovery dependem das etapas desenhadas nesta skill).
 3. **O que está construindo:** `processo-comercial-{negocio}.md` + `processo-comercial-{negocio}.html`.
-4. **Pendências para fechar com nota 10:** confirme se você já tem as 7 respostas do Passo 0 (ticket, ciclo, decisores, B2B/B2C, se tem vendedor ou é autoatendimento, nicho/mercado, se já existe processo hoje); sem isso, o processo fica genérico e o gate de compliance do Passo 0.5 não roda.
+4. **Pendências para fechar com nota 10:** confirme se você já tem as 8 respostas do Passo 0 (ticket, ciclo, decisores, B2B/B2C, se tem vendedor ou é autoatendimento, nicho/mercado, origem dos leads, se já existe processo hoje); sem isso, o processo fica genérico e o gate de compliance do Passo 0.5 não roda.
 
 Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 6 skills da aula" e "Fluxo da aula").
+
+---
+
+## Mentes por trás desta skill
+
+- **Chet Holmes** (*The Ultimate Sales Machine*) — Dream 100: priorizar um número finito de contas/segmentos-alvo em vez de atirar pra todo lado, usado no desenho da etapa de Prospecção.
+- **Aaron Ross** (*Predictable Revenue*) — Seeds/Nets/Spears: classificar de onde vêm os leads (indicação, marketing/inbound, prospecção ativa) antes de desenhar a etapa de entrada do funil.
+- Pesquisa de mercado 2026 sobre exit criteria como VCA (verifiable customer action) e o "teste dos dois vendedores" — ver fontes no handoff da Skill 1.
 
 ---
 
@@ -45,7 +53,8 @@ Antes de desenhar qualquer etapa, você precisa saber que tipo de venda está de
 > 4. **B2B ou B2C** — vende para empresa ou para pessoa física?
 > 5. **Existe vendedor no meio, ou é autoatendimento?** — alguém conversa com o cliente antes da compra, ou é tudo self-service (anúncio → página → checkout, sem humano envolvido)?
 > 6. **Qual o seu nicho/mercado?** — preciso saber se é um nicho regulado (saúde, estética, finanças/investimento, jurídico, psicologia) antes de desenhar qualquer coisa.
-> 7. **Você já tem um processo hoje** (mesmo que informal) ou está desenhando do zero?
+> 7. **De onde vêm seus leads hoje?** — indicação/boca a boca, marketing (inbound, anúncio, conteúdo), ou prospecção ativa (você ou o time vai atrás)? (classificação Seeds/Nets/Spears de Aaron Ross — cada fonte tem volume e qualidade diferentes, e isso muda o desenho da primeira etapa)
+> 8. **Você já tem um processo hoje** (mesmo que informal) ou está desenhando do zero?
 
 Classifique o negócio numa das faixas abaixo (adaptado do squad de vendas interno, que cobre 7 nichos recorrentes):
 
