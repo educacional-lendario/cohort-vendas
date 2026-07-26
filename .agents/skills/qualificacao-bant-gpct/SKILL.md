@@ -34,6 +34,7 @@ Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção
 - **BANT** — origem IBM, anos 60 (qualificação rápida para venda transacional).
 - **GPCT / GPCTBA-C&I** — origem HubSpot (qualificação consultiva para venda de médio/alto ticket).
 - **Keenan** (*Gap Selling*) — quantificação de estado atual vs. estado desejado, usada no Passo 3 (bloco Challenges).
+- **Neil Rackham** (*SPIN Selling*) — a pergunta de implicação ("se nada mudar, qual o efeito?") no Passo 3 (bloco Challenges), aprofundada de verdade na Skill 4 (Discovery Script).
 - **Jeb Blount** (*Sales EQ*) — disciplina de nunca deixar a qualificação virar interrogatório mecânico: pergunta é conversa, não checklist.
 
 ---

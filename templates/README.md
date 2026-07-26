@@ -8,5 +8,6 @@ Templates em branco dos outputs da aula, para quem prefere preencher na mão em 
 - `template-discovery-script.md` — esqueleto dos 6 blocos de discovery
 - `template-playbook-objecoes.md` — esqueleto da biblioteca de objeções multi-canal + battlecard
 - `template-escada-de-ofertas.md` — esqueleto da jornada de ascensão entre produtos (bônus)
+- `template-social-selling.md` — esqueleto da sequência de prospecção por LinkedIn/Instagram (bônus)
 
-Recomendado: rode a skill correspondente primeiro (`/desenho-processo-comercial`, `/regua-comunicacao-comercial`, `/qualificacao-bant-gpct`, `/discovery-script`, `/playbook-vendas-vivo`, `/escada-de-ofertas`) e use o template só como checklist de revisão, não como ponto de partida — a skill já pergunta o que falta.
+Recomendado: rode a skill correspondente primeiro (`/desenho-processo-comercial`, `/regua-comunicacao-comercial`, `/qualificacao-bant-gpct`, `/discovery-script`, `/playbook-vendas-vivo`, `/escada-de-ofertas`, `/social-selling-comercial`) e use o template só como checklist de revisão, não como ponto de partida — a skill já pergunta o que falta.

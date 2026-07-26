@@ -90,6 +90,8 @@ Isso não é venda menor — é a venda certa pro momento certo, que aumenta a c
 
 **Reforço opcional (Stadium Pitch de Chet Holmes):** em vez de vender degrau por degrau numa conversa 1:1, considere criar conteúdo educativo (aula gratuita, webinar, material de diagnóstico) que aquece vários degraus da escada ao mesmo tempo — a pessoa se auto-identifica em qual degrau está ao consumir o conteúdo, o que reduz o trabalho do vendedor de "adivinhar" o degrau certo na primeira conversa. Vale mais pra negócios com volume de leads suficiente para justificar produção de conteúdo; negócio pequeno/começando pode pular direto pro discurso 1:1 acima.
 
+**Se `nicho_regulado` for sim** (herdado da Skill 1, se já rodada): o discurso de ascensão nunca promete o resultado do degrau avançado como certeza ("isso vai te preparar melhor" está ok; "isso garante que você chega lá" não está) — mesma régua de linguagem de possibilidade das demais skills.
+
 ## Passo 4 — Conectar de volta ao funil comercial
 
 Deixe explícito para o usuário: a escada de ofertas define **qual produto oferecer**; o funil comercial (Skill 1) continua sendo o pipeline que acompanha **o status daquele deal específico**, não importa em qual degrau da escada o cliente entrou. Um lead pode entrar pelo Degrau 1 e, meses depois, abrir um novo deal no funil comercial para o Degrau 2 — são deals diferentes, na mesma jornada de escada.
@@ -101,4 +103,4 @@ Gere **dois arquivos com o mesmo conteúdo**:
 1. `escada-de-ofertas-{negocio}.md` com: a escada mapeada (Passo 1), a tabela de critério de qualificação por degrau (Passo 2), o modelo de discurso por degrau (Passo 3), e a nota de conexão com o funil comercial (Passo 4).
 2. `escada-de-ofertas-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com a escada representada visualmente como degraus empilhados (não como tabela simples) — o objetivo é o vendedor olhar e entender a jornada em segundos, sem precisar ler parágrafo.
 
-Feche informando que o pacote da Aula 1 está completo: os seis documentos juntos (processo, régua de comunicação, qualificação, discovery, playbook e, quando aplicável, escada de ofertas) resolvem o problema comercial ponta a ponta — do primeiro contato até a expansão de portfólio, para qualquer nicho, B2B ou B2C.
+Feche lembrando que ainda falta a Skill 7 (`/social-selling-comercial`, bônus) se o negócio prospecta por rede social. Com processo, régua de comunicação, qualificação, discovery, playbook e, quando aplicável, escada de ofertas e social selling, o pacote da Aula 1 resolve o problema comercial ponta a ponta — do primeiro contato até a expansão de portfólio, para qualquer nicho, B2B ou B2C.

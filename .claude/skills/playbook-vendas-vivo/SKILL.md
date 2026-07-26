@@ -48,7 +48,7 @@ Pergunte como seguir:
 
 > Como você quer alimentar o playbook?
 >
-> **1. Já tenho uma lista de objeções reais** — que apareceram em calls, e-mails ou no discovery (Skill 3). Cole aqui, com o contexto de cada uma.
+> **1. Já tenho uma lista de objeções reais** — que apareceram em calls, e-mails ou no discovery (Skill 4). Cole aqui, com o contexto de cada uma.
 >
 > **2. Não tenho lista ainda, vamos partir das objeções mais comuns do seu nicho** — eu monto um ponto de partida com as objeções típicas do seu tipo de venda (do diagnóstico da Skill 1), e você valida/ajusta com a experiência real do seu time.
 >
@@ -65,7 +65,7 @@ Antes de responder qualquer objeção, classifique-a. Isso não é burocracia �
 | Tipo | Sinal típico | Técnica certa |
 |---|---|---|
 | **Preço** | "Está caro", "não temos orçamento pra isso agora" | Reformulação de valor + pergunta calibrada (nunca desconto reflexo) |
-| **Urgência** | "Vamos pensar", "não é prioridade agora" | Voltar à implicação do discovery (Skill 3, bloco 4) — o custo de não decidir |
+| **Urgência** | "Vamos pensar", "não é prioridade agora" | Voltar à implicação do discovery (Skill 4, bloco 4) — o custo de não decidir |
 | **Confiança/risco** | "Como sei que vai funcionar", "nunca ouvi falar de vocês" | Feel-Felt-Found + prova social específica (caso real, não depoimento genérico) |
 | **Concorrente** | "Já uso [concorrente]", "estamos avaliando outra opção" | Diferenciação por brecha real (nunca falar mal do concorrente) |
 | **Autoridade/decisão** | "Preciso falar com meu sócio/chefe", "não decido sozinho" | Mapear quem falta e oferecer entrar na conversa junto, não empurrar decisão sozinha |
@@ -94,7 +94,7 @@ Use o framework que casa com o tipo (Passo 1), sempre em sequência — nunca pu
 > **Se `nicho_regulado` for sim:** troque "resultado real, com caso específico" por "com dedicação, muitos relatam [benefício em linguagem de possibilidade, nunca garantia]". Em médico (CFM), psicologia (CRP) e jurídico (OAB), Feel-Felt-Found **não pode citar depoimento de paciente/cliente** — substitua por credencial (registro no conselho) e método, nunca por caso de terceiro.
 
 **Reformulação de valor — para objeções de preço genuínas:**
-Nunca responder preço com desconto reflexo. Voltar à quantificação de gap feita no discovery (Skill 3): "Você mencionou que isso custa [X] hoje. O investimento é [Y] — o retorno esperado é [múltiplo], em quanto tempo?"
+Nunca responder preço com desconto reflexo. Voltar à quantificação de gap feita no discovery (Skill 4): "Você mencionou que isso custa [X] hoje. O investimento é [Y] — o retorno esperado é [múltiplo], em quanto tempo?"
 
 > **Se `nicho_regulado` for sim:** nunca prometa retorno/resultado como certeza numérica ("o retorno esperado é X") — reformule como possibilidade, sem número de resultado garantido, especialmente em finanças/investimento (evite qualquer linguagem que soe "renda garantida").
 

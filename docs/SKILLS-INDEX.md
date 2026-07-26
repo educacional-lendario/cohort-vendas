@@ -40,7 +40,7 @@ desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant
 
 **"Eu prospecto pelo Instagram/LinkedIn, tem processo pra isso?"** — sim, é a Skill 7 (`/social-selling-comercial`). LinkedIn usa a sequência de Jeb Blount (5 toques em ~2 semanas); Instagram/TikTok usa o Social Selling 2.0 de Torriani (achar lead por palavra-chave, pré-aquecer, abrir sem vender, conduzir até o agendamento). Não confundir com a régua de comunicação (Skill 2), que cobre o pós-contato.
 
-**"O aluno disse que se perdeu no meio de uma skill"** — todas as 6 skills têm uma seção "Se o aluno se perder" que responde onde ele está, por que está ali, o que está construindo e o que falta para a entrega ficar 10/10. Se mesmo assim ele continuar confuso, mande abrir o `GUIA-DO-ALUNO.html` do zero.
+**"O aluno disse que se perdeu no meio de uma skill"** — todas as 7 skills têm uma seção "Se o aluno se perder" que responde onde ele está, por que está ali, o que está construindo e o que falta para a entrega ficar 10/10. Se mesmo assim ele continuar confuso, mande abrir o `GUIA-DO-ALUNO.html` do zero.
 
 ## Saída dupla (regra de todas as skills)
 

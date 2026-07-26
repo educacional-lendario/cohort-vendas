@@ -148,6 +148,7 @@ Fluxo consultivo completo de referência (do squad): `@sales-chief *diagnose` �
 - Discovery que revela dor de verdade, não sintoma superficial
 - Playbook de objeções multi-canal que se mantém vivo, não decai em 3 meses
 - (Bônus) Escada de ofertas, para quem já tem mais de um produto
+- (Bônus) Sequência de social selling, para quem prospecta por LinkedIn ou Instagram/TikTok
 
 **O que a aula NÃO faz:**
 - Não configura CRM ou integra ferramentas (isso é Aula 2)
