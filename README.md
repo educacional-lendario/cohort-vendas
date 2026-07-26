@@ -39,37 +39,43 @@ Se preferir markdown puro, o conteúdo está abaixo.
 
 ## Setup em 5 minutos
 
-### Pré-requisitos
-
-- **Claude Code** instalado ([download](https://docs.claude.com/claude-code))
-- **Git** instalado
-
-### Passo a passo
-
-**1. Clone este repo**
+O primeiro passo é sempre o mesmo, não importa a ferramenta:
 
 ```bash
 git clone https://github.com/marketingLendario/cohort-vendas.git
 cd cohort-vendas
 ```
 
-**2. Abra o Claude Code no diretório**
+A partir daqui, escolha a opção que bate com o que você já usa:
 
-```bash
-claude
-```
+### Opção A — Claude Code (recomendado)
 
-As 6 skills em `.claude/skills/` são carregadas automaticamente. Funciona também no Codex.
+Pré-requisito: [Claude Code](https://docs.claude.com/claude-code) instalado.
 
-**3. Teste que as skills estão instaladas**
+1. Abra o Claude Code na pasta do repo:
+   ```bash
+   claude
+   ```
+2. As 6 skills em `.claude/skills/` carregam **sozinhas** — não tem passo de instalação separado.
+3. Teste digitando `/desenho-processo-comercial`. Se aparecer o menu da skill, está funcionando.
 
-No Claude Code, digite:
+### Opção B — Codex CLI
 
-```
-/desenho-processo-comercial
-```
+Pré-requisito: [Codex CLI](https://developers.openai.com/codex/cli) instalado e autenticado (`codex login`).
 
-Se aparecer o menu da skill, está funcionando.
+1. Abra o Codex na pasta do repo (`codex`).
+2. O Codex lê o `AGENTS.md` da raiz automaticamente — ele já sabe onde estão as skills (espelhadas em `.agents/skills/`) e qual é a primeira a rodar.
+3. Peça naturalmente: *"quero desenhar meu processo comercial"* ou use `@desenho-processo-comercial` se a sua interface usar esse prefixo.
+
+### Opção C — Sem instalar nada (qualquer IA de chat)
+
+Não usa Claude Code nem Codex? Cada skill é um arquivo de texto autocontido:
+
+1. Abra `.claude/skills/{nome-da-skill}/SKILL.md` (comece por `desenho-processo-comercial`).
+2. Copie o conteúdo a partir do título (pule o bloco `---` do topo).
+3. Cole numa conversa nova em qualquer IA de chat (ChatGPT, Gemini, etc.) e responda as perguntas que ela fizer.
+
+Funciona pior que com skills nativas (a IA não sabe automaticamente qual arquivo vem depois), mas resolve o problema comercial igual — só exige que você abra o próximo arquivo manualmente ao final de cada etapa.
 
 ---
 
@@ -132,22 +138,27 @@ Só se aplica se você tem mais de um produto/oferta. Desenha a jornada de ascen
 ```
 .
 ├── README.md                       este arquivo
+├── AGENTS.md                       instruções pro Codex e outros agentes
 ├── GUIA-DO-ALUNO.html              guia visual interativo (leia primeiro)
 ├── .env.example                    template de variáveis (opcional para esta aula)
 ├── .claude/
-│   └── skills/                     as 6 skills (Claude Code carrega automático)
+│   └── skills/                     as 6 skills, fonte canônica (Claude Code carrega automático)
 │       ├── desenho-processo-comercial/
 │       ├── regua-comunicacao-comercial/
 │       ├── qualificacao-bant-gpct/
 │       ├── discovery-script/
 │       ├── playbook-vendas-vivo/
 │       └── escada-de-ofertas/      bônus
+├── .agents/
+│   └── skills/                     espelho literal para Codex e outros agentes
 ├── templates/                      templates em branco dos outputs
 ├── exemplos/                       exemplos preenchidos
 └── docs/
     ├── workflow.md                 fluxo completo da Aula 1
     └── SKILLS-INDEX.md             mapa de nomes (aliases → canônico) para suporte
 ```
+
+> **Nota de manutenção:** `.claude/skills/` é a fonte de verdade. Se editar uma skill, replique a mudança em `.agents/skills/` — são cópias literais, não symlinks (por compatibilidade com Windows).
 
 ---
 

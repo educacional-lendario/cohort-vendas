@@ -342,24 +342,33 @@
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-content">
-        <h3>Clone este repo</h3>
+        <h3>Clone este repo (igual pra qualquer ferramenta)</h3>
         <div class="command-block">git clone https://github.com/marketingLendario/cohort-vendas.git<br>cd cohort-vendas</div>
       </div>
     </div>
     <div class="step">
-      <div class="step-num">2</div>
+      <div class="step-num">2A</div>
       <div class="step-content">
-        <h3>Abra o Claude Code no diretório</h3>
-        <p>As 6 skills em <code>.claude/skills/</code> são carregadas automaticamente. Funciona também no Codex.</p>
+        <h3>Opção A — Claude Code (recomendado)</h3>
+        <p>As 6 skills em <code>.claude/skills/</code> carregam sozinhas — não tem passo de instalação separado.</p>
         <div class="command-block">claude</div>
+        <p>Teste com <code>/desenho-processo-comercial</code>. Se aparecer o menu da skill, está funcionando.</p>
       </div>
     </div>
     <div class="step">
-      <div class="step-num">3</div>
+      <div class="step-num">2B</div>
       <div class="step-content">
-        <h3>Teste a primeira skill</h3>
-        <p>Se aparecer o menu da skill, está tudo funcionando.</p>
-        <div class="command-block slash">desenho-processo-comercial</div>
+        <h3>Opção B — Codex CLI</h3>
+        <p>O Codex lê o <code>AGENTS.md</code> da raiz sozinho — ele já sabe onde estão as skills (espelhadas em <code>.agents/skills/</code>).</p>
+        <div class="command-block">codex</div>
+        <p>Peça naturalmente: "quero desenhar meu processo comercial", ou use <code>@desenho-processo-comercial</code> se a interface usar esse prefixo.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2C</div>
+      <div class="step-content">
+        <h3>Opção C — Sem instalar nada</h3>
+        <p>Não usa Claude Code nem Codex? Abra <code>.claude/skills/desenho-processo-comercial/SKILL.md</code>, copie o conteúdo (a partir do título, sem o bloco do topo) e cole numa conversa nova em qualquer IA de chat.</p>
       </div>
     </div>
   </section>

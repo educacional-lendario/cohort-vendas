@@ -139,5 +139,7 @@ Fluxo consultivo completo de referência (do squad): `@sales-chief *diagnose` �
 
 ## Ferramentas necessárias
 
-- **Claude Code** com as 6 skills instaladas (este repo)
+- **Claude Code** com as 6 skills instaladas (fonte canônica: `.claude/skills/`) — opção recomendada, zero setup além do clone
+- **Codex CLI** também funciona: lê `AGENTS.md` na raiz e as skills espelhadas em `.agents/skills/`
+- Sem nenhuma das duas ferramentas: cada `SKILL.md` funciona como prompt colável em qualquer IA de chat (ver `AGENTS.md`, seção final)
 - Nenhuma chave de API é obrigatória para esta aula — as skills são geração e refino assistidos por IA em cima do que o aluno já sabe do próprio negócio ou de gravações/transcrições que ele fornecer
