@@ -58,20 +58,45 @@ Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale e Juliano Torriani entram a
 
 ## Setup em 5 minutos
 
-O primeiro passo é sempre o mesmo, não importa a ferramenta:
+Primeira pergunta, antes de qualquer comando: **você vai começar um projeto do zero só pra isso, ou já tem um projeto rodando (Claude Code/Codex) e só quer as skills dentro dele?**
+
+### Cenário 1 — Projeto novo (do zero)
 
 ```bash
 git clone https://github.com/marketingLendario/cohort-vendas.git
 cd cohort-vendas
 ```
 
-A partir daqui, escolha a opção que bate com o que você já usa:
+Isso cria a pasta `cohort-vendas` com tudo dentro. Vá direto pra "Qual ferramenta você usa?" abaixo.
+
+### Cenário 2 — Já tenho um projeto, quero só as skills dentro dele
+
+Não clone o repo inteiro por cima do seu projeto — clone numa pasta temporária, copie só as pastas de skills, e apague a temporária:
+
+```bash
+cd /caminho/do/seu/projeto
+git clone https://github.com/marketingLendario/cohort-vendas.git /tmp/cohort-vendas-temp
+mkdir -p .claude/skills .agents/skills
+cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/
+cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/
+rm -rf /tmp/cohort-vendas-temp
+```
+
+Isso adiciona as 7 skills da Aula 1 ao lado do que você já tem, sem mexer no resto do projeto. Se você já tiver uma skill com o mesmo nome de alguma dessas 7, o comando sobrescreve só ela — revise antes se isso for um problema pra você.
+
+**Sem terminal/git?** No GitHub, clique no botão verde **Code → Download ZIP**, extraia o arquivo, e arraste as pastas `skills` de dentro de `.claude` e `.agents` pra dentro das pastas `.claude` e `.agents` do seu projeto (crie essas duas pastas primeiro se elas não existirem no seu projeto).
+
+Depois de copiar, vá direto pra "Qual ferramenta você usa?" abaixo — só que, em vez de abrir a ferramenta "na pasta do repo", você abre **na pasta do seu próprio projeto** (onde acabou de colar as skills).
+
+---
+
+### Qual ferramenta você usa?
 
 ### Opção A — Claude Code (recomendado)
 
 Pré-requisito: [Claude Code](https://docs.claude.com/claude-code) instalado.
 
-1. Abra o Claude Code na pasta do repo:
+1. Abra o Claude Code na pasta do repo (Cenário 1) ou na pasta do seu projeto (Cenário 2):
    ```bash
    claude
    ```
@@ -82,8 +107,8 @@ Pré-requisito: [Claude Code](https://docs.claude.com/claude-code) instalado.
 
 Pré-requisito: [Codex CLI](https://developers.openai.com/codex/cli) instalado e autenticado (`codex login`).
 
-1. Abra o Codex na pasta do repo (`codex`).
-2. O Codex lê o `AGENTS.md` da raiz automaticamente — ele já sabe onde estão as skills (espelhadas em `.agents/skills/`) e qual é a primeira a rodar.
+1. Abra o Codex na pasta do repo ou na pasta do seu projeto (`codex`).
+2. O Codex lê o `AGENTS.md` da raiz automaticamente — ele já sabe onde estão as skills (espelhadas em `.agents/skills/`) e qual é a primeira a rodar. **Cenário 2:** se o seu projeto já tem um `AGENTS.md` próprio, copie também o `AGENTS.md` deste repo e cole o conteúdo dele no final do seu (não sobrescreva o seu inteiro).
 3. Peça naturalmente: *"quero desenhar meu processo comercial"* ou use `@desenho-processo-comercial` se a sua interface usar esse prefixo.
 
 ### Opção C — Sem instalar nada (qualquer IA de chat)

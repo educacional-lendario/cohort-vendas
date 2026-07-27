@@ -38,6 +38,8 @@ desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant
 
 **"Meu nicho é saúde/estética/finanças/jurídico/psicologia, isso muda alguma coisa?"** — sim. A Skill 1 (Passo 0.5) marca a flag `nicho_regulado: sim` e todas as skills seguintes calibram a linguagem (sem "garantido"/"cura", sem depoimento de paciente/cliente em médico/psicologia/jurídico). O aluno só responde uma vez.
 
+**"Não quero criar um projeto novo, quero usar dentro do meu projeto atual"** — funciona. README e GUIA-DO-ALUNO.html (Setup, passo 1B) têm o comando: clonar numa pasta temporária, copiar só `.claude/skills/` e `.agents/skills/` pro projeto do aluno, apagar a temporária. Sem git, o caminho é baixar o ZIP do GitHub e arrastar as pastas manualmente.
+
 **"Eu prospecto pelo Instagram/LinkedIn, tem processo pra isso?"** — sim, é a Skill 7 (`/social-selling-comercial`). LinkedIn usa a sequência de Jeb Blount (5 toques em ~2 semanas); Instagram/TikTok usa o Social Selling 2.0 de Torriani (achar lead por palavra-chave, pré-aquecer, abrir sem vender, conduzir até o agendamento). Não confundir com a régua de comunicação (Skill 2), que cobre o pós-contato.
 
 **"O aluno disse que se perdeu no meio de uma skill"** — todas as 7 skills têm uma seção "Se o aluno se perder" que responde onde ele está, por que está ali, o que está construindo e o que falta para a entrega ficar 10/10. Se mesmo assim ele continuar confuso, mande abrir o `GUIA-DO-ALUNO.html` do zero.

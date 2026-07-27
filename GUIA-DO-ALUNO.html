@@ -339,11 +339,22 @@
   <section id="secao-3">
     <div class="section-num">Parte 3</div>
     <h2>Setup em <em>5 minutos</em></h2>
+    <p>Antes do primeiro comando: você vai começar um <strong>projeto novo</strong> só pra isso, ou já tem um <strong>projeto rodando</strong> e quer só as skills dentro dele? Os passos 1A e 1B abaixo são alternativos — siga só o que bate com o seu caso.</p>
     <div class="step">
-      <div class="step-num">1</div>
+      <div class="step-num">1A</div>
       <div class="step-content">
-        <h3>Clone este repo (igual pra qualquer ferramenta)</h3>
+        <h3>Projeto novo — clone este repo</h3>
         <div class="command-block">git clone https://github.com/marketingLendario/cohort-vendas.git<br>cd cohort-vendas</div>
+        <p>Cria a pasta <code>cohort-vendas</code> com tudo dentro. Pule pro passo 2.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">1B</div>
+      <div class="step-content">
+        <h3>Já tenho um projeto — só as skills dentro dele</h3>
+        <p>Não clone o repo por cima do seu projeto. Clone numa pasta temporária, copie só as skills, apague a temporária:</p>
+        <div class="command-block">cd /caminho/do/seu/projeto<br>git clone https://github.com/marketingLendario/cohort-vendas.git /tmp/cohort-vendas-temp<br>mkdir -p .claude/skills .agents/skills<br>cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/<br>cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/<br>rm -rf /tmp/cohort-vendas-temp</div>
+        <p>Isso adiciona as 7 skills ao lado do que você já tem, sem mexer no resto do projeto. <strong>Sem terminal/git?</strong> Baixe o ZIP no GitHub (botão verde "Code → Download ZIP"), extraia, e arraste as pastas <code>skills</code> de dentro de <code>.claude</code> e <code>.agents</code> pra dentro das pastas <code>.claude</code> e <code>.agents</code> do seu projeto (crie essas pastas primeiro se não existirem).</p>
       </div>
     </div>
     <div class="step">
@@ -352,7 +363,7 @@
         <h3>Opção A — Claude Code (recomendado)</h3>
         <p>As 7 skills em <code>.claude/skills/</code> carregam sozinhas — não tem passo de instalação separado.</p>
         <div class="command-block">claude</div>
-        <p>Teste com <code>/desenho-processo-comercial</code>. Se aparecer o menu da skill, está funcionando.</p>
+        <p>Abra na pasta do repo (1A) ou na pasta do seu projeto (1B). Teste com <code>/desenho-processo-comercial</code>. Se aparecer o menu da skill, está funcionando.</p>
       </div>
     </div>
     <div class="step">
@@ -361,7 +372,7 @@
         <h3>Opção B — Codex CLI</h3>
         <p>O Codex lê o <code>AGENTS.md</code> da raiz sozinho — ele já sabe onde estão as skills (espelhadas em <code>.agents/skills/</code>).</p>
         <div class="command-block">codex</div>
-        <p>Peça naturalmente: "quero desenhar meu processo comercial", ou use <code>@desenho-processo-comercial</code> se a interface usar esse prefixo.</p>
+        <p>Peça naturalmente: "quero desenhar meu processo comercial", ou use <code>@desenho-processo-comercial</code> se a interface usar esse prefixo. Se seguiu o passo 1B e seu projeto já tem um <code>AGENTS.md</code> próprio, cole o conteúdo do <code>AGENTS.md</code> deste repo no final do seu, sem sobrescrever.</p>
       </div>
     </div>
     <div class="step">
