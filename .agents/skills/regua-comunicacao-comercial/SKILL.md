@@ -45,6 +45,10 @@ Princípio central: **nunca repita a mensagem idêntica.** Mensagem igual em D+1
 Puxe as etapas, critérios de saída, e as flags `nicho_regulado` e `modelo` (com-vendedor/autoatendimento) da Skill 1 (`/desenho-processo-comercial`), se já rodada. Se não, peça pelo menos a lista de etapas do funil e as duas flags antes de continuar — régua de comunicação sem etapa definida não tem onde ancorar, e sem saber se o nicho é regulado você pode sugerir uma mensagem que vira problema legal. Pergunte também:
 
 > Quais canais vocês realmente usam hoje pra falar com lead? (WhatsApp, e-mail, ligação, DM de rede social, outro) — não vou sugerir canal que vocês não operam.
+>
+> E vocês já têm alguma mensagem ou script que usam hoje em qualquer etapa (mesmo que informal, tipo "é sempre mais ou menos isso que eu mando")? Se sim, cola aqui — vou usar como base pra montar a régua, não vou reescrever do zero uma coisa que já funciona.
+
+**Se o usuário fornecer mensagens/scripts já em uso:** monte a régua adaptando esse material real — mantenha o que já converte, e só ajuste onde faltar variação por tempo parado (Passo 2) ou onde a linguagem precisar de calibração de compliance (Passo 1.5). Deixe explícito ao usuário o que veio do material dele versus o que foi criado do zero. Nunca descarte um texto que ele já usa só porque não segue o "modelo de referência" da skill — o modelo é ponto de partida para quem não tem nada, não substituição para quem já tem algo rodando.
 
 ## Passo 1 — Definir quem atua em cada etapa
 

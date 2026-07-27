@@ -70,6 +70,14 @@ Isso não é camisa de força — é ponto de partida. Se o usuário não souber
 
 > **Reaproveitamento:** se o usuário já usa (ou quer usar) o squad interno de vendas, esse diagnóstico é equivalente à Dimensão 0 do `@sales-chief *diagnose`. Se ele tiver acesso a esse squad, pode rodar `@sales-chief *diagnose` em paralelo para validar o nicho antes de continuar aqui.
 
+**Se a resposta da pergunta 8 for "já tenho um processo hoje":** não ignore isso e não desenhe do zero por cima. Peça explicitamente:
+
+> Antes de eu desenhar algo novo, me manda o que você já tem — pode ser as etapas do seu CRM/planilha hoje (só os nomes já ajudam), um documento de processo existente, ou mesmo você descrevendo de cabeça como funciona do primeiro contato até o fechamento. Vou usar isso como base e ADAPTAR, não recriar do zero — e vou te mostrar exatamente o que muda e por quê.
+
+Com o material em mãos, desenhe o novo processo (Passo 1) partindo das etapas que já existem: mantenha os nomes que já fazem sentido, funda ou separe etapas onde o critério de saída atual for confuso, e para cada mudança explique em uma frase o motivo (ex.: *"sua etapa 'Apresentação' virou 'Proposta', porque o critério de saída antigo era 'eu apresentei' — atividade do vendedor — e o novo é 'o comprador revisou e sinalizou preferência' — ação do cliente"*). Se o usuário não tiver nada documentado além da memória, trate a descrição verbal como a fonte e siga o mesmo princípio: adaptar, não substituir sem explicar.
+
+**Se a resposta for "estou desenhando do zero":** siga direto para a classificação de perfil abaixo, sem pedir documentação que não existe.
+
 ## Passo 0.5 — Gate de compliance de nicho regulado
 
 Antes de desenhar qualquer etapa, gatilho ou linguagem, verifique se o nicho informado no Passo 0 é **regulado**: saúde/bem-estar/emagrecimento/estética, finanças/investimento/renda, jurídico, médico (CFM), advocacia (OAB), psicologia (CRP), ou qualquer nicho que prometa resultado de vida/relacionamento/autoestima.

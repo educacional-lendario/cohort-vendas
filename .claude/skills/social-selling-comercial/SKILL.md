@@ -53,6 +53,8 @@ Puxe da Skill 1 (`/desenho-processo-comercial`), se já rodada: B2B ou B2C, tick
 
 Se o aluno responder que não prospecta e não pretende prospectar por rede social (só recebe lead de anúncio, indicação ou já tem fila de espera), avise que esta skill é opcional pro caso dele e ofereça pular direto pro fechamento da Aula 1.
 
+Se ele já prospecta ativamente (respostas 1, 2 ou 3), pergunte também: *"Você já tem alguma mensagem ou abordagem que usa hoje pra puxar conversa por [rede escolhida]? Se sim, cola aqui — vou ajustar pra sequência certa em vez de recriar do zero uma coisa que já te dá resultado."* Se fornecer material real, construa a sequência do Passo 2A/2B adaptando esse texto (mantendo o que já gera resposta, ajustando timing e progressão) em vez de substituir por um exemplo genérico.
+
 ## Passo 1 — Checkpoint "pronto para abordar"
 
 Antes de montar qualquer sequência, confirme que o básico está pronto — abordar com perfil fraco queima o lead antes mesmo da primeira mensagem:

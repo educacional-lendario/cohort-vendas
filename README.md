@@ -248,6 +248,10 @@ Negócio 100% autoatendimento (e-commerce, app, assinatura sem humano no meio) t
 
 Se você prospecta por LinkedIn ou Instagram/TikTok, a sequência de rede social (Skill 7) serve pra abrir a conversa. A partir do primeiro "sim" do lead, ele entra na régua de comunicação normal (Skill 2) — não fica preso à sequência de DM pra sempre, e social selling nunca substitui WhatsApp/e-mail/ligação como canal de qualificação.
 
+### Se você já tem algo rodando, a skill pergunta antes de recriar do zero
+
+Processo em planilha/CRM, mensagens que já usa, objeções reais, call gravada — toda skill pede esse material primeiro e adapta em cima dele, em vez de gerar um exemplo genérico e ignorar o que você já construiu. Isso é o que garante consistência de resultado: a IA parte do que já funciona no seu negócio, não de um template solto.
+
 ---
 
 ## Suporte
