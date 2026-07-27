@@ -91,9 +91,22 @@ Modelo de referência (adapte ao seu negócio — nunca copie um texto genérico
 | Penúltimo toque | Tom direto, sinaliza que a janela está fechando | Sem ameaça, mas com clareza de prazo |
 | Sem resposta após o último toque | Etapa muda para "sem resposta" (não "perdido para sempre") | Lead entra em fluxo de nutrição de longo prazo, não é descartado |
 
+**Referência de timing testada na prática (benchmark, não regra fixa):** 1 hora entre o lead entrar no funil e o primeiro contato; janela de corte de 7 dias pra etapa de espera de resposta (nem 48h, curto demais, nem sem prazo, que enche o funil de card zumbi); dentro dessa janela, 3 toques de ângulo diferente (ex.: dia seguinte, meio da janela, penúltimo dia) rendem melhor que 1 toque só ou toques diários repetidos.
+
 4. **Saída esperada da etapa** — para onde o lead vai quando responde, e para onde vai quando esgota a régua sem resposta.
 
 Alerte o usuário: régua de mensagens não é fim de linha quando esgota. Lead que não respondeu a etapa inteira normalmente entra num fluxo de nutrição separado (conteúdo de valor, cadência mais espaçada) em vez de ser descartado — reengajamento futuro reabre o funil no ponto certo, não do zero.
+
+**Modelo de referência de nutrição** (adapte o conteúdo e o canal ao seu negócio, a lógica de progressão é o que importa):
+
+| E-mail/toque | Quando | Objetivo |
+|---|---|---|
+| 1 — Reconexão honesta | D0 (no momento em que sai da régua ativa) | Reconhece que o atendimento comercial encerrou, mas não o acesso a conteúdo de valor. Sem CTA de venda. |
+| 2 — Prova | D3 | 1 caso ou prova concreta. CTA suave pra conhecer a oferta. |
+| 3 — Convite de baixo compromisso | D7 | Convite pra algo gratuito (evento, material, diagnóstico rápido). |
+| 4 — Levantada de mão explícita | D14 | Pergunta única e direta: "faz sentido retomar a conversa?" — resposta positiva reabre o funil. |
+
+**Regra de retorno (vale pra qualquer negócio):** se o lead responder, clicar ou agendar em qualquer ponto da nutrição, o funil reabre na etapa de reconexão com o **mesmo dono original** do deal — nunca cai pra um vendedor aleatório, e nunca "recomeça do zero" perdendo o histórico.
 
 ## Passo 3 — Nomear o mecanismo único de conversão
 
@@ -114,6 +127,7 @@ Feche com as regras que atravessam todas as etapas:
 3. Toda saída por "sem resposta" ou "perdido" precisa de motivo registrado — sem isso, a métrica de conversão da régua fica furada.
 4. Revisão da régua junto com a revisão trimestral do processo (Skill 1) — régua de mensagens desatualizada (preço mudou, oferta mudou) é tão grave quanto etapa de processo desatualizada.
 5. **A régua nunca para sozinha** (princípio de Jeb Blount): um dia sem disparo na etapa de topo de funil é um dia de pipeline morrendo em silêncio — se a régua parar, alguém decidiu isso, não foi esquecimento.
+6. **Escalonamento de card parado** (padrão testado, especialmente útil pra etapas pós-reunião): quando um card fica sem atualização depois de um evento que deveria ter gerado ação (ex.: reunião que já passou e o card não moveu), dispare uma cadência curta de lembrete direto ao dono — não pro CRM genérico, pro vendedor mesmo. Modelo de referência: 1º lembrete pouco tempo depois do evento (ex.: 2h), 2º se continuar parado no dia seguinte (24h), 3º com prazo mais curto e cópia pra liderança (48h) — cada lembrete pedindo uma ação binária clara (o que aconteceu?), não uma pergunta aberta. Card que passa pelos 3 lembretes sem ação é sinal de gestão, não de régua — vira pauta de acompanhamento, não mais um 4º lembrete automático.
 
 ## Passo 5 — Entregar o output (sempre em dois formatos)
 

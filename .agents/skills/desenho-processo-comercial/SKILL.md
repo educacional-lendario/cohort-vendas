@@ -104,6 +104,9 @@ Esqueleto de referência (7 etapas, adapte cortando ou fundindo conforme o perfi
 4. **Proposta → Negociação**: a proposta foi revisada pelo comprador econômico, houve sinal verbal de preferência, e não há proposta concorrente ainda em avaliação ativa.
 5. **Negociação → Fechado**: termos comerciais acordados em princípio, revisão jurídica (se houver) iniciada, contrato ou pedido assinado.
 6. **Fechado → Onboarding** (pós-venda, se aplicável): data de kickoff marcada, responsável pelo onboarding nomeado, métricas de sucesso combinadas. *Fechar sem isso não é fechar — é adiar o churn.*
+7. **Perdido** (saída sem venda, em qualquer ponto do funil): não é ausência de etapa, é etapa formal com contrato de dados próprio — ver Passo 1.5 abaixo. Sem isso, "perdido" vira buraco negro que ninguém consegue analisar depois.
+
+**Variante — venda que fecha tudo numa única reunião (discovery + apresentação + fechamento na mesma call, comum em venda consultiva por ligação/videochamada, inside sales):** não force as etapas 2-4 como conversas separadas. Funda Qualificação, Discovery e Proposta numa etapa só de pré-reunião (critério de saída: reunião agendada com horário confirmado), e trate a própria "Reunião" como uma etapa única onde discovery, apresentação e tentativa de fechamento acontecem no mesmo encontro — com saída em 3 caminhos: fechou na hora (→ Fechado), não fechou mas segue quente (→ etapa de acompanhamento pós-reunião, tipo "Oportunidade em aberto") ou não compareceu (→ etapa própria de "Reagendamento", nunca direto pra Perdido). Modelo testado na prática em vendas por chamada de vídeo/telefone de ticket médio.
 
 Para negócios de ticket baixo / B2C (perfil "transacional" ou "B2C volume" do Passo 0), funda etapas 2-4 numa única etapa de "qualificação + oferta" e pule stakeholder mapping — o comprador é o próprio decisor.
 
@@ -117,6 +120,16 @@ Para negócios de ticket baixo / B2C (perfil "transacional" ou "B2C volume" do P
 Nesse perfil, "quem" no critério de saída é o sistema (analytics, checkout, gateway de pagamento), não um vendedor — mas a régua de VCA continua valendo: o critério é o que o cliente fez, nunca uma métrica de vaidade (impressão, clique isolado sem intenção).
 
 Para cada etapa definida, escreva o critério de saída em uma frase só, no formato VCA: **"[quem] fez [ação verificável] que prova [o que avançou]"**. Rode o teste dos dois vendedores em cada critério: se ficar ambíguo, reescreva até ficar binário (sim/não, sem interpretação).
+
+**Referência de SLA (benchmark testado, não regra universal):** 1 hora é o tempo de referência entre um lead novo entrar no funil e o primeiro contato — depois disso a taxa de resposta cai rápido. Para etapas de espera de resposta (tipo "mandei mensagem, aguardando"), 7 dias é uma janela de corte testada na prática (nem 48h, que é curto demais e descarta lead cedo demais, nem "sem prazo", que deixa o funil sujo de card zumbi). Use como ponto de partida pra calibrar com o próprio negócio, não como número fixo.
+
+## Passo 1.5 — Contrato de dados por etapa (o que fica registrado, não só o critério de saída)
+
+Critério de saída (VCA) diz **quando** um card muda de etapa. Contrato de dados diz **o que precisa ficar escrito** nessa transição — sem isso, o processo até funciona ao vivo, mas ninguém consegue auditar depois, e todo vendedor novo "começa do zero" num card que já tinha história.
+
+Para cada etapa que envolve um encontro (reunião, call, demo), defina o contrato: uma nota padronizada obrigatória (ex.: resumo da conversa + objeções levantadas) no momento em que o card sai daquela etapa — nunca deixar pra "lembrar depois". Para a etapa Perdido, o contrato é sempre o mesmo, sem exceção: **status = perdido (nunca aberto) + data da perda + motivo da perda categorizado**. Motivo não é opcional — é o dado que depois explica se o problema foi o marketing (leads ruins), o closer (não fechou) ou o produto (sem fit). Sem motivo, "80 perdidos, 1 venda" não tem leitura nenhuma.
+
+Se o negócio já usa CRM, pergunte quais campos/notas já existem hoje e desenhe o contrato em cima disso — não invente campo novo que ninguém vai preencher na prática.
 
 ## Passo 2 — Definir os gatilhos (dois níveis)
 
@@ -139,6 +152,10 @@ Gatilhos servem dois propósitos: acender alerta num deal específico (nível mi
 
 Recomende revisão trimestral do processo como cadência mínima, mesmo sem gatilho disparado — funil não revisado apodrece silenciosamente.
 
+### Métrica de saúde: forecast por etapa
+
+Defina com o usuário qual combinação de etapas (normalmente as 2-3 etapas finais antes do fechamento) representa o "dinheiro parado no funil" — a soma do valor em R$ dessas etapas é o forecast. Duas condições pra esse número significar alguma coisa: (1) todo card nessas etapas precisa ter valor preenchido (sem isso o forecast é fictício), e (2) definir um piso de referência (ex.: "número mínimo de negócios nessas etapas por semana") que a gestão acompanha — não é só olhar o total, é cobrar o volume mínimo que sustenta a meta. Isso é rotina de gestão, não automação: revisão card a card com quem está negociando bate meta mais do que só olhar o painel.
+
 ## Passo 3 — Calibrar rigor (não travar o funil, não afrouxar demais)
 
 Alerte o usuário sobre o trade-off: critérios de saída rígidos demais fazem o vendedor "jogar" o CRM (preencher campo só pra mover o card); critérios frouxos demais transformam toda reunião de pipeline em contação de história, sem dado confiável. A régua: só exigir informação que muda o comportamento do vendedor ou a qualidade do forecast — nada de campo por preencher enquanto se filosofa.
@@ -150,8 +167,8 @@ Gere **dois arquivos com o mesmo conteúdo**, nunca só um:
 1. `processo-comercial-{negocio}.md` — markdown com:
    - Perfil do negócio (ticket, ciclo, decisores, B2B/B2C, autoatendimento ou não) do Passo 0.
    - Flags herdáveis pelas próximas skills: `nicho_regulado: sim/não` (Passo 0.5) e `modelo: com-vendedor/autoatendimento` (Passo 0) — destaque essas duas linhas no topo do documento, não enterradas no meio do texto.
-   - Tabela de etapas com critério de saída VCA de cada uma.
-   - Lista de gatilhos de deal e de processo.
+   - Tabela de etapas com critério de saída VCA de cada uma, e o contrato de dados (Passo 1.5) na mesma linha — o que fica registrado, não só o que muda.
+   - Lista de gatilhos de deal e de processo, incluindo a métrica de forecast por etapa (etapas somadas + piso de referência).
    - Cadência de revisão recomendada.
    - Handoff explícito: *"Este processo alimenta a Skill 2 (/regua-comunicacao-comercial) — cada etapa aqui vira uma linha da régua de comunicação, e a etapa de Qualificação vira o gate de entrada da Skill 3 (/qualificacao-bant-gpct). As flags de nicho regulado e modelo de atendimento seguem para todas as skills seguintes."*
 2. `processo-comercial-{negocio}.html` — a mesma informação em página autocontida, visual escuro com ouro (mesmos tokens de cor do `GUIA-DO-ALUNO.html`: fundo `#0A0A0A`, texto `#E5E5E5`, destaque `#C9B298`), com hero (título + 1 frase de contexto), a tabela de etapas renderizada como tabela HTML de verdade (não bloco de código), e a lista de gatilhos em cards. Objetivo: o aluno consegue mandar esse HTML para o time dele sem precisar explicar nada — o documento se explica sozinho.
