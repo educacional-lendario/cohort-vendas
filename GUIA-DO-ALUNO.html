@@ -181,7 +181,7 @@
     position: relative;
   }
   .command-block::before { content: "$"; color: var(--primary); margin-right: 12px; font-weight: 700; }
-  .command-block.slash::before { content: "/"; }
+  .command-block.slash::before { content: none; margin-right: 0; }
 
   .copy-btn {
     position: absolute;
@@ -382,9 +382,11 @@
       <div class="step-num">2A</div>
       <div class="step-content">
         <h3>Opção A — Claude Code (recomendado)</h3>
-        <p>As 7 skills em <code>.claude/skills/</code> carregam sozinhas — não tem passo de instalação separado.</p>
+        <p><strong>Antes de rodar <code>claude</code>, confirme que você está DENTRO da pasta certa</strong> (a pasta <code>cohort-vendas</code> do Cenário 1, ou a pasta do seu projeto no Cenário 2). O erro mais comum é abrir o Claude Code na pasta errada, um nível acima: aí ele não enxerga o <code>.claude/skills/</code> e nenhum comando funciona.</p>
+        <div class="command-block">ls .claude/skills</div>
+        <p>Rodou o comando acima e apareceram as 7 pastas de skill (<code>desenho-processo-comercial</code>, <code>regua-comunicacao-comercial</code>...)? Você está no lugar certo. Deu erro de "pasta não encontrada"? Você está na pasta errada, faltou o <code>cd</code> pra dentro dela.</p>
         <div class="command-block">claude</div>
-        <p>Abra na pasta do repo (1A) ou na pasta do seu projeto (1B). Teste com <code>/desenho-processo-comercial</code>. Se aparecer o menu da skill, está funcionando.</p>
+        <p>Teste com <code>/desenho-processo-comercial</code>. Se aparecer o menu da skill, está funcionando. Se aparecer "No commands match", feche o Claude Code (<code>/exit</code> ou Ctrl+C), confira a pasta com o comando acima, e abra o Claude Code de novo já na pasta certa.</p>
       </div>
     </div>
     <div class="step">
@@ -457,49 +459,49 @@
       <div class="bloco-header"><span class="bloco-num">Bloco 1</span><span class="bloco-time">50 min</span></div>
       <h3>Processo Comercial</h3>
       <p>Diagnóstico do modelo de venda (ticket, ciclo, decisores, B2B/B2C) e desenho das etapas com critério de saída.</p>
-      <div class="bloco-action">desenho-processo-comercial [seu negócio]</div>
+      <div class="bloco-action">/desenho-processo-comercial [seu negócio]</div>
       <p class="bloco-result">Saída: <strong>processo-comercial-{negocio}.md + .html</strong></p>
     </div>
     <div class="bloco">
       <div class="bloco-header"><span class="bloco-num">Bloco 2</span><span class="bloco-time">50 min</span></div>
       <h3>Régua de Comunicação por Etapa</h3>
       <p>Quem fala, o que fala e por qual canal em cada etapa, funil de reforço por tempo parado e o mecanismo único de conversão.</p>
-      <div class="bloco-action">regua-comunicacao-comercial</div>
+      <div class="bloco-action">/regua-comunicacao-comercial</div>
       <p class="bloco-result">Saída: <strong>regua-comunicacao-{negocio}.md + .html</strong></p>
     </div>
     <div class="bloco">
       <div class="bloco-header"><span class="bloco-num">Bloco 3</span><span class="bloco-time">50 min</span></div>
       <h3>ICP e Qualificação BANT/GPCT</h3>
       <p>Escolha do mix de framework, montagem do ICP e geração do roteiro de qualificação com escala de pontuação.</p>
-      <div class="bloco-action">qualificacao-bant-gpct</div>
+      <div class="bloco-action">/qualificacao-bant-gpct</div>
       <p class="bloco-result">Saída: <strong>qualificacao-{negocio}.md + .html</strong></p>
     </div>
     <div class="bloco">
       <div class="bloco-header"><span class="bloco-num">Bloco 4</span><span class="bloco-time">50 min</span></div>
       <h3>Discovery Script com IA</h3>
       <p>Geração do script em 6 blocos, ou refino em cima de calls reais gravadas/transcritas.</p>
-      <div class="bloco-action">discovery-script</div>
+      <div class="bloco-action">/discovery-script</div>
       <p class="bloco-result">Saída: <strong>discovery-script-{negocio}.md + .html</strong></p>
     </div>
     <div class="bloco">
       <div class="bloco-header"><span class="bloco-num">Bloco 5</span><span class="bloco-time">50 min</span></div>
       <h3>Playbook de Vendas Vivo</h3>
       <p>Classificação das objeções, geração de resposta com framework certo por canal (call/WhatsApp/e-mail) e definição da cadência de revisão.</p>
-      <div class="bloco-action">playbook-vendas-vivo</div>
+      <div class="bloco-action">/playbook-vendas-vivo</div>
       <p class="bloco-result">Saída: <strong>playbook-objecoes-{negocio}.md + .html</strong> — pacote principal da Aula 1 fechado.</p>
     </div>
     <div class="bloco">
       <div class="bloco-header"><span class="bloco-num">Bônus 1</span><span class="bloco-time">opcional</span></div>
       <h3>Escada de Ofertas</h3>
       <p>Só roda se você já tem mais de um produto/oferta. Mapeia a jornada de ascensão entre eles.</p>
-      <div class="bloco-action">escada-de-ofertas</div>
+      <div class="bloco-action">/escada-de-ofertas</div>
       <p class="bloco-result">Saída: <strong>escada-de-ofertas-{negocio}.md + .html</strong></p>
     </div>
     <div class="bloco">
       <div class="bloco-header"><span class="bloco-num">Bônus 2</span><span class="bloco-time">opcional</span></div>
       <h3>Social Selling</h3>
       <p>Só roda se rede social é canal de prospecção ativa. Monta a sequência de LinkedIn (B2B) ou Instagram/TikTok (B2C/alto ticket) que aquece o lead antes de entrar no funil comercial.</p>
-      <div class="bloco-action">social-selling-comercial</div>
+      <div class="bloco-action">/social-selling-comercial</div>
       <p class="bloco-result">Saída: <strong>social-selling-{negocio}.md + .html</strong></p>
     </div>
   </section>
@@ -613,7 +615,7 @@
   <div class="cta-final">
     <h2>Pronto pra <em>começar</em>?</h2>
     <p>Abra o Claude Code no terminal e rode o primeiro comando.</p>
-    <div class="command-block slash">desenho-processo-comercial [seu negócio]</div>
+    <div class="command-block slash">/desenho-processo-comercial [seu negócio]</div>
   </div>
 </div>
 

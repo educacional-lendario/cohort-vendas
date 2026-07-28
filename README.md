@@ -96,12 +96,17 @@ Depois de copiar, vá direto pra "Qual ferramenta você usa?" abaixo — só que
 
 Pré-requisito: [Claude Code](https://docs.claude.com/claude-code) instalado.
 
-1. Abra o Claude Code na pasta do repo (Cenário 1) ou na pasta do seu projeto (Cenário 2):
+1. **Antes de rodar `claude`, confirme que você está DENTRO da pasta certa** (`cohort-vendas` no Cenário 1, ou a pasta do seu projeto no Cenário 2). O erro mais comum é abrir o Claude Code um nível acima, na pasta errada, e aí nenhum comando funciona:
+   ```bash
+   ls .claude/skills
+   ```
+   Apareceram as 7 pastas (`desenho-processo-comercial`, `regua-comunicacao-comercial`...)? Está no lugar certo. Deu erro de pasta não encontrada? Falta o `cd` pra dentro da pasta certa.
+2. Abra o Claude Code:
    ```bash
    claude
    ```
-2. As 7 skills em `.claude/skills/` carregam **sozinhas** — não tem passo de instalação separado.
-3. Teste digitando `/desenho-processo-comercial`. Se aparecer o menu da skill, está funcionando.
+3. As 7 skills em `.claude/skills/` carregam **sozinhas** — não tem passo de instalação separado.
+4. Teste digitando `/desenho-processo-comercial`. Se aparecer o menu da skill, está funcionando. Se aparecer "No commands match", saia do Claude Code, confira a pasta com o comando do passo 1, e abra de novo já no lugar certo.
 
 ### Opção B — Codex CLI
 

@@ -38,6 +38,8 @@ desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant
 
 **"Meu nicho é saúde/estética/finanças/jurídico/psicologia, isso muda alguma coisa?"** — sim. A Skill 1 (Passo 0.5) marca a flag `nicho_regulado: sim` e todas as skills seguintes calibram a linguagem (sem "garantido"/"cura", sem depoimento de paciente/cliente em médico/psicologia/jurídico). O aluno só responde uma vez.
 
+**"Digitei `/desenho-processo-comercial` e apareceu 'No commands match'"** — causa quase certa: o Claude Code foi aberto na pasta errada (um nível acima de onde estão as skills). Peça pro aluno rodar `ls .claude/skills` antes de abrir o `claude` — se der erro de pasta não encontrada, falta o `cd` pra dentro da pasta certa (`cohort-vendas` ou a pasta do projeto dele, se seguiu o Cenário 2 de instalação).
+
 **"Não quero criar um projeto novo, quero usar dentro do meu projeto atual"** — funciona. README e GUIA-DO-ALUNO.html (Setup, passo 1B) têm o comando: clonar numa pasta temporária, copiar só `.claude/skills/` e `.agents/skills/` pro projeto do aluno, apagar a temporária. Sem git, o caminho é baixar o ZIP do GitHub e arrastar as pastas manualmente.
 
 **"Eu prospecto pelo Instagram/LinkedIn, tem processo pra isso?"** — sim, é a Skill 7 (`/social-selling-comercial`). LinkedIn usa a sequência de Jeb Blount (5 toques em ~2 semanas); Instagram/TikTok usa o Social Selling 2.0 de Torriani (achar lead por palavra-chave, pré-aquecer, abrir sem vender, conduzir até o agendamento). Não confundir com a régua de comunicação (Skill 2), que cobre o pós-contato.
