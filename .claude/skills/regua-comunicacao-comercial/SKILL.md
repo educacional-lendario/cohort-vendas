@@ -138,4 +138,9 @@ Gere **dois arquivos com o mesmo conteúdo**:
 
 **Abra o HTML automaticamente assim que gerar (não deixe só salvo na pasta):** rode um comando de abrir arquivo pro `regua-comunicacao-{negocio}.html` logo depois de criá-lo — `open regua-comunicacao-{negocio}.html` (Mac), `start regua-comunicacao-{negocio}.html` (Windows) ou `xdg-open regua-comunicacao-{negocio}.html` (Linux). Se o comando de abrir falhar (ambiente sem interface gráfica, sandbox restrito, etc.), avise o aluno o caminho exato do arquivo e como abrir manualmente — nunca termine a skill em silêncio sem tentar mostrar o resultado.
 
+**Atualize a Central de Entregas** (`central-de-entregas.html` na raiz do projeto do aluno):
+- Se o arquivo ainda não existir na pasta do projeto, copie de `templates/central-de-entregas.html` (deste repo) para a raiz do projeto antes de editar.
+- No array `ENTREGAS` desse arquivo, encontre a linha com `id: 2` e troque `status: "pendente", html: null, md: null` por `status: "pronto", html: "regua-comunicacao-{negocio}.html", md: "regua-comunicacao-{negocio}.md"` (com o nome real do negócio no lugar de `{negocio}`). Não mude nenhuma outra linha do array — elas guardam o progresso das outras skills já entregues.
+- Não precisa abrir a central de novo toda vez (o HTML individual já abriu no passo anterior), mas informe ao aluno que ela existe e já está atualizada.
+
 **Depois de entregar os dois arquivos, diga isto diretamente ao aluno no chat (não deixe só escrito dentro do documento):** *"Régua de comunicação pronta — os dois arquivos estão aí, com o mecanismo único já nomeado. Próximo passo: rode `/qualificacao-bant-gpct` pra calibrar a qualificação."*

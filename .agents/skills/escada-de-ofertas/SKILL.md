@@ -105,4 +105,9 @@ Gere **dois arquivos com o mesmo conteúdo**:
 
 **Abra o HTML automaticamente assim que gerar (não deixe só salvo na pasta):** rode um comando de abrir arquivo pro `escada-de-ofertas-{negocio}.html` logo depois de criá-lo — `open escada-de-ofertas-{negocio}.html` (Mac), `start escada-de-ofertas-{negocio}.html` (Windows) ou `xdg-open escada-de-ofertas-{negocio}.html` (Linux). Se o comando de abrir falhar (ambiente sem interface gráfica, sandbox restrito, etc.), avise o aluno o caminho exato do arquivo e como abrir manualmente — nunca termine a skill em silêncio sem tentar mostrar o resultado.
 
+**Atualize a Central de Entregas** (`central-de-entregas.html` na raiz do projeto do aluno):
+- Se o arquivo ainda não existir na pasta do projeto, copie de `templates/central-de-entregas.html` (deste repo) para a raiz do projeto antes de editar.
+- No array `ENTREGAS` desse arquivo, encontre a linha com `id: 6` e troque `status: "pendente", html: null, md: null` por `status: "pronto", html: "escada-de-ofertas-{negocio}.html", md: "escada-de-ofertas-{negocio}.md"` (com o nome real do negócio no lugar de `{negocio}`). Não mude nenhuma outra linha do array — elas guardam o progresso das outras skills já entregues.
+- Não precisa abrir a central de novo toda vez (o HTML individual já abriu no passo anterior), mas informe ao aluno que ela existe e já está atualizada.
+
 **Depois de entregar os dois arquivos, diga isto diretamente ao aluno no chat (não deixe só escrito dentro do documento):** *"Escada de ofertas pronta — os dois arquivos estão aí. Se você prospecta por LinkedIn ou Instagram/TikTok, ainda tem a última skill bônus: rode `/social-selling-comercial`. Se não, a Aula 1 está completa pra você."*

@@ -110,4 +110,9 @@ Gere **dois arquivos com o mesmo conteúdo**:
 
 **Abra o HTML automaticamente assim que gerar (não deixe só salvo na pasta):** rode um comando de abrir arquivo pro `social-selling-{negocio}.html` logo depois de criá-lo — `open social-selling-{negocio}.html` (Mac), `start social-selling-{negocio}.html` (Windows) ou `xdg-open social-selling-{negocio}.html` (Linux). Se o comando de abrir falhar (ambiente sem interface gráfica, sandbox restrito, etc.), avise o aluno o caminho exato do arquivo e como abrir manualmente — nunca termine a skill em silêncio sem tentar mostrar o resultado.
 
+**Atualize a Central de Entregas** (`central-de-entregas.html` na raiz do projeto do aluno):
+- Se o arquivo ainda não existir na pasta do projeto, copie de `templates/central-de-entregas.html` (deste repo) para a raiz do projeto antes de editar.
+- No array `ENTREGAS` desse arquivo, encontre a linha com `id: 7` e troque `status: "pendente", html: null, md: null` por `status: "pronto", html: "social-selling-{negocio}.html", md: "social-selling-{negocio}.md"` (com o nome real do negócio no lugar de `{negocio}`). Não mude nenhuma outra linha do array — elas guardam o progresso das outras skills já entregues.
+- Não precisa abrir a central de novo toda vez (o HTML individual já abriu no passo anterior), mas informe ao aluno que ela existe e já está atualizada.
+
 **Depois de entregar os dois arquivos, diga isto diretamente ao aluno no chat (não deixe só escrito dentro do documento):** *"Sequência de social selling pronta — os dois arquivos estão aí. Com isso, a Aula 1 está completa: processo, régua de comunicação, qualificação, discovery, playbook e, se aplicável, escada de ofertas e social selling. Se ainda não rodou a Skill 6 (`/escada-de-ofertas`) e seu negócio tem mais de uma oferta, vale rodar também."*

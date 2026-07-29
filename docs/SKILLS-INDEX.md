@@ -38,6 +38,8 @@ desenho-processo-comercial → regua-comunicacao-comercial → qualificacao-bant
 
 **"Meu nicho é saúde/estética/finanças/jurídico/psicologia, isso muda alguma coisa?"** — sim. A Skill 1 (Passo 0.5) marca a flag `nicho_regulado: sim` e todas as skills seguintes calibram a linguagem (sem "garantido"/"cura", sem depoimento de paciente/cliente em médico/psicologia/jurídico). O aluno só responde uma vez.
 
+**"Onde eu vejo tudo que já foi entregue até agora?"** — no `central-de-entregas.html`, na raiz do projeto do aluno. Aparece sozinho assim que a primeira skill termina; cada skill destrava o próprio card lá (com link pro `.md` e `.html` dela), o que ainda não rodou fica apagado. Se o aluno não encontrar esse arquivo, é sinal de que nenhuma skill terminou ainda, ou de que ele está numa pasta diferente da que rodou as skills.
+
 **"Digitei `/desenho-processo-comercial` e apareceu 'No commands match'"** — causa quase certa: o Claude Code foi aberto na pasta errada (um nível acima de onde estão as skills). Peça pro aluno rodar `ls .claude/skills` antes de abrir o `claude` — se der erro de pasta não encontrada, falta o `cd` pra dentro da pasta certa (`cohort-vendas` ou a pasta do projeto dele, se seguiu o Cenário 2 de instalação).
 
 **"Não quero criar um projeto novo, quero usar dentro do meu projeto atual"** — funciona. README e GUIA-DO-ALUNO.html (Setup, passo 1B) têm o comando: clonar numa pasta temporária, copiar só `.claude/skills/` e `.agents/skills/` pro projeto do aluno, apagar a temporária. Sem git, o caminho é baixar o ZIP do GitHub e arrastar as pastas manualmente.

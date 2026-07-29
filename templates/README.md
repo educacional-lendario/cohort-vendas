@@ -11,3 +11,7 @@ Templates em branco dos outputs da aula, para quem prefere preencher na mão em 
 - `template-social-selling.md` — esqueleto da sequência de prospecção por LinkedIn/Instagram (bônus)
 
 Recomendado: rode a skill correspondente primeiro (`/desenho-processo-comercial`, `/regua-comunicacao-comercial`, `/qualificacao-bant-gpct`, `/discovery-script`, `/playbook-vendas-vivo`, `/escada-de-ofertas`, `/social-selling-comercial`) e use o template só como checklist de revisão, não como ponto de partida — a skill já pergunta o que falta.
+
+## `central-de-entregas.html` (funcional, não é pra preencher na mão)
+
+Este é diferente dos demais: é o template funcional da Central de Entregas. Nenhuma skill cria esse painel do zero — na primeira vez que uma skill terminar, ela copia este arquivo pra raiz do projeto do aluno (se ainda não existir lá) e edita só a própria linha do array `ENTREGAS` dentro dele. As skills seguintes fazem o mesmo, cada uma mexendo só na própria linha, o que preserva o progresso acumulado. Não edite este arquivo esperando que ele reflita um projeto específico — ele é o ponto de partida, sempre com as 7 linhas em `"pendente"`.

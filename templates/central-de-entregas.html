@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central de Entregas — Cohort de Vendas · Aula 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --background: #0A0A0A;
+    --card: #0F0F0F;
+    --raised: #1A1A1A;
+    --border: #262626;
+    --foreground: #E5E5E5;
+    --muted-foreground: #999999;
+    --primary: #C9B298;
+    --primary-light: #D9CBB9;
+    --primary-deep: #8D7556;
+    --font-body: 'Source Serif 4', Georgia, serif;
+    --font-ui: Inter, system-ui, sans-serif;
+    --font-display: Rajdhani, Inter, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--background); color: var(--foreground); font-family: var(--font-ui); margin: 0; padding: 0; }
+  .shell { max-width: 980px; margin: 0 auto; padding: 56px 32px 96px; }
+  .kicker { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); }
+  h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; margin: 8px 0 8px; letter-spacing: -0.01em; }
+  .lead { font-family: var(--font-body); color: var(--muted-foreground); font-size: 1.05rem; margin: 0 0 32px; }
+
+  .progress-bar-outer { background: var(--raised); border-radius: 9999px; height: 8px; overflow: hidden; margin-bottom: 8px; }
+  .progress-bar-inner { background: var(--primary); height: 100%; border-radius: 9999px; transition: width 0.3s ease; }
+  .progress-label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 40px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--border);
+    border-radius: 0.75rem; padding: 20px; transition: border-color 0.15s ease, opacity 0.15s ease;
+  }
+  .card.pronto { border-left-color: var(--primary); }
+  .card.pendente { opacity: 0.55; }
+  .card .num { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted-foreground); margin-bottom: 6px; }
+  .card .nome { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+  .badge {
+    display: inline-block; font-family: var(--font-ui); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 9999px; margin-bottom: 14px;
+  }
+  .badge.pronto { background: rgba(201,178,152,0.15); color: var(--primary-light); border: 1px solid var(--primary-deep); }
+  .badge.pendente { background: var(--raised); color: var(--muted-foreground); border: 1px solid var(--border); }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .links a, .links span {
+    font-family: var(--font-mono); font-size: 0.78rem; padding: 6px 12px; border-radius: 0.4rem;
+    border: 1px solid var(--primary-deep); color: var(--primary-light); text-decoration: none;
+  }
+  .links a:hover { background: rgba(201,178,152,0.1); }
+  .links span.locked { border-color: var(--border); color: var(--muted-foreground); cursor: not-allowed; }
+
+  footer { margin-top: 48px; font-family: var(--font-body); font-size: 0.85rem; color: var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div class="shell">
+  <span class="kicker">Cohort de Vendas · Aula 1</span>
+  <h1>Central de Entregas</h1>
+  <p class="lead">Cada card destrava sozinho assim que a skill correspondente termina. Card apagado = ainda não rodou aquela skill.</p>
+
+  <div class="progress-bar-outer"><div class="progress-bar-inner" id="progress-inner" style="width:0%"></div></div>
+  <div class="progress-label" id="progress-label">0 de 7 entregues</div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>Gerado automaticamente pelas skills da Aula 1. Não edite este arquivo na mão — cada skill atualiza o card dela sozinha ao terminar.</footer>
+</div>
+
+<script>
+// ENTREGAS — cada skill edita a própria linha ao terminar (status + arquivos).
+// Não mude a estrutura do array, só os valores de "status", "html" e "md".
+const ENTREGAS = [
+  { id: 1, nome: "Processo Comercial",        cmd: "/desenho-processo-comercial",    status: "pendente", html: null, md: null },
+  { id: 2, nome: "Régua de Comunicação",       cmd: "/regua-comunicacao-comercial",   status: "pendente", html: null, md: null },
+  { id: 3, nome: "Qualificação BANT/GPCT",     cmd: "/qualificacao-bant-gpct",        status: "pendente", html: null, md: null },
+  { id: 4, nome: "Discovery Script",           cmd: "/discovery-script",              status: "pendente", html: null, md: null },
+  { id: 5, nome: "Playbook de Vendas Vivo",    cmd: "/playbook-vendas-vivo",          status: "pendente", html: null, md: null },
+  { id: 6, nome: "Escada de Ofertas (bônus)",  cmd: "/escada-de-ofertas",             status: "pendente", html: null, md: null },
+  { id: 7, nome: "Social Selling (bônus)",     cmd: "/social-selling-comercial",      status: "pendente", html: null, md: null },
+];
+
+const grid = document.getElementById("grid");
+ENTREGAS.forEach(function (e) {
+  const card = document.createElement("div");
+  card.className = "card " + e.status;
+  const links = e.status === "pronto"
+    ? '<div class="links">' +
+        (e.html ? '<a href="' + e.html + '">Abrir HTML</a>' : '') +
+        (e.md ? '<a href="' + e.md + '">Abrir MD</a>' : '') +
+      '</div>'
+    : '<div class="links"><span class="locked">Aguardando ' + e.cmd + '</span></div>';
+  card.innerHTML =
+    '<div class="num">Skill ' + e.id + ' / 7</div>' +
+    '<div class="nome">' + e.nome + '</div>' +
+    '<span class="badge ' + e.status + '">' + (e.status === "pronto" ? "Pronto" : "Pendente") + '</span>' +
+    links;
+  grid.appendChild(card);
+});
+
+const total = ENTREGAS.length;
+const prontos = ENTREGAS.filter(function (e) { return e.status === "pronto"; }).length;
+document.getElementById("progress-inner").style.width = Math.round((prontos / total) * 100) + "%";
+document.getElementById("progress-label").textContent = prontos + " de " + total + " entregues";
+</script>
+</body>
+</html>

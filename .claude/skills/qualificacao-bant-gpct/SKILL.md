@@ -121,4 +121,9 @@ Gere **dois arquivos com o mesmo conteúdo**:
 
 **Abra o HTML automaticamente assim que gerar (não deixe só salvo na pasta):** rode um comando de abrir arquivo pro `qualificacao-{negocio}.html` logo depois de criá-lo — `open qualificacao-{negocio}.html` (Mac), `start qualificacao-{negocio}.html` (Windows) ou `xdg-open qualificacao-{negocio}.html` (Linux). Se o comando de abrir falhar (ambiente sem interface gráfica, sandbox restrito, etc.), avise o aluno o caminho exato do arquivo e como abrir manualmente — nunca termine a skill em silêncio sem tentar mostrar o resultado.
 
+**Atualize a Central de Entregas** (`central-de-entregas.html` na raiz do projeto do aluno):
+- Se o arquivo ainda não existir na pasta do projeto, copie de `templates/central-de-entregas.html` (deste repo) para a raiz do projeto antes de editar.
+- No array `ENTREGAS` desse arquivo, encontre a linha com `id: 3` e troque `status: "pendente", html: null, md: null` por `status: "pronto", html: "qualificacao-{negocio}.html", md: "qualificacao-{negocio}.md"` (com o nome real do negócio no lugar de `{negocio}`). Não mude nenhuma outra linha do array — elas guardam o progresso das outras skills já entregues.
+- Não precisa abrir a central de novo toda vez (o HTML individual já abriu no passo anterior), mas informe ao aluno que ela existe e já está atualizada.
+
 **Depois de entregar os dois arquivos, diga isto diretamente ao aluno no chat (não deixe só escrito dentro do documento):** *"Qualificação pronta — os dois arquivos estão aí, com o ICP e o roteiro calibrados. Próximo passo: rode `/discovery-script` pra aprofundar a conversa."*

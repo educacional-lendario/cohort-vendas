@@ -209,7 +209,7 @@ Só se aplica se rede social é (ou vai ser) canal de prospecção ativa. Monta 
 │       └── social-selling-comercial/  bônus
 ├── .agents/
 │   └── skills/                     espelho literal para Codex e outros agentes
-├── templates/                      templates em branco dos outputs
+├── templates/                      templates em branco dos outputs + central-de-entregas.html
 ├── exemplos/                       exemplos preenchidos
 └── docs/
     ├── workflow.md                 fluxo completo da Aula 1
@@ -285,6 +285,10 @@ Processo em planilha/CRM, mensagens que já usa, objeções reais, call gravada 
 ### O HTML sempre abre sozinho, você nunca precisa procurar o arquivo
 
 Assim que uma skill termina, o `.html` correspondente abre automaticamente no navegador (`open` no Mac, `start` no Windows, `xdg-open` no Linux). Se isso não acontecer (comando de abrir falhou no seu ambiente), a skill avisa o caminho exato do arquivo, nunca termina em silêncio deixando você achar sozinho.
+
+### Você tem uma Central de Entregas acompanhando tudo
+
+Assim que a primeira skill termina, aparece um `central-de-entregas.html` na raiz do seu projeto: um painel com as 7 skills, cada uma destravando o próprio card (com link pro `.md` e `.html` dela) assim que termina. O que ainda não rodou fica apagado e sem link — abra esse arquivo a qualquer momento pra ver o que já foi entregue e o que falta.
 
 ---
 
