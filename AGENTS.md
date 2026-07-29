@@ -23,6 +23,7 @@ O aluno sempre começa por **`/desenho-processo-comercial`** (`.claude/skills/de
 ## Regras gerais (valem em qualquer agente)
 
 - Toda entrega sai em **dois arquivos**: `{nome-do-output}.md` e `{nome-do-output}.html` — nunca só um.
+- **O HTML abre sozinho assim que é gerado** (`open arquivo.html` no Mac, `start arquivo.html` no Windows, `xdg-open arquivo.html` no Linux) — nunca deixe o arquivo só salvo na pasta esperando o aluno achar. Se o comando de abrir falhar, avise o caminho exato do arquivo.
 - Se o aluno parecer perdido ou perguntar onde está, siga a seção "Se o aluno se perder" de cada `SKILL.md` (não invente uma resposta genérica).
 - Português do Brasil com acentuação correta. Sem emoji, sem travessão, sem tom de guru nos entregáveis.
 - Nunca invente dado, caso real, ou objeção que o aluno não forneceu — quando faltar informação, pergunte ou marque como "ponto de partida a validar".

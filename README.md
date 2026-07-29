@@ -282,6 +282,10 @@ Se você prospecta por LinkedIn ou Instagram/TikTok, a sequência de rede social
 
 Processo em planilha/CRM, mensagens que já usa, objeções reais, call gravada — toda skill pede esse material primeiro e adapta em cima dele, em vez de gerar um exemplo genérico e ignorar o que você já construiu. Isso é o que garante consistência de resultado: a IA parte do que já funciona no seu negócio, não de um template solto.
 
+### O HTML sempre abre sozinho, você nunca precisa procurar o arquivo
+
+Assim que uma skill termina, o `.html` correspondente abre automaticamente no navegador (`open` no Mac, `start` no Windows, `xdg-open` no Linux). Se isso não acontecer (comando de abrir falhou no seu ambiente), a skill avisa o caminho exato do arquivo, nunca termina em silêncio deixando você achar sozinho.
+
 ---
 
 ## Suporte
