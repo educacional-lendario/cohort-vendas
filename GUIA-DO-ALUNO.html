@@ -390,6 +390,16 @@
       </div>
     </div>
     <div class="step">
+      <div class="step-num">App</div>
+      <div class="step-content">
+        <h3>Usando o app Desktop do Claude (sem terminal)</h3>
+        <p>Se você usa o Claude Code pelo aplicativo (aba "Code", botão "Novo") em vez do terminal, atenção: <strong>o botão "Novo" só abre ou cria a pasta local, ele não traz as skills sozinho.</strong> Escolher uma pasta vazia ali abre a sessão, mas nenhum comando <code>/desenho-processo-comercial</code> vai existir até a pasta ter o <code>.claude/skills/</code> dentro dela. Dois jeitos de resolver isso antes de clicar em "Novo":</p>
+        <p><strong>1. Clone o repo primeiro:</strong> no terminal (ou no app de terminal do seu sistema), rode o comando do passo 1A pra criar a pasta <code>cohort-vendas</code> já com tudo dentro. Depois, no app Desktop, clique em "Novo" e aponte pra essa pasta clonada.</p>
+        <p><strong>2. Copie as skills pra sua pasta:</strong> se você já tem uma pasta de projeto (ou criou uma vazia no Finder), siga o passo 1B pra copiar <code>.claude/skills/</code> (e <code>.agents/skills/</code>, se for usar Codex também) pra dentro dela. Só depois clique em "Novo" no app e selecione essa pasta.</p>
+        <p>Depois de abrir a pasta certa no app, o resto funciona igual ao terminal: digite <code>/desenho-processo-comercial</code> na caixa de mensagem. Se não aparecer o menu da skill, é sinal de que a pasta selecionada não tem o <code>.claude/skills/</code>, feche a sessão e repita um dos dois caminhos acima.</p>
+      </div>
+    </div>
+    <div class="step">
       <div class="step-num">2B</div>
       <div class="step-content">
         <h3>Opção B — Codex CLI</h3>
@@ -414,13 +424,13 @@
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-name">1 · /desenho-processo-comercial</div>
-        <p class="skill-what">Diagnostica seu modelo de venda (inclusive se é autoatendimento e se o nicho é regulado) e desenha as etapas do funil com critério de saída verificável e gatilhos de risco em 2 níveis.</p>
+        <p class="skill-what">Primeiro pergunta se você já rodou o Cohort de Marketing e tem offerbook/ICP prontos (se sim, reaproveita; se não, faz as perguntas-chave equivalentes). Depois diagnostica seu modelo de venda (inclusive se é autoatendimento e se o nicho é regulado) e desenha as etapas do funil com critério de saída verificável e gatilhos de risco em 2 níveis.</p>
         <p class="skill-out"><strong>Output:</strong> processo comercial completo com etapas, VCAs e gatilhos.</p>
       </div>
       <div class="skill-card">
         <div class="skill-name">2 · /regua-comunicacao-comercial</div>
-        <p class="skill-what">Define quem fala, o que fala e por qual canal em cada etapa, com funil de reforço por tempo parado e o mecanismo único de conversão do seu negócio.</p>
-        <p class="skill-out"><strong>Output:</strong> régua de comunicação completa + mecanismo único nomeado.</p>
+        <p class="skill-what">Define quem fala, o que fala e por qual canal em cada etapa, com funil de reforço por tempo parado, uma pesquisa de canais do seu nicho ainda não explorados (baseada em concorrentes reais, nunca por completude) e o mecanismo único de conversão do seu negócio.</p>
+        <p class="skill-out"><strong>Output:</strong> régua de comunicação completa + mapa de canais a explorar + mecanismo único nomeado.</p>
       </div>
       <div class="skill-card">
         <div class="skill-name">3 · /qualificacao-bant-gpct</div>

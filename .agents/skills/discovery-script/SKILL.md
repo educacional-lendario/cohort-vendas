@@ -1,6 +1,6 @@
 ---
 name: discovery-script
-description: Gera e refina scripts de discovery e descoberta de dor com apoio de IA, a partir do ICP e do roteiro de qualificação já definidos. Constrói o roteiro como framework modular de conversa (não um texto decorado) usando a sequência SPIN (Situação, Problema, Implicação, Necessidade) combinada com o Funil de Dor de 3 níveis (técnico, impacto no negócio, pessoal) e a quantificação de gap (estado atual vs estado desejado, em números). Refina o script com IA em cima de ligações reais gravadas ou transcritas — sempre comparando o que o roteiro previa com o que o vendedor realmente perguntou, nunca reescrevendo do zero sem dado de call real. Use quando o usuário pedir para criar, revisar ou melhorar um roteiro de discovery call, script de primeira reunião, perguntas de aprofundamento de dor, ou quiser saber por que os discovery calls não estão revelando dor suficiente. Português do Brasil.
+description: Gera e refina scripts de discovery e descoberta de dor com apoio de IA, a partir do ICP e do roteiro de qualificação já definidos. Constrói o roteiro como framework modular de conversa (não um texto decorado) usando a sequência SPIN (Situação, Problema, Implicação, Necessidade) combinada com o Funil de Dor de 3 níveis (técnico, impacto no negócio, pessoal) e a quantificação de gap (estado atual vs estado desejado, em números). Também escreve o roteiro por canal (convite, e-mail, WhatsApp, DM) como copy de verdade, com técnica de copywriting nomeada e atribuída (Eugene Schwartz, Robert Collier, Gary Halbert, entre outros), delegando a escrita a clones de copywriter quando o ambiente tiver esse squad disponível, e sempre auditando o resultado (clone Claude Hopkins, ou checklist equivalente) contra compliance e voz da marca antes de entregar. Refina o script com IA em cima de ligações reais gravadas ou transcritas, sempre comparando o que o roteiro previa com o que o vendedor realmente perguntou, nunca reescrevendo do zero sem dado de call real. Use quando o usuário pedir para criar, revisar ou melhorar um roteiro de discovery call, script de primeira reunião, textos de convite/follow-up por canal, perguntas de aprofundamento de dor, ou quiser saber por que os discovery calls não estão revelando dor suficiente. Português do Brasil.
 user_invocable: true
 ---
 
@@ -35,6 +35,11 @@ Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção
 - **David Sandler** (*Sandler Selling System*) — Funil de Dor em 3 níveis (técnico, impacto no negócio, pessoal), usado nos blocos 3-5.
 - **Keenan** (*Gap Selling*) — quantificação de gap (estado atual vs. desejado, em número), no bloco 4.
 - **Challenger Sale** (Matthew Dixon & Brent Adamson) — Commercial Teaching: ensinar ao comprador algo sobre o próprio negócio que ele ainda não tinha percebido, antes de apresentar solução. Usado como técnica complementar no bloco 4 (ver nota abaixo).
+- **Eugene Schwartz** (*Breakthrough Advertising*): níveis de sofisticação de mercado, usado no Passo 1.5 pra calibrar o gancho de cada peça escrita ao estágio de consciência do lead.
+- **Robert Collier**: entrar na conversa que já está acontecendo na cabeça do lead, usado no corpo das peças do Passo 1.5.
+- **Gary Halbert e John Carlton**: especificidade em vez de adjetivo vazio, usado na prova/credibilidade do Passo 1.5.
+- **David Ogilvy, Dan Kennedy e Joe Sugarman**: princípios de gancho, urgência real e progressão de frase, usados conforme o canal no Passo 1.5.
+- **Claude Hopkins** (*Scientific Advertising*): rigor científico e especificidade, base do checklist de auditoria obrigatória do Passo 1.6, nenhuma peça sai sem essa revisão.
 
 ---
 
@@ -108,6 +113,44 @@ Se o usuário fornecer gravações ou transcrições, rode esta análise (nunca 
 
 Compare múltiplas calls quando houver mais de uma — padrões que se repetem em 3+ calls (ex.: todo vendedor pula o bloco de implicação) são sinal de que o script precisa reforçar aquele bloco, não de que um vendedor específico está errado.
 
+## Passo 1.5: Roteiro por canal, com copywriting de verdade
+
+O script dos Passos 1A/1B cobre a call ao vivo. Mas discovery raramente acontece só na call: tem a mensagem que convida pra call, o e-mail de recap, o follow-up por WhatsApp, a DM que reabre a conversa. Cada um desses textos escritos precisa ser copy de verdade, memorável e persuasivo, baseado na dor específica que este negócio resolve, nunca um "Oi, tudo bem? Vamos conversar?" genérico.
+
+**Cobertura completa, não amostra:** puxe TODAS as linhas da régua definida na Skill 2 (`/regua-comunicacao-comercial`) e TODOS os toques da sequência de social selling definida na Skill 7 (`/social-selling-comercial`, se já rodada), e escreva uma peça pronta pra cada uma. Não entregue só um exemplo por canal, entregue o script de cada mensagem que a régua e a sequência já preveem: convite, confirmação/lembrete, recap pós-encontro, cada toque de follow-up da nutrição (D+3, D+10, D+21, e por aí em diante conforme a régua definida), e cada toque de rede social (comentário de pré-aquecimento, abertura de DM, condução, convite de qualificação). O objetivo desta skill é entregar o roteiro completo do processo comercial em texto, a call e todo o resto, nada a menos que isso.
+
+Para cada peça, escreva aplicando uma técnica de copywriting nomeada, nunca um placeholder. Frameworks de referência, use o que fizer sentido pro canal e pro estágio de consciência do lead (herdado da qualificação, Skill 3):
+
+- **Gancho/abertura:** níveis de sofisticação de mercado de Eugene Schwartz (fale diferente pra quem já conhece o problema versus quem nunca parou pra pensar nele), ou o princípio de David Ogilvy de que o gancho decide se o resto é lido.
+- **Corpo/agitação da dor:** PAS (Problema, Agitação, Solução), ou o princípio de Robert Collier de entrar na conversa que já está acontecendo na cabeça do lead, em vez de iniciar um assunto novo.
+- **Prova/credibilidade:** especificidade em vez de adjetivo (Gary Halbert, John Carlton). Número e caso real convencem mais que "ótimo resultado".
+- **Fechamento/CTA:** urgência real sem fabricar escassez falsa (Dan Kennedy), ou o "slippery slide" de Joe Sugarman (cada frase existe só pra puxar a próxima).
+
+**Toda peça de e-mail leva assunto tratado como copy própria, nunca afterthought.** O assunto é o que decide se o e-mail é aberto, antes de qualquer coisa que esteja no corpo. Escreva pelo menos 2 variações de assunto por e-mail (pra teste A/B), cada uma testando um gancho diferente (curiosidade versus especificidade, por exemplo), e destaque as duas no output, não só a escolhida.
+
+**Se você estiver rodando num ambiente com squad de clones de copywriters disponível** (Agent tool com agentes de copy, ex.: `gary-halbert`, `eugene-schwartz`, `robert-collier`, `joe-sugarman`, `david-ogilvy`, `dan-kennedy`, entre outros): delegue a escrita de cada peça ao clone mais adequado ao canal e à técnica escolhida, em paralelo quando possível. **Se não houver squad de clones disponível** (a maioria dos projetos de aluno não tem), aplique a técnica nomeada diretamente você mesmo, sempre citando no output qual técnica/autor embasa cada peça, a atribuição não é decoração, é o que ensina o aluno a reconhecer o padrão depois.
+
+## Passo 1.6: Auditoria de compliance e voz (obrigatória, roda sempre)
+
+Nenhuma peça do Roteiro por Canal (Passo 1.5) é entregue sem passar por esta auditoria antes, valha o ambiente que for. Copy persuasiva não é sinônimo de copy que exagera, e um vendedor sozinho revisando o próprio texto costuma deixar passar o vício mais comum: reformular a mesma frase de contraste toda vez que precisa fazer uma virada de sentido.
+
+**Se houver squad de clones disponível:** delegue esta auditoria ao clone `claude-hopkins`, entregando as peças junto com o checklist abaixo.
+
+**Se não houver:** rode você mesmo o mesmo checklist, peça por peça, sem pular nenhuma:
+
+1. Travessão no meio de frase: proibido.
+2. Promessa de resultado garantido ("garante", "cura", "sempre", ou qualquer promessa absoluta sem qualificador): proibido.
+3. Construção "não é [apenas] X, é Y" (em qualquer variação, incluindo "não é sobre X, é sobre Y" ou "não era X, era Y"): proibido. Este é o vício mais comum entre copywriters diferentes, verifique com atenção redobrada.
+4. Uso de "nós" em vez de "a gente": proibido.
+5. Jargão de guru de vendas ("mindset", "virada de chave", "despertar"): proibido.
+6. Tríade de adjetivos vazios (3 adjetivos seguidos sem dado por trás): proibido.
+7. Claim sem prova por trás (número vago tipo "dezenas de milhares" quando existe um número específico disponível, ou generalização tipo "resultado incrível"): troque pelo número exato sempre que houver um.
+8. Se `nicho_regulado: sim`, qualquer coisa que soe como depoimento de paciente/cliente em atendimento clínico regulado (CFM, CRP, OAB): proibido. Depoimento de aluna/colega profissional sobre a própria carreira é permitido.
+
+Para cada violação encontrada, registre a frase exata e a substituição sugerida, sem perder a força persuasiva da peça original. Só depois de corrigir todas as violações a peça entra no output final do Passo 3.
+
+**Regra inegociável, valha o ambiente que for:** todo texto gerado aqui segue as mesmas regras de voz e compliance já herdadas (Skill 1, Passo 0.5, se `nicho_regulado: sim`).
+
 ## Passo 2 — Ritmo e extensão (não empurrar tudo numa call só)
 
 Se o comprador ainda não está "consciente do problema" (não veio pra call já sabendo o que precisa), ou se há múltiplos stakeholders a envolver aos poucos, avise o usuário que discovery em etapas costuma performar melhor que tentar fechar tudo numa call: a primeira call confirma que o problema existe, o e-mail de acompanhamento resume o que foi ouvido e traz uma pergunta mais afiada, a segunda call aprofunda. Isso vale sobretudo pra venda consultiva complexa (perfil B2B do diagnóstico da Skill 1) — venda transacional/B2C tende a comprimir isso numa call só.
@@ -116,8 +159,8 @@ Se o comprador ainda não está "consciente do problema" (não veio pra call já
 
 Gere **dois arquivos com o mesmo conteúdo**:
 
-1. `discovery-script-{negocio}.md` com os 6 blocos completos (Passo 1A) e, se houver, a análise de refino em cima de calls reais (Passo 1B) com recomendações específicas por bloco. Feche com o handoff: *"Este script alimenta a Skill 5 (/playbook-vendas-vivo) — as objeções que aparecerem durante o discovery viram o primeiro lote de entradas do playbook de objeções."*
-2. `discovery-script-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com os 6 blocos como cards sequenciais (numerados, com a intenção do bloco em destaque) — pensado para o vendedor consultar durante a call, não só ler uma vez.
+1. `discovery-script-{negocio}.md` com os 6 blocos completos (Passo 1A), o Roteiro por Canal do Passo 1.5 (uma peça de copy pronta por canal real, cada uma com a técnica/autor que a embasa e, se aplicável, qual clone de copywriter escreveu), a nota de auditoria do Passo 1.6 (o que foi encontrado e corrigido, ou confirmação de que nada foi encontrado) e, se houver, a análise de refino em cima de calls reais (Passo 1B) com recomendações específicas por bloco. Feche com o handoff: *"Este script alimenta a Skill 5 (/playbook-vendas-vivo) — as objeções que aparecerem durante o discovery viram o primeiro lote de entradas do playbook de objeções."*
+2. `discovery-script-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com os 6 blocos como cards sequenciais (numerados, com a intenção do bloco em destaque) e o Roteiro por Canal em cards próprios com a técnica/autor visível em cada um, pensado para o vendedor consultar durante a call e copiar/colar as peças escritas, não só ler uma vez. **Todo card de peça escrita (WhatsApp, e-mail, DM) leva um botão "Copiar"** que copia só o texto da mensagem (sem a etiqueta de técnica/autor) pra área de transferência, pronto pra colar direto no canal, mesmo padrão de botão já usado no `GUIA-DO-ALUNO.html`.
 
 **Abra o HTML automaticamente assim que gerar (não deixe só salvo na pasta):** rode um comando de abrir arquivo pro `discovery-script-{negocio}.html` logo depois de criá-lo — `open discovery-script-{negocio}.html` (Mac), `start discovery-script-{negocio}.html` (Windows) ou `xdg-open discovery-script-{negocio}.html` (Linux). Se o comando de abrir falhar (ambiente sem interface gráfica, sandbox restrito, etc.), avise o aluno o caminho exato do arquivo e como abrir manualmente — nunca termine a skill em silêncio sem tentar mostrar o resultado.
 

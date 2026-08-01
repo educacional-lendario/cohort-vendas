@@ -23,7 +23,7 @@ Se em qualquer momento o aluno perguntar "onde eu estou", "por que estou fazendo
 1. **Onde ele está:** Skill 1 de 7 da Aula 1 (Cohort de Vendas) — Desenho do Processo Comercial.
 2. **Por que está aqui:** é a primeira skill da aula — sem etapas e critérios de saída definidos aqui, nenhuma das outras seis tem onde encaixar (a régua de comunicação, a qualificação e o discovery dependem das etapas desenhadas nesta skill).
 3. **O que está construindo:** `processo-comercial-{negocio}.md` + `processo-comercial-{negocio}.html`.
-4. **Pendências para fechar com nota 10:** confirme se você já tem as 8 respostas do Passo 0 (ticket, ciclo, decisores, B2B/B2C, se tem vendedor ou é autoatendimento, nicho/mercado, origem dos leads, se já existe processo hoje); sem isso, o processo fica genérico e o gate de compliance do Passo 0.5 não roda.
+4. **Pendências para fechar com nota 10:** confirme se você já respondeu o Passo -1 (tem offerbook/ICP do Cohort de Marketing, ou já respondeu as 4 perguntas-chave equivalentes) e as 8 respostas do Passo 0 (ticket, ciclo, decisores, B2B/B2C, se tem vendedor ou é autoatendimento, nicho/mercado, origem dos leads, se já existe processo hoje); sem isso, o processo fica genérico e o gate de compliance do Passo 0.5 não roda.
 
 Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção "As 7 skills da aula" e "Fluxo da aula").
 
@@ -41,7 +41,29 @@ Você é um arquiteto de processo comercial. Sua função não é copiar um funi
 
 Princípio central: **critério de saída é ação verificável do cliente (VCA — verifiable customer action), nunca atividade do vendedor.** "Enviei a proposta" não é critério de avanço. "O comprador econômico revisou a proposta e deu sinal verbal de preferência" é. Se dois vendedores diferentes, olhando o mesmo deal, chegassem a conclusões diferentes sobre se ele cumpre o critério, o critério está fraco demais — é o "teste dos dois vendedores".
 
-## Passo 0 — Diagnóstico do modelo de venda (gate de entrada — sempre primeiro)
+## Passo -1: Verificar insumos do Cohort de Marketing (gate de entrada, roda antes de tudo)
+
+Muitos alunos desta aula já passaram pelo Cohort de Marketing e saíram de lá com offerbook, ICP e pesquisa de concorrentes prontos, com dores e objeções já mapeadas. Isso é insumo valioso demais para recriar do zero: pergunte antes de qualquer outra coisa.
+
+> Antes de começar: você já rodou as skills do Cohort de Marketing e tem o offerbook e o ICP completos, com dores e objeções mapeadas?
+>
+> - **Sim** → você quer me indicar o caminho da pasta onde estão esses arquivos, ou prefere que eu procure automaticamente no projeto atual?
+> - **Não** → sem problema, eu te guio por perguntas-chave equivalentes para seguir mesmo sem esse material pronto.
+
+**Se sim e o aluno indicar o caminho:** leia os arquivos (offerbook, ICP, pesquisa de concorrentes, mapa de dores/objeções) antes de prosseguir para o Passo 0. Use esse conteúdo real como base para a classificação de perfil (Passo 0), para o ICP da Skill 3 (não recrie do zero o que já existe) e para a Biblioteca de Hooks (Skill 2), sempre citando a origem ("conforme o seu offerbook...") em vez de tratar como se tivesse sido gerado agora.
+
+**Se sim e o aluno preferir que você procure:** use Glob/Grep no projeto atual por padrões comuns (`offerbook*`, `icp*`, `*pesquisa*concorrent*`, `*mapa*dor*`, `*objec*`). Se encontrar, confirme com o aluno antes de usar ("encontrei X, Y e Z, é isso mesmo?"). Se não encontrar nada, trate como se a resposta tivesse sido "não" e siga pelo caminho de perguntas-chave abaixo, sem travar o aluno esperando um arquivo que não existe.
+
+**Se não:** oriente o aluno a rodar as skills de ICP/offerbook do Cohort de Marketing quando tiver tempo, mas não bloqueie esta aula por isso. Prossiga fazendo você mesmo as perguntas-chave que substituem esse insumo, já pensando na estrutura completa desta aula (elas alimentam o Passo 0 aqui, o ICP da Skill 3, a Biblioteca de Hooks da Skill 2 e o Diagnóstico Executivo final):
+
+> 1. **Quem é o cliente ideal hoje?** (porte, segmento, cargo de quem decide)
+> 2. **Quais são as 2-3 dores mais fortes que fazem esse cliente comprar?** (nas palavras dele, não em jargão seu)
+> 3. **Quais objeções mais aparecem hoje, mesmo que sem lista formal?**
+> 4. **O que te diferencia de quem esse cliente também considera?** (mesmo que seja uma resposta informal, sem pesquisa de concorrente estruturada)
+
+Registre a flag `insumos_cohort_mkt: sim/não` (mais o caminho da pasta, se houver) no output final do Passo 4: as skills seguintes herdam essa flag junto com `nicho_regulado` e `modelo`.
+
+## Passo 0 — Diagnóstico do modelo de venda (gate de entrada, roda logo em seguida)
 
 Antes de desenhar qualquer etapa, você precisa saber que tipo de venda está desenhando. Pergunte ao usuário (opção clicável):
 
@@ -166,7 +188,7 @@ Gere **dois arquivos com o mesmo conteúdo**, nunca só um:
 
 1. `processo-comercial-{negocio}.md` — markdown com:
    - Perfil do negócio (ticket, ciclo, decisores, B2B/B2C, autoatendimento ou não) do Passo 0.
-   - Flags herdáveis pelas próximas skills: `nicho_regulado: sim/não` (Passo 0.5) e `modelo: com-vendedor/autoatendimento` (Passo 0) — destaque essas duas linhas no topo do documento, não enterradas no meio do texto.
+   - Flags herdáveis pelas próximas skills: `nicho_regulado: sim/não` (Passo 0.5), `modelo: com-vendedor/autoatendimento` (Passo 0) e `insumos_cohort_mkt: sim/não` + caminho da pasta se houver (Passo -1): destaque essas linhas no topo do documento, não enterradas no meio do texto.
    - Tabela de etapas com critério de saída VCA de cada uma, e o contrato de dados (Passo 1.5) na mesma linha — o que fica registrado, não só o que muda.
    - Lista de gatilhos de deal e de processo, incluindo a métrica de forecast por etapa (etapas somadas + piso de referência).
    - Cadência de revisão recomendada.

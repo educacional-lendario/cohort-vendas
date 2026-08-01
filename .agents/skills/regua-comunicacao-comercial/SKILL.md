@@ -1,6 +1,6 @@
 ---
 name: regua-comunicacao-comercial
-description: Monta a régua de comunicação por etapa do processo comercial — o que dizer, em qual canal e quando, para cada etapa desenhada na Skill 1. Primeiro define, para cada etapa, quem atua (vendedor humano, automação/IA, ou os dois) e o canal certo (WhatsApp, e-mail, ligação, DM). Segundo constrói o funil de reforço por tempo parado — mensagens que variam de texto conforme os dias sem resposta, nunca repetindo a mesma mensagem. Terceiro ajuda o negócio a nomear e documentar o próprio mecanismo único de conversão: o método ou abordagem distintiva que atravessa todas as etapas e canais, dando consistência de voz ao invés de scripts soltos. Use quando o usuário pedir para montar régua de comunicação, cadência de mensagens por etapa do funil, follow-up estruturado, ou definir quem (humano ou IA) fala com o lead em cada momento do pipeline. Português do Brasil.
+description: Monta a régua de comunicação por etapa do processo comercial — o que dizer, em qual canal e quando, para cada etapa desenhada na Skill 1. Primeiro define, para cada etapa, quem atua (vendedor humano, automação/IA, ou os dois) e o canal certo (WhatsApp, e-mail, ligação, DM). Segundo constrói o funil de reforço por tempo parado — mensagens que variam de texto conforme os dias sem resposta, nunca repetindo a mesma mensagem. Terceiro pesquisa canais do nicho ainda não explorados pelo negócio, com base em concorrentes reais, nunca por completude. Quarto ajuda o negócio a nomear e documentar o próprio mecanismo único de conversão: o método ou abordagem distintiva que atravessa todas as etapas e canais, dando consistência de voz ao invés de scripts soltos. Use quando o usuário pedir para montar régua de comunicação, cadência de mensagens por etapa do funil, follow-up estruturado, pesquisar novos canais de venda, ou definir quem (humano ou IA) fala com o lead em cada momento do pipeline. Português do Brasil.
 user_invocable: true
 ---
 
@@ -108,6 +108,30 @@ Alerte o usuário: régua de mensagens não é fim de linha quando esgota. Lead 
 
 **Regra de retorno (vale pra qualquer negócio):** se o lead responder, clicar ou agendar em qualquer ponto da nutrição, o funil reabre na etapa de reconexão com o **mesmo dono original** do deal — nunca cai pra um vendedor aleatório, e nunca "recomeça do zero" perdendo o histórico.
 
+## Passo 2.5 — Pesquisa de canais ainda não explorados (baseada em concorrentes e nicho)
+
+Depois de fechar a régua nos canais que o negócio já usa (Passo 0-2), pesquise se existem canais relevantes pro nicho que o negócio ainda não explora. O objetivo não é empurrar canal novo por empurrar, é mostrar ao aluno uma lacuna real, com evidência, para ele decidir se vale investigar.
+
+**Regra de ouro desta etapa: nenhum canal entra na lista sem justificativa baseada em dado, nunca por completude.** Se você não consegue justificar com um dado concreto (presença de concorrente, comportamento típico do nicho), não sugira o canal.
+
+Passos da pesquisa:
+
+1. **Pergunte por 2-3 concorrentes diretos** (se o usuário já tiver nomeado algum na Skill 1 ou souber de cabeça). Se ele não souber, ofereça pesquisar por conta própria a partir do nicho e da região informados.
+2. **Verifique presença digital básica dos concorrentes e do próprio negócio**, com o que estiver disponível (WebSearch, ou pergunte diretamente ao usuário se não tiver acesso a busca):
+   - **Google Meu Negócio / Perfil da Empresa no Google**: o negócio do aluno tem perfil reclamado, com avaliações? Os concorrentes têm? Nicho local (clínica, loja física, prestador de serviço com endereço) sem isso está perdendo busca de intenção alta ("perto de mim").
+   - **Redes sociais que o nicho realmente usa**: LinkedIn pesa mais em B2B/serviço profissional; Instagram e TikTok pesam mais em nicho de consumo, estética, educação; YouTube pesa em nicho que depende de explicar algo complexo. Não generalize "toda empresa precisa de todas as redes" — identifique o que o nicho especificamente usa, com base no que os concorrentes fazem de verdade (não o que eles deveriam fazer).
+   - **Outros canais específicos do nicho**, se existirem (ex.: marketplaces verticais, diretórios profissionais, grupos de WhatsApp/Telegram do setor, associações de classe).
+3. **Monte o Mapa de Canais a Explorar:**
+
+| Canal | O negócio já usa? | Concorrentes usam? | Justificativa | Prioridade |
+|---|---|---|---|---|
+| (exemplo) Google Meu Negócio | Não | 3 de 4 concorrentes pesquisados têm perfil ativo com avaliações | Nicho local, busca de alta intenção ("perto de mim") sem isso não converte | Alta |
+| (exemplo) TikTok | Não | Nenhum concorrente relevante usa | Sem evidência de que o público do nicho está lá | Não recomendado agora |
+
+4. **Para cada canal com prioridade Alta ou Média, monte uma mini régua** (mais enxuta que a régua principal dos Passos 1-2): objetivo do canal, tom, e uma cadência inicial de 2-3 toques para testar, sem se comprometer com a régua completa até validar que o canal converte.
+
+Se o usuário não tiver como fornecer concorrentes nem acesso a pesquisa, não invente concorrência fictícia: registre a lacuna ("pesquisa de canais pendente, precisa de nomes de concorrentes ou acesso a busca") e siga em frente sem essa etapa, avisando que ela fica pendente para quando houver dado disponível.
+
 ## Passo 3 — Nomear o mecanismo único de conversão
 
 Esta é a etapa que dá identidade à régua inteira. Pergunte ao usuário:
@@ -133,7 +157,7 @@ Feche com as regras que atravessam todas as etapas:
 
 Gere **dois arquivos com o mesmo conteúdo**:
 
-1. `regua-comunicacao-{negocio}.md` com: quem atua por etapa (Passo 1), a régua de mensagens completa com funil de reforço por tempo parado (Passo 2), o mecanismo único de conversão nomeado e documentado (Passo 3), e as regras transversais (Passo 4). Feche com o handoff: *"Esta régua alimenta a Skill 4 (/discovery-script), que usa o canal e o tom definidos aqui para a etapa de discovery, e a Skill 5 (/playbook-vendas-vivo), que usa o mecanismo único para dar consistência às respostas de objeção em qualquer canal."*
+1. `regua-comunicacao-{negocio}.md` com: quem atua por etapa (Passo 1), a régua de mensagens completa com funil de reforço por tempo parado (Passo 2), o Mapa de Canais a Explorar com a justificativa por canal (Passo 2.5, se a pesquisa foi possível), o mecanismo único de conversão nomeado e documentado (Passo 3), e as regras transversais (Passo 4). Feche com o handoff: *"Esta régua alimenta a Skill 4 (/discovery-script), que usa o canal e o tom definidos aqui para a etapa de discovery, e a Skill 5 (/playbook-vendas-vivo), que usa o mecanismo único para dar consistência às respostas de objeção em qualquer canal."*
 2. `regua-comunicacao-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html` (fundo `#0A0A0A`, ouro `#C9B298`), com uma linha do tempo visual por etapa (quem atua, canal, régua de reforço) e o mecanismo único de conversão destacado em card próprio no topo, como a "marca registrada" do negócio.
 
 **Abra o HTML automaticamente assim que gerar (não deixe só salvo na pasta):** rode um comando de abrir arquivo pro `regua-comunicacao-{negocio}.html` logo depois de criá-lo — `open regua-comunicacao-{negocio}.html` (Mac), `start regua-comunicacao-{negocio}.html` (Windows) ou `xdg-open regua-comunicacao-{negocio}.html` (Linux). Se o comando de abrir falhar (ambiente sem interface gráfica, sandbox restrito, etc.), avise o aluno o caminho exato do arquivo e como abrir manualmente — nunca termine a skill em silêncio sem tentar mostrar o resultado.
