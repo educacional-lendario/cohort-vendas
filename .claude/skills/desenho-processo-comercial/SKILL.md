@@ -73,10 +73,19 @@ Antes de desenhar qualquer etapa, você precisa saber que tipo de venda está de
 > 2. **Ciclo de venda** — quanto tempo leva do primeiro contato até fechar? (ex.: mesmo dia, 2 semanas, 4 meses)
 > 3. **Quantos decisores** normalmente participam da compra? (1 pessoa decide sozinha / 2-3 pessoas / comitê de 5+)
 > 4. **B2B ou B2C** — vende para empresa ou para pessoa física?
-> 5. **Existe vendedor no meio, ou é autoatendimento?** — alguém conversa com o cliente antes da compra, ou é tudo self-service (anúncio → página → checkout, sem humano envolvido)?
+> 5. **Existe vendedor no meio, ou é autoatendimento?** — escolha entre três, não duas:
+>    - **a) Zero-toque puro** — anúncio → página → checkout. Nenhum humano em lugar nenhum.
+>    - **b) Zero-toque com humano só na recuperação** — a venda é self-service, mas alguém responde no WhatsApp/e-mail quem abandonou o carrinho, teve cartão recusado ou não pagou o boleto.
+>    - **c) Tem vendedor / closer** — alguém conversa com o lead **antes** dele decidir, e essa conversa influencia a compra.
 > 6. **Qual o seu nicho/mercado?** — preciso saber se é um nicho regulado (saúde, estética, finanças/investimento, jurídico, psicologia) antes de desenhar qualquer coisa.
 > 7. **De onde vêm seus leads hoje?** — indicação/boca a boca, marketing (inbound, anúncio, conteúdo), ou prospecção ativa (você ou o time vai atrás)? (classificação Seeds/Nets/Spears de Aaron Ross — cada fonte tem volume e qualidade diferentes, e isso muda o desenho da primeira etapa)
 > 8. **Você já tem um processo hoje** (mesmo que informal) ou está desenhando do zero?
+
+**Como resolver a resposta (b), o caso do meio:** olhe **onde a decisão acontece**, não se algum humano digita em algum momento. Se a conversa humana só existe **depois** que o cliente já decidiu não comprar (recuperação de carrinho, cartão recusado, boleto não pago), o modelo é `autoatendimento` — o cliente percorreu o funil sozinho e travou no pagamento; ninguém o convenceu, o funil convenceu. Se a conversa humana acontece **antes** da decisão e influencia a compra (DM, call, negociação), o modelo é `com-vendedor`, mesmo que seja o próprio dono vendendo.
+
+Consequência prática de (b): `modelo: autoatendimento` para todo o desenho do funil, **mais** uma anotação explícita no output de que existe um ponto humano de recuperação — a Skill 2 (`/regua-comunicacao-comercial`) usa isso para marcar "quem atua = ambos" só naquele ponto da régua, e "automação" no resto. Registre no output como `modelo: autoatendimento (com recuperação humana)`.
+
+⚠️ **O erro caro é classificar como "tem vendedor" só porque existe um WhatsApp em algum lugar.** Aí você desenha funil consultivo com discovery e proposta para um produto de checkout direto — etapas que nunca vão acontecer.
 
 Classifique o negócio numa das faixas abaixo (adaptado do squad de vendas interno, que cobre 7 nichos recorrentes):
 
@@ -188,7 +197,7 @@ Gere **dois arquivos com o mesmo conteúdo**, nunca só um:
 
 1. `processo-comercial-{negocio}.md` — markdown com:
    - Perfil do negócio (ticket, ciclo, decisores, B2B/B2C, autoatendimento ou não) do Passo 0.
-   - Flags herdáveis pelas próximas skills: `nicho_regulado: sim/não` (Passo 0.5), `modelo: com-vendedor/autoatendimento` (Passo 0) e `insumos_cohort_mkt: sim/não` + caminho da pasta se houver (Passo -1): destaque essas linhas no topo do documento, não enterradas no meio do texto.
+   - Flags herdáveis pelas próximas skills: `nicho_regulado: sim/não` (Passo 0.5), `modelo: com-vendedor/autoatendimento` — acrescentando `(com recuperação humana)` se a resposta da pergunta 5 foi a (b) — (Passo 0) e `insumos_cohort_mkt: sim/não` + caminho da pasta se houver (Passo -1): destaque essas linhas no topo do documento, não enterradas no meio do texto.
    - Tabela de etapas com critério de saída VCA de cada uma, e o contrato de dados (Passo 1.5) na mesma linha — o que fica registrado, não só o que muda.
    - Lista de gatilhos de deal e de processo, incluindo a métrica de forecast por etapa (etapas somadas + piso de referência).
    - Cadência de revisão recomendada.

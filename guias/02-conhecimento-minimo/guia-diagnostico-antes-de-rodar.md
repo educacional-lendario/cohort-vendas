@@ -99,7 +99,7 @@ Escolha: `1 pessoa decide sozinha` · `2-3 pessoas` · `comitê de 5+`.
 
 ⚠️ **Esta resposta muda a aula inteira.** Se for autoatendimento, as etapas viram toques digitais (visitou → engajou → iniciou compra → comprou → ativou), os gatilhos viram abandono de carrinho, e a Skill 4 (Discovery) vai te avisar que não se aplica e mandar pular pra Skill 5.
 
-**Na prática a skill costuma oferecer três caminhos, não dois:**
+**A skill oferece três caminhos, não dois:**
 
 | Opção | Como é | Vira que modelo |
 |---|---|---|
@@ -119,7 +119,7 @@ Escolha: `1 pessoa decide sozinha` · `2-3 pessoas` · `comitê de 5+`.
 
 WhatsApp de carrinho abandonado **não é conversa de venda**: é alavanca de recuperação. O cliente percorreu o funil sozinho, decidiu sozinho, e travou no pagamento. Ninguém o convenceu — o funil convenceu.
 
-**A consequência prática de responder a opção do meio:** o modelo continua `autoatendimento` para o desenho do funil, e a **Skill 2** ganha uma linha humana só no ponto de recuperação ("quem atua = ambos" ali, "automação" no resto da régua).
+**A consequência prática de responder a opção do meio:** a Skill 1 registra a flag como `modelo: autoatendimento (com recuperação humana)` — o funil é desenhado como autoatendimento, e a **Skill 2** ganha uma linha humana só no ponto de recuperação ("quem atua = ambos" ali, "automação" no resto da régua).
 
 ⚠️ **O erro caro é responder "tem vendedor" só porque existe um WhatsApp em algum lugar.** Aí a skill desenha funil consultivo com discovery e proposta para um produto de checkout direto — etapas que nunca vão acontecer.
 

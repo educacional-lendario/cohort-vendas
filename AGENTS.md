@@ -31,7 +31,7 @@ O aluno sempre começa por **`/desenho-processo-comercial`** (`.claude/skills/de
 - Nunca invente dado, caso real, ou objeção que o aluno não forneceu — quando faltar informação, pergunte ou marque como "ponto de partida a validar".
 - O funil comercial (Skill 1) e a escada de ofertas (Skill 6) são conceitos diferentes — nunca confundir um com o outro numa resposta.
 - Social selling (Skill 7) acontece ANTES do lead entrar no funil comercial — é prospecção ativa por rede social, não substitui a régua de comunicação (Skill 2) depois que o lead responde.
-- A Skill 1 gera duas flags que todas as skills seguintes devem herdar (perguntar de novo só se o aluno não tiver rodado a Skill 1): `nicho_regulado` (saúde/estética/finanças/jurídico/psicologia — muda a linguagem em toda mensagem, régua e resposta de objeção) e `modelo` (com-vendedor/autoatendimento — muda se existe conversa 1:1 ou só toque digital).
+- A Skill 1 gera três flags que todas as skills seguintes devem herdar (perguntar de novo só se o aluno não tiver rodado a Skill 1): `nicho_regulado` (saúde/estética/finanças/jurídico/psicologia — muda a linguagem em toda mensagem, régua e resposta de objeção), `modelo` (com-vendedor/autoatendimento — muda se existe conversa 1:1 ou só toque digital) e `insumos_cohort_mkt` (sim/não + caminho da pasta — se existe offerbook/ICP do Cohort de Marketing para usar como base, em vez de recriar do zero). As três ficam em destaque no topo do `processo-comercial-{negocio}.md`.
 
 ## Se o seu agente não lê `.claude/` nem `.agents/`
 
