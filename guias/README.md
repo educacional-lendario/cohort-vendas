@@ -22,7 +22,7 @@
 |---|---|
 | **Nunca abri um terminal na vida. Pasta? Caminho? `cd`?** | [01/guia-terminal-e-pastas.md](01-pre-requisitos/guia-terminal-e-pastas.md) (erros W1–W7) |
 | **Claude Code, Claude Desktop, Codex… qual eu instalo?** | [01/guia-instalar-e-escolher-ferramenta.md](01-pre-requisitos/guia-instalar-e-escolher-ferramenta.md) (erros N1–N11) |
-| **Baixar o projeto, ou botar as skills num projeto que já tenho** | [01/guia-baixar-e-abrir-o-projeto.md](01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md) (erros R1–R8) |
+| **Baixar o projeto, ou botar as skills num projeto que já tenho** | [01/guia-baixar-e-abrir-o-projeto.md](01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md) (erros R1–R9) |
 | **Digitei `/desenho-processo-comercial` e apareceu "No commands match"** | [01/guia-baixar-e-abrir-o-projeto.md](01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md) — erro `R6` |
 | **Quanto isso custa? Vou ser cobrado? Qual modelo eu uso?** | [01/guia-modelo-e-custo.md](01-pre-requisitos/guia-modelo-e-custo.md) (erros Q1–Q7) |
 | **Apareceu "API Error" / a skill parou no meio** | [01/guia-modelo-e-custo.md](01-pre-requisitos/guia-modelo-e-custo.md) — erros `Q4` e `Q5` |
@@ -87,6 +87,6 @@
 05 → pôr em prática · cards parados · onboarding · métricas
 ```
 
-**Com pressa?** O mínimo pra rodar a aula hoje são três: [baixar-e-abrir-o-projeto](01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md), [diagnostico-antes-de-rodar](02-conhecimento-minimo/guia-diagnostico-antes-de-rodar.md) e [as-7-skills](04-operacao/guia-mapa-das-skills.md).
+**Com pressa?** O mínimo pra rodar a aula hoje são três: [baixar-e-abrir-o-projeto](01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md), [diagnostico-antes-de-rodar](02-conhecimento-minimo/guia-diagnostico-antes-de-rodar.md) e [mapa-das-skills](04-operacao/guia-mapa-das-skills.md).
 
 **Já rodou as skills e quer operar?** Vá direto pra área [05-depois](05-depois/).

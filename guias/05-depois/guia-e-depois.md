@@ -92,13 +92,15 @@ O mapa que a Skill 2 já entregou dentro da sua régua (a coluna "quem atua"):
 
 O `docs/workflow.md` é explícito sobre o que **não** é da Aula 1:
 
+⚠️ **Se você comparar com o `docs/workflow.md`, vai achar uma divergência:** lá a automação aparece como Aula 4. A tabela abaixo segue o que a professora disse ao vivo na Aula 1 — automação é a Aula 3, com o Adávio; a Aula 4, com o Marcondes, é proposta e fechamento. Vale a fala da aula.
+
 | Assunto | Aula | Professor |
 |---|---|---|
 | Configurar CRM, integrar ferramentas, higienizar pipeline | **Aula 2** | Bruno |
-| Cadência de prospecção outbound fria, FUPs, SDR | **Aula 3** | Adávio |
-| Automação e fechamento com IA | **Aula 4** | Marcondes |
+| Cadência de prospecção outbound fria, FUPs, SDR **e automação** | **Aula 3** | Adávio |
+| Proposta e fechamento | **Aula 4** | Marcondes |
 
-Da aula: *"vocês podem sentir falta — ah, mas eu queria automatizar mais. Então, só pra deixar vocês mais calmos: vai ser [na Aula 3]."*
+Da aula, sobre automação: *"vocês podem sentir falta — ah, mas eu queria automatizar mais. Então, só pra deixar vocês mais calmos: vai ser [na aula três]."* E, sobre o fechamento: *"na aula quatro, o Marcondes vai trazer inclusive essa parte de proposta de fechamento."*
 
 ## Quando rodar as skills de novo
 
@@ -187,7 +189,7 @@ Responda com honestidade:
 |---|---|---|---|
 | DP1 | Os documentos estão lindos e ninguém usa | Faltou dono e faltou o processo estar onde o trabalho acontece | 1) nomeie donos (Passo 1) 2) leve as etapas pra planilha/quadro (Passo 2) 3) mande os HTMLs pro time |
 | DP2 | Quero automatizar tudo já | Ansiedade natural, e o erro mais caro da aula | rode o protocolo de validação humana primeiro (10-15 casos). Automação é Aula 3. *"A chance de dar ruim é muito grande, e de você gastar muitos dinheiros"* |
-| DP3 | O vendedor não segue o processo | Rigor mal calibrado, e quase nunca é falta de disciplina — é atrito | 1) confira se cada campo exigido realmente muda o comportamento dele: *"só exigir informação que muda o comportamento do vendedor ou a qualidade do forecast"* 2) corte o que é burocracia 3) mostre o que ele **ganha** ao preencher, não o que a gestão ganha 4) veja a seção "por que processo documentado não pega" abaixo |
+| DP3 | O vendedor não segue o processo | Rigor mal calibrado, e quase nunca é falta de disciplina — é atrito | 1) confira se cada campo exigido realmente muda o comportamento dele: *"só exigir informação que muda o comportamento do vendedor ou a qualidade do forecast"* 2) corte o que é burocracia 3) mostre o que ele **ganha** ao preencher, não o que a gestão ganha 4) releia a seção "por que processo documentado não pega" deste guia |
 | DP4 | O forecast não bate com a realidade | Cards sem valor preenchido, ou critério de saída frouxo deixando deal avançar cedo demais | 1) exija valor em todo card das etapas finais 2) reaudite os critérios com o teste dos dois vendedores ([guia-revisar-e-corrigir.md](../04-operacao/guia-revisar-e-corrigir.md)) |
 | DP5 | Os deals ficam parados e ninguém percebe | Os gatilhos existem no documento mas não em lugar nenhum operacional | crie um lembrete semanal simples: *"quais cards não se moveram há 7 dias?"*. Não precisa de automação pra isso |
 | DP6 | O playbook ficou desatualizado em 3 meses | É o destino de todo playbook sem cadência | agende a revisão trimestral **agora**, no calendário, com o dono nomeado. *"Um playbook estático é pior que não ter playbook: passa segurança falsa"* |

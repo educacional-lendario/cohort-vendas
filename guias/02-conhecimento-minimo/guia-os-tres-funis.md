@@ -76,11 +76,11 @@ Degrau 2 — Completo
 Degrau 1 — Básico (porta de entrada)
 ```
 
-E aí vem a conexão que confunde todo mundo — direto do `SKILL.md` da Skill 6:
+E aí vem a conexão que confunde todo mundo. O `SKILL.md` da Skill 6 fecha com ela (Passo 4, "Conectar de volta ao funil comercial"):
 
-> Um lead entra pelo **Degrau 1**. Isso abre **um deal** no funil comercial. Seis meses depois ele quer subir pro **Degrau 2**: isso abre **um deal novo** no funil comercial, do mesmo cliente.
->
-> **Dois deals diferentes, na mesma jornada de escada.**
+> *"Um lead pode entrar pelo Degrau 1 e, meses depois, abrir um novo deal no funil comercial para o Degrau 2 — são deals diferentes, na mesma jornada de escada."*
+
+Em outras palavras: entrar no Degrau 1 abre **um deal**. Querer subir pro Degrau 2 abre **outro deal**, do mesmo cliente. **Dois deals diferentes, uma escada só.**
 
 Exemplo real da aula, sobre um CRM vendido pra indústrias:
 

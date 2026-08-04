@@ -147,4 +147,4 @@ Tem que sair um número de versão, tipo `2.x.x`. Se sair "comando não encontra
 |---|---|
 | ▶️ Fazer | com a ferramenta instalada, baixe o projeto |
 | 📖 Ler | [guia-baixar-e-abrir-o-projeto.md](guia-baixar-e-abrir-o-projeto.md) — `git clone`, abrir na pasta certa e rodar a primeira skill |
-| 🚑 Se travar | o catálogo N1–N7 acima; se for "não achou a skill", vá direto pro `R6` do próximo guia |
+| 🚑 Se travar | o catálogo N1–N11 acima; se for "não achou a skill", vá direto pro `R6` do próximo guia |

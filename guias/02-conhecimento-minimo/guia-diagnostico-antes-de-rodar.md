@@ -202,4 +202,4 @@ Depois de rodar a Skill 1, tem um segundo teste: abra o `processo-comercial-{seu
 |---|---|
 | ▶️ Fazer | rode `/desenho-processo-comercial` com o rascunho ao lado |
 | 📖 Ler | se você fez o Cohort de Marketing: [guia-offerbook-do-marketing.md](../03-insumos/guia-offerbook-do-marketing.md) antes de rodar · se não: [guia-mapa-das-skills.md](../04-operacao/guia-mapa-das-skills.md) |
-| 🚑 Se travar | o catálogo DG1–DG8 acima |
+| 🚑 Se travar | o catálogo DG1–DG9 acima |

@@ -95,7 +95,7 @@
 | **O que faz** | Desenha a jornada de ascensão entre os seus **produtos** — nível de portfólio, não de pipeline |
 | **O que pergunta** | Primeira coisa: *"vocês têm mais de uma oferta/produto, em faixas de preço ou complexidade diferentes?"* |
 | **O que entrega** | `escada-de-ofertas-{negocio}.md` + `.html` — degraus com "pra quem é" e "o que entrega", critério de prontidão por degrau, o **erro comum** de cada degrau, e o discurso de ascensão |
-| **Tempo** | ~30 min |
+| **Tempo** | mais curta que as do fluxo principal (as bônus não estão cronometradas no `docs/workflow.md`; na prática, cerca de metade) |
 | **Pular?** | **Sim, se você só tem um produto.** A skill se recusa a inventar uma escada artificial — e isso é o comportamento certo |
 
 ### Skill 7 — `/social-selling-comercial` (bônus)
@@ -105,7 +105,7 @@
 | **O que faz** | Monta a sequência de prospecção pela rede social — o que acontece **antes** do lead entrar no funil comercial |
 | **O que pergunta** | Qual rede é o canal principal (LinkedIn / Instagram-TikTok / os dois / nenhuma ainda) · se você já tem abordagem em uso |
 | **O que entrega** | `social-selling-{negocio}.md` + `.html` — checkpoint de prontidão, sequência de 5 toques em ~2 semanas (LinkedIn) e/ou o funil de DM (Instagram), regras de compliance, e a conexão de volta ao funil comercial |
-| **Tempo** | ~30 min |
+| **Tempo** | mais curta que as do fluxo principal (mesma ressalva da Skill 6: as bônus não estão cronometradas) |
 | **Pular?** | **Sim, em dois casos** — veja abaixo |
 
 ## Quando PULAR uma skill (as 4 situações reais)

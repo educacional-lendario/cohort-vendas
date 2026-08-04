@@ -45,7 +45,7 @@ Os números de referência do mercado:
 **Como controlar isso na prática, sem cronômetro:**
 
 - Depois de cada pergunta, **conte até três em silêncio** antes de falar de novo. O silêncio é desconfortável pra você e produtivo pra ele.
-- Se você se ouvir explicando o produto antes do bloco 6, pare. Ainda não é hora.
+- Se você se ouvir explicando o produto antes de ter passado pelos blocos de dor (3, 4 e 5), pare. Ainda não é hora.
 - Se a call foi gravada, a Skill 4 te diz isso sem dó — veja [guia-insumos-reais.md](../03-insumos/guia-insumos-reais.md).
 
 ## 3. As palavras do cliente (e o que fazer com elas)
@@ -141,7 +141,7 @@ Ao sair da próxima reunião, responda estas cinco:
 
 | # | Sintoma | Causa provável | O que fazer (em ordem) |
 |---|---|---|---|
-| CV1 | A reunião virou apresentação do produto | Você pulou pro bloco 6 cedo demais | 1) volte pro bloco 3: *"antes de eu te mostrar, me conta onde isso trava hoje"* 2) na próxima, não abra slide antes do bloco 5 |
+| CV1 | A reunião virou apresentação do produto | Você saiu do roteiro cedo demais — o script tem blocos de descoberta (1 a 5) e um de fechamento parcial (6); apresentar produto não é nenhum deles | 1) volte pro bloco 3: *"antes de eu te mostrar, me conta onde isso trava hoje"* 2) na próxima, não abra slide antes de ter passado pelo bloco 5 (o nível pessoal da dor) |
 | CV2 | Saí da call sem nenhum número | Faltou o bloco 4, ou você aceitou o sintoma | force a quantificação: *"hoje, em números, onde vocês estão?"*. Sem número, a objeção de preço depois não tem contra-argumento |
 | CV3 | O cliente respondeu tudo com monossílabo | Perguntas fechadas demais, ou você não deu silêncio | 1) troque "vocês têm problema com X?" por "como funciona X hoje?" 2) conte até três antes de preencher o silêncio |
 | CV4 | Falei 80% do tempo e nem percebi | Padrão mais comum, e o mais caro — acima de 65% a conversão cai | 1) grave a próxima e confira 2) transforme afirmação em pergunta: em vez de "isso resolve seu problema", pergunte "isso resolveria o que você descreveu?" |

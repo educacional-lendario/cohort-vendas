@@ -46,13 +46,17 @@
    pwd
    ls
    ```
-   O `pwd` tem que terminar em `cohort-vendas`, e o `ls` tem que mostrar `README.md`, `AGENTS.md`, `GUIA-DO-ALUNO.html`, `docs`, `templates`, `exemplos`.
+   O `pwd` tem que terminar em `cohort-vendas`, e o `ls` tem que mostrar `README.md`, `AGENTS.md`, `GUIA-DO-ALUNO.html`, `guias`, `docs`, `templates`, `exemplos`.
 
 Vá para o **Passo 2**.
 
 ## Passo 1B — Já tenho um projeto, quero só as skills dentro dele
 
-Não clone o repositório inteiro por cima do seu projeto. Clone numa pasta temporária, copie só as skills, e apague a temporária:
+Não clone o repositório inteiro por cima do seu projeto. Clone numa pasta temporária, copie só as skills, e apague a temporária.
+
+⚠️ **Os comandos são diferentes no Windows e no Mac/Linux.** Use o bloco da sua máquina — copiar o bloco errado é o erro `R9` do catálogo.
+
+**Mac / Linux (Terminal), ou Windows com Git Bash:**
 
 ```bash
 cd /caminho/do/seu/projeto
@@ -62,6 +66,19 @@ cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/
 cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/
 rm -rf /tmp/cohort-vendas-temp
 ```
+
+**Windows (PowerShell)** — mesma sequência, comandos do sistema:
+
+```powershell
+cd C:\caminho\do\seu\projeto
+git clone https://github.com/marketingLendario/cohort-vendas.git $env:TEMP\cohort-vendas-temp
+New-Item -ItemType Directory -Force .claude\skills, .agents\skills
+Copy-Item "$env:TEMP\cohort-vendas-temp\.claude\skills\*" .claude\skills\ -Recurse -Force
+Copy-Item "$env:TEMP\cohort-vendas-temp\.agents\skills\*" .agents\skills\ -Recurse -Force
+Remove-Item "$env:TEMP\cohort-vendas-temp" -Recurse -Force
+```
+
+> `$env:TEMP` é a pasta temporária do seu usuário no Windows — o equivalente do `/tmp` do Mac/Linux. Você não precisa saber o caminho dela; o PowerShell resolve sozinho.
 
 ⚠️ **Se você já tiver uma skill com o mesmo nome de alguma das 7, o comando sobrescreve só ela.** Revise antes se isso for um problema.
 
@@ -145,6 +162,7 @@ Com a ferramenta aberta, digite `/desenho-processo-comercial` e aperte Enter.
 | R6 | `No commands match` / "Unknown skill" ao digitar `/desenho-processo-comercial` | **Causa quase certa:** a ferramenta foi aberta um nível acima da pasta certa | 1) saia da ferramenta 2) rode `ls .claude/skills` — se der erro, falta o `cd` 3) `cd cohort-vendas` (ou a pasta do seu projeto) 4) confira o `ls` de novo 5) abra a ferramenta e tente outra vez 6) se as 7 pastas aparecem no `ls` e mesmo assim não funciona, digite o nome completo e aperte Enter mesmo sem autocompletar ([issue conhecida](https://github.com/anthropics/claude-code/issues/58556)) 7) atualize a ferramenta pra última versão |
 | R7 | Clonei dentro da pasta errada (ex.: na raiz do disco, ou dentro de outro projeto) | Faltou o `pwd` antes do clone | 1) `cd` até onde ela foi parar 2) mova a pasta pelo Explorador/Finder pro lugar certo 3) ou simplesmente apague e refaça o Passo 1A com o `pwd` antes |
 | R8 | Copiei as skills pro meu projeto (Cenário 2) mas o Codex não as encontra | O `AGENTS.md` do repo não foi copiado, ou seu `AGENTS.md` foi sobrescrito | copie o `AGENTS.md` deste repo e cole o conteúdo **no final** do seu, sem apagar o que já estava lá |
+| R9 | No Passo 1B o PowerShell reclamou: `mkdir : Não é possível localizar um parâmetro` / `cp` ou `rm` não reconhecido / `/tmp` não existe | Você colou o bloco de Mac/Linux dentro do PowerShell | use o **bloco PowerShell** do Passo 1B (`New-Item`, `Copy-Item`, `Remove-Item`, `$env:TEMP`). Se preferir os comandos de Mac/Linux no Windows, rode-os dentro do **Git Bash** (instalado junto com o [Git for Windows](https://git-scm.com/downloads/win)), não no PowerShell |
 
 **Se nada resolver:** print da tela inteira (terminal com o comando e a resposta) no grupo do cohort, ou cole numa conversa com a IA: *"estou tentando rodar a skill e aparece isto: [print]. Me guie passo a passo a partir daqui."*
 
@@ -152,6 +170,7 @@ Com a ferramenta aberta, digite `/desenho-processo-comercial` e aperte Enter.
 
 | Agora | O quê |
 |---|---|
-| ▶️ Fazer | rode `/desenho-processo-comercial` — mas antes, prepare as respostas |
-| 📖 Ler | [guia-diagnostico-antes-de-rodar.md](../02-conhecimento-minimo/guia-diagnostico-antes-de-rodar.md) — as 8 perguntas que a Skill 1 vai fazer · e [guia-mapa-das-skills.md](../04-operacao/guia-mapa-das-skills.md) pro mapa da aula inteira |
-| 🚑 Se travar | o catálogo R1–R8 acima |
+| ▶️ Fazer | rode `/desenho-processo-comercial` — mas antes, escolha o modelo e prepare as respostas |
+| 📖 Ler | [guia-modelo-e-custo.md](guia-modelo-e-custo.md) — qual modelo usar em cada etapa e o que gasta (leia **antes** de rodar a primeira skill) |
+| 📖 Ler | depois: [guia-diagnostico-antes-de-rodar.md](../02-conhecimento-minimo/guia-diagnostico-antes-de-rodar.md) — as 8 perguntas que a Skill 1 vai fazer · e [guia-mapa-das-skills.md](../04-operacao/guia-mapa-das-skills.md) pro mapa da aula inteira |
+| 🚑 Se travar | o catálogo R1–R9 acima |
