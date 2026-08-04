@@ -35,3 +35,14 @@ yarn-error.log*
 .env
 .env.local
 secrets.json
+
+# Material interno de autoria (esteira de guias, transcricoes, rascunhos) — nunca vai pro repo do aluno
+_interno/
+
+# AIOX cockpit-integration (conductor file-protocol + state) — managed
+.sdc-decision/
+.sdc-resolution/
+.sdc-inbox/
+.sdc-ack/
+.sdc-status/
+.aiox/

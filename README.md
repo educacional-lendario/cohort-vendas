@@ -54,7 +54,7 @@ Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes p
 | Challenger Sale (Dixon & Adamson) | Commercial Teaching | Discovery Script, Playbook de Objeções |
 | Juliano Torriani | Social Selling 2.0 (funil de DM sem tráfego pago) | Social Selling |
 
-Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale e Juliano Torriani entram aqui como reforço pontual — a aplicação mais profunda de prospecção e cadência é na **Aula 3 (FUPs, Cadência e SDR, com Adavio)**.
+Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale e Juliano Torriani entram aqui como reforço pontual — a aplicação mais profunda de prospecção e cadência é na **Aula 3 (FUPs, Cadência, SDR e Automação, com Adavio)**.
 
 ---
 
@@ -241,8 +241,8 @@ VOCÊ
  |
  +-- AULA 1: Processo Comercial & Playbook com IA     <- você está aqui
  +-- AULA 2: CRM, Integrações e Gestão de Pipeline    próxima
- +-- AULA 3: FUPs, Cadência e SDR                     depois
- +-- AULA 4: Automação e Fechamento com IA            final
+ +-- AULA 3: FUPs, Cadência, SDR e Automação          depois
+ +-- AULA 4: Proposta e Fechamento                    final
 ```
 
 ---

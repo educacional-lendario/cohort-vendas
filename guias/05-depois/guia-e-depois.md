@@ -92,8 +92,6 @@ O mapa que a Skill 2 já entregou dentro da sua régua (a coluna "quem atua"):
 
 O `docs/workflow.md` é explícito sobre o que **não** é da Aula 1:
 
-⚠️ **Se você comparar com o `docs/workflow.md`, vai achar uma divergência:** lá a automação aparece como Aula 4. A tabela abaixo segue o que a professora disse ao vivo na Aula 1 — automação é a Aula 3, com o Adávio; a Aula 4, com o Marcondes, é proposta e fechamento. Vale a fala da aula.
-
 | Assunto | Aula | Professor |
 |---|---|---|
 | Configurar CRM, integrar ferramentas, higienizar pipeline | **Aula 2** | Bruno |
