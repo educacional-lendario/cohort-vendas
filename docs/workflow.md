@@ -20,9 +20,9 @@ VOCE
  |    +-- /escada-de-ofertas (bonus)      (jornada entre produtos — funil de vendas, nao comercial)
  |    +-- /social-selling-comercial (bonus) (prospeccao por LinkedIn/Instagram, antes do funil comercial)
  |
- +-- AULA 2: CRM, Integracoes e Pipeline  (Bruno — proxima)
- +-- AULA 3: FUPs, Cadencia e SDR         (Adavio)
- +-- AULA 4: Automacao e Fechamento       (Marcondes)
+ +-- AULA 2: CRM, Integracoes e Pipeline    (Bruno — proxima)
+ +-- AULA 3: FUPs, Cadencia, SDR e Automacao (Adavio)
+ +-- AULA 4: Proposta e Fechamento          (Marcondes)
 ```
 
 ## Dois funis, dois níveis — não confundir
@@ -137,7 +137,7 @@ As 7 skills desta aula não reinventam frameworks de venda do zero — elas trad
 
 Fluxo consultivo completo de referência (do squad): `@sales-chief *diagnose` → `neil-rackham *spin-discovery` → `keenan *gap-analysis` → `david-sandler *pain-funnel` → `chris-voss *negotiate` → `david-sandler *sandler-close`.
 
-**As 9 mentes citadas nas 7 skills desta aula** (ver seção "Mentes por trás desta skill" em cada `SKILL.md`): Neil Rackham (SPIN), David Sandler (Pain Funnel + Sandler Close), Keenan (Gap Selling), Chris Voss (Empatia Tática), Chet Holmes (Dream 100 + Stadium Pitch), Jeb Blount (Fanatical Prospecting + Objections), Aaron Ross (Predictable Revenue + Seeds/Nets/Spears), Challenger Sale — Dixon & Adamson (Commercial Teaching), Juliano Torriani (Social Selling 2.0). Os 5 últimos são Tier 2-3 do squad ou origem de mercado e ficam mais a fundo na **Aula 3 (FUPs, Cadência e SDR, com Adavio)** — aqui entram como reforço pontual, não como técnica central.
+**As 9 mentes citadas nas 7 skills desta aula** (ver seção "Mentes por trás desta skill" em cada `SKILL.md`): Neil Rackham (SPIN), David Sandler (Pain Funnel + Sandler Close), Keenan (Gap Selling), Chris Voss (Empatia Tática), Chet Holmes (Dream 100 + Stadium Pitch), Jeb Blount (Fanatical Prospecting + Objections), Aaron Ross (Predictable Revenue + Seeds/Nets/Spears), Challenger Sale — Dixon & Adamson (Commercial Teaching), Juliano Torriani (Social Selling 2.0). Os 5 últimos são Tier 2-3 do squad ou origem de mercado e ficam mais a fundo na **Aula 3 (FUPs, Cadência, SDR e Automação, com Adavio)** — aqui entram como reforço pontual, não como técnica central.
 
 ## Regras da Aula 1
 
@@ -153,7 +153,8 @@ Fluxo consultivo completo de referência (do squad): `@sales-chief *diagnose` �
 **O que a aula NÃO faz:**
 - Não configura CRM ou integra ferramentas (isso é Aula 2)
 - Não monta cadência de prospecção outbound fria (isso é Aula 3)
-- Não automatiza fechamento com IA sem a camada de validação humana primeiro (isso é Aula 4 — e mesmo lá, o protocolo de validação desta aula continua valendo)
+- Não automatiza nada: automação é Aula 3 (Adávio), e mesmo lá o protocolo de validação humana desta aula continua valendo — nunca escalar com IA antes de rodar manual em 10-15 casos
+- Não cobre proposta e fechamento (isso é Aula 4, com o Marcondes)
 
 ## Ferramentas necessárias
 

@@ -67,7 +67,7 @@ Pergunte como seguir:
 
 ## Passo 1A — Criar o script do zero
 
-Monte o script em 5 blocos, cada um com **intenção do bloco** (o que ele precisa conseguir) e **exemplos de pergunta** (não texto fixo):
+Monte o script em 6 blocos, cada um com **intenção do bloco** (o que ele precisa conseguir) e **exemplos de pergunta** (não texto fixo):
 
 **Bloco 1 — Abertura com contrato prévio (up-front contract)**
 Intenção: alinhar tempo, agenda e o que acontece no fim da call, tirando a ansiedade de "isso vai virar uma pressão de venda?".

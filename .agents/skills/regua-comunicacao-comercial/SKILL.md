@@ -58,6 +58,7 @@ Para cada etapa do funil (herdada do Passo 0), classifique quem atua:
 - **Automação/IA** — disparo automático por regra de tempo (ex.: lead sem resposta há X dias); típico em etapas de topo de funil (primeiro contato, reforço de contato sem resposta).
 - **Ambos** — automação atua enquanto o humano não estiver engajado ativamente; no momento em que o humano sinaliza que está conduzindo, a automação para de disparar nessa etapa para aquele lead específico.
 - **Automação apenas, sem humano** — perfil "autoatendimento/zero-toque" (herdado da Skill 1): todas as etapas são automação (e-mail transacional, remarketing, notificação de carrinho abandonado). Não force uma etapa "humana" que não existe nesse modelo de negócio.
+- **Automação, com humano só na recuperação** — quando a Skill 1 registrar `modelo: autoatendimento (com recuperação humana)`: o funil inteiro é automação, **exceto** o ponto de recuperação de pagamento (carrinho abandonado, cartão recusado, boleto não pago), onde alguém responde de verdade. Marque "quem atua = ambos" **só nesse ponto** da régua e "automação" no resto. Não transforme isso num funil consultivo: a conversa acontece depois da decisão de não comprar, não antes — ela recupera pagamento, não convence ninguém.
 
 Documente a regra de prioridade explicitamente: *"Automação nunca dispara por cima de humano ativo — é o vendedor quem sinaliza que está com a mão no deal, não a automação que decide parar sozinha."* (Regra não se aplica ao perfil autoatendimento — lá não existe humano disputando prioridade.)
 
