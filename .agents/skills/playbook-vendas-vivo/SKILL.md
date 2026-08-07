@@ -1,6 +1,6 @@
 ---
 name: playbook-vendas-vivo
-description: Constrói e mantém vivo o playbook de vendas — biblioteca de objeções, respostas aprovadas e casos reais. Primeiro classifica cada objeção recebida em um dos 6 tipos (preço, urgência, confiança/risco, concorrente, autoridade/decisão, desalinhamento interno) porque o tipo determina a técnica certa de resposta, não o contrário. Segundo gera a resposta usando o framework certo para o tipo (Empatia Tática de Chris Voss para objeções de risco/confiança, Feel-Felt-Found para objeções de confiança social, reformulação para objeções de preço). Terceiro documenta em biblioteca pesquisável com casos reais por trás de cada objeção. Quarto — e principal diferença de um playbook estático — define a cadência de revisão (mensal ou trimestral, baseada em dados de ganho/perda reais) que mantém o playbook vivo em vez de decair. Use quando o usuário pedir para montar playbook de objeções, biblioteca de respostas de vendas, treinar time em contorno de objeção, ou revisar/atualizar um playbook existente com dados de calls perdidas. Português do Brasil.
+description: Constrói e mantém vivo o playbook de vendas, biblioteca de objeções, respostas aprovadas e casos reais. Primeiro classifica cada objeção recebida em um dos 6 tipos (preço, urgência, confiança/risco, concorrente, autoridade/decisão, desalinhamento interno) porque o tipo determina a técnica certa de resposta, não o contrário. Segundo gera a resposta usando o framework certo para o tipo (Empatia Tática de Chris Voss para objeções de risco/confiança, Feel-Felt-Found para objeções de confiança social, reformulação para objeções de preço), escrevendo cada peça por canal (call, WhatsApp, e-mail) como copy de verdade, com técnica nomeada e atribuída, delegando a clones de copywriter quando o ambiente tiver esse squad disponível, e sempre auditando o resultado (clone Claude Hopkins, ou checklist equivalente) contra compliance e voz da marca antes de entregar. Terceiro documenta em biblioteca pesquisável com casos reais por trás de cada objeção. Quarto, e principal diferença de um playbook estático, define a cadência de revisão (mensal ou trimestral, baseada em dados de ganho/perda reais) que mantém o playbook vivo em vez de decair. Use quando o usuário pedir para montar playbook de objeções, biblioteca de respostas de vendas, treinar time em contorno de objeção, ou revisar/atualizar um playbook existente com dados de calls perdidas. Português do Brasil.
 user_invocable: true
 ---
 
@@ -35,6 +35,8 @@ Se ele quiser o quadro completo da aula, remeta ao `GUIA-DO-ALUNO.html` (seção
 - **Jeb Blount** (*Objections*) — princípio de que objeção é habilidade a dominar, não obstáculo a temer: base do Passo 1 (classificar antes de responder) e da ideia de biblioteca/battlecard como ativo de time, não conhecimento individual.
 - **Challenger Sale** (Dixon & Adamson) — mediar desalinhamento entre stakeholders do mesmo comitê como negociação multi-frente, não como objeção única (tipo "Desalinhamento interno" do Passo 1).
 - D.E.E.P. e Feel-Felt-Found — frameworks de objeção consolidados no mercado, sem autor único atribuído.
+- **Gary Halbert, John Carlton e Gary Bencivenga**: especificidade e prova concreta em vez de adjetivo, usados na redação das peças por canal do Passo 3.
+- **Claude Hopkins** (*Scientific Advertising*): rigor científico e especificidade, base do checklist de auditoria obrigatória do Passo 3.5, nenhuma peça sai sem essa revisão.
 
 ---
 
@@ -100,23 +102,46 @@ Nunca responder preço com desconto reflexo. Voltar à quantificação de gap fe
 
 Para cada objeção documentada, gere: a resposta no framework certo, **e** um caso real (se o usuário fornecer) que sirva de prova concreta — resposta sem caso é teoria, caso sem resposta estruturada é anedota. Os dois juntos é o que vira treinamento de time. Se o nicho for regulado (médico/psicologia/jurídico), substitua "caso real de cliente" por "credencial + método", conforme a vedação do Passo 0.
 
-## Passo 3 — Montar a biblioteca pesquisável (todos os canais, uma só voz)
+## Passo 3 — Montar a biblioteca pesquisável (todos os canais, uma só voz, com copywriting de verdade)
 
-O playbook não é só "o que falar numa call". Objeção aparece em WhatsApp, e-mail, DM, ligação e até em comentário público — e a resposta muda de forma (não de substância) por canal. Para cada objeção, gere a variação por canal a partir da mesma resposta aprovada do Passo 2:
+O playbook não é só "o que falar numa call". Objeção aparece em WhatsApp, e-mail, DM, ligação e até em comentário público, e a resposta muda de forma (não de substância) por canal. **Cobertura completa, não amostra:** escreva a variação de TODAS as objeções levantadas no Passo 0/1 em TODOS os canais reais do negócio (herdados da Skill 2), nunca só uma objeção de exemplo por tipo. Se o negócio tem 6 objeções mapeadas e 3 canais, o output tem 18 peças escritas, não 6.
+
+Para cada peça (objeção x canal), o framework do Passo 2 (D.E.E.P., Empatia Tática, Feel-Felt-Found, Reformulação de valor) dá a estrutura psicológica, mas o **texto em si precisa ser copy de verdade**, memorável e específico, nunca um preenchimento de template. Frameworks de referência por variação de canal:
 
 - **Call/reunião:** a resposta completa, com pausa tática entre as etapas do D.E.E.P.
-- **WhatsApp/DM:** versão curta, sem perder o rótulo (label) nem a pergunta calibrada — corta a explicação longa, mantém a pergunta.
-- **E-mail:** versão com espaço para 1 prova concreta a mais (link de caso, número), já que o formato permite mais densidade sem parecer insistente.
+- **WhatsApp/DM:** versão curta, sem perder o rótulo (label) nem a pergunta calibrada. Corta a explicação longa, mantém a pergunta. Técnica de referência: especificidade em vez de adjetivo (Gary Halbert, John Carlton).
+- **E-mail:** versão com espaço para 1 prova concreta a mais (link de caso, número), já que o formato permite mais densidade sem parecer insistente. Técnica de referência: prova específica em vez de afirmação genérica (Gary Bencivenga), com assunto tratado como copy própria (2 variações pra teste A/B, o assunto decide a abertura).
 
-Todas as variações devem soar como a **mesma pessoa/marca falando** — é aqui que entra o **mecanismo único de conversão** definido na Skill 2 (`/regua-comunicacao-comercial`): se o negócio já nomeou o método/abordagem distintivo dele, toda resposta de objeção reforça esse mecanismo em vez de soar como resposta de manual genérico. Se a Skill 2 ainda não rodou, pergunte ao usuário: *"Existe um nome ou um jeito único que vocês já chamam a forma de vender/atender? Se não existir ainda, vamos usar essa resposta como o primeiro tijolo dele."*
+**Se você estiver rodando num ambiente com squad de clones de copywriters disponível** (Agent tool com agentes de copy): delegue a escrita de cada peça ao clone mais adequado ao tipo de objeção e ao canal, em paralelo quando possível, sempre citando no output qual clone escreveu qual peça. **Se não houver squad disponível**, aplique a técnica nomeada diretamente você mesmo, sempre citando a técnica/autor que embasa cada peça.
 
-Organize tudo em uma tabela única, pesquisável por tipo e por etapa do funil (herdada da Skill 1 — em qual etapa essa objeção normalmente aparece):
+Todas as variações devem soar como a **mesma pessoa/marca falando**, é aqui que entra o **mecanismo único de conversão** definido na Skill 2 (`/regua-comunicacao-comercial`): se o negócio já nomeou o método/abordagem distintivo dele, toda resposta de objeção reforça esse mecanismo em vez de soar como resposta de manual genérico. Se a Skill 2 ainda não rodou, pergunte ao usuário: *"Existe um nome ou um jeito único que vocês já chamam a forma de vender/atender? Se não existir ainda, vamos usar essa resposta como o primeiro tijolo dele."*
 
-| Objeção (palavras do cliente) | Tipo | Etapa onde aparece | Framework usado | Resposta — call | Resposta — WhatsApp/DM | Resposta — e-mail | Caso real |
+Organize tudo em uma tabela única, pesquisável por tipo e por etapa do funil (herdada da Skill 1, em qual etapa essa objeção normalmente aparece):
+
+| Objeção (palavras do cliente) | Tipo | Etapa onde aparece | Framework usado | Resposta, call | Resposta, WhatsApp/DM | Resposta, e-mail | Caso real |
 |---|---|---|---|---|---|---|---|
 | ... | ... | ... | ... | ... | ... | ... | ... |
 
-Isso vira "battlecard" consultável antes de calls difíceis, e material de treinamento e certificação de novos vendedores — em qualquer canal que a objeção aparecer.
+Isso vira "battlecard" consultável antes de calls difíceis, e material de treinamento e certificação de novos vendedores, em qualquer canal que a objeção aparecer.
+
+## Passo 3.5: Auditoria de compliance e voz (obrigatória, roda sempre)
+
+Nenhuma peça escrita no Passo 3 é entregue sem passar por esta auditoria antes, valha o ambiente que for.
+
+**Se houver squad de clones disponível:** delegue esta auditoria ao clone `claude-hopkins`, entregando as peças junto com o checklist abaixo.
+
+**Se não houver:** rode você mesmo o mesmo checklist, peça por peça, sem pular nenhuma:
+
+1. Travessão no meio de frase: proibido.
+2. Promessa de resultado garantido ("garante", "cura", "sempre", ou qualquer promessa absoluta sem qualificador): proibido.
+3. Construção "não é [apenas] X, é Y" (em qualquer variação, incluindo "não foi X, foi Y" ou "isso é X, não é Y"): proibido. É o vício mais comum entre copywriters diferentes, verifique com atenção redobrada.
+4. Uso de "nós" em vez de "a gente": proibido.
+5. Jargão de guru de vendas: proibido.
+6. Tríade de adjetivos vazios: proibido.
+7. Claim sem prova por trás: troque número vago por número específico sempre que houver um disponível.
+8. Se `nicho_regulado: sim`, qualquer coisa que soe como depoimento de paciente/cliente em atendimento clínico regulado (CFM, CRP, OAB): proibido. Depoimento de aluna/cliente/colega sobre a própria experiência de negócio é permitido, depoimento sobre desfecho de tratamento clínico não é.
+
+Para cada violação, registre a frase exata e a substituição sugerida, sem perder a força persuasiva da peça original. Só depois de corrigir todas as violações a peça entra no output final do Passo 5.
 
 ## Passo 4 — Cadência de manutenção (o que faz o playbook ser "vivo" e não estático)
 
@@ -131,8 +156,8 @@ Esta é a etapa que a maioria dos playbooks nunca faz — e é a que mais import
 
 Gere **dois arquivos com o mesmo conteúdo**:
 
-1. `playbook-objecoes-{negocio}.md` com: a biblioteca completa multi-canal (Passo 3), a cadência de manutenção acordada com dono nomeado (Passo 4), e um resumo de 1 página ("battlecard") com as 5 objeções mais frequentes prontas para consulta rápida antes de uma call.
-2. `playbook-objecoes-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com a biblioteca em tabela filtrável visualmente por tipo (mesmo que a filtragem seja só visual/cor, não interativa) e o battlecard das 5 objeções mais frequentes destacado no topo.
+1. `playbook-objecoes-{negocio}.md` com: a biblioteca completa multi-canal (Passo 3, uma peça por objeção x canal, cada uma com a técnica/autor que a embasa e, se aplicável, qual clone de copywriter escreveu), a nota de auditoria do Passo 3.5 (o que foi encontrado e corrigido, ou confirmação de que nada foi encontrado), a cadência de manutenção acordada com dono nomeado (Passo 4), e um resumo de 1 página ("battlecard") com as 5 objeções mais frequentes prontas para consulta rápida antes de uma call.
+2. `playbook-objecoes-{negocio}.html` — mesma informação em página autocontida, mesmos tokens visuais do `GUIA-DO-ALUNO.html`, com a biblioteca em tabela filtrável visualmente por tipo (mesmo que a filtragem seja só visual/cor, não interativa) e o battlecard das 5 objeções mais frequentes destacado no topo. **Toda peça escrita (WhatsApp, e-mail, DM) leva um botão "Copiar"** que copia só o texto da mensagem pra área de transferência, mesmo padrão de botão já usado no `GUIA-DO-ALUNO.html` e no output da Skill 4 (`/discovery-script`).
 
 **Abra o HTML automaticamente assim que gerar (não deixe só salvo na pasta):** rode um comando de abrir arquivo pro `playbook-objecoes-{negocio}.html` logo depois de criá-lo — `open playbook-objecoes-{negocio}.html` (Mac), `start playbook-objecoes-{negocio}.html` (Windows) ou `xdg-open playbook-objecoes-{negocio}.html` (Linux). Se o comando de abrir falhar (ambiente sem interface gráfica, sandbox restrito, etc.), avise o aluno o caminho exato do arquivo e como abrir manualmente — nunca termine a skill em silêncio sem tentar mostrar o resultado.
 
