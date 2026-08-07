@@ -1,6 +1,6 @@
 ---
 name: lead-scoring-ia
-description: Converte os critérios de qualificação BANT/GPCT da Aula 1 em um modelo de pontuação numérica, com tabela de pontos fixos por nível pra cada critério, calibrado pelo teste dos dois vendedores e entregue em ordem de implementação gradual, não tudo de uma vez. Primeiro define 4 critérios padrão de pontuação (nível de engajamento, nível de resposta, origem do lead, histórico de compra de produto de entrada) e 3 critérios complementares (autoridade de decisão, necessidade explícita, tamanho do gap), cada um com tabela de pontos fixos por nível, com peso ajustado por ticket e ciclo de venda. Segundo monta o plano de rollout em fases, porque ninguém configura os 7 critérios de uma vez quando está começando. Terceiro mostra como isso vira campo e automação dentro da ferramenta de CRM já montada na Skill 1. Funciona pra B2B e B2C, qualquer ticket. Use quando o usuário pedir para pontuar leads, priorizar quem tem mais chance de fechar, montar um scorecard, ou definir régua de temperatura (quente/morno/frio). Português do Brasil.
+description: Converte os critérios de qualificação BANT/GPCT da Aula 1 em um modelo de pontuação numérica, com tabela de pontos fixos por nível pra cada critério, calibrado pelo teste dos dois vendedores e entregue em ordem de implementação gradual, não tudo de uma vez. Primeiro define 4 critérios padrão de pontuação (nível de engajamento, nível de resposta, origem do lead, histórico de compra de produto de entrada) e 3 critérios complementares (autoridade de decisão, necessidade explícita, tamanho do gap), cada um com tabela de pontos fixos por nível, com peso ajustado por ticket e ciclo de venda. Segundo monta o plano de rollout em fases, porque ninguém configura os 7 critérios de uma vez quando está começando. Terceiro entrega o plano de implementação técnica real: fórmulas concretas se a ferramenta for planilha, campo customizado se for CRM com login, automação via API se a ferramenta suportar, mais o critério de decisão pra migração de ferramenta (documentação de API pública, campo numérico, automação por mudança de campo). Funciona pra B2B e B2C, qualquer ticket. Use quando o usuário pedir para pontuar leads, priorizar quem tem mais chance de fechar, montar um scorecard, ou definir régua de temperatura (quente/morno/frio). Português do Brasil.
 user_invocable: true
 ---
 
@@ -35,6 +35,7 @@ Se ele quiser o quadro completo da aula, remeta ao guia da Aula 2 (mesma lógica
 - **Keenan** (*Gap Selling*): quantificar o gap entre estado atual e desejado é o critério 7, o único que mede a dor diretamente em vez de só medir o entorno dela.
 - **Aaron Ross** (*Predictable Revenue*): Seeds/Nets/Spears vira diretamente a tabela de pontos por origem do lead.
 - **Jeb Blount** (*Sales EQ*): disciplina de nunca deixar pontuação virar régua fria, o score prioriza contato, não substitui julgamento humano na conversa.
+- **Thiago Finch**: funil antes de produto, decidir onde e como a pontuação vai rodar de verdade (fórmula, campo customizado, API) importa mais que a ferramenta escolhida, base do Passo 5.
 - Lógica de crivo de crédito (pontos fixos por nível, por critério) aplicada a lead scoring, calibrada com o "teste dos dois vendedores" já usado na Aula 1.
 
 ---
@@ -148,12 +149,46 @@ Soma os pontos de todos os critérios já ativos (conforme a fase de rollout) nu
 
 Rodada de teste numa imobiliária fictícia (Vólta Imóveis, ticket alto de R$450.000, ciclo de 60 a 120 dias, decisão do casal comprador): os Critérios 1 e 2 tiveram o teto reduzido de +15 pra +8 porque quem respondia mais rápido era sistematicamente o cônjuge menos engajado na decisão, não o casal como um todo. O Critério 4 (histórico de compra) foi marcado "não aplicável a este modelo", já que imóvel é produto único, sem escada de ofertas, e o peso dele foi redistribuído pro Critério 7 (gap). O negócio começou na Fase 1 com o Critério 3 represado, herdando o achado de origem não confiável da Skill 1, então nenhum lead chegou a "Quente" ainda, o que é esperado nessa fase, não um erro.
 
-## Passo 5: Entregar o output (sempre em dois formatos)
+## Passo 5: Implementação técnica, aos poucos e amarrada à ferramenta real
+
+Tabela de pontos sem lugar pra rodar é teoria. Não termine esta skill sem responder, de forma concreta, ONDE e COMO cada critério vai ser calculado de verdade. Duas partes obrigatórias:
+
+### 5.1: Implementação imediata, na ferramenta que o aluno já tem hoje
+
+Puxe da Skill 1 qual é a ferramenta real (planilha, CRM com login, ou CRM com API) e gere passo a passo concreto pra essa ferramenta específica, não instrução genérica:
+
+- **Se for planilha:** especifique as colunas novas a criar (uma por critério de pontos, mais colunas de apoio pra registrar o nível de cada critério manual), a fórmula real de cada uma (`SE`/`IF` ou `SES`/`IFS` encadeado, não pseudocódigo), a fórmula do Score Total somando só os critérios já ativos na fase corrente, e como aplicar a régua de temperatura com formatação condicional. Amarre a ordem de criação das colunas à ordem de fases do Passo 2: não crie a coluna de um critério antes da fase dele chegar.
+- **Se for CRM com login, sem API (ou API que o aluno ainda não vai configurar):** especifique os campos customizados a criar direto no painel (nome, tipo do campo, que precisa ser numérico pra somar), e como simular a régua de temperatura com um campo de texto ou tag, já que sem automação nativa o cálculo do Score Total é manual, o vendedor soma e digita.
+- **Se for CRM com API já configurada na Skill 1:** especifique como os campos de pontuação viram Custom Properties/Custom Fields via API, e como uma automação nativa da ferramenta (ou um script simples lendo a API) recalcula o Score Total sozinho a cada mudança de critério, sem depender do vendedor somar na mão.
+
+Gere isso semana a semana, amarrado às fases do Passo 2 (ex.: "Semana 1: crie a coluna do Critério 2 com esta fórmula, meta de saída é todas as linhas ativas calculadas sem erro"), não um bloco só de "configure tudo".
+
+### 5.2: Decisão de migração de ferramenta, se e quando isso vier a acontecer
+
+Se o aluno perguntar sobre migrar de planilha (ou de um CRM sem API) pra outra ferramenta, não recomende marca nenhuma. Em vez disso, entregue o critério de decisão: 3 perguntas que valem pra qualquer CRM candidato, porque são elas que decidem se o cálculo pode ser automatizado ou não, não o nome da ferramenta.
+
+| Pergunta | Como testar de verdade |
+|---|---|
+| A documentação de API existe e é pública? | Procurar `/developers`, `/api-docs` ou `/docs` no site do fornecedor sem precisar logar ou abrir chamado comercial. Se só aparece depois de falar com vendedor, trate como "não é pública" |
+| O CRM suporta campo customizado numérico, visível na listagem/pipeline? | Confirmar que dá pra criar campo tipo Número (não texto, não lista), e que ele aparece fora do card individual, senão não dá pra filtrar por temperatura |
+| O CRM suporta automação por mudança de campo (não só por mudança de etapa)? | Confirmar que existe seção de Automações/Workflows que dispara quando qualquer campo muda, e que ela consegue escrever de volta noutro campo do mesmo registro |
+
+O resultado das 3 perguntas muda o plano, não é detalhe cosmético:
+
+| Cenário | Como o Score Total é calculado |
+|---|---|
+| API pública + campo numérico + automação por mudança de campo | 100% automatizado: vendedor só preenche os níveis, o sistema soma e classifica sozinho |
+| Campo customizado existe, mas automação só dispara por mudança de etapa | Cálculo roda fora (planilha ponte ou script lendo a API) e escreve de volta em lote, não em tempo real |
+| Sem API pública, só login manual | Nada automatiza. O vendedor calcula a soma com a tabela de referência e digita o resultado, exatamente como faria na planilha, só que dentro do painel |
+
+**Regra de sequência, sempre:** não recomende migrar de ferramenta antes do modelo já estar rodando estável na ferramenta atual por pelo menos um ciclo de calibração (Passo 3). Migrar um modelo ainda não calibrado pra uma ferramenta nova dobra a superfície de erro por nada.
+
+## Passo 6: Entregar o output (sempre em dois formatos)
 
 Gere **dois arquivos com o mesmo conteúdo**:
 
-1. `lead-scoring-{negocio}.md` com: as 7 tabelas de pontos (Passo 1), quais critérios ficaram represados por causa de achado herdado da Skill 1 (ex.: origem não confiável, ver aviso no Passo 0), qual fase de rollout o negócio está usando agora (Passo 2), o protocolo de calibração (Passo 3), e a régua de temperatura com os pontos de corte (Passo 4). Feche com o handoff: *"Este modelo de pontuação alimenta a Skill 3 (/diagnostico-gargalos-funil), que usa a temperatura pra identificar onde os leads quentes estão travando no funil."*
-2. `lead-scoring-{negocio}.html`: mesma informação em página autocontida, mesmos tokens visuais do padrão da Aula 1 (fundo `#0A0A0A`, ouro `#C9B298`), com as 7 tabelas renderizadas como tabelas reais e a régua de temperatura em destaque visual (cores para Quente, Morno, Frio).
+1. `lead-scoring-{negocio}.md` com: as 7 tabelas de pontos (Passo 1), quais critérios ficaram represados por causa de achado herdado da Skill 1 (ex.: origem não confiável, ver aviso no Passo 0), qual fase de rollout o negócio está usando agora (Passo 2), o protocolo de calibração (Passo 3), a régua de temperatura com os pontos de corte (Passo 4), e o plano de implementação técnica completo (Passo 5, incluindo fórmulas reais se for planilha). Feche com o handoff: *"Este modelo de pontuação alimenta a Skill 3 (/diagnostico-gargalos-funil), que usa a temperatura pra identificar onde os leads quentes estão travando no funil."*
+2. `lead-scoring-{negocio}.html`: mesma informação em página autocontida, mesmos tokens visuais do padrão da Aula 1 (fundo `#0A0A0A`, ouro `#C9B298`), com as 7 tabelas renderizadas como tabelas reais, a régua de temperatura em destaque visual (cores para Quente, Morno, Frio), e o passo a passo de implementação técnica também renderizado (não só no .md).
 
 **Abra o HTML automaticamente assim que gerar:** `open lead-scoring-{negocio}.html` (Mac), `start lead-scoring-{negocio}.html` (Windows) ou `xdg-open lead-scoring-{negocio}.html` (Linux). Se falhar, avise o caminho exato do arquivo.
 

@@ -1,6 +1,6 @@
 ---
 name: montagem-higiene-crm
-description: Traduz o processo comercial desenhado na Aula 1 para dentro do CRM real do aluno e faz o checklist de higiene de dado, sem depender de uma única ferramenta. Primeiro detecta qual CRM o aluno já usa (com API documentada, sem API mas com login web, ou nenhum CRM formal, só planilha) e escolhe o caminho de acesso certo pra cada caso. Segundo traduz as etapas e critérios de saída da Aula 1 para a estrutura real daquela ferramenta (stages, campos customizados, responsável pelo deal, automações), calibrado por B2B ou B2C. Terceiro roda o checklist de 8 itens de higiene (duplicidade de contato e de conta, campo obrigatório vazio, etapa sem critério de saída, card zumbi, motivo de perda, nomenclatura, confiabilidade da origem do lead, cobertura histórica) e define a rotina recorrente que mantém isso limpo depois. Funciona pra B2B e B2C, qualquer nicho, qualquer ferramenta. Use quando o usuário pedir para montar, configurar, organizar ou limpar o CRM, migrar o processo comercial pra dentro de uma ferramenta, ou auditar a higiene dos dados de pipeline. Português do Brasil.
+description: Traduz o processo comercial desenhado na Aula 1 para dentro do CRM real do aluno e faz o checklist de higiene de dado, sem depender de uma única ferramenta. Primeiro detecta qual CRM o aluno já usa (com API documentada, sem API mas com login web, ou nenhum CRM formal, só planilha) e escolhe o caminho de acesso certo pra cada caso. Segundo traduz as etapas e critérios de saída da Aula 1 para a estrutura real daquela ferramenta (stages, campos customizados, responsável pelo deal, automações), calibrado por B2B ou B2C. Terceiro roda o checklist de 8 itens de higiene (duplicidade de contato e de conta, campo obrigatório vazio, etapa sem critério de saída, card zumbi, motivo de perda, nomenclatura, confiabilidade da origem do lead, cobertura histórica), aplica de fato a correção possível (planilha higienizada, roteiro de correção manual, ou correção via API), e define a rotina recorrente que mantém isso limpo depois. Funciona pra B2B e B2C, qualquer nicho, qualquer ferramenta. Use quando o usuário pedir para montar, configurar, organizar ou limpar o CRM, migrar o processo comercial pra dentro de uma ferramenta, ou auditar a higiene dos dados de pipeline. Português do Brasil.
 user_invocable: true
 ---
 
@@ -105,16 +105,27 @@ Se `nicho_regulado` for sim, confira se algum campo customizado ou nome de tag e
 
 Se `nicho_regulado` for não, não pule este passo em silêncio: registre explicitamente no output "Passo 4: não aplicável, nicho não regulado", pra deixar claro que o gate rodou e não achou motivo de alerta, em vez de deixar a seção ausente sem explicação.
 
+## Passo 4.5: Executar a correção, não só apontar ela
+
+Um checklist que só lista problema é diagnóstico pela metade. Depois do Passo 3, aplique de fato o que dá pra corrigir sem inventar dado, e entregue isso como artefato, não só como texto dizendo "corrija isso":
+
+- **Se a ferramenta for planilha (CSV/Excel):** gere uma **segunda planilha, higienizada**, além do relatório em .md/.html. Nela: mescle duplicidades reais (mesmo e-mail/telefone ou mesma conta em B2B), mantendo o registro mais avançado de cada par; padronize a nomenclatura de etapa pro formato acordado no Passo 2; adicione a coluna de responsável se ela não existir. Para o que não pode ser inventado (valor de negócio vazio, motivo de perda ausente, origem não classificada), não preencha com achismo, marque numa coluna extra (`Status Higiene` ou similar) exatamente o que falta e quem precisa preencher, linha por linha. Uma planilha higienizada de verdade é a que já resolveu tudo que dava pra resolver sem humano, e deixou visível, não escondido, tudo que ainda depende de humano.
+- **Se a ferramenta tiver login web, sem API:** como você não tem acesso automatizado pra editar direto na ferramenta, gere um roteiro de correção manual, passo a passo, com o que clicar e onde (nome do menu, nome do campo), pra cada tipo de achado do Passo 3, na ordem de prioridade que mais rápido destrava as skills seguintes (duplicidade e origem primeiro, nomenclatura depois).
+- **Se a ferramenta tiver API já configurada:** aplique a correção via API sempre que for uma ação determinística (mesclar duplicidade exata, renomear etapa pro padrão acordado). Para o que exige julgamento humano (qual motivo de perda, qual origem correta), não adivinhe, gere a lista do que precisa de decisão humana e não escreva nada via API pra esses casos.
+
+Registre no output final qual das três correções foi aplicada e o que ficou pendente de decisão humana, isso é parte do handoff pras skills seguintes, não detalhe de rodapé.
+
 ## Exemplo real de execução
 
 Rodada de teste numa imobiliária fictícia (Vólta Imóveis, B2C, ticket alto, CRM próprio sem ser GHL): o achado mais crítico do checklist não foi duplicidade nem campo vazio, foi o item 7, 65% da base com origem de lead marcada como "não classificado". Isso bloqueou de verdade a Skill 2 de pontuar por origem até a base ser reclassificada, não foi um alerta decorativo. O threshold de card zumbi usou o teto da faixa de ciclo declarada (120 dias, não a média de 90), e a trava de avanço só funcionou via API em 4 das 6 etapas, o que a skill registrou explicitamente em vez de esconder a limitação.
 
-## Passo 5: Entregar o output (sempre em dois formatos)
+## Passo 5: Entregar o output
 
-Gere **dois arquivos com o mesmo conteúdo**:
+Gere **os dois arquivos de sempre, mais o artefato de correção do Passo 4.5**:
 
-1. `higiene-crm-{negocio}.md` com: ferramenta detectada e caminho de acesso escolhido (Passo 1), tabela de tradução etapa → estrutura real (Passo 2, incluindo campo de responsável e convenção de nomenclatura), os 8 achados do checklist de higiene com quantidade e exemplo (Passo 3), a rotina de higiene recorrente com cadência e responsável (Passo 3.5), e o alerta de compliance se aplicável (Passo 4). Feche com o handoff: *"Esta estrutura alimenta a Skill 2 (/lead-scoring-ia), que usa os campos aqui configurados pra calcular pontuação, e a Skill 3 (/diagnostico-gargalos-funil), que lê os stages aqui traduzidos pra achar o gargalo."*
-2. `higiene-crm-{negocio}.html`: mesma informação em página autocontida, mesmos tokens visuais do padrão da Aula 1 (fundo `#0A0A0A`, ouro `#C9B298`), com a tabela de tradução renderizada como tabela real e os achados de higiene em cards, um card por tipo de problema com o número de registros afetados em destaque.
+1. `higiene-crm-{negocio}.md` com: ferramenta detectada e caminho de acesso escolhido (Passo 1), tabela de tradução etapa → estrutura real (Passo 2, incluindo campo de responsável e convenção de nomenclatura), os 8 achados do checklist de higiene com quantidade e exemplo (Passo 3), o que foi corrigido de fato e o que ficou pendente de decisão humana (Passo 4.5), a rotina de higiene recorrente com cadência e responsável (Passo 3.5), e o alerta de compliance se aplicável (Passo 4). Feche com o handoff: *"Esta estrutura alimenta a Skill 2 (/lead-scoring-ia), que usa os campos aqui configurados pra calcular pontuação, e a Skill 3 (/diagnostico-gargalos-funil), que lê os stages aqui traduzidos pra achar o gargalo."*
+2. `higiene-crm-{negocio}.html`: mesma informação em página autocontida, mesmos tokens visuais do padrão da Aula 1 (fundo `#0A0A0A`, ouro `#C9B298`), com a tabela de tradução renderizada como tabela real e os achados de higiene em cards, um card por tipo de problema com o número de registros afetados em destaque, e um link visível pro artefato de correção do Passo 4.5 (a planilha higienizada, se for o caso).
+3. Se a ferramenta for planilha: o arquivo higienizado, com o mesmo nome base do arquivo original mais o sufixo `-higienizado` (ex.: `crm-{negocio}-higienizado.xlsx`), na mesma pasta.
 
 **Abra o HTML automaticamente assim que gerar:** `open higiene-crm-{negocio}.html` (Mac), `start higiene-crm-{negocio}.html` (Windows) ou `xdg-open higiene-crm-{negocio}.html` (Linux). Se falhar, avise o caminho exato do arquivo.
 
@@ -123,4 +134,4 @@ Gere **dois arquivos com o mesmo conteúdo**:
 - Se o arquivo já existir (outra skill desta aula já rodou antes), edite só a linha `id: 1`, nunca sobrescreva o arquivo inteiro nem toque nas linhas `id: 2` ou `id: 3`, elas guardam o progresso das outras skills.
 - No array `ENTREGAS`, encontre a linha com `id: 1` e troque `status: "pendente", html: null, md: null` por `status: "pronto", html: "higiene-crm-{negocio}.html", md: "higiene-crm-{negocio}.md"`.
 
-**Depois de entregar os dois arquivos, diga isto diretamente ao aluno no chat:** *"CRM traduzido e higienizado, os dois arquivos estão aí. Próximo passo: rode /lead-scoring-ia pra pontuar quem tem mais chance de fechar."*
+**Depois de entregar os arquivos, diga isto diretamente ao aluno no chat:** *"CRM traduzido e higienizado, os arquivos estão aí, incluindo a planilha corrigida (se aplicável). Próximo passo: rode /lead-scoring-ia pra pontuar quem tem mais chance de fechar."*

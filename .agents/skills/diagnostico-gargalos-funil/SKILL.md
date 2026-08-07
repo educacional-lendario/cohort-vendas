@@ -1,6 +1,6 @@
 ---
 name: diagnostico-gargalos-funil
-description: Identifica em qual etapa do funil o negócio está perdendo mais receita, quantifica o valor em risco, e entrega uma ferramenta viva e interativa (não só um relatório estático) onde o usuário mexe nos números do próprio pipeline e vê o gargalo recalcular na hora. Primeiro roda um gate de sanidade (etapa decorativa, critério de saída ausente, ticket sem valor) antes de calcular qualquer coisa, pra não produzir um número confiante e errado. Segundo lê os dados do CRM já montado e higienizado na Skill 1 (via API se a ferramenta tiver, via upload de CSV se não tiver). Terceiro calcula a conversão entre etapas (por coorte quando o dado permitir, por estoque como fallback declarado), distingue gargalo aparente de causa real na etapa anterior, e projeta receita em risco usando ticket médio real. Conecta o achado a uma automação de follow-up que exige critério de saída cumprido, não só tempo parado, evitando ensinar o vendedor a empurrar o card artificialmente. Já embute uma leitura de forecast por etapa ponderada por conversão. Funciona pra B2B e B2C, com leitura ajustada por ticket e ciclo. Use quando o usuário pedir para diagnosticar o funil, achar o gargalo, calcular receita em risco, ler forecast por etapa, ou entender por que o pipeline não converte. Português do Brasil.
+description: Identifica em qual etapa do funil o negócio está perdendo mais receita, quantifica o valor em risco, e entrega uma ferramenta viva e interativa (não só um relatório estático) onde o usuário mexe nos números do próprio pipeline e vê o gargalo recalcular na hora. Primeiro roda um gate de sanidade (etapa decorativa, critério de saída ausente, ticket sem valor) antes de calcular qualquer coisa, pra não produzir um número confiante e errado. Segundo lê os dados do CRM já montado e higienizado na Skill 1 (via API se a ferramenta tiver, via upload de CSV se não tiver). Terceiro calcula a conversão entre etapas (por coorte quando o dado permitir, por estoque como fallback declarado), distingue gargalo aparente de causa real na etapa anterior, e projeta receita em risco usando ticket médio real. Conecta o achado a um sistema de recuperação em 5 partes: quantificação do que está em jogo, triagem dos negócios travados, sequência de resgate dia a dia com dono de cada ação, trava estrutural que impede o gargalo reaparecer, e métricas de receita recuperada, não uma tabela de gatilho e ação de uma linha. Já embute uma leitura de forecast por etapa ponderada por conversão. Funciona pra B2B e B2C, com leitura ajustada por ticket e ciclo. Use quando o usuário pedir para diagnosticar o funil, achar o gargalo, calcular receita em risco, ler forecast por etapa, ou entender por que o pipeline não converte. Português do Brasil.
 user_invocable: true
 ---
 
@@ -34,6 +34,8 @@ Se ele quiser o quadro completo da aula, remeta ao guia da Aula 2 (mesma lógica
 - **Chet Holmes** (*The Ultimate Sales Machine*): funil como sistema medido, não como intuição, todo gargalo tem um número, não só uma sensação de "as vendas estão devagar".
 - **David Sandler** (*Submarine System*): etapas com saída clara e sem retrabalho é o que torna a leitura de conversão entre etapas confiável, funil com etapa "decorativa" (a mesma que a Skill 1 já auditou) distorce esse cálculo.
 - **Aaron Ross** (*Predictable Revenue*): previsibilidade de receita como objetivo do diagnóstico, não só identificar o problema por identificar.
+- **Alex Hormozi** (*$100M Leads*): follow-up sistemático de intensidade crescente, nunca deixar lead esfriar sem tentativa, e medir receita recuperada em vez de atividade registrada, base do Passo 5.
+- **Thiago Finch**: transformar diagnóstico em plano de execução concreto e sequenciado, não teoria solta, mesmo princípio aplicado ao passo a passo do Passo 5.
 - Pesquisa de mercado sobre SLA de resposta e decaimento de conversão por etapa, mesma referência de 1 hora usada no Passo 1 da Aula 1.
 
 ---
@@ -90,21 +92,62 @@ Em vez de só um relatório estático, gere uma ferramenta viva: uma tabela edit
 1. **Carga inicial com dado real**, vindo do Passo 1 e Passo 3 (via API ou CSV), nunca número de exemplo inventado.
 2. **Camada de simulação por cima**: o usuário edita um valor pra testar cenário ("e se essa conversão subisse X pontos"), e vê o impacto recalcular na hora, sem alterar o dado real do CRM.
 
-## Passo 5: Conectar o diagnóstico à ação (fechar o loop)
+## Passo 5: Conectar o diagnóstico à ação (resolver de vez, não uma tabela de uma linha)
 
-Um gargalo identificado sem ação vira só um relatório bonito. Conecte o achado à automação já existente:
+Um gatilho-ação de uma frase cada ("card parado dispara mensagem") é relatório disfarçado de plano. Isso não é opcional nem cosmético: monte um sistema real de recuperação, com quatro partes obrigatórias, na ordem abaixo. Nenhuma das quatro pode ficar de fora do output.
 
-| Gatilho | Ação automática | Herda de qual skill |
+### 5.1: Quantificar o que está em jogo (antes de propor qualquer ação)
+
+Calcule e mostre dois números, não um:
+
+- **Valor represado hoje**: quantos negócios estão parados na etapa gargalo agora, multiplicado pelo ticket médio real (já calculado no Passo 3).
+- **Receita adicional recuperável**: o diferencial de conversão. Se a etapa gargalo converte a X% e a média saudável das outras etapas é Y%, o ganho é `quantidade_na_etapa × (Y% − X%) × ticket_médio × taxa_de_conversão_até_o_fechamento`. Esse número quase sempre é maior que o valor represado simples, porque conta o efeito multiplicador de destravar a conversão, não só o estoque parado. Mostre a conta, não só o resultado, o aluno precisa conseguir refazer esse cálculo sozinho com dado novo depois.
+
+Isso estabelece por que resgatar os negócios travados agora vem antes de qualquer outra correção: é dinheiro que já pagou o custo de aquisição, parado a um passo de virar caixa ou zero.
+
+### 5.2: Triagem dos negócios travados agora (nunca tratar todos como iguais)
+
+Separe os negócios na etapa gargalo em grupos, usando o critério de saída da etapa causa-real (achado do Passo 3) como régua de corte, não a etapa gargalo em si:
+
+- **Grupo com o critério cumprido**: o negócio é legítimo, só travou por falta de acompanhamento. Vai para a sequência de reengajamento normal (abaixo).
+- **Grupo sem o critério cumprido**: o negócio não deveria ter avançado até aqui (é o mesmo padrão do avanço em lote identificado no gate de sanidade). Insistir em fechar esses é empurrar algo estruturalmente incapaz de fechar. A ação aqui não é reengajar, é **retroceder** o negócio pra etapa anterior e resolver a lacuna primeiro (ex.: se falta decisor identificado, o próximo passo é identificar o decisor, não reenviar a proposta).
+
+Essa triagem sozinha costuma explicar boa parte do gargalo: parte dos negócios "parados" nunca teve chance real de avançar.
+
+### 5.3: Sequência de resgate, dia a dia, com dono de cada ação
+
+Para o grupo com critério cumprido, gere uma cadência concreta de reengajamento com intensidade crescente, nunca um toque repetido igual. Adapte os dias ao ciclo de venda real do negócio (os números abaixo são referência pra ciclo de semanas, comprima pra ciclo de dias ou estique pra ciclo de meses proporcionalmente), mas mantenha a lógica de escalonar canal, conteúdo e quem participa:
+
+| Quando | Quem age | O que fazer |
 |---|---|---|
-| Card na etapa gargalo parado além do ciclo esperado **e** sem ter cumprido o critério de saída daquela etapa | Dispara mensagem de reengajamento automática pelo canal já validado | Régua de comunicação e discovery script da Aula 1 (o texto já existe, só decide quando disparar) |
-| Score sobe pra Quente na etapa gargalo | Notifica o vendedor dono do deal com prioridade | Régua de temperatura da Skill 2 desta aula |
+| Dia 1 | Vendedor | Toque de valor, não de cobrança (usa a mensagem já escrita na régua de comunicação e no discovery script da Aula 1, calibrada pro canal preferido do contato). Traz algo novo à mesa, nunca "e aí, decidiu?" |
+| Dia 3 | Vendedor | Troca de canal (se mandou mensagem, agora liga). Objetivo único: marcar o próximo passo a partir desta conversa, nunca sair sem agendar algo |
+| Dia 7 | Vendedor | Toque de prova social: um caso parecido com o perfil do contato, com resultado concreto |
+| Dia 10 | Gestor | Uma intervenção de autoridade equivalente (quem decide do lado do negócio fala com quem decide do lado do cliente), só se os 3 toques do vendedor não destravaram |
+| Dia 14 | Vendedor | Razão de agora real (prazo de condição comercial, fila de implantação, ajuste de preço datado), nunca urgência inventada sem lastro |
+| Dia 21 | Gestor | Ponto de corte: ou o negócio avança de verdade, ou vira Perdido com motivo categorizado, ou entra em nutrição de longo prazo. Não pode ficar parado indefinidamente inflando o funil |
 
-| Negociação expira sem movimento | Move pra régua de reengajamento de base | Segmentação por motivo de perda definida na Aula 1 |
-| Card na etapa gargalo sem nenhuma interação registrada há X dias | Inicia sequência de follow-up escalonada (3 toques, não uma mensagem única) | Régua de comunicação da Aula 1, mesma origem do primeiro gatilho |
+Para o grupo sem critério cumprido, a sequência muda: os primeiros dias são pra fechar a lacuna estrutural (ex.: identificar o decisor que falta), não pra empurrar fechamento. Só depois de fechar a lacuna o negócio reentra na sequência acima, contando os dias a partir desse ponto, não do início original.
 
-**Cuidado de design nesse gate:** o primeiro gatilho não pode disparar (nem silenciar) só por tempo parado. Se disparar só por tempo, o vendedor aprende a mover o card pra escapar do alerta sem o critério de saída ter sido cumprido de fato, isso destrói a integridade da própria etapa que a Skill 1 configurou. O alerta só deve parar quando o critério de saída real for cumprido, nunca só porque o card mudou de coluna.
+### 5.4: Resolver de vez, não só resgatar os de agora
 
-**Se a Skill 2 ainda estiver numa fase de rollout inicial (Fase 1 a 3) e nenhum lead tiver alcançado o corte de Quente ainda**, o gatilho "Score sobe pra Quente" fica latente, não quebrado. Diga isso explicitamente no output em vez de deixar a linha da tabela parecendo inativa sem explicação: a automação está configurada e vai disparar assim que a pontuação avançar de fase e algum lead cruzar o corte, não existe erro no fluxo, só ainda não há dado suficiente pra ela agir.
+Resgatar os negócios travados hoje é apagar incêndio: sem uma mudança estrutural, o mesmo gargalo reaparece no próximo ciclo. Feche o loop de verdade:
+
+- **Transforme o critério de saída da etapa causa-real numa trava, não numa sugestão.** Se a ferramenta permite bloqueio automático de avanço (Skill 1 já detectou isso), configure o critério identificado no Passo 3 como campo obrigatório e bloqueante pra sair daquela etapa. Se a ferramenta não permite bloqueio automático (ex.: planilha), proponha o equivalente manual mais barato possível ainda esta semana (ex.: validação de célula condicional numa planilha), não espere a ferramenta ideal pra agir.
+- **Proíba a criação de negócio direto na etapa gargalo ou depois dela.** Se o gate de sanidade achou avanço em lote (etapa pulada), a regra de entrada mais barata de todas é: todo negócio nasce na primeira etapa do funil, sem exceção.
+- **Amarre a régua de comunicação ao gatilho de tempo parado, automaticamente.** Negócio sem atividade além de um limite (calibrado pelo ciclo real do negócio, não um número genérico) dispara a sequência do Passo 5.3 sozinho, o vendedor não precisa lembrar de rodar isso na mão.
+- **Nunca dispare nem silencie um alerta só por tempo parado.** Sempre exija também a ausência do critério de saída real. Do contrário o vendedor aprende a mover o card só pra escapar do alerta, sem o critério ter sido cumprido de fato, o que destrói a integridade da etapa que a Skill 1 configurou.
+
+### 5.5: Como medir se funcionou (receita recuperada, não atividade registrada)
+
+A métrica-mãe é **quanto do valor represado (5.1) virou negócio fechado dentro da janela de resgate**, não "quantas mensagens foram enviadas". Toque enviado é métrica de processo, não de sucesso. Meça também, semanalmente:
+
+- Taxa de conversão da etapa gargalo, comparada ao alvo (a média saudável das outras etapas).
+- Percentual de negócios na etapa gargalo que cumprem de fato o critério de saída da etapa causa-real (alvo: 100%, se aparecer um caso fora disso, a trava do item 5.4 furou).
+- Percentual de negócios criados direto na etapa gargalo ou depois dela (alvo: 0%).
+- Percentual de negócios perdidos com motivo categorizado (alvo: 100%, se a Skill 1 já achou lacuna aqui, essa correção é pré-requisito).
+
+**Se a Skill 2 ainda estiver numa fase de rollout inicial (Fase 1 a 3) e nenhum lead tiver alcançado o corte de Quente ainda**, o gatilho de temperatura fica latente, não quebrado: diga isso explicitamente no output, a automação está configurada e vai disparar assim que a pontuação avançar de fase e algum lead cruzar o corte, não existe erro no fluxo, só falta dado suficiente ainda.
 
 ## Exemplo real de execução
 
@@ -114,7 +157,7 @@ Rodada de teste na mesma imobiliária fictícia (Vólta Imóveis): o gargalo apa
 
 Gere **dois arquivos com o mesmo conteúdo**:
 
-1. `diagnostico-gargalos-{negocio}.md` com: método de leitura usado (Passo 1), gate de sanidade (Passo 2), etapa gargalo (aparente e real, se forem diferentes), conversão, ticket médio real e receita em risco (Passo 3), leitura de forecast por etapa, e a tabela de gatilho/ação (Passo 5). Feche com o handoff: *"Isso fecha o ciclo das 3 skills da Aula 2: CRM organizado, leads pontuados, gargalo identificado e conectado a uma automação de verdade."*
+1. `diagnostico-gargalos-{negocio}.md` com: método de leitura usado (Passo 1), gate de sanidade (Passo 2), etapa gargalo (aparente e real, se forem diferentes), conversão, ticket médio real e receita em risco (Passo 3), leitura de forecast por etapa, e o sistema de recuperação completo com as 5 partes do Passo 5 (quantificação, triagem, sequência de resgate, trava estrutural, métricas). Feche com o handoff: *"Isso fecha o ciclo das 3 skills da Aula 2: CRM organizado, leads pontuados, gargalo identificado e conectado a um sistema de recuperação de verdade, não só uma automação pontual."*
 2. `diagnostico-gargalos-{negocio}.html`: a calculadora interativa do Passo 4 embutida diretamente na página (não como anexo separado), mesmos tokens visuais do padrão da Aula 1 (fundo `#0A0A0A`, ouro `#C9B298`), com o resultado do gargalo e da receita em risco em destaque visual.
 
 **Abra o HTML automaticamente assim que gerar:** `open diagnostico-gargalos-{negocio}.html` (Mac), `start diagnostico-gargalos-{negocio}.html` (Windows) ou `xdg-open diagnostico-gargalos-{negocio}.html` (Linux). Se falhar, avise o caminho exato do arquivo.
