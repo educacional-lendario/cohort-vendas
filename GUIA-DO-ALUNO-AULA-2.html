@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia do Aluno · Cohort de Vendas · Aula 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --background: #0A0A0A;
+    --card: #0F0F0F;
+    --raised: #262626;
+    --border: #262626;
+    --foreground: #E5E5E5;
+    --muted-foreground: #999999;
+    --primary: #C9B298;
+    --primary-light: #D9CBB9;
+    --primary-deep: #8D7556;
+    --primary-foreground: #1A1A1A;
+    --status-success: #23E169;
+    --font-body: 'Source Serif 4', Georgia, serif;
+    --font-ui: Inter, 'Source Sans Pro', system-ui, sans-serif;
+    --font-display: Rajdhani, Inter, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+  #progress {
+    position: fixed; top: 0; left: 0; height: 2px; width: 0;
+    background: var(--primary);
+    box-shadow: 0 0 15px rgba(201, 178, 152, 0.6);
+    z-index: 100;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 64px 32px 96px; }
+
+  .hero {
+    text-align: center;
+    padding: 32px 0 56px;
+    border-bottom: 1px solid var(--raised);
+    margin-bottom: 56px;
+  }
+  .hero .kicker {
+    display: inline-block;
+    font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--primary);
+    padding: 6px 16px;
+    border: 1px solid var(--primary-deep);
+    border-radius: 9999px;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+  .hero h1 em {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--primary);
+  }
+  .hero .subtitle {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    color: var(--muted-foreground);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+  }
+  .hero .lead {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 1.3rem;
+    color: var(--foreground);
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-radius: 0.75rem;
+    padding: 20px 24px;
+    margin: 48px auto;
+    max-width: 720px;
+  }
+  .toc-label {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 12px;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 20px;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+  .toc ol li { color: var(--muted-foreground); }
+  .toc ol li a { color: var(--foreground); text-decoration: none; transition: color 0.15s ease; }
+  .toc ol li a:hover { color: var(--primary); }
+
+  section { margin: 80px 0; scroll-margin-top: 32px; }
+  .section-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+  section h2 em { font-family: var(--font-body); font-style: normal; font-weight: 400; color: var(--primary); }
+  section h3 { font-family: var(--font-ui); font-size: 1.25rem; font-weight: 600; margin: 32px 0 12px; }
+  section p { margin: 16px 0; }
+  section strong { color: var(--primary-light); font-weight: 600; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    margin: 32px 0;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-radius: 1rem;
+    transition: border-color 0.2s ease;
+  }
+  .step:hover { border-color: var(--primary-deep); }
+  .step-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--primary); line-height: 1; }
+  .step-content h3 { margin-top: 0; margin-bottom: 8px; }
+  .step-content p { margin: 8px 0; font-family: var(--font-ui); font-size: 0.95rem; color: var(--muted-foreground); }
+  .step-content code {
+    font-family: var(--font-mono);
+    background: var(--raised);
+    color: var(--primary-light);
+    padding: 2px 8px;
+    border-radius: 0.25rem;
+    font-size: 0.85em;
+  }
+
+  .command-block {
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-radius: 0.75rem;
+    padding: 20px 88px 20px 24px;
+    margin: 16px 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--foreground);
+    overflow-x: auto;
+    position: relative;
+  }
+  .command-block::before { content: "$"; color: var(--primary); margin-right: 12px; font-weight: 700; }
+  .command-block.slash::before { content: none; margin-right: 0; }
+
+  .copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--raised);
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    padding: 5px 10px;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .copy-btn:hover { border-color: var(--primary); color: var(--primary-light); }
+  .copy-btn.copied { border-color: var(--primary); color: var(--primary); }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 32px 0; }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-left: 2px solid var(--primary);
+    border-radius: 0.75rem;
+    padding: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .skill-card:hover { transform: translateY(-2px); border-color: var(--primary-light); }
+  .skill-card .skill-name { font-family: var(--font-mono); font-size: 0.95rem; color: var(--primary); font-weight: 700; margin-bottom: 12px; }
+  .skill-card .skill-what { font-family: var(--font-ui); font-size: 0.9rem; color: var(--foreground); margin: 0 0 12px; line-height: 1.5; }
+  .skill-card .skill-out { font-family: var(--font-ui); font-size: 0.8rem; color: var(--muted-foreground); padding-top: 12px; border-top: 1px solid var(--raised); margin: 0; }
+  .skill-card .skill-out strong { color: var(--primary); font-weight: 600; }
+
+  .bloco { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 28px; margin: 24px 0; }
+  .bloco .bloco-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--raised); }
+  .bloco .bloco-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+  .bloco .bloco-time { font-family: var(--font-ui); font-size: 0.85rem; color: var(--muted-foreground); letter-spacing: 0.06em; }
+  .bloco h3 { margin: 0 0 16px; font-size: 1.4rem; }
+  .bloco .bloco-action { background: rgba(201, 178, 152, 0.06); border: 1px solid var(--primary-deep); border-radius: 0.5rem; padding: 14px 88px 14px 18px; margin: 16px 0; font-family: var(--font-mono); font-size: 0.9rem; position: relative; }
+  .bloco .bloco-result { font-family: var(--font-ui); font-size: 0.9rem; color: var(--muted-foreground); margin: 12px 0 0; }
+  .bloco .bloco-result strong { color: var(--primary); }
+
+  .rule {
+    display: grid; grid-template-columns: 32px 1fr; gap: 16px; align-items: flex-start;
+    padding: 20px; background: var(--card); border-left: 2px solid var(--primary); border-radius: 0.5rem; margin: 16px 0;
+  }
+  .rule-icon { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1; }
+  .rule h3 { margin: 0 0 4px; font-family: var(--font-ui); font-size: 1rem; font-weight: 700; }
+  .rule p { margin: 4px 0 0; font-family: var(--font-ui); font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.5; }
+
+  .cohort-map { background: var(--card); border: 1px solid var(--raised); border-radius: 1rem; padding: 28px; margin: 32px 0; }
+  .cohort-map .aula { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 0.5rem; margin: 6px 0; font-family: var(--font-ui); font-size: 0.95rem; transition: background 0.2s ease; }
+  .cohort-map .aula.atual { background: rgba(201, 178, 152, 0.08); border: 1px solid var(--primary-deep); }
+  .cohort-map .aula-num { font-family: var(--font-display); font-weight: 700; color: var(--primary); min-width: 60px; }
+  .cohort-map .aula-name { flex: 1; color: var(--foreground); font-weight: 600; }
+  .cohort-map .aula-status { font-size: 0.7rem; color: var(--muted-foreground); letter-spacing: 0.06em; text-transform: uppercase; }
+  .cohort-map .aula.atual .aula-status { color: var(--primary); font-weight: 700; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-family: var(--font-ui); font-size: 0.85rem; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--raised); }
+  th { color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; }
+  td { color: var(--foreground); }
+
+  .cta-final { text-align: center; margin: 96px 0 32px; padding: 48px 32px; background: var(--card); border: 1px solid var(--primary-deep); border-radius: 1.5rem; }
+  .cta-final h2 { font-family: var(--font-display); font-size: 2.2rem; margin: 0 0 16px; }
+  .cta-final h2 em { font-family: var(--font-body); font-style: normal; color: var(--primary); font-weight: 400; }
+  .cta-final p { font-family: var(--font-body); font-style: normal; color: var(--muted-foreground); max-width: 50ch; margin: 16px auto 24px; }
+  .cta-final .command-block { max-width: 400px; margin: 0 auto; text-align: left; }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">Cohort de Vendas · Aula 2</span>
+    <h1>CRM &amp; Gestão de <em>Pipeline com IA</em></h1>
+    <p class="subtitle">Academia Lendária · Squad Vendas</p>
+    <p class="lead">Você sai desta aula com o CRM organizado (na ferramenta que você já usa, seja qual for), os leads pontuados por critério objetivo, e o gargalo do seu funil identificado com valor real em risco, mesmo que você ainda não tenha nenhum CRM formal.</p>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-label">Você vai ler aqui</div>
+    <ol>
+      <li><a href="#secao-1">O que você vai sair construindo</a></li>
+      <li><a href="#secao-2">Onde você está no cohort</a></li>
+      <li><a href="#secao-3">Setup em 5 minutos</a></li>
+      <li><a href="#secao-4">As 3 skills da aula</a></li>
+      <li><a href="#secao-5">Fluxo da aula</a></li>
+      <li><a href="#secao-perdido">Se você se perder</a></li>
+      <li><a href="#secao-7">As regras de ouro</a></li>
+    </ol>
+  </nav>
+
+  <section id="secao-1">
+    <div class="section-num">Parte 1</div>
+    <h2>O que você vai sair <em>construindo</em></h2>
+    <p>Esta aula resolve um problema só: <strong>ter um processo desenhado no papel não adianta nada se ele não vira estrutura real dentro de uma ferramenta, com dado limpo o suficiente pra confiar</strong>. Ao final, você tem três artefatos prontos para rodar, nesta ordem:</p>
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>CRM montado e higienizado</h3>
+        <p>As etapas da Aula 1 traduzidas pra estrutura real da sua ferramenta (seja qual for, com API ou sem), mais um checklist de 8 pontos de higiene: contato duplicado, campo obrigatório vazio, etapa sem critério de saída, card zumbi, motivo de perda, nomenclatura, confiabilidade da origem do lead e cobertura histórica.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>Modelo de pontuação de leads</h3>
+        <p>7 critérios com pontos fixos por nível (engajamento, resposta, origem, histórico de compra, autoridade, necessidade explícita, gap), calibrado pelo teste dos dois vendedores e implantado aos poucos, um critério de cada vez, não tudo no primeiro dia.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Diagnóstico de gargalo do funil</h3>
+        <p>Onde exatamente seu funil perde mais receita, com valor real em risco, não estimativa genérica. Vem com uma calculadora interativa: você edita os números do seu próprio pipeline e vê o gargalo recalcular na hora.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="secao-2">
+    <div class="section-num">Parte 2</div>
+    <h2>Onde você está <em>no cohort</em></h2>
+    <div class="cohort-map">
+      <div class="aula">
+        <div class="aula-num">Aula 1</div>
+        <div class="aula-name">Processo Comercial &amp; Playbook com IA</div>
+        <div class="aula-status">Concluída</div>
+      </div>
+      <div class="aula atual">
+        <div class="aula-num">Aula 2</div>
+        <div class="aula-name">CRM &amp; Gestão de Pipeline com IA</div>
+        <div class="aula-status">Você está aqui</div>
+      </div>
+      <div class="aula">
+        <div class="aula-num">Aula 3</div>
+        <div class="aula-name">FUPs, Cadência e SDR</div>
+        <div class="aula-status">Próxima</div>
+      </div>
+      <div class="aula">
+        <div class="aula-num">Aula 4</div>
+        <div class="aula-name">Automação e Fechamento com IA</div>
+        <div class="aula-status">Final</div>
+      </div>
+    </div>
+    <p>As 3 skills desta aula puxam contexto direto do que você já gerou na Aula 1 (etapas do processo, critérios de saída, ICP e qualificação BANT/GPCT). Se você ainda não rodou a Aula 1, cada skill faz as perguntas mínimas equivalentes antes de continuar, mas o resultado fica mais raso do que rodando na sequência certa.</p>
+  </section>
+
+  <section id="secao-3">
+    <div class="section-num">Parte 3</div>
+    <h2>Setup em <em>5 minutos</em></h2>
+    <p>O repositório é o mesmo das duas aulas. Se você já fez o setup na Aula 1 nesta pasta, só precisa atualizar pra receber as 3 skills novas. Se está começando direto por aqui, clone o repositório completo.</p>
+    <div class="step">
+      <div class="step-num">1A</div>
+      <div class="step-content">
+        <h3>Já fiz a Aula 1 nesta pasta, só quero atualizar</h3>
+        <div class="command-block">cd cohort-vendas<br>git pull</div>
+        <p>Isso traz as 3 skills novas da Aula 2 pra dentro da mesma pasta, sem mexer no que você já gerou na Aula 1.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">1B</div>
+      <div class="step-content">
+        <h3>Estou começando agora, direto na Aula 2</h3>
+        <div class="command-block">git clone https://github.com/educacional-lendario/cohort-vendas.git<br>cd cohort-vendas</div>
+        <p>Cria a pasta <code>cohort-vendas</code> já com as skills das duas aulas dentro.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2A</div>
+      <div class="step-content">
+        <h3>Opção A · Claude Code (recomendado)</h3>
+        <p><strong>Antes de rodar <code>claude</code>, confirme que você está DENTRO da pasta certa.</strong> O erro mais comum é abrir o Claude Code um nível acima: aí ele não enxerga o <code>.claude/skills/</code> e nenhum comando funciona.</p>
+        <div class="command-block">ls .claude/skills</div>
+        <p>Apareceram as pastas <code>montagem-higiene-crm</code>, <code>lead-scoring-ia</code> e <code>diagnostico-gargalos-funil</code> (junto com as 7 da Aula 1)? Você está no lugar certo.</p>
+        <div class="command-block">claude</div>
+        <p>Teste com <code>/montagem-higiene-crm</code>. Se aparecer o menu da skill, está funcionando. Se aparecer "No commands match", feche o Claude Code, confira a pasta com o comando acima, e abra de novo já na pasta certa.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2B</div>
+      <div class="step-content">
+        <h3>Opção B · Codex CLI</h3>
+        <p>O Codex lê o <code>AGENTS.md</code> da raiz sozinho, ele já sabe onde estão as skills (espelhadas em <code>.agents/skills/</code>).</p>
+        <div class="command-block">codex</div>
+        <p>Peça naturalmente: "quero montar meu CRM e higienizar o pipeline", ou use <code>@montagem-higiene-crm</code> se a interface usar esse prefixo.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2C</div>
+      <div class="step-content">
+        <h3>Opção C · Sem instalar nada</h3>
+        <p>Não usa Claude Code nem Codex? Abra <code>.claude/skills/montagem-higiene-crm/SKILL.md</code>, copie o conteúdo (a partir do título, sem o bloco do topo) e cole numa conversa nova em qualquer IA de chat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="secao-4">
+    <div class="section-num">Parte 4</div>
+    <h2>As 3 skills <em>da aula</em></h2>
+    <p>As 3 rodam em sequência, cada uma depende da anterior estar funcionando: não dá pra pontuar lead num CRM sujo, e não dá pra diagnosticar gargalo antes de organizar a base.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-name">1 · /montagem-higiene-crm</div>
+        <p class="skill-what">Detecta primeiro qual ferramenta você usa (com API, sem API mas com login web, ou nenhum CRM formal), traduz as etapas da Aula 1 pra estrutura real dela, e roda o checklist de 8 pontos de higiene. GHL é só o exemplo demonstrado em aula, a skill não depende dele.</p>
+        <p class="skill-out"><strong>Output:</strong> estrutura de CRM traduzida + relatório de higiene com rotina de manutenção.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">2 · /lead-scoring-ia</div>
+        <p class="skill-what">Converte a qualificação BANT/GPCT da Aula 1 em 7 critérios de pontuação com pesos fixos, ajustados pelo seu ticket e ciclo de venda, implantados aos poucos numa ordem testada.</p>
+        <p class="skill-out"><strong>Output:</strong> modelo de pontuação completo + régua de temperatura (Quente/Morno/Frio).</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">3 · /diagnostico-gargalos-funil</div>
+        <p class="skill-what">Lê o CRM já organizado, calcula a conversão entre etapas, distingue o gargalo aparente da causa real, e projeta a receita em risco com uma calculadora interativa que recalcula ao vivo.</p>
+        <p class="skill-out"><strong>Output:</strong> diagnóstico de gargalo + calculadora interativa + automação de follow-up conectada.</p>
+      </div>
+    </div>
+    <h3>Mentes por trás da aula</h3>
+    <p>Cada skill credita o método na seção "Mentes por trás desta skill" do próprio <code>SKILL.md</code>. Nesta aula entram Aaron Ross (Predictable Revenue), Chet Holmes (The Ultimate Sales Machine), Neil Rackham (SPIN Selling), Keenan (Gap Selling), Jeb Blount (Sales EQ) e David Sandler (Submarine System), a mesma disciplina prática usada na Aula 1, agora aplicada a dado de CRM em vez de conversa de vendas.</p>
+  </section>
+
+  <section id="secao-5">
+    <div class="section-num">Parte 5</div>
+    <h2>Fluxo da <em>aula</em></h2>
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Abertura</span><span class="bloco-time">9h · 60 min</span></div>
+      <h3>Cold Call para Captação de Clientes</h3>
+      <p>Bloco convidado com João Paulo Ferreira: canal de aquisição por prospecção ativa, ferramentas de geração de lista e discagem, modelo de cold call, gravações reais do time de vendas dele, e sessão de perguntas e respostas.</p>
+      <p class="bloco-result">Você sai com: <strong>mapa mental do processo de prospecção dele + gravações do time de vendas usando o modelo</strong>.</p>
+    </div>
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 1</span><span class="bloco-time">25 min</span></div>
+      <h3>Montagem e Higiene de CRM</h3>
+      <p>Detecção da sua ferramenta, tradução das etapas da Aula 1, e checklist de higiene completo.</p>
+      <div class="bloco-action">/montagem-higiene-crm [seu negócio]</div>
+      <p class="bloco-result">Saída: <strong>higiene-crm-{negocio}.md + .html</strong></p>
+    </div>
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 2</span><span class="bloco-time">30 min</span></div>
+      <h3>Lead Scoring com IA</h3>
+      <p>As 7 tabelas de pontuação, o plano de implantação em fases, e a régua de temperatura.</p>
+      <div class="bloco-action">/lead-scoring-ia</div>
+      <p class="bloco-result">Saída: <strong>lead-scoring-{negocio}.md + .html</strong></p>
+    </div>
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 3</span><span class="bloco-time">25 min</span></div>
+      <h3>Diagnóstico de Gargalos do Funil</h3>
+      <p>Leitura do pipeline, cálculo do gargalo real, e a calculadora interativa ao vivo.</p>
+      <div class="bloco-action">/diagnostico-gargalos-funil</div>
+      <p class="bloco-result">Saída: <strong>diagnostico-gargalos-{negocio}.md + .html</strong>, pacote da Aula 2 fechado.</p>
+    </div>
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Encerramento</span><span class="bloco-time">10 min</span></div>
+      <h3>Fechando o loop</h3>
+      <p>O workflow de follow-up automático disparando a partir do score, conectando de volta com os hooks da Aula 1.</p>
+    </div>
+  </section>
+
+  <section id="secao-perdido">
+    <div class="section-num">Parte 5.5</div>
+    <h2>Se você se <em>perder</em></h2>
+    <p>Em qualquer skill, a qualquer momento, você pode perguntar <strong>"me mostra onde eu estou"</strong> (ou qualquer variação, "não entendi", "o que eu tô construindo", "o que falta"). As 3 skills respondem com a mesma estrutura:</p>
+    <div class="rule">
+      <div class="rule-icon">1</div>
+      <div><h3>Onde você está</h3><p>Qual skill, de qual número, dentro da sequência da Aula 2.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">2</div>
+      <div><h3>Por que você está ali</h3><p>O papel daquela skill na sequência, o que ela recebe de antes e o que ela entrega depois.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">3</div>
+      <div><h3>O que você está construindo</h3><p>O nome exato dos dois arquivos de saída (.md + .html) daquela skill.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">4</div>
+      <div><h3>O que falta para nota 10</h3><p>A lista específica de informação que você ainda precisa dar pra aquele documento sair completo.</p></div>
+    </div>
+    <p>Se mesmo assim continuar confuso, volte a este guia do zero, o link de cada skill está na <a href="#secao-4">Parte 4</a>.</p>
+  </section>
+
+  <section id="secao-7">
+    <div class="section-num">Parte 6</div>
+    <h2>As regras de <em>ouro</em></h2>
+    <div class="rule">
+      <div class="rule-icon">01</div>
+      <div><h3>Sua ferramenta de CRM não precisa ser nenhuma em especial</h3><p>Com API, sem API mas com login, ou nenhuma formal, ainda só planilha, a Skill 1 detecta o seu cenário antes de montar qualquer estrutura.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">02</div>
+      <div><h3>Pontuação entra aos poucos, nunca tudo de uma vez</h3><p>Comece só pelo critério de nível de resposta. Os critérios que exigem preenchimento manual (autoridade, necessidade, gap) entram por último.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">03</div>
+      <div><h3>Nunca confie num campo de dado sem checar ele antes</h3><p>Origem de lead majoritariamente "não classificado" contamina a pontuação inteira. A Skill 1 audita isso antes de qualquer coisa depender dele.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">04</div>
+      <div><h3>O gargalo mais visível nem sempre é a causa real</h3><p>Antes de mexer na etapa com pior conversão, confira a etapa anterior. Se ela deixa negócio mal qualificado passar, o problema está lá, não na etapa que "aparenta" pior número.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">05</div>
+      <div><h3>Forecast e receita em risco nunca são certeza</h3><p>São projeção baseada em padrão histórico. Comunique como possibilidade, nunca como garantia, principalmente em nicho regulado.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">06</div>
+      <div><h3>B2B e B2C pedem leitura diferente, não o mesmo modelo pros dois</h3><p>Comitê de decisão, ticket alto e ciclo longo mudam o peso dos critérios de pontuação e a forma de ler o gargalo, a skill ajusta isso, não aplica uma régua única.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">07</div>
+      <div><h3>Nicho regulado muda a linguagem, herdado da Aula 1</h3><p>Sem "garantido", sem depoimento de paciente/cliente em médico/psicologia/jurídico, inclusive na forma como qualquer estimativa de fechamento é comunicada pro time.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">08</div>
+      <div><h3>Automação de follow-up nunca dispara só por tempo parado</h3><p>Precisa também do critério de saída daquela etapa não cumprido, senão o time aprende a empurrar o card só pra escapar do alerta, sem resolver nada de verdade.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">09</div>
+      <div><h3>O HTML sempre abre sozinho</h3><p>Assim que a skill termina, o arquivo .html abre automaticamente no navegador. Se isso não acontecer no seu ambiente, a skill avisa o caminho exato do arquivo, nunca termina em silêncio.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">10</div>
+      <div><h3>A Central de Entregas acompanha tudo</h3><p>Um arquivo <code>central-de-entregas-aula2.html</code> aparece na raiz do seu projeto assim que a primeira skill termina. Cada skill destrava o próprio card lá.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-final">
+    <h2>Pronto pra <em>começar</em>?</h2>
+    <p>Abra o Claude Code no terminal e rode o primeiro comando.</p>
+    <div class="command-block slash">/montagem-higiene-crm [seu negócio]</div>
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById('progress');
+  function updateBar() {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  document.addEventListener('scroll', updateBar);
+  updateBar();
+
+  function getCopyText(el) {
+    const clone = el.cloneNode(true);
+    clone.querySelectorAll('br').forEach(function (br) {
+      br.replaceWith('\n');
+    });
+    clone.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.remove();
+    });
+    return clone.textContent.trim();
+  }
+
+  document.querySelectorAll('.command-block, .bloco-action').forEach(function (block) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.setAttribute('aria-label', 'Copiar comando');
+    btn.textContent = 'Copiar';
+    btn.addEventListener('click', function () {
+      const text = getCopyText(block);
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copiado!';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = 'Copiar';
+          btn.classList.remove('copied');
+        }, 1500);
+      }).catch(function () {
+        btn.textContent = 'Selecione o texto';
+        setTimeout(function () {
+          btn.textContent = 'Copiar';
+        }, 1500);
+      });
+    });
+    block.appendChild(btn);
+  });
+</script>
+
+</body>
+</html>
