@@ -18,6 +18,8 @@ Bem-vindo ao repositório do Cohort de Vendas. Este repo contém tudo o que voc�
 
 Cada guia tem tudo que você precisa saber pra começar aquela aula (5 minutos de leitura).
 
+**Travou em alguma coisa da Aula 1?** A pasta **[`guias/`](./guias/)** tem um guia por problema, do "nunca abri um terminal" até "terminei as skills, e agora?". Abra o [roteador](./guias/README.md), ache a linha "Estou perdido em..." mais parecida com o seu caso e siga.
+
 **Se você se perder no meio de uma skill**, não sabe mais onde está, por que está fazendo aquilo, ou o que falta pra fechar o material, peça pra qualquer skill *"me mostra onde eu estou"*. Todas as 10 têm essa resposta pronta, com base no guia da aula correspondente.
 
 Se preferir markdown puro, o conteúdo está abaixo.
@@ -56,7 +58,7 @@ Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes p
 | Challenger Sale (Dixon & Adamson) | Commercial Teaching | Discovery Script, Playbook de Objeções |
 | Juliano Torriani | Social Selling 2.0 (funil de DM sem tráfego pago) | Social Selling |
 
-Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale e Juliano Torriani entram aqui como reforço pontual, a aplicação mais profunda de prospecção e cadência é na **Aula 3 (FUPs, Cadência e SDR, com Adavio)**.
+Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale e Juliano Torriani entram aqui como reforço pontual, a aplicação mais profunda de prospecção e cadência é na **Aula 3 (FUPs, Cadência, SDR e Automação, com Adavio)**.
 
 ---
 
@@ -281,6 +283,15 @@ Lê o CRM já organizado, calcula a conversão entre etapas, distingue o gargalo
 │       └── diagnostico-gargalos-funil/      Aula 2
 ├── .agents/
 │   └── skills/                     espelho literal para Codex e outros agentes
+├── guias/                          um guia por problema ("estou perdido em X"), específico da Aula 1
+│   ├── README.md                   o roteador: ache seu problema aqui
+│   ├── 01-pre-requisitos/          terminal, instalar, baixar o projeto, custo, como ser guiado
+│   ├── 02-conhecimento-minimo/     conceitos, os três funis, BANT/GPCT/SPIN, a conversa de
+│   │                               venda, diferencial × concorrência, o diagnóstico
+│   ├── 03-insumos/                 offerbook do marketing, calls gravadas e objeções reais
+│   ├── 04-operacao/                as 7 skills, revisar e corrigir, entregáveis e central
+│   └── 05-depois/                  pôr em prática, cards parados, onboarding, métricas,
+│                                   vender isso como serviço, ponte pra Aula 2
 ├── templates/                      templates em branco dos outputs, central-de-entregas.html (Aula 1) e central-de-entregas-aula2.html (Aula 2)
 ├── exemplos/                       exemplos preenchidos
 └── docs/
@@ -302,8 +313,8 @@ VOCÊ
  |
  +-- AULA 1: Processo Comercial & Playbook com IA        concluída
  +-- AULA 2: CRM & Gestão de Pipeline com IA             <- você está aqui
- +-- AULA 3: FUPs, Cadência e SDR                        próxima
- +-- AULA 4: Automação e Fechamento com IA               final
+ +-- AULA 3: FUPs, Cadência, SDR e Automação             próxima
+ +-- AULA 4: Proposta e Fechamento                       final
 ```
 
 ---
