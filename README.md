@@ -103,7 +103,7 @@ Primeira pergunta, antes de qualquer comando: **você vai começar um projeto do
 ### Cenário 1: projeto novo (do zero)
 
 ```bash
-git clone https://github.com/educacional-lendario/cohort-vendas.git
+git clone https://github.com/marketingLendario/cohort-vendas.git
 cd cohort-vendas
 ```
 
@@ -115,7 +115,7 @@ Não clone o repo inteiro por cima do seu projeto, clone numa pasta temporária,
 
 ```bash
 cd /caminho/do/seu/projeto
-git clone https://github.com/educacional-lendario/cohort-vendas.git /tmp/cohort-vendas-temp
+git clone https://github.com/marketingLendario/cohort-vendas.git /tmp/cohort-vendas-temp
 mkdir -p .claude/skills .agents/skills templates squads
 cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/
 cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/
