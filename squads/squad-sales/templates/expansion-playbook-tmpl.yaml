@@ -1,0 +1,162 @@
+# Expansion Playbook Template
+# Usado pelo @expansion-strategist para criar playbooks de upgrade/cross-sell.
+# Cada playbook mapeia: produto origem → produto destino, com triggers, timing e scripts.
+
+template:
+  id: expansion-playbook-tmpl
+  name: "Expansion Playbook"
+  version: "1.0"
+  output:
+    format: yaml
+    filename: "expansion-playbook-{{source_product}}-to-{{target_product}}.yaml"
+  description: >
+    Template para playbooks de expansão (upgrade, cross-sell, upsell).
+    Define condições de trigger, timing, canal, script e anti-sinais
+    para cada transição entre produtos.
+
+variables:
+  required:
+    - source_product: "Produto de origem (onde o cliente está hoje)"
+    - target_product: "Produto de destino (para onde queremos levar)"
+    - business: "Nome do business"
+  optional:
+    - campaign_slug: "Slug da campanha (se vinculado a campanha específica)"
+    - effective_date: "Data de início de vigência do playbook"
+
+sections:
+
+  source_product:
+    description: "Produto onde o cliente está atualmente"
+    fields:
+      name: "{{source_product}}"
+      tier: "digital | light_touch | mid_touch | white_glove"
+      ticket: "Valor do produto de origem"
+      typical_duration: "Duração típica do produto (meses, semanas)"
+      completion_milestone: "Milestone que indica conclusão/maturidade"
+
+  target_product:
+    description: "Produto para o qual queremos expandir"
+    fields:
+      name: "{{target_product}}"
+      tier: "digital | light_touch | mid_touch | white_glove"
+      ticket: "Valor do produto de destino"
+      value_proposition: "Por que este upgrade faz sentido para o cliente"
+      prerequisites: "O que o cliente precisa ter feito/alcançado antes"
+
+  trigger_composite:
+    description: >
+      Conjunto de condições que, quando combinadas, indicam prontidão
+      para expansion. Usar operador AND (todas devem ser verdadeiras)
+      ou OR (pelo menos uma).
+    fields:
+      operator: "AND | OR"
+      conditions:
+        - id: "TRIG-001"
+          type: "behavioral | temporal | sentiment | achievement | financial"
+          signal: "Descrição do sinal"
+          source: "De onde vem o dado (health score, NPS, usage, etc.)"
+          threshold: "Valor mínimo ou condição"
+          weight: "Peso relativo (se operator=OR com scoring)"
+          example: "Exemplo concreto do sinal"
+
+      composite_score:
+        enabled: false
+        min_score: "Score mínimo para acionar (se usando scoring)"
+        formula: "Como calcular o score composto"
+
+  timing:
+    description: "Quando abordar o cliente sobre expansion"
+    fields:
+      optimal_window:
+        start: "Momento mais cedo (ex: 'Semana 6 do programa')"
+        end: "Momento mais tarde (ex: 'Até 2 semanas pós-conclusão')"
+        rationale: "Por que esta janela"
+
+      avoid_periods:
+        - period: "Período a evitar"
+          reason: "Por que evitar"
+
+      trigger_delay:
+        description: "Tempo entre trigger acionado e primeiro contato"
+        value: "Ex: 48h"
+        rationale: "Por que este delay"
+
+  channel:
+    description: "Canal e formato do approach de expansion"
+    fields:
+      primary:
+        channel: "email | video_call | whatsapp | in_app | presential"
+        format: "1:1 | group | automated"
+        responsible: "Quem faz o approach (CSM, founder, automated)"
+
+      follow_up:
+        channel: "Canal de follow-up se sem resposta"
+        timing: "Tempo após primeiro contato"
+        max_attempts: "Número máximo de tentativas"
+
+      escalation:
+        trigger: "Quando escalar"
+        to: "Para quem escalar"
+
+  script:
+    description: "Script/roteiro para a conversa de expansion"
+    fields:
+      opener:
+        approach: "Valor-first, nunca venda direta"
+        template: |
+          Contexto: reconhecer conquistas do cliente.
+          Transição: conectar conquistas com próximo nível.
+          Proposta: apresentar o upgrade como próximo passo natural.
+
+      value_bridge:
+        description: "Como conectar resultados atuais com o próximo produto"
+        template: |
+          "Você alcançou [resultado no produto atual]. O próximo passo natural
+          para [objetivo maior do cliente] é [produto destino], que vai te
+          permitir [benefício principal]."
+
+      objection_handling:
+        common_objections:
+          - objection: "Preço"
+            response_framework: "ROI do produto atual + projeção do próximo"
+          - objection: "Timing"
+            response_framework: "Janela de oportunidade + custo de esperar"
+          - objection: "Não sei se preciso"
+            response_framework: "Diagnóstico rápido + caso similar"
+
+      close:
+        soft_close: "Pergunta de qualificação, não de fechamento"
+        next_step: "Sempre definir próximo passo concreto"
+
+  conversion_target:
+    description: "Metas de conversão para este playbook"
+    fields:
+      target_rate: "% de clientes elegíveis que convertem"
+      benchmark: "Benchmark de mercado para referência"
+      volume_estimate: "Quantos clientes elegíveis por período"
+      revenue_impact: "Receita incremental projetada por período"
+      measurement:
+        metric: "Como medir conversão"
+        source: "Onde acompanhar"
+        cadence: "Frequência de análise"
+
+  anti_signals:
+    description: >
+      Sinais que indicam que o cliente NÃO deve ser abordado para expansion.
+      Abordar nestes momentos gera atrito e pode acelerar churn.
+    fields:
+      - id: "ANTI-001"
+        signal: "Descrição do anti-sinal"
+        source: "De onde vem o dado"
+        action: "O que fazer em vez de abordar"
+        cooldown: "Tempo mínimo antes de tentar novamente"
+        example: "Exemplo concreto"
+
+    hard_stops:
+      description: "Condições que bloqueiam qualquer approach de expansion"
+      conditions:
+        - "Cliente com ticket de suporte crítico aberto"
+        - "NPS <= 6 no último ciclo"
+        - "Health score < 40"
+        - "Cliente em processo de churn/cancelamento"
+        - "Menos de 50% do produto atual completado"

@@ -1,0 +1,285 @@
+workflow:
+  id: cs-setup
+  name: "CS Setup for Business"
+  version: "1.0.0"
+  description: |
+    Workflow principal para configurar Customer Success em um business.
+    4 fases sequenciais com checkpoints entre cada uma.
+    Lê dados do workspace do business e produz artefatos de CS completos.
+  type: canonical-cs-workflow
+  status: active
+  duration: "3-5 dias"
+
+  prerequisites:
+    required:
+      - "Business registrado em workspace/businesses/{business}/"
+      - "Pelo menos 1 produto com offerbook definido"
+      - "ICP do business ou produto definido"
+    recommended:
+      - "Pricing strategy definida"
+      - "Proof/testimonials disponíveis"
+      - "Dados de churn/retenção históricos"
+
+  workspace_reads:
+    - "workspace/businesses/{business}/company/company-profile.yaml"
+    - "workspace/businesses/{business}/company/icp.yaml"
+    - "workspace/businesses/{business}/products/"
+    - "workspace/businesses/{business}/operations/pricing-strategy.yaml"
+    - "workspace/businesses/{business}/analytics/"
+
+  output_path: "workspace/businesses/{business}/analytics/customer-success/"
+
+  handoff_prompts:
+    - from: cs-chief
+      to: onboarding-architect
+      when: "Phase 1 complete, diagnostic approved"
+      prompt: "Pass CS report with gaps and tier assignments"
+    - from: onboarding-architect
+      to: health-monitor
+      when: "Onboarding design approved"
+      prompt: "Pass onboarding flow with activation signals for health score"
+    - from: health-monitor
+      to: expansion-strategist
+      when: "Health score and EWS built"
+      prompt: "Pass health model with green triggers for expansion"
+
+  sequence:
+
+    # =========================================================================
+    # PHASE 1: DIAGNOSE
+    # =========================================================================
+    - step: phase-1
+      id: phase-1
+      phase: 1
+      phase_name: "Diagnose"
+      agent: cs-chief
+      description: |
+        CS Chief lê o workspace do business e gera um diagnóstico completo
+        de maturidade CS. Identifica gaps, prioriza e define delegações.
+      action: diagnose_cs_maturity
+
+      inputs:
+        - "workspace/businesses/{business}/ (company, products, operations)"
+        - "squads/customer-success/data/cs-motion-tiers.yaml"
+        - "squads/customer-success/checklists/cs-readiness-checklist.md"
+
+      tasks:
+        - "Ler company-profile, ICP, produtos e pricing do workspace"
+        - "Mapear cada produto ao tier de CS motion adequado"
+        - "Avaliar cada dimensão do CS Readiness Checklist (0-10)"
+        - "Identificar e priorizar gaps"
+        - "Definir plano de delegação para experts"
+        - "Gerar CS Report usando cs-report-tmpl.yaml"
+
+      output:
+        - file: "cs-report-{business}-{date}.yaml"
+          template: "templates/cs-report-tmpl.yaml"
+
+      next: checkpoint-1
+
+    - step: checkpoint-1
+      id: checkpoint-1
+      agent: cs-chief
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar diagnóstico antes de prosseguir"
+      validation:
+        - "CS Report completo com todos os 6 dimension scores"
+        - "Pelo menos 1 gap identificado com prioridade"
+        - "Tier de CS motion definido para cada produto"
+        - "Delegações necessárias listadas"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "Retornar ao phase-1 para completar diagnóstico"
+      next: phase-2
+
+    # =========================================================================
+    # PHASE 2: DESIGN ONBOARDING
+    # =========================================================================
+    - step: phase-2
+      id: phase-2
+      phase: 2
+      phase_name: "Design Onboarding"
+      agent: onboarding-architect
+      description: |
+        Onboarding Architect desenha o fluxo de onboarding para cada produto/tier.
+        Inclui milestones, automações, touchpoints e TTFW.
+      action: design_onboarding_flow
+
+      inputs:
+        - "CS Report do phase-1"
+        - "squads/customer-success/data/cs-motion-tiers.yaml"
+        - "Dados do produto (offerbook, curriculum)"
+
+      tasks:
+        - "Definir TTFW e first win para cada produto"
+        - "Mapear milestones de onboarding (3-7 por produto)"
+        - "Definir touchpoints por tier (canais, timing, conteúdo)"
+        - "Criar fluxo de automação (triggers e ações)"
+        - "Documentar handoff vendas → CS"
+        - "Definir métricas de sucesso do onboarding"
+
+      output:
+        - file: "onboarding-flow-{product}.yaml"
+          description: "Fluxo de onboarding por produto"
+
+      delegations:
+        - expert: "@wes-kao"
+          when: "Produto é cohort-based"
+          request: "Milestone design e completion strategy"
+        - expert: "@sean-ellis"
+          when: "Definição de activation event incerta"
+          request: "Activation model para o produto"
+
+      next: checkpoint-2
+
+    - step: checkpoint-2
+      id: checkpoint-2
+      agent: onboarding-architect
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar design de onboarding"
+      validation:
+        - "TTFW definido e mensurável para cada produto"
+        - "Pelo menos 3 milestones por produto"
+        - "Touchpoints definidos com canal, timing e conteúdo"
+        - "Automações documentadas com triggers"
+        - "Handoff vendas → CS documentado"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "Retornar ao phase-2 para completar design"
+      next: phase-3
+
+    # =========================================================================
+    # PHASE 3: BUILD HEALTH SCORE
+    # =========================================================================
+    - step: phase-3
+      id: phase-3
+      phase: 3
+      phase_name: "Build Health Score"
+      agent: health-monitor
+      description: |
+        Health Monitor cria o modelo de health score para cada produto.
+        Inclui componentes, pesos, thresholds e Early Warning System.
+      action: build_health_score_model
+
+      inputs:
+        - "CS Report do phase-1"
+        - "Onboarding flow do phase-2 (sinais de ativação)"
+        - "squads/customer-success/checklists/health-score-checklist.md"
+
+      tasks:
+        - "Definir 5 componentes do health score por produto"
+        - "Atribuir pesos (somam 100%)"
+        - "Definir thresholds (healthy/at_risk/critical)"
+        - "Mapear sinais específicos do produto"
+        - "Identificar fontes de dados"
+        - "Criar Early Warning System (sinais, alertas, SLAs)"
+        - "Validar modelo contra health-score-checklist"
+
+      output:
+        - file: "health-score-{product}.yaml"
+          description: "Modelo de health score por produto"
+        - file: "ews-{product}.yaml"
+          description: "Early Warning System por produto"
+
+      delegations:
+        - expert: "@nick-mehta"
+          when: "Sempre (health score é domínio dele)"
+          request: "Review e calibração do modelo"
+
+      next: checkpoint-3
+
+    - step: checkpoint-3
+      id: checkpoint-3
+      agent: health-monitor
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar health score e EWS"
+      validation:
+        - "Health score tem 5 componentes com pesos somando 100%"
+        - "Thresholds definidos para 3 faixas"
+        - "Todos os sinais têm fonte de dados identificada"
+        - "EWS tem pelo menos 5 sinais de alerta"
+        - "Health Score Checklist passing >= 80%"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "Retornar ao phase-3, delegar para @nick-mehta se necessário"
+      next: phase-4
+
+    # =========================================================================
+    # PHASE 4: PLAN EXPANSION
+    # =========================================================================
+    - step: phase-4
+      id: phase-4
+      phase: 4
+      phase_name: "Plan Expansion"
+      agent: expansion-strategist
+      description: |
+        Expansion Strategist cria playbooks de expansion para cada caminho
+        de upgrade/cross-sell entre produtos.
+      action: plan_expansion_paths
+
+      inputs:
+        - "CS Report do phase-1"
+        - "Health score do phase-3 (triggers de expansion)"
+        - "squads/customer-success/templates/expansion-playbook-tmpl.yaml"
+        - "Pricing strategy do workspace"
+
+      tasks:
+        - "Mapear todos os caminhos de expansion possíveis"
+        - "Para cada caminho, criar playbook usando template"
+        - "Definir triggers compostos (behavioral + sentiment + achievement)"
+        - "Criar scripts de conversa por caminho"
+        - "Definir anti-sinais e hard stops"
+        - "Estabelecer metas de conversão"
+        - "Criar KPI scorecard de CS"
+
+      output:
+        - file: "expansion-playbook-{source}-to-{target}.yaml"
+          template: "templates/expansion-playbook-tmpl.yaml"
+          description: "Playbook por caminho de expansion"
+        - file: "cs-scorecard-{business}.yaml"
+          description: "KPI scorecard consolidado de CS"
+
+      delegations:
+        - expert: "@peter-fader"
+          when: "Base > 100 clientes, precisa segmentar"
+          request: "CLV segmentation para priorizar expansion"
+        - expert: "@hormozi-retention"
+          when: "Churn > target, precisa de retention strategy antes de expansion"
+          request: "Retention strategy e offer adjustments"
+
+      next: checkpoint-4
+
+    - step: checkpoint-4
+      id: checkpoint-4
+      agent: expansion-strategist
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar expansion plan e fechar setup"
+      validation:
+        - "Pelo menos 1 expansion playbook por transição de produto"
+        - "Cada playbook tem triggers, timing, script e anti-sinais"
+        - "KPI scorecard com pelo menos 6 KPIs"
+        - "CS Readiness Checklist re-avaliada com scores atualizados"
+        - "Score médio >= 6 (CONDITIONAL GO ou melhor)"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "Iterar nas fases com gaps, priorizar por impacto"
+      next: complete
+
+    - step: complete
+      id: complete
+      agent: cs-chief
+      type: completion
+      action: complete_workflow
+      description: "CS Setup finalizado"
+      summary: |
+        Setup de Customer Success completo. Artefatos gerados:
+        1. CS Report (diagnóstico de maturidade)
+        2. Onboarding flows (por produto)
+        3. Health score models + EWS (por produto)
+        4. Expansion playbooks (por caminho)
+        5. KPI Scorecard consolidado
+      next_steps:
+        - "Implementar automações de onboarding"
+        - "Configurar health score no sistema"
+        - "Treinar CSMs nos playbooks"
+        - "Agendar primeira review de métricas (30 dias)"

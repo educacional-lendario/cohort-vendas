@@ -1,0 +1,352 @@
+workflow:
+  id: churn-prevention
+  name: "Churn Prevention System"
+  version: "1.0.0"
+  description: |
+    Workflow para criar o sistema completo de prevenção de churn.
+    3 fases: build health score, create Early Warning System, define playbooks.
+    Pode ser executado standalone ou como parte do cs-setup.
+  type: cs-workflow
+  status: active
+  duration: "2-3 dias"
+
+  prerequisites:
+    required:
+      - "Produto definido com tier de CS motion"
+      - "ICP do produto ou business disponível"
+      - "Dados de uso ou engagement minimamente identificados"
+    recommended:
+      - "CS Report existente (do cs-setup phase-1)"
+      - "Onboarding flow definido (sinais de ativação)"
+      - "Dados históricos de churn (motivos, timing, volume)"
+      - "NPS ou feedback qualitativo recente"
+
+  workspace_reads:
+    - "workspace/businesses/{business}/products/{product}/"
+    - "workspace/businesses/{business}/analytics/"
+
+  output_path: "workspace/businesses/{business}/analytics/customer-success/"
+
+  handoff_prompts:
+    - from: health-monitor
+      to: cs-chief
+      when: "Health score and EWS built"
+      prompt: "Pass health model and EWS for playbook definition"
+
+  sequence:
+
+    # =========================================================================
+    # PHASE 1: BUILD HEALTH SCORE
+    # =========================================================================
+    - step: phase-1
+      id: phase-1
+      phase: 1
+      phase_name: "Build Health Score"
+      agent: health-monitor
+      description: |
+        Health Monitor cria o modelo de health score para o produto.
+        Define componentes, pesos, thresholds e sinais específicos.
+        Delega review para @nick-mehta.
+      action: build_health_score
+
+      inputs:
+        - "Dados do produto (offerbook, curriculum, tier)"
+        - "Onboarding flow (se disponível, para sinais de ativação)"
+        - "squads/customer-success/checklists/health-score-checklist.md"
+        - "squads/customer-success/data/expert-delegation-map.yaml (health_score)"
+
+      tasks:
+        - "Identificar 5 componentes do health score"
+        - "Definir sinais específicos do produto para cada componente"
+        - "Atribuir pesos (somam 100%)"
+        - "Definir thresholds: healthy (>70), at_risk (40-70), critical (<40)"
+        - "Mapear fontes de dados para cada sinal"
+        - "Definir cadência de refresh"
+        - "Validar contra health-score-checklist"
+
+      output:
+        - file: "health-score-{product}.yaml"
+          description: "Modelo de health score completo"
+          schema:
+            product: "string"
+            tier: "string"
+            version: "string"
+            components:
+              - id: "C1"
+                name: "string"
+                description: "string"
+                weight: "number (0-100)"
+                signals:
+                  - name: "string"
+                    source: "string"
+                    measurement: "string"
+                    good_threshold: "string"
+                    bad_threshold: "string"
+            weights_total: 100
+            thresholds:
+              healthy:
+                range: "71-100"
+                meaning: "Cliente saudável, expansion eligible"
+                action: "Monitorar, considerar expansion"
+              at_risk:
+                range: "40-70"
+                meaning: "Cliente em risco, atenção necessária"
+                action: "Ativar playbook de intervenção"
+              critical:
+                range: "0-39"
+                meaning: "Cliente em risco iminente de churn"
+                action: "Alerta imediato, rescue intervention"
+            refresh_cadence: "string (daily | weekly | biweekly)"
+            data_sources:
+              - component_id: "C1"
+                source: "string"
+                type: "api | database | manual | survey"
+                cadence: "string"
+                fallback: "string"
+
+      delegations:
+        - expert: "@nick-mehta"
+          action: "Review e calibração do modelo"
+          handoff:
+            send: "health-score-{product}.yaml draft"
+            expect: "Modelo revisado com ajustes de pesos e thresholds"
+
+      next: checkpoint-1
+
+    - step: checkpoint-1
+      id: checkpoint-1
+      agent: health-monitor
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar health score antes de criar EWS"
+      validation:
+        - "5 componentes definidos com pesos somando 100%"
+        - "3 faixas de threshold definidas"
+        - "Cada componente tem pelo menos 1 sinal específico"
+        - "Todas as fontes de dados identificadas"
+        - "Health Score Checklist passing >= 80%"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "Health Monitor ajusta modelo, re-delega para @nick-mehta se necessário"
+      next: phase-2
+
+    # =========================================================================
+    # PHASE 2: CREATE EARLY WARNING SYSTEM
+    # =========================================================================
+    - step: phase-2
+      id: phase-2
+      phase: 2
+      phase_name: "Create EWS"
+      agent: health-monitor
+      description: |
+        Health Monitor cria o Early Warning System baseado no health score.
+        Define sinais de alerta, regras de detecção, SLAs e escalation paths.
+      action: create_ews
+
+      inputs:
+        - "Health score model do phase-1"
+        - "squads/customer-success/data/cs-motion-tiers.yaml (intervention protocols)"
+
+      tasks:
+        - "Extrair sinais de alerta do health score model"
+        - "Definir regras de detecção (condição + janela temporal)"
+        - "Criar alertas compostos (combinação de sinais)"
+        - "Definir SLAs de resposta por severidade"
+        - "Mapear escalation path por tipo de alerta"
+        - "Definir canais de notificação por tier"
+        - "Criar dashboard de alertas (especificação)"
+
+      output:
+        - file: "ews-{product}.yaml"
+          description: "Early Warning System completo"
+          schema:
+            product: "string"
+            tier: "string"
+            version: "string"
+            alerts:
+              - id: "EWS-001"
+                name: "string"
+                type: "single_signal | composite"
+                severity: "critical | high | medium | low"
+                detection_rule:
+                  condition: "string (ex: 'health_score < 40 for 3 consecutive days')"
+                  window: "string (ex: '3 days', '1 week')"
+                  data_source: "string"
+                response:
+                  sla: "string (ex: '4h', '24h', '48h')"
+                  owner: "string (CSM, CS Chief, founder)"
+                  action: "string"
+                  channel: "string"
+                escalation:
+                  trigger: "string (ex: 'no response in SLA')"
+                  to: "string"
+                  action: "string"
+
+            composite_alerts:
+              - id: "EWS-COMP-001"
+                name: "string"
+                description: "string"
+                conditions:
+                  operator: "AND | OR"
+                  signals: "list of alert IDs"
+                severity: "critical"
+                response:
+                  sla: "string"
+                  owner: "string"
+                  action: "string"
+
+            sla_matrix:
+              critical:
+                response_time: "4h"
+                resolution_target: "24h"
+                owner: "CS Chief"
+              high:
+                response_time: "24h"
+                resolution_target: "72h"
+                owner: "CSM"
+              medium:
+                response_time: "48h"
+                resolution_target: "1 week"
+                owner: "CSM"
+              low:
+                response_time: "1 week"
+                resolution_target: "2 weeks"
+                owner: "Automated"
+
+            notification_channels:
+              critical: ["slack_urgent", "email", "sms"]
+              high: ["slack", "email"]
+              medium: ["slack", "email_digest"]
+              low: ["email_digest"]
+
+      next: checkpoint-2
+
+    - step: checkpoint-2
+      id: checkpoint-2
+      agent: health-monitor
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar EWS antes de criar playbooks"
+      validation:
+        - "Pelo menos 5 alertas definidos"
+        - "Pelo menos 1 alerta composto"
+        - "SLA definido para cada severidade"
+        - "Escalation path documentado"
+        - "Canais de notificação por severidade"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "Health Monitor completa EWS"
+      next: phase-3
+
+    # =========================================================================
+    # PHASE 3: DEFINE PLAYBOOKS
+    # =========================================================================
+    - step: phase-3
+      id: phase-3
+      phase: 3
+      phase_name: "Define Playbooks"
+      agent: cs-chief
+      description: |
+        CS Chief define playbooks de intervenção para cada tipo de alerta.
+        Delega para @hormozi-retention quando o problema é estrutural
+        (oferta, pricing, value proposition).
+      action: define_intervention_playbooks
+
+      inputs:
+        - "Health score model do phase-1"
+        - "EWS do phase-2"
+        - "squads/customer-success/data/cs-motion-tiers.yaml (intervention protocols)"
+        - "squads/customer-success/data/expert-delegation-map.yaml (retention_strategy)"
+
+      tasks:
+        - "Criar playbook de intervenção para cada tipo de alerta"
+        - "Definir ações por faixa de health score"
+        - "Criar scripts de rescue call"
+        - "Definir métricas de sucesso de cada playbook (save rate)"
+        - "Mapear quando escalar vs resolver internamente"
+        - "Identificar problemas estruturais para delegar a @hormozi-retention"
+        - "Criar playbook de win-back para churned customers"
+
+      output:
+        - file: "intervention-playbooks-{product}.yaml"
+          description: "Playbooks de intervenção por tipo de alerta"
+          schema:
+            product: "string"
+            tier: "string"
+            playbooks:
+              - id: "PB-001"
+                name: "string"
+                trigger: "Alert ID do EWS"
+                health_score_range: "string (ex: '40-70')"
+                target_outcome: "string"
+                steps:
+                  - step: 1
+                    action: "string"
+                    owner: "string"
+                    channel: "string"
+                    timing: "string"
+                    script: "string (template de mensagem)"
+                  - step: 2
+                    action: "string"
+                    escalation_if: "string"
+                success_metrics:
+                  save_rate_target: "string (ex: '60%')"
+                  measurement: "string"
+
+            win_back:
+              eligibility: "Critérios para tentar win-back"
+              timing: "Quando abordar (ex: '30 dias pós-churn')"
+              channel: "Canal preferido"
+              offer: "Tipo de oferta de retorno"
+              max_attempts: 2
+              success_metric: "Win-back rate target"
+
+      delegations:
+        - expert: "@hormozi-retention"
+          when: "Churn causado por problemas de oferta, pricing ou value proposition"
+          request: "Retention strategy com redesenho de oferta"
+          handoff:
+            send: "Dados de churn (motivos, volume, timing) + oferta atual"
+            expect: "retention-strategy.yaml com offer adjustments e LTV projection"
+        - expert: "@david-spinks"
+          when: "Churn causado por falta de comunidade ou isolamento"
+          request: "Community strategy para aumentar stickiness"
+          handoff:
+            send: "Perfil dos membros + dados de engajamento"
+            expect: "community-strategy.yaml com engagement model"
+
+      next: checkpoint-3
+
+    - step: checkpoint-3
+      id: checkpoint-3
+      agent: cs-chief
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar sistema completo de churn prevention"
+      validation:
+        - "Pelo menos 1 playbook para cada severidade (critical, high, medium)"
+        - "Cada playbook tem steps, owner e timing definidos"
+        - "Scripts de rescue documentados"
+        - "Save rate target definido"
+        - "Win-back playbook criado"
+        - "Delegações para experts documentadas (quando aplicável)"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "CS Chief itera nos playbooks"
+      next: complete
+
+    - step: complete
+      id: complete
+      agent: cs-chief
+      type: completion
+      action: complete_workflow
+      description: "Churn Prevention System finalizado"
+      summary: |
+        Sistema de prevenção de churn completo. Artefatos gerados:
+        1. Health Score Model (5 componentes, pesos, thresholds)
+        2. Early Warning System (alertas, SLAs, escalation)
+        3. Intervention Playbooks (por tipo de alerta + win-back)
+      next_steps:
+        - "Implementar health score calculation (automático ou manual)"
+        - "Configurar alertas do EWS no sistema"
+        - "Treinar CSMs nos playbooks de intervenção"
+        - "Definir baseline de save rate (primeiros 90 dias)"
+        - "Agendar calibração do health score (90 dias)"
+        - "Review de eficácia do EWS (mensal)"

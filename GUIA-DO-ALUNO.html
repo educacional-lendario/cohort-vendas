@@ -273,7 +273,7 @@
       <li><a href="#secao-1">O que você vai sair construindo</a></li>
       <li><a href="#secao-2">Onde você está no cohort</a></li>
       <li><a href="#secao-3">Setup em 5 minutos</a></li>
-      <li><a href="#secao-4">As 7 skills da aula</a></li>
+      <li><a href="#secao-4">As 8 skills da aula</a></li>
       <li><a href="#secao-5">Fluxo da aula (5 blocos + 1 bônus)</a></li>
       <li><a href="#secao-funil">Funil comercial x funil de vendas, não é a mesma coisa</a></li>
       <li><a href="#secao-perdido">Se você se perder</a></li>
@@ -374,8 +374,8 @@
       <div class="step-content">
         <h3>Já tenho um projeto, só as skills dentro dele</h3>
         <p>Não clone o repo por cima do seu projeto. Clone numa pasta temporária, copie as skills e a pasta de templates, apague a temporária:</p>
-        <div class="command-block">cd /caminho/do/seu/projeto<br>git clone https://github.com/educacional-lendario/cohort-vendas.git /tmp/cohort-vendas-temp<br>mkdir -p .claude/skills .agents/skills templates<br>cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/<br>cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/<br>cp -R /tmp/cohort-vendas-temp/templates/. templates/<br>rm -rf /tmp/cohort-vendas-temp</div>
-        <p><strong>Atenção pra esse detalhe:</strong> copiar só as pastas de skills e esquecer a pasta <code>templates/</code> faz a Central de Entregas nunca aparecer, é de lá que a primeira skill de cada aula copia o painel pra raiz do seu projeto. Isso adiciona as 10 skills (7 da Aula 1 + 3 da Aula 2) ao lado do que você já tem, sem mexer no resto do projeto. <strong>Sem terminal/git?</strong> Baixe o ZIP no GitHub (botão verde "Code → Download ZIP"), extraia, e arraste as pastas <code>skills</code> de dentro de <code>.claude</code> e <code>.agents</code>, mais a pasta <code>templates</code> inteira, pra dentro do seu projeto (crie as pastas <code>.claude</code> e <code>.agents</code> primeiro se não existirem).</p>
+        <div class="command-block">cd /caminho/do/seu/projeto<br>git clone https://github.com/educacional-lendario/cohort-vendas.git /tmp/cohort-vendas-temp<br>mkdir -p .claude/skills .agents/skills templates squads<br>cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/<br>cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/<br>cp -R /tmp/cohort-vendas-temp/templates/. templates/<br>cp -R /tmp/cohort-vendas-temp/squads/. squads/<br>rm -rf /tmp/cohort-vendas-temp</div>
+        <p><strong>Atenção pra esses dois detalhes:</strong> copiar só as pastas de skills e esquecer a pasta <code>templates/</code> faz a Central de Entregas nunca aparecer, é de lá que a primeira skill de cada aula copia o painel pra raiz do seu projeto. Esquecer a pasta <code>squads/</code> faz o Bônus 3 (<code>/squad-sales-bonus</code>) não encontrar nenhuma mente pra ler, é de lá que essa skill aplica os frameworks reais. Isso adiciona as 11 skills (8 da Aula 1 + 3 da Aula 2) ao lado do que você já tem, sem mexer no resto do projeto. <strong>Sem terminal/git?</strong> Baixe o ZIP no GitHub (botão verde "Code → Download ZIP"), extraia, e arraste as pastas <code>skills</code> de dentro de <code>.claude</code> e <code>.agents</code>, mais as pastas <code>templates</code> e <code>squads</code> inteiras, pra dentro do seu projeto (crie as pastas <code>.claude</code> e <code>.agents</code> primeiro se não existirem).</p>
       </div>
     </div>
     <div class="step">
@@ -384,7 +384,7 @@
         <h3>Opção A: Claude Code (recomendado)</h3>
         <p><strong>Antes de rodar <code>claude</code>, confirme que você está DENTRO da pasta certa</strong> (a pasta <code>cohort-vendas</code> do Cenário 1, ou a pasta do seu projeto no Cenário 2). O erro mais comum é abrir o Claude Code na pasta errada, um nível acima: aí ele não enxerga o <code>.claude/skills/</code> e nenhum comando funciona.</p>
         <div class="command-block">ls .claude/skills</div>
-        <p>Rodou o comando acima e apareceram as pastas de skill, 10 ao todo, 7 da Aula 1 (<code>desenho-processo-comercial</code>, <code>regua-comunicacao-comercial</code>...) e 3 da Aula 2 (<code>montagem-higiene-crm</code>...)? Você está no lugar certo. Deu erro de "pasta não encontrada"? Você está na pasta errada, faltou o <code>cd</code> pra dentro dela.</p>
+        <p>Rodou o comando acima e apareceram as pastas de skill, 11 ao todo, 8 da Aula 1 (<code>desenho-processo-comercial</code>, <code>regua-comunicacao-comercial</code>, <code>squad-sales-bonus</code>...) e 3 da Aula 2 (<code>montagem-higiene-crm</code>...)? Você está no lugar certo. Deu erro de "pasta não encontrada"? Você está na pasta errada, faltou o <code>cd</code> pra dentro dela.</p>
         <div class="command-block">claude</div>
         <p>Teste com <code>/desenho-processo-comercial</code>. Se aparecer o menu da skill, está funcionando. Se aparecer "No commands match", feche o Claude Code (<code>/exit</code> ou Ctrl+C), confira a pasta com o comando acima, e abra o Claude Code de novo já na pasta certa.</p>
       </div>
@@ -419,8 +419,8 @@
 
   <section id="secao-4">
     <div class="section-num">Parte 4</div>
-    <h2>As 7 skills <em>da aula</em></h2>
-    <p>As 5 primeiras formam o fluxo principal. As 2 últimas são bônus, só rodam se o seu negócio já tem mais de uma oferta ou prospecta por rede social.</p>
+    <h2>As 8 skills <em>da aula</em></h2>
+    <p>As 5 primeiras formam o fluxo principal. As 3 últimas são bônus: rodam se o seu negócio já tem mais de uma oferta, prospecta por rede social, ou se você quer ir além com um squad inteiro de mentes extras de vendas e pós-venda.</p>
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-name">1 · /desenho-processo-comercial</div>
@@ -457,9 +457,14 @@
         <p class="skill-what">Monta a sequência de prospecção direto pela rede social (LinkedIn para B2B, Instagram/TikTok para B2C/alto ticket) antes do lead entrar no funil comercial.</p>
         <p class="skill-out"><strong>Output:</strong> sequência de social selling com checkpoint de prontidão e timing por toque.</p>
       </div>
+      <div class="skill-card">
+        <div class="skill-name">8 (bônus) · /squad-sales-bonus</div>
+        <p class="skill-what">Dá acesso guiado a um squad inteiro de 14 mentes de pré e pós-venda (produzido por Fran Martins), sempre perguntando antes o que você vende e qual das 4 dores descreve seu momento, nunca aplicando framework genérico.</p>
+        <p class="skill-out"><strong>Output:</strong> material real aplicado ao seu negócio, mais acesso ao squad completo pra explorar depois.</p>
+      </div>
     </div>
     <h3>Mentes por trás da aula</h3>
-    <p>Cada skill credita o método na seção "Mentes por trás desta skill" do próprio <code>SKILL.md</code>. No total, 9 mentes do squad interno de vendas entram nesta aula: Neil Rackham (SPIN), David Sandler (Pain Funnel), Keenan (Gap Selling), Chris Voss (Empatia Tática), Chet Holmes (Dream 100 + Stadium Pitch), Jeb Blount (Fanatical Prospecting + Objections), Aaron Ross (Predictable Revenue), Challenger Sale (Commercial Teaching) e Juliano Torriani (Social Selling 2.0). As últimas 5 aparecem aqui como reforço pontual, a aplicação mais profunda de prospecção e cadência é na Aula 3 (FUPs, Cadência, SDR e Automação).</p>
+    <p>Cada skill credita o método na seção "Mentes por trás desta skill" do próprio <code>SKILL.md</code>. No total, 9 mentes do squad interno de vendas entram nesta aula: Neil Rackham (SPIN), David Sandler (Pain Funnel), Keenan (Gap Selling), Chris Voss (Empatia Tática), Chet Holmes (Dream 100 + Stadium Pitch), Jeb Blount (Fanatical Prospecting + Objections), Aaron Ross (Predictable Revenue), Challenger Sale (Commercial Teaching) e Juliano Torriani (Social Selling 2.0). As últimas 5 aparecem aqui como reforço pontual, a aplicação mais profunda de prospecção e cadência é na Aula 3 (FUPs, Cadência, SDR e Automação). O Bônus 3 (Skill 8) soma mais 14 mentes de um squad à parte, produzido por Fran Martins, com pré-venda avançada e pós-venda completo.</p>
   </section>
 
   <section id="secao-5">
@@ -514,6 +519,13 @@
       <div class="bloco-action">/social-selling-comercial</div>
       <p class="bloco-result">Saída: <strong>social-selling-{negocio}.md + .html</strong></p>
     </div>
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bônus 3</span><span class="bloco-time">opcional</span></div>
+      <h3>Squad Sales completo</h3>
+      <p>O mais avançado dos 3 bônus. Dá acesso guiado a um squad inteiro de 14 mentes de pré e pós-venda, produzido por Fran Martins. Sempre pergunta antes o que você vende e qual das 4 dores (prospecção seca, travado no meio, sangria pós-venda, ou tudo do zero) descreve seu momento, nunca aplica framework sem esse contexto. Faz mais sentido depois que pelo menos o processo comercial (Skill 1) já estiver desenhado.</p>
+      <div class="bloco-action">/squad-sales-bonus</div>
+      <p class="bloco-result">Saída: <strong>squad-sales-{negocio}.md + .html</strong>, mais acesso ao squad completo em <code>squads/squad-sales/</code> pra ir além.</p>
+    </div>
   </section>
 
   <section id="secao-funil">
@@ -526,7 +538,7 @@
   <section id="secao-perdido">
     <div class="section-num">Parte 5.6</div>
     <h2>Se você se <em>perder</em></h2>
-    <p>Em qualquer skill, a qualquer momento, você pode perguntar <strong>"me mostra onde eu estou"</strong> (ou qualquer variação, "não entendi", "o que eu tô construindo", "o que falta"). Todas as 7 skills respondem com a mesma estrutura:</p>
+    <p>Em qualquer skill, a qualquer momento, você pode perguntar <strong>"me mostra onde eu estou"</strong> (ou qualquer variação, "não entendi", "o que eu tô construindo", "o que falta"). Todas as 8 skills respondem com a mesma estrutura:</p>
     <div class="rule">
       <div class="rule-icon">1</div>
       <div><h3>Onde você está</h3><p>Qual skill, de qual número, dentro da sequência da Aula 1.</p></div>

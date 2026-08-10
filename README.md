@@ -20,7 +20,7 @@ Cada guia tem tudo que você precisa saber pra começar aquela aula (5 minutos d
 
 **Travou em alguma coisa da Aula 1?** A pasta **[`guias/`](./guias/)** tem um guia por problema, do "nunca abri um terminal" até "terminei as skills, e agora?". Abra o [roteador](./guias/README.md), ache a linha "Estou perdido em..." mais parecida com o seu caso e siga.
 
-**Se você se perder no meio de uma skill**, não sabe mais onde está, por que está fazendo aquilo, ou o que falta pra fechar o material, peça pra qualquer skill *"me mostra onde eu estou"*. Todas as 10 têm essa resposta pronta, com base no guia da aula correspondente.
+**Se você se perder no meio de uma skill**, não sabe mais onde está, por que está fazendo aquilo, ou o que falta pra fechar o material, peça pra qualquer skill *"me mostra onde eu estou"*. Todas as 11 têm essa resposta pronta, com base no guia da aula correspondente.
 
 Se preferir markdown puro, o conteúdo está abaixo.
 
@@ -28,7 +28,7 @@ Se preferir markdown puro, o conteúdo está abaixo.
 
 ## O que você ganha na Aula 1
 
-7 skills para o Claude Code que constroem, em sequência, o esqueleto comercial do seu negócio (as 5 primeiras compõem o fluxo principal; as 2 últimas são bônus, para quem já tem mais de uma oferta ou prospecta por rede social):
+8 skills para o Claude Code que constroem, em sequência, o esqueleto comercial do seu negócio (as 5 primeiras compõem o fluxo principal; as 3 últimas são bônus, para quem já tem mais de uma oferta, prospecta por rede social, ou quer ir além com um squad inteiro de mentes extras):
 
 | # | Skill | O que faz | Output |
 |---|---|---|---|
@@ -39,12 +39,13 @@ Se preferir markdown puro, o conteúdo está abaixo.
 | 5 | `/playbook-vendas-vivo` | Classifica objeções em 6 tipos, gera resposta com o framework certo por tipo (D.E.E.P., Empatia Tática, Feel-Felt-Found) em todos os canais, e define a cadência que mantém o playbook vivo | `playbook-objecoes-{negocio}.md` + `.html` |
 | 6 · bônus | `/escada-de-ofertas` | Desenha a jornada de ascensão entre produtos/ofertas diferentes (não confundir com o funil comercial, este é o funil de vendas do portfólio inteiro) | `escada-de-ofertas-{negocio}.md` + `.html` |
 | 7 · bônus | `/social-selling-comercial` | Monta a sequência de prospecção direto pela rede social (LinkedIn para B2B, Instagram/TikTok para B2C/alto ticket pessoal), antes do lead entrar no funil comercial | `social-selling-{negocio}.md` + `.html` |
+| 8 · bônus | `/squad-sales-bonus` | Dá acesso guiado a um squad completo de 14 mentes de pré e pós-venda (produzido por Fran Martins), sempre perguntando antes o que você vende e qual das 4 dores descreve seu momento, nunca aplicando framework genérico | `squad-sales-{negocio}.md` + `.html`, mais acesso ao squad completo em `squads/squad-sales/` |
 
 **Tese-mãe da Aula 1:** desenhar o processo, dar voz a ele com a régua de comunicação, calibrar a qualificação e construir o playbook, para o aluno sair com o problema comercial resolvido, não com mais um framework na cabeça. Toda entrega sai em markdown **e** HTML, organizada o suficiente pra não sobrar dúvida.
 
 ### Mentes por trás da aula
 
-Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes por trás desta skill" dentro de cada `SKILL.md`). No total, 9 mentes do squad interno de vendas (`squads/sales/`) e origens de mercado entram nesta aula:
+Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes por trás desta skill" dentro de cada `SKILL.md`). Nas 7 primeiras skills, 9 mentes do squad interno de vendas e origens de mercado entram nesta aula:
 
 | Mente | Framework | Onde aparece |
 |---|---|---|
@@ -59,6 +60,12 @@ Cada skill credita explicitamente de onde tirou o método (ver seção "Mentes p
 | Juliano Torriani | Social Selling 2.0 (funil de DM sem tráfego pago) | Social Selling |
 
 Chet Holmes, Jeb Blount, Aaron Ross, Challenger Sale e Juliano Torriani entram aqui como reforço pontual, a aplicação mais profunda de prospecção e cadência é na **Aula 3 (FUPs, Cadência, SDR e Automação, com Adavio)**.
+
+### Bônus 3: Squad Sales completo (`squads/squad-sales/`)
+
+A Skill 8 dá acesso a um squad à parte, produzido por **Fran Martins** fora deste cohort e trazido como camada extra: **14 mentes reais** (9 de pré-venda, 5 de pós-venda/customer success), com 19 tasks executáveis, 4 fluxos prontos e um diagnóstico de nicho em 7 perfis (do infoproduto de R$97 ao SaaS enterprise). O material completo, incluindo os créditos individuais de cada mente, está em [`squads/squad-sales/README.md`](./squads/squad-sales/README.md). Duas versões visuais também estão disponíveis: [`squads/squad-sales/docs/overview-v2.html`](./squads/squad-sales/docs/overview-v2.html) e [`squads/squad-sales/docs/apresentacao-squad-sales.html`](./squads/squad-sales/docs/apresentacao-squad-sales.html).
+
+A Skill 8 nunca aplica esse squad de forma genérica: ela sempre pergunta primeiro o que o aluno vende e qual das 4 dores (prospecção seca, travado entre qualificar e fechar, cliente cancela depois de fechar, ou quer tudo estruturado do zero) descreve o momento dele, detecta o nicho antes de escolher qual mente priorizar, e só então aplica o framework ao negócio real, sempre citando de qual mente e arquivo veio cada recomendação.
 
 ---
 
@@ -104,23 +111,26 @@ Isso cria a pasta `cohort-vendas` com tudo dentro (as duas aulas). Vá direto pr
 
 ### Cenário 2: já tenho um projeto, quero só as skills dentro dele
 
-Não clone o repo inteiro por cima do seu projeto, clone numa pasta temporária, copie as pastas de skills e a pasta de templates, e apague a temporária:
+Não clone o repo inteiro por cima do seu projeto, clone numa pasta temporária, copie as pastas de skills, a pasta de templates e a pasta squads, e apague a temporária:
 
 ```bash
 cd /caminho/do/seu/projeto
 git clone https://github.com/educacional-lendario/cohort-vendas.git /tmp/cohort-vendas-temp
-mkdir -p .claude/skills .agents/skills templates
+mkdir -p .claude/skills .agents/skills templates squads
 cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/
 cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/
 cp -R /tmp/cohort-vendas-temp/templates/. templates/
+cp -R /tmp/cohort-vendas-temp/squads/. squads/
 rm -rf /tmp/cohort-vendas-temp
 ```
 
-**Atenção pra esse detalhe, é o erro mais comum de quem segue esse caminho:** copiar só `.claude/skills` e `.agents/skills` e esquecer a pasta `templates/` faz a Central de Entregas nunca aparecer. É de dentro de `templates/central-de-entregas.html` e `templates/central-de-entregas-aula2.html` que a primeira skill de cada aula copia o painel pra raiz do seu projeto, sem esse passo o comando de "atualizar a Central de Entregas" não encontra o arquivo de onde copiar, e o painel simplesmente nunca nasce.
+**Atenção pra esses dois detalhes, são os erros mais comuns de quem segue esse caminho:**
+- Copiar só `.claude/skills` e `.agents/skills` e esquecer a pasta `templates/` faz a Central de Entregas nunca aparecer. É de dentro de `templates/central-de-entregas.html` e `templates/central-de-entregas-aula2.html` que a primeira skill de cada aula copia o painel pra raiz do seu projeto, sem esse passo o comando de "atualizar a Central de Entregas" não encontra o arquivo de onde copiar, e o painel simplesmente nunca nasce.
+- Esquecer a pasta `squads/` faz a Skill 8 (`/squad-sales-bonus`) não encontrar nenhuma mente pra ler: é de dentro de `squads/squad-sales/agents/` e `squads/squad-sales/tasks/` que essa skill lê os frameworks reais em tempo de execução, sem essa pasta ela não tem de onde aplicar nada.
 
-Isso adiciona as 10 skills (7 da Aula 1 + 3 da Aula 2) ao lado do que você já tem, sem mexer no resto do projeto. Se você já tiver uma skill com o mesmo nome de alguma dessas 10, o comando sobrescreve só ela, revise antes se isso for um problema pra você.
+Isso adiciona as 11 skills (8 da Aula 1 + 3 da Aula 2) ao lado do que você já tem, sem mexer no resto do projeto. Se você já tiver uma skill com o mesmo nome de alguma dessas 11, o comando sobrescreve só ela, revise antes se isso for um problema pra você.
 
-**Sem terminal/git?** No GitHub, clique no botão verde **Code → Download ZIP**, extraia o arquivo, e arraste as pastas `skills` de dentro de `.claude` e `.agents`, mais a pasta `templates` inteira, pra dentro do seu projeto (crie as pastas `.claude` e `.agents` primeiro se elas não existirem).
+**Sem terminal/git?** No GitHub, clique no botão verde **Code → Download ZIP**, extraia o arquivo, e arraste as pastas `skills` de dentro de `.claude` e `.agents`, mais as pastas `templates` e `squads` inteiras, pra dentro do seu projeto (crie as pastas `.claude` e `.agents` primeiro se elas não existirem).
 
 Depois de copiar, vá direto pra "Qual ferramenta você usa?" abaixo, só que, em vez de abrir a ferramenta "na pasta do repo", você abre **na pasta do seu próprio projeto** (onde acabou de colar as skills).
 
@@ -136,12 +146,12 @@ Pré-requisito: [Claude Code](https://docs.claude.com/claude-code) instalado.
    ```bash
    ls .claude/skills
    ```
-   Apareceram as 10 pastas (`desenho-processo-comercial`, `regua-comunicacao-comercial`, `montagem-higiene-crm`...)? Está no lugar certo. Deu erro de pasta não encontrada? Falta o `cd` pra dentro da pasta certa.
+   Apareceram as 11 pastas (`desenho-processo-comercial`, `regua-comunicacao-comercial`, `squad-sales-bonus`, `montagem-higiene-crm`...)? Está no lugar certo. Deu erro de pasta não encontrada? Falta o `cd` pra dentro da pasta certa.
 2. Abra o Claude Code:
    ```bash
    claude
    ```
-3. As 10 skills em `.claude/skills/` carregam **sozinhas**, não tem passo de instalação separado.
+3. As 11 skills em `.claude/skills/` carregam **sozinhas**, não tem passo de instalação separado.
 4. Teste digitando `/desenho-processo-comercial` (Aula 1) ou `/montagem-higiene-crm` (Aula 2). Se aparecer o menu da skill, está funcionando. Se aparecer "No commands match", saia do Claude Code, confira a pasta com o comando do passo 1, e abra de novo já no lugar certo.
 
 ### Opção B: Codex CLI
@@ -164,7 +174,7 @@ Funciona pior que com skills nativas (a IA não sabe automaticamente qual arquiv
 
 ---
 
-## Fluxo da aula (5 blocos principais + 2 bônus, ~50 min cada)
+## Fluxo da aula (5 blocos principais + 3 bônus, ~50 min cada)
 
 ### Bloco 1: Processo Comercial com `/desenho-processo-comercial`
 
@@ -222,7 +232,15 @@ Só se aplica se você tem mais de um produto/oferta. Desenha a jornada de ascen
 
 Só se aplica se rede social é (ou vai ser) canal de prospecção ativa. Monta a sequência de LinkedIn (B2B) ou Instagram/TikTok (B2C/alto ticket) que aquece o lead antes dele entrar no funil comercial.
 
-**Output final:** pacote comercial completo, processo, régua de comunicação, qualificação, discovery e playbook (+ escada de ofertas e social selling, se aplicáveis), pronto para rodar e para alimentar a Aula 2 (CRM e Gestão de Pipeline com IA).
+### Bônus 3: Squad Sales completo com `/squad-sales-bonus`
+
+```
+/squad-sales-bonus
+```
+
+O mais avançado dos 3 bônus, e o único que dá acesso a um squad inteiro em vez de resolver um problema pontual: 14 mentes reais de pré e pós-venda produzidas por Fran Martins. Nunca aplica nenhum framework sem antes perguntar o que você vende e qual das 4 dores (prospecção seca, travado no meio, sangria pós-venda, ou tudo do zero) descreve seu momento agora, e detecta o nicho antes de escolher a mente certa.
+
+**Output final:** pacote comercial completo, processo, régua de comunicação, qualificação, discovery e playbook (+ escada de ofertas, social selling e Squad Sales, se aplicáveis), pronto para rodar e para alimentar a Aula 2 (CRM e Gestão de Pipeline com IA).
 
 ---
 
@@ -270,7 +288,7 @@ Lê o CRM já organizado, calcula a conversão entre etapas, distingue o gargalo
 ├── GUIA-DO-ALUNO-AULA-2.html       guia visual da Aula 2
 ├── .env.example                    template de variáveis (opcional)
 ├── .claude/
-│   └── skills/                     as 10 skills, fonte canônica (Claude Code carrega automático)
+│   └── skills/                     as 11 skills, fonte canônica (Claude Code carrega automático)
 │       ├── desenho-processo-comercial/      Aula 1
 │       ├── regua-comunicacao-comercial/     Aula 1
 │       ├── qualificacao-bant-gpct/          Aula 1
@@ -278,18 +296,23 @@ Lê o CRM já organizado, calcula a conversão entre etapas, distingue o gargalo
 │       ├── playbook-vendas-vivo/            Aula 1
 │       ├── escada-de-ofertas/               Aula 1, bônus
 │       ├── social-selling-comercial/        Aula 1, bônus
+│       ├── squad-sales-bonus/               Aula 1, bônus (Squad Sales de Fran Martins)
 │       ├── montagem-higiene-crm/            Aula 2
 │       ├── lead-scoring-ia/                 Aula 2
 │       └── diagnostico-gargalos-funil/      Aula 2
 ├── .agents/
 │   └── skills/                     espelho literal para Codex e outros agentes
+├── squads/
+│   └── squad-sales/                squad completo de referência da Skill 8 (14 mentes, 19 tasks,
+│                                   4 fluxos, produzido por Fran Martins), a skill lê os arquivos
+│                                   daqui em tempo de execução
 ├── guias/                          um guia por problema ("estou perdido em X"), específico da Aula 1
 │   ├── README.md                   o roteador: ache seu problema aqui
 │   ├── 01-pre-requisitos/          terminal, instalar, baixar o projeto, custo, como ser guiado
 │   ├── 02-conhecimento-minimo/     conceitos, os três funis, BANT/GPCT/SPIN, a conversa de
 │   │                               venda, diferencial × concorrência, o diagnóstico
 │   ├── 03-insumos/                 offerbook do marketing, calls gravadas e objeções reais
-│   ├── 04-operacao/                as 7 skills, revisar e corrigir, entregáveis e central
+│   ├── 04-operacao/                as skills da aula, revisar e corrigir, entregáveis e central
 │   └── 05-depois/                  pôr em prática, cards parados, onboarding, métricas,
 │                                   vender isso como serviço, ponte pra Aula 2
 ├── templates/                      templates em branco dos outputs, central-de-entregas.html (Aula 1) e central-de-entregas-aula2.html (Aula 2)

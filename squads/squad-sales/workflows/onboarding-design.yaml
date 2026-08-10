@@ -1,0 +1,264 @@
+workflow:
+  id: onboarding-design
+  name: "Onboarding Flow Design"
+  version: "1.0.0"
+  description: |
+    Workflow para desenhar ou redesenhar o fluxo de onboarding de um produto.
+    3 fases: audit do existente, design do novo fluxo, validação contra checklist.
+    Pode ser executado standalone ou como parte do cs-setup.
+  type: cs-workflow
+  status: active
+  duration: "1-2 dias"
+
+  prerequisites:
+    required:
+      - "Produto definido com offerbook"
+      - "Tier de CS motion definido (ou será definido no audit)"
+      - "ICP do produto ou business disponível"
+    recommended:
+      - "CS Report existente (do cs-setup phase-1)"
+      - "Dados de completion/churn se produto já opera"
+      - "Feedback qualitativo de clientes/alunos"
+
+  workspace_reads:
+    - "workspace/businesses/{business}/products/{product}/"
+    - "workspace/businesses/{business}/company/icp.yaml"
+
+  output_path: "workspace/businesses/{business}/analytics/customer-success/"
+
+  handoff_prompts:
+    - from: cs-chief
+      to: onboarding-architect
+      when: "Audit complete"
+      prompt: "Pass audit results with gaps and tier recommendation"
+    - from: onboarding-architect
+      to: cs-chief
+      when: "Design complete"
+      prompt: "Pass onboarding flow for validation review"
+
+  sequence:
+
+    # =========================================================================
+    # PHASE 1: AUDIT EXISTING
+    # =========================================================================
+    - step: phase-1
+      id: phase-1
+      phase: 1
+      phase_name: "Audit Existing"
+      agent: cs-chief
+      description: |
+        CS Chief lê o workspace do business e audita o que existe hoje
+        em termos de onboarding. Documenta estado atual, gaps e oportunidades.
+      action: audit_existing_onboarding
+
+      inputs:
+        - "workspace/businesses/{business}/products/{product}/"
+        - "squads/customer-success/data/cs-motion-tiers.yaml"
+        - "CS Report (se disponível)"
+
+      tasks:
+        - "Ler offerbook, curriculum e ICP do produto"
+        - "Identificar tier de CS motion adequado"
+        - "Documentar fluxo de onboarding atual (se existe)"
+        - "Listar touchpoints existentes (emails, mensagens, calls)"
+        - "Identificar TTFW atual (medido ou estimado)"
+        - "Mapear drop-off points conhecidos"
+        - "Documentar gaps e oportunidades"
+
+      output:
+        - file: "onboarding-audit-{product}.yaml"
+          description: "Diagnóstico do onboarding atual"
+          schema:
+            current_state:
+              has_onboarding: "boolean"
+              touchpoints_count: "number"
+              ttfw_current: "string ou 'not measured'"
+              drop_off_points: "list"
+              automation_level: "none | partial | full"
+            gaps: "list of gaps with priority"
+            opportunities: "list of quick wins"
+            tier_recommendation: "digital | light_touch | mid_touch | white_glove"
+
+      next: checkpoint-1
+
+    - step: checkpoint-1
+      id: checkpoint-1
+      agent: cs-chief
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar audit antes de design"
+      validation:
+        - "Tier de CS motion definido"
+        - "Estado atual documentado (mesmo que 'inexistente')"
+        - "Pelo menos 1 gap ou oportunidade identificada"
+        - "ICP do produto lido e compreendido"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "CS Chief completa audit com dados faltantes"
+      next: phase-2
+
+    # =========================================================================
+    # PHASE 2: DESIGN FLOW
+    # =========================================================================
+    - step: phase-2
+      id: phase-2
+      phase: 2
+      phase_name: "Design Flow"
+      agent: onboarding-architect
+      description: |
+        Onboarding Architect desenha o novo fluxo de onboarding baseado no
+        audit e no tier de CS motion. Produz fluxo completo com milestones,
+        touchpoints, automações e métricas.
+      action: design_onboarding_flow
+
+      inputs:
+        - "Onboarding audit do phase-1"
+        - "squads/customer-success/data/cs-motion-tiers.yaml (touchpoints do tier)"
+        - "ICP e curriculum do produto"
+
+      tasks:
+        - "Definir TTFW target e first win"
+        - "Criar mapa de milestones (3-7)"
+        - "Para cada milestone: definir trigger, ação, canal, conteúdo"
+        - "Desenhar touchpoints por fase (pre-onboarding, onboarding, ongoing)"
+        - "Definir automações com triggers e condições"
+        - "Criar fluxo de handoff vendas → CS"
+        - "Definir métricas de sucesso do onboarding"
+        - "Criar nudge sequences para re-engagement"
+
+      output:
+        - file: "onboarding-flow-{product}.yaml"
+          description: "Fluxo de onboarding completo"
+          schema:
+            product: "string"
+            tier: "string"
+            ttfw:
+              target: "string (ex: '72h', 'Semana 2')"
+              first_win: "string"
+            milestones:
+              - id: "M1"
+                name: "string"
+                trigger: "string"
+                expected_timing: "string"
+                success_criteria: "string"
+            touchpoints:
+              pre_onboarding: "list"
+              onboarding: "list"
+              ongoing: "list"
+            automations:
+              - trigger: "string"
+                condition: "string"
+                action: "string"
+                channel: "string"
+            nudge_sequences:
+              - trigger: "string"
+                sequence: "list of messages with timing"
+            handoff:
+              from: "vendas"
+              to: "CS"
+              trigger: "string"
+              data_passed: "list"
+            metrics:
+              - name: "string"
+                formula: "string"
+                target: "string"
+
+      delegations:
+        - expert: "@wes-kao"
+          when: "Produto cohort-based com completion < 60%"
+          request: "Milestone redesign e completion interventions"
+        - expert: "@sean-ellis"
+          when: "TTFW ou first win não são claros"
+          request: "Activation model e aha moment"
+
+      next: checkpoint-2
+
+    - step: checkpoint-2
+      id: checkpoint-2
+      agent: onboarding-architect
+      type: checkpoint
+      action: validate_checkpoint
+      description: "Validar design antes de review final"
+      validation:
+        - "TTFW target definido e mensurável"
+        - "Pelo menos 3 milestones com critérios de sucesso"
+        - "Touchpoints cobrem todas as fases"
+        - "Automações têm triggers claros"
+        - "Handoff vendas → CS documentado"
+        - "Pelo menos 3 métricas de sucesso definidas"
+      pass_condition: "Todos os critérios atendidos"
+      fail_action: "Onboarding Architect itera no design"
+      next: phase-3
+
+    # =========================================================================
+    # PHASE 3: VALIDATE
+    # =========================================================================
+    - step: phase-3
+      id: phase-3
+      phase: 3
+      phase_name: "Validate"
+      agent: cs-chief
+      description: |
+        CS Chief valida o onboarding flow contra o CS Readiness Checklist
+        (dimensão onboarding) e faz review final de qualidade.
+      action: validate_onboarding_design
+
+      inputs:
+        - "Onboarding flow do phase-2"
+        - "squads/customer-success/checklists/cs-readiness-checklist.md (seção Onboarding)"
+        - "squads/customer-success/data/cs-motion-tiers.yaml"
+
+      tasks:
+        - "Avaliar onboarding flow contra cada item do checklist"
+        - "Verificar alinhamento com o tier de CS motion"
+        - "Validar que touchpoints respeitam canais do tier"
+        - "Confirmar que first win é alcançável no TTFW target"
+        - "Verificar que automações são tecnicamente viáveis"
+        - "Score final de onboarding readiness (0-10)"
+        - "Documentar issues encontrados e recomendações"
+
+      output:
+        - file: "onboarding-validation-{product}.yaml"
+          description: "Resultado da validação"
+          schema:
+            product: "string"
+            checklist_score: "number (0-10)"
+            items_passed: "number"
+            items_total: "number"
+            verdict: "APPROVED | NEEDS_REVISION | REJECTED"
+            issues:
+              - item: "string"
+                severity: "critical | major | minor"
+                recommendation: "string"
+            final_notes: "string"
+
+      verdict_actions:
+        APPROVED:
+          action: "Onboarding flow aprovado, pronto para implementação"
+          next: complete
+        NEEDS_REVISION:
+          action: "Retornar ao phase-2 com issues documentados"
+          next: phase-2
+          max_iterations: 2
+        REJECTED:
+          action: "Redesign necessário, escalar para CS Chief + expert"
+          next: phase-1
+
+      next: complete
+
+    - step: complete
+      id: complete
+      agent: cs-chief
+      type: completion
+      action: complete_workflow
+      description: "Onboarding design finalizado"
+      summary: |
+        Design de onboarding completo e validado. Artefatos gerados:
+        1. Onboarding Audit (estado atual)
+        2. Onboarding Flow (design completo)
+        3. Onboarding Validation (review com score)
+      next_steps:
+        - "Implementar automações definidas no flow"
+        - "Criar conteúdo dos touchpoints"
+        - "Configurar triggers no sistema"
+        - "Testar fluxo com 3-5 usuários piloto"
+        - "Medir TTFW na primeira cohort"

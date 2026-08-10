@@ -1,0 +1,179 @@
+# CS Diagnostic / Maturity Report Template
+# Usado pelo @cs-chief para gerar relatórios de diagnóstico e maturidade de CS.
+# Output: relatório completo com scores, gaps e plano de ação.
+
+template:
+  id: cs-report-tmpl
+  name: "CS Diagnostic & Maturity Report"
+  version: "1.0"
+  output:
+    format: yaml
+    filename: "cs-report-{{business}}-{{date}}.yaml"
+  description: >
+    Template para relatórios de diagnóstico de Customer Success.
+    Avalia 6 dimensões de maturidade, identifica gaps prioritários,
+    define plano de delegação e próximas ações.
+
+variables:
+  required:
+    - business: "Nome do business sendo avaliado"
+    - product: "Produto/oferta sendo analisado"
+    - tier: "Tier de CS motion (digital | light_touch | mid_touch | white_glove)"
+    - date: "Data do diagnóstico"
+  optional:
+    - evaluator: "Agente ou pessoa que conduziu o diagnóstico"
+    - previous_report: "Path para relatório anterior (se existe)"
+
+sections:
+
+  metadata:
+    description: "Informações básicas do diagnóstico"
+    fields:
+      report_id: "cs-report-{business}-{YYYYMMDD}"
+      business: "{{business}}"
+      product: "{{product}}"
+      tier: "{{tier}}"
+      date: "{{date}}"
+      evaluator: "{{evaluator}}"
+      status: "draft | reviewed | approved"
+      previous_report: "{{previous_report}}"
+      summary: |
+        Resumo executivo do diagnóstico em 3-5 linhas.
+        Incluir: estado atual, principal gap, recomendação primária.
+
+  dimension_scores:
+    description: "Score de 0-10 para cada dimensão de maturidade CS"
+    scoring_guide: >
+      0-3: Inexistente ou ad-hoc. Nenhum processo definido.
+      4-5: Inicial. Processos básicos existem mas não são consistentes.
+      6-7: Definido. Processos documentados e executados regularmente.
+      8-9: Gerenciado. Métricas acompanhadas, melhorias contínuas.
+      10: Otimizado. Best-in-class, referência de mercado.
+
+    dimensions:
+      onboarding:
+        score: 0
+        evidence: "Descrever o que existe hoje"
+        gap: "O que falta para o próximo nível"
+        components:
+          - "Fluxo de boas-vindas definido"
+          - "TTFW (Time to First Win) medido"
+          - "Milestones de ativação mapeados"
+          - "Automações de onboarding ativas"
+          - "Handoff vendas → CS documentado"
+
+      health_score:
+        score: 0
+        evidence: "Descrever o que existe hoje"
+        gap: "O que falta para o próximo nível"
+        components:
+          - "Modelo de health score definido"
+          - "5 componentes com pesos"
+          - "Thresholds calibrados"
+          - "Refresh automático"
+          - "Correlação validada com churn"
+
+      churn_prevention:
+        score: 0
+        evidence: "Descrever o que existe hoje"
+        gap: "O que falta para o próximo nível"
+        components:
+          - "Early Warning System (EWS) ativo"
+          - "Playbooks de intervenção por sinal"
+          - "Tempo de reação definido (SLA)"
+          - "Causa raiz de churn documentada"
+          - "Métricas de save rate acompanhadas"
+
+      expansion:
+        score: 0
+        evidence: "Descrever o que existe hoje"
+        gap: "O que falta para o próximo nível"
+        components:
+          - "Playbook de expansion definido"
+          - "Triggers de upgrade mapeados"
+          - "NPS → expansion pipeline"
+          - "Cross-sell/upsell paths documentados"
+          - "Conversion rate de expansion medido"
+
+      feedback_loop:
+        score: 0
+        evidence: "Descrever o que existe hoje"
+        gap: "O que falta para o próximo nível"
+        components:
+          - "NPS/CSAT coletado regularmente"
+          - "Voice of Customer (VoC) documentada"
+          - "Feedback → produto pipeline existe"
+          - "Closed loop (resposta ao cliente)"
+          - "Tendências analisadas periodicamente"
+
+      metrics_reporting:
+        score: 0
+        evidence: "Descrever o que existe hoje"
+        gap: "O que falta para o próximo nível"
+        components:
+          - "KPIs de CS definidos"
+          - "Dashboard ou scorecard ativo"
+          - "Reporting cadence definida"
+          - "Benchmarks por tier"
+          - "ROI de CS calculado"
+
+    overall:
+      total_score: "Soma dos 6 scores (max 60)"
+      average: "Média (max 10)"
+      maturity_level: >
+        0-2.0: Inexistente
+        2.1-4.0: Reativo
+        4.1-6.0: Proativo
+        6.1-8.0: Preditivo
+        8.1-10.0: Transformativo
+
+  gaps_prioritized:
+    description: "Gaps ordenados por impacto e urgência"
+    fields:
+      - id: "GAP-001"
+        dimension: "Dimensão afetada"
+        description: "Descrição do gap"
+        impact: "high | medium | low"
+        urgency: "high | medium | low"
+        priority_score: "impact * urgency (H=3, M=2, L=1)"
+        effort: "small | medium | large"
+        recommendation: "Ação recomendada"
+        delegate_to: "Agente ou expert responsável"
+
+  delegation_plan:
+    description: "Plano de delegação para experts de outros squads"
+    fields:
+      - gap_id: "GAP-001"
+        expert: "@expert-name"
+        squad: "squad de origem"
+        request_summary: "O que pedir ao expert"
+        expected_output: "O que esperar de volta"
+        deadline: "Prazo sugerido"
+        priority: "P1 | P2 | P3"
+
+  next_actions:
+    description: "Próximas ações concretas com responsável e prazo"
+    fields:
+      immediate:
+        description: "Ações para os próximos 7 dias"
+        items:
+          - action: "Descrição da ação"
+            owner: "Responsável"
+            deadline: "Data"
+            dependency: "Depende de algo?"
+
+      short_term:
+        description: "Ações para os próximos 30 dias"
+        items:
+          - action: "Descrição da ação"
+            owner: "Responsável"
+            deadline: "Data"
+            dependency: "Depende de algo?"
+
+      medium_term:
+        description: "Ações para os próximos 90 dias"
+        items:
+          - action: "Descrição da ação"
+            owner: "Responsável"
+            deadline: "Data"
+            dependency: "Depende de algo?"

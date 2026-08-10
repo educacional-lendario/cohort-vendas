@@ -1,0 +1,134 @@
+pack:
+  name: squad-sales
+  title: "Sales Squad - Elite Sales Methodology + Customer Success"
+  version: "2.0.0"
+  author: "Squad Architect"
+  created: "2026-03-29"
+  updated: "2026-05-25"
+  slash_prefix: "Sales"
+  pattern_prefix: "SL"
+  entry_agent: "sales-chief"
+  description: |
+    Squad de vendas baseado em elite minds reais com frameworks documentados.
+    Cobre o funil COMPLETO: diagnostico, qualificacao, negociacao, prospecting,
+    closing, escala E pós-venda (onboarding, retention, expansion, journey).
+    v2.0: integrado com customer-success (AIOX-enterprise) e padrão wrapper enterprise.
+
+metadata:
+  domain: sales
+  keywords:
+    - sales
+    - vendas
+    - closing
+    - prospecting
+    - negotiation
+    - qualification
+    - B2B
+    - enterprise
+    - outbound
+    - customer-success
+    - retention
+    - expansion
+    - onboarding
+    - churn
+    - LTV
+  score: 0
+  research_date: "2026-03-29"
+  cs_integration_date: "2026-05-25"
+  minds_researched: 18
+  minds_selected: 13
+  mode: YOLO
+
+settings:
+  activation:
+    show_context_report: false
+  workspace_integration:
+    level: none
+
+tiers:
+  orchestrator:
+    agent: "sales-chief"
+    role: "Coordena o squad, diagnostica situacao e roteia para o especialista certo"
+  tier_0_diagnosis:
+    agents:
+      - neil-rackham
+    role: "Diagnostico via questioning antes de qualquer acao de venda"
+  tier_1_masters:
+    agents:
+      - david-sandler
+      - keenan
+      - chris-voss
+    role: "Execucao principal - metodologias completas battle-tested"
+  tier_2_systematizers:
+    agents:
+      - challenger-sale
+      - jeb-blount
+      - chet-holmes
+    role: "Frameworks estruturados e ensinaveis"
+  tier_3_specialists:
+    agents:
+      - aaron-ross
+    role: "Especialistas em nichos (outbound engine, escala)"
+  tier_4_post_sale:
+    agents:
+      - cs-chief
+      - onboarding-architect
+      - health-monitor
+      - journey-mapper
+      - expansion-strategist
+    role: "Customer Success - retention, onboarding, expansion, journey mapping (importado do AIOX-enterprise)"
+
+components:
+  agents:
+    # Sales (9)
+    - sales-chief.md
+    - neil-rackham.md
+    - david-sandler.md
+    - keenan.md
+    - chris-voss.md
+    - challenger-sale.md
+    - jeb-blount.md
+    - chet-holmes.md
+    - aaron-ross.md
+    # Customer Success (5) - importados do AIOX-enterprise
+    - cs-chief.md
+    - onboarding-architect.md
+    - health-monitor.md
+    - journey-mapper.md
+    - expansion-strategist.md
+  tasks:
+    # Sales tasks (9)
+    - diagnose-deal.md
+    - qualify-prospect.md
+    - create-cold-outreach.md
+    - negotiate-deal.md
+    - close-deal.md
+    - create-followup-sequence.md
+    - create-email-sequences.md
+    - create-sales-copy.md
+    - create-sales-scripts.md
+    # Customer Success tasks (10)
+    - build-health-score.md
+    - create-churn-ews.md
+    - delete-cs-squad.md
+    - design-onboarding.md
+    - diagnose-cs-maturity.md
+    - fill-kpi-scorecard.md
+    - map-student-journey.md
+    - plan-expansion.md
+    - run-nps-cycle.md
+    - update-cs-squad.md
+  workflows:
+    - churn-prevention.yaml
+    - cs-setup.yaml
+    - onboarding-design.yaml
+  templates:
+    - cs-report-tmpl.yaml
+    - expansion-playbook-tmpl.yaml
+  checklists:
+    # Sales (2)
+    - deal-qualification-checklist.md
+    - discovery-quality-checklist.md
+    # Customer Success (2)
+    - cs-readiness-checklist.md
+    - health-score-checklist.md
