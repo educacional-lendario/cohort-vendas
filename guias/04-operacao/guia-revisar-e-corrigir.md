@@ -2,7 +2,7 @@
 
 > **Estou perdido em:** "a skill entregou o documento, mas tem etapa que não faz sentido pro meu negócio — e o texto tem cara de IA. Posso mexer? Como?".
 > **O que você vai ter no final:** o hábito de revisar **antes** de avançar, os prompts de correção cirúrgica, e o filtro anti-"cara de IA" pra rodar em qualquer texto que você for usar com cliente.
-> **Fontes cruzadas:** o `SKILL.md` da `/discovery-script` (Passo 1.6, a auditoria de compliance e voz, com o checklist de 8 itens literal) · os `SKILL.md` das Skills 1 e 2 (que mandam adaptar o que você já tem em vez de recriar) · a Aula 1 ao vivo, onde a professora explicou por que criou essa auditoria e avisou 3 vezes pra revisar antes de avançar · pesquisa sobre marcas de texto gerado por IA em português (consultada em 03/08/2026), que acrescentou o vocabulário-denúncia ao checklist.
+> **Fontes cruzadas:** o `SKILL.md` da `/discovery-script` (Passo 1.6, a auditoria de compliance e voz, com o checklist de 8 itens literal) e da `/playbook-vendas-vivo` (Passo 3.5, a mesma auditoria, agora obrigatória também no playbook) · os `SKILL.md` das Skills 1 e 2 (que mandam adaptar o que você já tem em vez de recriar) · a Aula 1 ao vivo, onde a professora explicou por que criou essa auditoria e avisou 3 vezes pra revisar antes de avançar · pesquisa sobre marcas de texto gerado por IA em português (consultada em 03/08/2026), que acrescentou o vocabulário-denúncia ao checklist.
 
 ## Pré-requisitos (confira ANTES)
 
@@ -124,7 +124,23 @@ Fala da Aula 1:
 >
 > *"E é importante ter essa auditoria. Inclusive em páginas que vocês forem fazer, em tudo que vocês forem fazer, criando skills do zero: passa por essa auditoria pra eliminar o que é cara de IA."*
 
-A Skill 4 já roda essa auditoria sozinha no Passo 1.6, sempre. Mas vale você rodar em **qualquer** texto seu.
+**Duas skills já rodam essa auditoria sozinhas**, com o mesmo checklist: a Skill 4 no **Passo 1.6**, e a Skill 5 no **Passo 3.5**. Nenhuma das duas entrega peça sem passar. Mas vale você rodar em **qualquer** texto seu — inclusive nos que nenhuma skill escreveu.
+
+### O que a skill já checa e o que continua sendo trabalho seu
+
+Isto é o mais útil desta seção: saber onde parar de refazer o que já foi feito, e onde não relaxar.
+
+| A skill checa sozinha | Continua sendo seu |
+|---|---|
+| os 8 itens do checklist abaixo, peça por peça | o **vocabulário-denúncia** em português (a tabela mais adiante) — não está no checklist da skill |
+| a flag `nicho_regulado` calibrando promessa e depoimento | se o texto soa como **você** — a skill garante que não tem vício, não que tem a sua voz |
+| registra numa **nota de auditoria** o que achou e corrigiu | ler essa nota. Ela é o mapa dos vícios que quase entraram no seu texto |
+| que nenhuma peça sai sem a rodada | se a **prova** citada existe de verdade. A auditoria pega "claim sem prova"; ela não confere se o seu número é real |
+| — | o teste da voz alta, e o julgamento final. Ferramenta nenhuma faz isso |
+
+⚠️ **O ponto cego mais importante:** a auditoria valida a **forma**, não a **verdade**. Se a peça afirma "11 metalúrgicas atendidas" e você atendeu 4, ela passa limpa nos 8 itens — está específica, tem número, não tem jargão. O único jeito de pegar isso é você ler.
+
+⚠️ **A nota de auditoria vem vazia?** Isso pode significar duas coisas: nada foi encontrado, ou a auditoria não rodou de verdade. Confira se a nota existe e diz explicitamente o que checou. Ausência de nota não é sinônimo de texto limpo.
 
 ### O checklist de 8 itens (o mesmo que a skill usa)
 
@@ -159,10 +175,14 @@ Além dos 8 itens da skill, existe um conjunto de palavras que a IA usa muito ma
 ### O prompt pra rodar em qualquer texto
 
 ```
-Audite este texto contra o checklist do Passo 1.6 da skill /discovery-script:
+Audite este texto contra o checklist do Passo 1.6 da skill /discovery-script
+(o mesmo do Passo 3.5 da /playbook-vendas-vivo):
 travessão no meio de frase, promessa de resultado garantido, construção "não é X é Y"
 em qualquer variação, "nós" em vez de "a gente", jargão de guru, tríade de adjetivos
 vazios, e claim sem prova.
+
+Depois, some a checagem que a skill NÃO faz: aponte o vocabulário-denúncia em português
+(crucial, fundamental, insight, mergulhar, particularmente, "é importante ressaltar que").
 
 Para cada violação, mostre a frase exata e a substituição sugerida, sem perder a força
 persuasiva. Depois entregue o texto corrigido.
@@ -198,8 +218,9 @@ Pegue o entregável mais recente e responda **sim ou não** a estas três:
 1. Todos os critérios de saída descrevem ação do **cliente**?
 2. Você mandaria as mensagens desse documento hoje, com o seu nome, sem vergonha?
 3. Não existe nenhum bloco marcado como "ponto de partida a validar" que você ainda não validou?
+4. Todo número que aparece no documento **existe de verdade** — você conferiu, não a auditoria?
 
-**Funcionou se:** as três são "sim". Qualquer "não" é uma correção pendente — e é mais barato fazer agora que depois.
+**Funcionou se:** as quatro são "sim". Qualquer "não" é uma correção pendente — e é mais barato fazer agora que depois.
 
 ## POSSÍVEIS ERROS — catálogo
 
@@ -213,6 +234,9 @@ Pegue o entregável mais recente e responda **sim ou não** a estas três:
 | RV6 | Discordo do que a skill entregou, mas não sei se estou errado | Insegurança normal em quem está desenhando processo pela primeira vez | peça a defesa dela: *"me explique por que você desenhou assim, e o que aconteceria se eu fizesse [minha alternativa]"*. Quem decide é você — é o seu negócio |
 | RV7 | Editei na mão e agora a skill seguinte parece ignorar minha edição | Ela leu o arquivo antes da sua edição, ou está lendo o `.html` | aponte explicitamente: *"leia o arquivo `x.md` NOVAMENTE — eu editei — e continue a partir dele"* |
 | RV8 | O documento tem uma seção que não faz sentido nenhum pro meu caso | A skill aplicou um bloco de referência genérico | peça pra remover: *"remova a seção [X], ela não se aplica ao meu modelo de negócio porque [motivo]"*. Documento com seção morta é documento que ninguém usa |
+| RV9 | A auditoria passou limpa, mas a peça afirma um número que eu não tenho | A auditoria valida **forma**, não **verdade** | é o ponto cego dela: um número inventado passa nos 8 itens porque é específico. Só você pega isso. Confira cada número antes de mandar pro cliente |
+| RV10 | Não achei nota de auditoria nenhuma no meu documento | Ou nada foi encontrado, ou a rodada não aconteceu | ausência de nota ≠ texto limpo. Peça: *"rode a auditoria de 8 itens neste documento e me devolva a nota, mesmo que não encontre nada"* |
+| RV11 | Rodei a auditoria e ela não pegou "crucial", "insight", "é importante ressaltar" | O vocabulário-denúncia em português **não** está no checklist da skill | é a parte que continua sendo sua. Use o prompt do Passo 3, que já soma as duas checagens |
 
 **Se nada resolver:** cole o trecho problemático numa conversa e peça *"me guie passo a passo pra corrigir isto, um passo por vez"*.
 
@@ -222,4 +246,4 @@ Pegue o entregável mais recente e responda **sim ou não** a estas três:
 |---|---|
 | ▶️ Fazer | releia o último entregável com a checagem do Passo 1 e corrija o que achar — **antes** de rodar a próxima skill |
 | 📖 Ler | [guia-entregaveis-e-central.md](guia-entregaveis-e-central.md) — onde ficam os arquivos e como acompanhar o progresso |
-| 🚑 Se travar | o catálogo RV1–RV8 acima |
+| 🚑 Se travar | o catálogo RV1–RV11 acima |

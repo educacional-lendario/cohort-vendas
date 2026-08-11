@@ -1,7 +1,7 @@
 # GUIA INSTALAR E ESCOLHER A FERRAMENTA — terminal, desktop ou Codex (a votação da Aula 1)
 
 > **Estou perdido em:** "Claude Code, Claude Desktop, Codex, VS Code… qual deles eu instalo pra fazer esta aula?".
-> **O que você vai ter no final:** UMA ferramenta instalada e funcionando, escolhida pelo seu perfil — e a certeza de que as 7 skills entregam o mesmo resultado nas quatro opções.
+> **O que você vai ter no final:** UMA ferramenta instalada e funcionando, escolhida pelo seu perfil — e a certeza de que as skills entregam o mesmo resultado nas quatro opções.
 > **Fontes cruzadas:** o `README.md` deste repo (seção "Qual ferramenta você usa?", opções A/B/C) · o `AGENTS.md` (que descreve como o Codex carrega as skills espelhadas em `.agents/skills/`) · a Aula 1 ao vivo, onde a professora fez uma votação e comparou desktop × terminal na prática · a página oficial de setup do Claude Code (`code.claude.com/docs/en/setup`, consultada em 03/08/2026 — comandos, requisitos de sistema e exigência de plano pago conferidos linha a linha) · a documentação e o pacote npm oficial do Codex CLI.
 
 ## Pré-requisitos (confira ANTES)
@@ -14,7 +14,7 @@
 
 ## A escolha, em uma tabela
 
-As 7 skills são **arquivos de texto** dentro do projeto. Qualquer ferramenta que consiga ler esses arquivos executa a aula. A escolha é de conforto, não de resultado.
+As skills são **arquivos de texto** dentro do projeto. Qualquer ferramenta que consiga ler esses arquivos executa a aula. A escolha é de conforto, não de resultado.
 
 | Opção | Como é na prática | Escolha se… |
 |---|---|---|
@@ -74,7 +74,7 @@ As 7 skills são **arquivos de texto** dentro do projeto. Qualquer ferramenta qu
 4. Na barra lateral, clique em **Code** (não é o chat normal — o chat normal não enxerga suas pastas).
 5. Clique em abrir/adicionar pasta e escolha a pasta do projeto (a que você vai criar no próximo guia).
 
-Quando você digitar `/` dentro dele, as 7 skills aparecem numa lista **com a descrição de cada uma ao lado**. É a diferença prática mais útil pra quem está começando.
+Quando você digitar `/` dentro dele, todas as skills do projeto aparecem numa lista **com a descrição de cada uma ao lado**. É a diferença prática mais útil pra quem está começando. (Vão aparecer 11: as 7 da Aula 1, o bônus Squad Sales e as 3 da Aula 2 — todas ficam disponíveis desde o primeiro dia.)
 
 ## Opção C — Instalar o Codex CLI
 

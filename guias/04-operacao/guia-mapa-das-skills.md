@@ -1,8 +1,10 @@
-# GUIA AS 7 SKILLS — o mapa da aula: o que cada uma pergunta, entrega, e quando pular
+# GUIA O MAPA DAS SKILLS — o que cada uma pergunta, entrega, e quando pular
 
-> **Estou perdido em:** "são 7 comandos, qual eu rodo agora? o que cada um faz? e quanto tempo isso leva?".
-> **O que você vai ter no final:** o mapa inteiro da Aula 1 numa página — ordem, o que cada skill pergunta, o que entrega, e as três situações em que **pular** uma skill é a resposta certa.
-> **Fontes cruzadas:** os 7 `SKILL.md` deste repo (a ordem, os gates de entrada e as condições de pulo saíram de dentro deles) · o `README.md` e o `docs/workflow.md` (fluxo da aula e conexão entre skills) · o `docs/SKILLS-INDEX.md` (aliases que o aluno tenta digitar) · a Aula 1 ao vivo, onde as 7 rodaram em sequência · pesquisa sobre os limites de convite do LinkedIn em 2026 (consultada em 03/08/2026), que a skill não cobre e a operação real esbarra.
+> **Estou perdido em:** "são vários comandos, qual eu rodo agora? o que cada um faz? e quanto tempo isso leva?".
+> **O que você vai ter no final:** o mapa inteiro da Aula 1 numa página — ordem, o que cada skill pergunta, o que entrega, e as situações em que **pular** uma skill é a resposta certa.
+> **Fontes cruzadas:** os `SKILL.md` deste repo (a ordem, os gates de entrada e as condições de pulo saíram de dentro deles) · o `README.md` e o `docs/workflow.md` (fluxo da aula e conexão entre skills) · o `docs/SKILLS-INDEX.md` (aliases que o aluno tenta digitar) · a Aula 1 ao vivo, onde o fluxo principal rodou em sequência · pesquisa sobre os limites de convite do LinkedIn em 2026 (consultada em 03/08/2026), que a skill não cobre e a operação real esbarra.
+
+> **Escopo:** este guia cobre a **Aula 1** — as 5 skills do fluxo principal mais os 3 bônus. As 3 skills da **Aula 2** (`/montagem-higiene-crm`, `/lead-scoring-ia`, `/diagnostico-gargalos-funil`) aparecem no `ls` desde o primeiro dia e têm numeração própria (`1/3`, `2/3`, `3/3`); elas não entram na contagem daqui.
 
 ## Pré-requisitos (confira ANTES)
 
@@ -18,13 +20,14 @@
         →  4 /discovery-script  →  5 /playbook-vendas-vivo   ← fecha o fluxo principal
 
         BÔNUS (só se aplicar):  6 /escada-de-ofertas   ·   7 /social-selling-comercial
+                                8 /squad-sales-bonus   ← o mais avançado dos três
 ```
 
 **A ordem importa?** Sim, mas não é trava. Cada skill puxa contexto da anterior se ela já rodou; se não rodou, ela pergunta o que precisa e segue. Rodar fora de ordem só significa responder mais perguntas.
 
 ⚠️ **O que a ordem realmente protege:** cada skill herda decisões da anterior. Se você aprovar um processo com etapa errada na Skill 1, as Skills 2 a 5 vão construir tudo em cima da etapa errada. Veja [guia-revisar-e-corrigir.md](guia-revisar-e-corrigir.md).
 
-## As 7, uma por uma
+## Uma por uma
 
 ### Skill 1 — `/desenho-processo-comercial`
 
@@ -108,7 +111,23 @@
 | **Tempo** | mais curta que as do fluxo principal (mesma ressalva da Skill 6: as bônus não estão cronometradas) |
 | **Pular?** | **Sim, em dois casos** — veja abaixo |
 
-## Quando PULAR uma skill (as 4 situações reais)
+### Skill 8 — `/squad-sales-bonus` (bônus)
+
+| | |
+|---|---|
+| **O que faz** | Abre a porta de um squad de **14 mentes** de pré e pós-venda (produzido por Fran Martins, fora deste cohort) e faz a ponte entre o seu negócio e a mente certa — nunca framework genérico |
+| **O que pergunta** | Puxa o contexto da Skill 1 se ela existir. Depois, um gate de 3 perguntas que ela **não** pula: (1) em uma frase, o que você vende · (2) qual das 4 dores descreve seu momento — prospecção seca / travado entre qualificar e fechar / cliente cancela depois de fechar / quero tudo do zero · (3) tem lead ou cliente real pra usar de exemplo? |
+| **O que entrega** | `squad-sales-{negocio}.md` + `.html` — o nicho detectado e **por quê**, o fluxo escolhido, e cada peça de material com a citação de origem (*"isso vem do framework X de Y, adaptado ao seu negócio"*) |
+| **Tempo** | varia com o fluxo escolhido; o de retenção e pós-venda é o mais longo |
+| **Pular?** | **Sim, se você ainda não rodou a Skill 1.** Ela mesma recomenda voltar. E é bônus: nada do fluxo principal depende dela |
+
+**Antes de rodar, ela detecta seu nicho** entre 7 perfis (infoproduto low/high-ticket, SaaS SMB/enterprise, serviços, e-commerce DTC, customizado) — e isso decide quais mentes **evitar**. O exemplo que ela mesma dá: *"SPIN Selling é overkill pra um infoproduto de R$97"*. Rodar Dream 100 num ticket baixo é o erro mais caro que essa skill pode cometer, e o gate existe pra impedir isso.
+
+⚠️ **Ela precisa da pasta `squads/`** no seu projeto: os frameworks não estão dentro da skill, são lidos em tempo de execução de `squads/squad-sales/agents/` e `squads/squad-sales/tasks/`. Sem a pasta, ela não tem o que aplicar — veja o `R11` do [guia-baixar-e-abrir-o-projeto.md](../01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md).
+
+**As 5 mentes de pós-venda** (CS Chief, Onboarding Architect, Health Monitor, Journey Mapper, Expansion Strategist) cobrem terreno que **nenhuma** das 7 skills anteriores toca: onboarding, health score, churn, jornada e expansão de conta. Se a sua dor é "fecho, mas o cliente some", é aqui — e vale ler antes o [guia-onboarding-e-pos-venda.md](../05-depois/guia-onboarding-e-pos-venda.md).
+
+## Quando PULAR uma skill (as situações reais)
 
 Pular na hora certa é competência, não preguiça. As skills foram escritas pra te avisar.
 
@@ -118,6 +137,8 @@ Pular na hora certa é competência, não preguiça. As skills foram escritas pr
 | **Só tenho um produto** | **Skill 6** | Escada de ofertas resolve problema de portfólio. Com um produto só, a skill diz: *"quando vocês tiverem um segundo produto, voltamos aqui"* |
 | **Não prospecto por rede social** (só recebo lead de anúncio, indicação, ou tenho fila de espera) | **Skill 7** | Ela é opcional por natureza |
 | **Meu perfil ainda não está pronto pra abordar** | **Skill 7, por enquanto** | O checkpoint dela é um bloqueio real: perfil sem autoridade (foto, bio, posts recentes), oferta de call não clara, ou nenhuma forma de organizar quem já foi abordado |
+| **Ainda não rodei nem a Skill 1** | **Skill 8, por enquanto** | Ela é a mais avançada das oito e trabalha em cima do que as anteriores construíram. A própria skill recomenda voltar pro `/desenho-processo-comercial`. Se você insistir, ela roda — e registra essa escolha no documento |
+| **Quero fechar a aula no essencial** | **Skills 6, 7 e 8** | Os três bônus são opcionais por definição. O fluxo principal termina na Skill 5 |
 
 ⚠️ **Sobre o checkpoint da Skill 7**, direto da Aula 1:
 
@@ -173,14 +194,18 @@ O `docs/SKILLS-INDEX.md` mapeia os apelidos. Os que mais confundem:
 | `/playbook`, `/objecoes`, `/biblioteca-de-objecoes` | `/playbook-vendas-vivo` |
 | `/value-ladder`, `/escada-de-produtos` | `/escada-de-ofertas` |
 | `/social-selling`, `/vender-por-dm`, `/linkedin-outreach` | `/social-selling-comercial` |
+| `/squad`, `/squad-sales`, `/mentes-de-venda`, `/prospeccao-fanatica`, `/negociacao`, `/churn`, `/pos-venda` | `/squad-sales-bonus` |
+| `/crm`, `/higiene`, `/limpar-base` | `/montagem-higiene-crm` (**Aula 2**) |
+| `/lead-scoring`, `/pontuar-leads`, `/temperatura` | `/lead-scoring-ia` (**Aula 2**) |
+| `/gargalo`, `/funil-por-numero`, `/conversao` | `/diagnostico-gargalos-funil` (**Aula 2**) |
 
 ## Peça pra IA
 
 | Situação | Cole isto |
 |---|---|
-| **Saber onde eu parei** | dentro de qualquer skill: `me mostra onde eu estou` — as 7 têm essa resposta pronta, com o que falta pra entrega ficar 10/10 |
-| **Descobrir a próxima skill** | "Olhe os arquivos desta pasta e me diga quais das 7 skills da Aula 1 já entregaram, qual é a próxima na ordem, e se alguma se aplica ao meu caso ([descreva seu negócio em 2 linhas])." |
-| **Saber se posso pular alguma** | "Meu negócio é [descreva: com vendedor ou autoatendimento, quantos produtos, prospecto por rede social ou não]. Das 7 skills da Aula 1, quais se aplicam a mim e quais eu posso pular sem prejuízo? Justifique cada pulo." |
+| **Saber onde eu parei** | dentro de qualquer skill: `me mostra onde eu estou` — todas têm essa resposta pronta, com o que falta pra entrega ficar 10/10 |
+| **Descobrir a próxima skill** | "Olhe os arquivos desta pasta e me diga quais skills da Aula 1 já entregaram, qual é a próxima na ordem, e se alguma se aplica ao meu caso ([descreva seu negócio em 2 linhas])." |
+| **Saber se posso pular alguma** | "Meu negócio é [descreva: com vendedor ou autoatendimento, quantos produtos, prospecto por rede social ou não]. Das skills da Aula 1, quais se aplicam a mim e quais eu posso pular sem prejuízo? Justifique cada pulo." |
 | **Retomar depois de dias parado** | "Faz [X] dias que não mexo nisso. Leia os arquivos da pasta, me diga em 5 linhas o que eu já construí, e qual é o próximo comando a rodar." |
 | **A skill parou no meio** | `continue de onde você parou` — e, se o arquivo ficou incompleto: "releia o arquivo `[nome]` e complete o que faltou, sem reescrever o que já está pronto" |
 
@@ -188,9 +213,11 @@ O `docs/SKILLS-INDEX.md` mapeia os apelidos. Os que mais confundem:
 
 Depois de rodar a Skill 1, abra o `central-de-entregas.html` na raiz do projeto.
 
-**Funcionou se:** a barra de progresso mostra **1 de 7 entregues**, o card 1 está aceso com badge **Pronto** e dois links (Abrir HTML / Abrir MD), e os outros 6 estão apagados com "Aguardando /comando".
+**Funcionou se:** a barra de progresso mostra **1 de 8 entregues**, o card 1 está aceso com badge **Pronto** e dois links (Abrir HTML / Abrir MD), e os outros 7 estão apagados com "Aguardando /comando".
 
-Ao fim da aula, o esperado é 5 de 7 (fluxo principal) ou até 7 de 7 (com os bônus). Se você pulou a Skill 6 ou 7 conscientemente, 5 de 7 é resultado completo.
+**A régua de "terminei":** ao fim da aula, o fluxo principal completo é **5 de 8** — e isso já é resultado completo. Os cards 6, 7 e 8 são bônus: só acendem se aplicarem ao seu caso. **Não persiga 8 de 8.** Rodar a Escada de Ofertas com um produto só, ou o Squad Sales sem ter o processo desenhado, produz documento bonito e inútil.
+
+⚠️ O rótulo de cada card diz `/ 7` mesmo com 8 cards — é um texto fixo do template que não acompanhou a entrada do bônus. A barra de progresso conta certo. Veja `EN11` em [guia-entregaveis-e-central.md](guia-entregaveis-e-central.md).
 
 ## POSSÍVEIS ERROS — catálogo
 
@@ -198,20 +225,24 @@ Ao fim da aula, o esperado é 5 de 7 (fluxo principal) ou até 7 de 7 (com os b�
 |---|---|---|---|
 | SK1 | Rodei a Skill 3 e ela me perguntou tudo de novo | A Skill 1 não rodou, ou o `.md` dela não está na pasta aberta | 1) confirme com `ls *.md` que o `processo-comercial-*.md` está lá 2) se estiver, aponte: *"leia `processo-comercial-x.md` antes de continuar"* |
 | SK2 | A Skill 4 disse que "não se aplica" ao meu negócio | Seu modelo é autoatendimento | comportamento correto: pule pra Skill 5, como ela sugere |
-| SK3 | A Skill 6 se recusou a rodar | Você tem um produto só | comportamento correto. 5 de 7 é entrega completa no seu caso |
+| SK3 | A Skill 6 se recusou a rodar | Você tem um produto só | comportamento correto. **5 de 8 é entrega completa no seu caso** — os bônus não contam como pendência |
 | SK4 | A Skill 7 me travou num checkpoint | Perfil sem autoridade, oferta de call vaga, ou sem forma de organizar prospects | resolva o item que faltou **antes** de gerar a sequência: sequência de mensagens não compensa perfil fraco |
 | SK5 | Rodei fora de ordem e agora está tudo desencontrado | Cada skill herda da anterior | 1) rode a Skill 1 primeiro 2) re-rode as posteriores na ordem — elas puxam o contexto novo 3) veja [guia-revisar-e-corrigir.md](guia-revisar-e-corrigir.md) |
 | SK6 | A Skill 4 está demorando muito | Esperado: ela escreve uma peça de copy por linha da régua | espere. Se der erro de API no meio, peça *"continue de onde você parou"* ([guia-modelo-e-custo.md](../01-pre-requisitos/guia-modelo-e-custo.md)) |
 | SK7 | O playbook saiu com objeções que não são as minhas | Você escolheu a opção 2 (partir das típicas do nicho) | é o modo "ponto de partida a validar". Levante 5 objeções reais e rode de novo |
 | SK8 | Digitei o comando e apareceu "No commands match" | Ferramenta aberta na pasta errada | veja o `R6` do [guia-baixar-e-abrir-o-projeto.md](../01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md) |
 | SK9 | Não sei em qual skill eu parei | Perdeu o fio entre sessões | 1) abra o `central-de-entregas.html` 2) ou peça, dentro de qualquer skill: **"me mostra onde eu estou"** |
+| SK10 | A Skill 8 me fez três perguntas e não avançou enquanto eu não respondi | É o gate obrigatório dela (Passo 0.5) | comportamento correto. Responda a pergunta 2 escolhendo **uma** das quatro dores — resposta vaga tipo "quero vender mais" faz ela repetir a pergunta, de propósito |
+| SK11 | A Skill 8 rodou mas o material saiu genérico, sem citar mentor nenhum | Ela não conseguiu ler os arquivos das mentes | 1) `ls squads/squad-sales/agents` — se der erro, falta a pasta `squads/` (veja `R11` do [guia-baixar-e-abrir-o-projeto.md](../01-pre-requisitos/guia-baixar-e-abrir-o-projeto.md)) 2) com a pasta no lugar, rode de novo — cada peça tem que vir com *"isso vem do framework X de Y"* |
+| SK12 | Vejo 11 pastas em `.claude/skills`, mas este guia só fala de 8 | As 3 a mais são da **Aula 2** | não é erro. Elas ficam disponíveis desde o primeiro dia e têm numeração própria (`1/3`). Rode na ordem da aula, não na ordem do `ls` |
 
-**Se nada resolver:** dentro da skill, digite `me mostra onde eu estou`. As 7 têm essa resposta pronta.
+**Se nada resolver:** dentro da skill, digite `me mostra onde eu estou`. Todas têm essa resposta pronta.
 
 ## Pronto. Próximos passos
 
 | Agora | O quê |
 |---|---|
 | ▶️ Fazer | rode a próxima skill da sequência que ainda está apagada na Central de Entregas |
-| 📖 Ler | [guia-revisar-e-corrigir.md](guia-revisar-e-corrigir.md) — **leia antes de aprovar o primeiro entregável**, é a regra que evita retrabalho nas 6 skills seguintes |
-| 🚑 Se travar | o catálogo SK1–SK9 acima |
+| 📖 Ler | [guia-revisar-e-corrigir.md](guia-revisar-e-corrigir.md) — **leia antes de aprovar o primeiro entregável**, é a regra que evita retrabalho em todas as skills seguintes |
+| 📖 Ler | [guia-entregaveis-e-central.md](guia-entregaveis-e-central.md) — onde os arquivos caem e como ler as duas Centrais |
+| 🚑 Se travar | o catálogo SK1–SK12 acima |

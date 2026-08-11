@@ -2,7 +2,7 @@
 
 > **Estou perdido em:** "o cliente parou de responder e eu não sei se insisto, se espero, ou se dou por perdido".
 > **O que você vai ter no final:** os 4 sinais de alerta de um negócio específico e os 4 que mandam revisar o processo inteiro — cada um com a ação certa, o prazo e quem age.
-> **Fontes cruzadas:** o `SKILL.md` da `/desenho-processo-comercial` (Passo 2, os dois níveis de gatilho, e a referência de SLA de 1 hora / janela de 7 dias) e da `/regua-comunicacao-comercial` (Passo 4, o escalonamento de card parado em 2h / 24h / 48h) · a Aula 1 ao vivo, onde a professora percorreu um gatilho por vez com exemplo · pesquisa sobre envelhecimento de pipeline e queda de probabilidade de fechamento (consultada em 03/08/2026).
+> **Fontes cruzadas:** o `SKILL.md` da `/desenho-processo-comercial` (Passo 2, os dois níveis de gatilho, e a referência de SLA de 1 hora / janela de 7 dias) e da `/regua-comunicacao-comercial` (Passo 4, o escalonamento de card parado em 2h / 24h / 48h) · o `SKILL.md` da `/montagem-higiene-crm` (Passo 3, itens 3 e 4: trava de avanço e o teto da faixa de ciclo pro card zumbi) · a Aula 1 ao vivo, onde a professora percorreu um gatilho por vez com exemplo · pesquisa sobre envelhecimento de pipeline e queda de probabilidade de fechamento (consultada em 03/08/2026).
 
 ## Pré-requisitos (confira ANTES)
 
@@ -48,6 +48,32 @@ Um negócio parado não fica parado — ele **apodrece**. Os dados de mercado:
 > *"Se é uma falha do comercial, se é uma falha que o cliente ali a gente não está alinhado, tem que melhorar o ICP. O ICP que a gente imaginou está travado."*
 
 Ou seja: card travando **sempre na mesma etapa**, em vários deals, não é problema de vendedor. É problema de processo ou de ICP.
+
+#### ⚠️ Tempo parado sozinho é um gatilho ruim (e cria um vício)
+
+Este é o ponto mais importante desta parte, e o mais fácil de errar.
+
+Se o alerta dispara **só** porque o card ficou X dias parado, o vendedor aprende a coisa errada: ele move o card. Não porque o cliente avançou — porque o alarme parou de tocar. Em poucas semanas o funil fica lindo, todo mundo se movendo, e **nenhuma etapa significa mais nada**. Você perdeu a leitura de conversão, o forecast e o gargalo de uma vez só, e trocou tudo por um painel verde.
+
+**A regra:** o alerta exige **duas** condições ao mesmo tempo.
+
+| Condição | |
+|---|---|
+| 1 | o card está parado além do prazo daquela etapa |
+| 2 | **e** o critério de saída daquela etapa não foi cumprido |
+
+Card parado com o critério de saída já cumprido não é card travado — é card esperando alguém mover. Isso é problema de rotina, não de deal, e resolve no escalonamento da Parte 2. Card parado **sem** o critério cumprido é o alerta de verdade.
+
+**A versão estrutural disso** aparece na Aula 2: onde a ferramenta permitir, o critério de saída vira **trava de avanço** — o card simplesmente não muda de etapa sem o campo preenchido. Aí o vendedor não tem como fugir do alarme movendo o card, e o tempo parado volta a ser um sinal confiável. Onde a ferramenta não permitir, o critério fica só informativo — e vale saber em quais etapas você está nessa situação, porque são exatamente as que aceitam o vício.
+
+#### O prazo de "zumbi": use o teto da faixa, nunca a média
+
+Um card parado muito além do ciclo inteiro, e sem estar marcado como perdido, é dado morto inflando o pipeline. Duas regras pra achar esse limite:
+
+- **Se o seu ciclo é uma faixa** (ex.: "60 a 120 dias"), use o **teto** — 120, não 90. É a leitura conservadora, e evita marcar como zumbi um negócio que ainda está dentro do prazo normal.
+- **Não calcule a média da sua própria base pra decidir isso.** Base suja distorce a própria média: os cards mortos que você quer encontrar são justamente os que estão puxando a média pra cima. Você acabaria usando o lixo como régua do lixo. Use o ciclo que você conhece do seu negócio.
+
+⚠️ Não confunda com o prazo de **estagnação** da tabela acima: estagnação é por etapa (dias), zumbi é contra o ciclo inteiro (semanas ou meses). Um card pode estar estagnado sem ser zumbi.
 
 ### Gatilho 2 — No-show
 
@@ -149,8 +175,9 @@ Abra a sua planilha/quadro de deals e responda:
 2. Cada um desses tem uma **próxima ação com data**?
 3. Existe uma etapa de **Reagendamento** separada de "Perdido"?
 4. Tenho a revisão trimestral do processo **marcada no calendário**, com dono?
+5. Dos cards que se moveram na última semana, **todos tinham o critério de saída cumprido**?
 
-**Funcionou se:** quatro "sim". Se o item 1 falhou, seus gatilhos existem no documento mas não na operação — e aí eles não existem.
+**Funcionou se:** cinco "sim". Se o item 1 falhou, seus gatilhos existem no documento mas não na operação — e aí eles não existem. Se o item 5 falhou, o alerta de tempo parado está sendo burlado, e o número de cards que avançaram sem critério é o tamanho do estrago.
 
 ## POSSÍVEIS ERROS — catálogo
 
@@ -165,6 +192,9 @@ Abra a sua planilha/quadro de deals e responda:
 | GT7 | Meu vendedor não avisa quando o card trava | Falta o escalonamento interno | implante os 3 toques (2h / 24h / 48h com cópia pra liderança), sempre com pergunta binária, nunca aberta |
 | GT8 | Mudei o ICP porque um cliente falou uma coisa | Mudança por impulso | espere pelo menos 10 conversas de discovery apontando na mesma direção antes de mexer na definição |
 | GT9 | O comprador econômico nunca apareceu no deal inteiro | Isso não é um deal, é uma conversa | volte ao bloco de autoridade: *"além de você, quem mais precisa estar de acordo?"*. Sem ele, a proposta não tem para onde ir |
+| GT10 | Desde que liguei os alertas, ninguém tem card parado — mas a conversão não melhorou | Clássico: o time aprendeu a mover o card pra calar o alarme, não a destravar o negócio | 1) exija as **duas** condições (parado **e** critério de saída não cumprido) 2) confira quantos cards avançaram sem o critério preenchido — esse número é o tamanho do problema 3) onde a ferramenta permitir, transforme o critério em **trava de avanço** |
+| GT11 | Marquei como zumbi um monte de card que ainda estava vivo | Você usou a média do ciclo (ou a média da própria base) em vez do teto da faixa | use o **teto**: ciclo de "60 a 120 dias" tem corte em 120. E não calcule a média da sua base pra isso — os cards mortos que você procura são os que estão inflando essa média |
+| GT12 | Meu CRM não deixa travar o avanço em algumas etapas | Limitação de plano ou de API, é comum | não é problema, é informação. Registre **quais** etapas ficaram só com campo informativo e quais têm trava real. Nas informativas, o alerta de tempo parado precisa de revisão humana, não é confiável sozinho |
 
 **Se nada resolver:** leve o card específico pra uma conversa com a IA: *"este deal está parado há X dias na etapa Y. Este é o histórico: [cole]. Qual é a próxima ação mais provável de destravar?"*
 
@@ -174,4 +204,5 @@ Abra a sua planilha/quadro de deals e responda:
 |---|---|
 | ▶️ Fazer | marque um ritual semanal de 15 minutos: "quais cards não se moveram?" — e a revisão trimestral no calendário |
 | 📖 Ler | [guia-metricas-do-comercial.md](guia-metricas-do-comercial.md) — os números que dizem se o funil está saudável |
-| 🚑 Se travar | o catálogo GT1–GT9 acima |
+| ▶️ Fazer (Aula 2) | rode `/montagem-higiene-crm` — ela transforma o critério de saída em trava de avanço onde a ferramenta deixar, e varre os cards zumbi pelo teto do seu ciclo |
+| 🚑 Se travar | o catálogo GT1–GT12 acima |

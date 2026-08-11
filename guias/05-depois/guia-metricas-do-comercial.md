@@ -2,7 +2,7 @@
 
 > **Estou perdido em:** "sei que preciso medir alguma coisa, mas não sei o quê — e nem se os números que eu tenho querem dizer alguma coisa".
 > **O que você vai ter no final:** os poucos números que os entregáveis da Aula 1 já produzem, o que cada um revela, e a régua pra não confundir número bonito com negócio saudável.
-> **Fontes cruzadas:** o `SKILL.md` da `/desenho-processo-comercial` (a métrica de forecast por etapa, as duas condições pra ela significar algo, e o gatilho de mudança de conversão) e da `/qualificacao-bant-gpct` (nota de corte e auditoria entre duas pessoas) · o acervo interno de formação em bastidores do digital (as métricas do departamento comercial e o mapeamento de motivo de cancelamento) · pesquisa sobre benchmarks de conversão entre etapas e de envelhecimento de pipeline (consultada em 03/08/2026).
+> **Fontes cruzadas:** o `SKILL.md` da `/desenho-processo-comercial` (a métrica de forecast por etapa, as duas condições pra ela significar algo, e o gatilho de mudança de conversão) e da `/qualificacao-bant-gpct` (nota de corte e auditoria entre duas pessoas) · o `SKILL.md` da `/diagnostico-gargalos-funil` (Passos 2 e 3: o gate de sanidade, coorte vs estoque, gargalo aparente vs causa real, forecast ponderado e receita em risco) · o acervo interno de formação em bastidores do digital (as métricas do departamento comercial e o mapeamento de motivo de cancelamento) · pesquisa sobre benchmarks de conversão entre etapas e de envelhecimento de pipeline (consultada em 03/08/2026).
 
 ## Pré-requisitos (confira ANTES)
 
@@ -13,7 +13,9 @@
 
 ## O escopo deste guia (o que ele NÃO cobre)
 
-⚠️ Aqui só entram os números que os **entregáveis da Aula 1 já produzem**. Painel de CRM, dashboard e relatório automatizado são **Aula 2**. Este guia é o mínimo pra você não operar às cegas nas próximas semanas — feito em planilha, na mão, se preciso.
+⚠️ Aqui só entram os números que os **entregáveis da Aula 1 já produzem**, calculáveis em planilha, na mão, sem ferramenta nenhuma. Painel de CRM, cálculo automático e diagnóstico de gargalo são a **Aula 2** — e ela já existe: `/diagnostico-gargalos-funil` faz esses mesmos números com o dado do seu pipeline e monta a calculadora.
+
+**Por que ainda vale ler isto se a Aula 2 calcula sozinho:** porque a skill entrega o número, não o julgamento. Quem decide se aquele número quer dizer alguma coisa é você — e as duas seções abaixo (a régua antes dos números, e o que cada um revela) são justamente esse julgamento.
 
 ## A régua antes dos números
 
@@ -46,6 +48,25 @@ Referências de mercado, só pra você não se assustar com o próprio número:
 
 > *"Se é uma falha do comercial, se é uma falha [de que] o cliente não está alinhado, tem que melhorar o ICP."*
 
+#### As duas formas de calcular isso — e por que a diferença importa
+
+A fórmula lá em cima (*saíram ÷ entraram*) é a versão **por coorte**, e é a boa. Só que ela exige uma coisa que muita planilha não tem: **data de entrada em cada etapa**. Sem isso, o que quase todo mundo acaba calculando é outra coisa:
+
+| Forma | Como se calcula | O que ela mede |
+|---|---|---|
+| **Coorte** (preferencial) | dos deals que **entraram** nesta etapa nos últimos 90 dias, quantos avançaram | conversão de verdade |
+| **Estoque** (fallback) | quantos estão **agora** na etapa seguinte ÷ quantos estão agora nesta | onde olhar primeiro — nada além disso |
+
+⚠️ **Se você só tem o estoque, diga isso em voz alta ao apresentar o número.** Leitura de estoque é sensível a etapas com velocidades diferentes: uma etapa rápida sempre parece ter poucos cards, e isso não quer dizer que ela converte mal.
+
+⚠️ **Estoque acima de 100% não é uma etapa excelente.** Chegar mais negócio na etapa seguinte do que existe na atual é matematicamente impossível como taxa real — só acontece quando entrou um lote de cards sem passar de verdade pela etapa anterior. É a assinatura de uma **etapa decorativa**, e ela contamina a média de todas as outras. Tire esse par de etapas da conta de "média saudável" antes de comparar qualquer coisa.
+
+#### A etapa pior não é necessariamente a culpada
+
+Antes de reformar a etapa com a pior conversão, olhe a **de trás**. Se a anterior não tem critério de saída claro, ou se é comum ver vários cards avançando de uma vez, ela está despejando negócio malqualificado na próxima — que trava e leva a culpa.
+
+Isso tem nome: **gargalo aparente** na etapa N, **causa real** na etapa N-1. E vale o contrário também: se a etapa anterior está saudável, o gargalo aparente **é** o gargalo real. Isso é um resultado válido, não sinal de que a análise falhou — não saia procurando problema onde não tem.
+
 ### 2. Forecast por etapa (o dinheiro parado no funil)
 
 **O que é:** a soma em R$ dos deals que estão nas 2-3 etapas finais antes do fechamento.
@@ -59,7 +80,26 @@ Referências de mercado, só pra você não se assustar com o próprio número:
 
 E o cuidado que a pesquisa de mercado adiciona: **card velho infla o forecast**, porque ele continua contando o valor cheio mesmo quando a chance de fechar despencou. Negócio que ultrapassa o ciclo médio converte a ~23%, contra ~68% dos que fecham dentro dele. Limpe o funil antes de somar — veja [guia-gatilhos-e-cards-parados.md](guia-gatilhos-e-cards-parados.md).
 
-**A rotina que faz o forecast valer:** revisão card a card, com quem está negociando. Não é olhar o painel — é conversar sobre cada negócio. Isso bate meta mais do que dashboard.
+**A rotina que faz o forecast valer:** revisão card a card, com quem está negociando. Não é olhar o painel — é conversar sobre cada negócio. Isso bate meta mais do que dashboard. Regra prática dessa revisão: **todo card sem próximo passo definido conta como parado**, mesmo que tenha mudado de etapa ontem.
+
+#### A versão honesta: forecast ponderado
+
+A soma bruta das etapas finais é o forecast de quem quer se animar. O número que decide alguma coisa é o **ponderado pela conversão de cada etapa**:
+
+> R$ 100 mil em Proposta, numa etapa que converte a 40%, valem **R$ 40 mil** de forecast — não R$ 100 mil.
+
+Faça isso etapa por etapa e some. A diferença entre os dois números costuma ser desconfortável, e é exatamente por isso que vale calcular: é a distância entre o que você reporta e o que você recebe.
+
+⚠️ **Nunca comunique forecast como certeza**, nem o ponderado. É projeção baseada em padrão histórico. Isso é regra dura se o seu nicho é regulado.
+
+#### E a receita em risco
+
+Um número que a Aula 1 não produz e vale conhecer desde já, porque ele é o que transforma "essa etapa converte mal" em decisão: **quanto o funil geraria a mais se a etapa gargalo chegasse à média das outras**, multiplicado pelo ticket médio real e pela conversão daí até o fechamento.
+
+Duas cautelas que vêm junto:
+
+- **Ticket médio real** é a média dos negócios **já ganhos**. Nunca um número assumido, nunca o preço de tabela.
+- **A unidade de tempo muda com o seu ciclo.** Ciclo curto e volume alto: expresse por mês, faz sentido operacional. Ciclo longo com contrato anual: mensalizar é artificial — expresse como total represado no pipeline atual, e diga que leva um ciclo completo pra se realizar.
 
 ### 3. Tempo médio por etapa
 
@@ -105,13 +145,21 @@ E, como no motivo da perda, o número sozinho não serve. É preciso mapear **po
 
 Pra você não se perder tentando medir tudo:
 
+A boa notícia: a maior parte desta tabela **deixou de ser espera e virou endereço**. A Aula 2 já saiu.
+
 | Métrica | Onde ela entra |
 |---|---|
-| Tempo médio de atendimento, tempo de primeira resposta, CSAT | quando existir ferramenta de atendimento — **Aula 2** |
-| Mensagens por vendedor, participação da equipe nas vendas | quando existir time — **Aula 2** |
-| SLA formal entre marketing e vendas | **Aula 2** (a Aula 1 entrega o contrato de dados, que é o insumo disso) |
-| Taxa de renovação | só se você vende assinatura, e melhor com CRM — **Aula 2** |
+| Conversão calculada sozinha, gargalo apontado, receita em risco | **Aula 2** → `/diagnostico-gargalos-funil` |
+| Temperatura do lead (Quente / Morno / Frio), pontuação por critério | **Aula 2** → `/lead-scoring-ia` |
+| Cobertura de campo, duplicidade, card zumbi, confiabilidade da origem | **Aula 2** → `/montagem-higiene-crm` |
+| Tempo médio de atendimento, tempo de primeira resposta, CSAT | quando existir ferramenta de atendimento — segue fora do escopo das duas aulas |
+| Mensagens por vendedor, participação da equipe nas vendas | quando existir time — segue fora do escopo |
+| SLA formal entre marketing e vendas | a Aula 1 entrega o contrato de dados, que é o insumo; formalizar é decisão sua |
+| Health score, churn, NRR, expansão de conta | pós-venda → veja [guia-onboarding-e-pos-venda.md](guia-onboarding-e-pos-venda.md) e a Skill 8 (`/squad-sales-bonus`) |
+| Taxa de renovação | só se você vende assinatura. Com o CRM montado na Aula 2, fica calculável |
 | Custo de aquisição, retorno sobre investimento em anúncio | é do **funil de marketing**, não do comercial |
+
+⚠️ **O que continua sendo trabalho seu, mesmo com a Aula 2 rodando:** o **motivo da perda** (número 4 abaixo). Nenhuma skill inventa motivo — ela só conta o que você categorizou. Campo de motivo vazio é o único dos 5 números que a automação não salva.
 
 ## A planilha mínima (cabe em 6 colunas)
 
@@ -156,10 +204,13 @@ Responda com os seus dados reais:
 | MT2 | Comparei minha conversão com um benchmark e me desesperei | Benchmark de mercado não é a sua régua | compare você com você: mês a mês. Ticket, ciclo e origem de lead mudam tudo |
 | MT3 | Não consigo calcular conversão por etapa | Falta o registro de quando o deal entrou/saiu de cada etapa | acrescente a coluna "data da última movimentação". Sem histórico de etapa, não existe conversão por etapa |
 | MT4 | Todo mundo preenche o CRM/planilha errado | Campo que não devolve nada pra quem preenche | corte campo que não muda decisão. A régua da Skill 1: *"só exigir informação que muda o comportamento do vendedor ou a qualidade do forecast"* — cada campo a mais é um pedágio entre o vendedor e a próxima conversa |
-| MT5 | Meço tudo e não decido nada | Métrica de vaidade | fique nos 5 deste guia. O resto é Aula 2 |
+| MT5 | Meço tudo e não decido nada | Métrica de vaidade | fique nos 5 deste guia. O resto ou é Aula 2 (e a skill calcula sozinha), ou não muda decisão nenhuma |
 | MT6 | Meu motivo de perda mais comum é "outros" | Categorias mal definidas ou preenchimento no automático | 1) limite a 5-6 categorias fechadas 2) proíba "outros" sem uma frase de explicação |
 | MT7 | A conversão subiu e eu comemorei, mas o faturamento caiu | Conversão alta com volume baixo, ou tickets menores | olhe sempre conversão **e** volume juntos. Conversão de 100% em 2 deals não é performance |
 | MT8 | Minha taxa de qualificação está baixíssima | Lead chegando frio demais | não é problema do vendedor: é ICP ou captação. Devolva o dado pro marketing, com o motivo categorizado |
+| MT9 | Uma etapa minha converte acima de 100% | Você calculou estoque, não coorte — e essa etapa provavelmente é decorativa | 1) é matematicamente impossível como taxa real 2) confira se aquela etapa tem critério de saída de verdade 3) tire esse par de etapas da média antes de comparar as outras |
+| MT10 | Reformei a etapa com a pior conversão e não melhorou nada | Gargalo aparente: a causa estava na etapa anterior | olhe a etapa **de trás**: ela tem critério de saída claro, ou os cards avançam em lote? Se avançam em lote, é ela que precisa de trabalho |
+| MT11 | Rodei a Aula 2 e ela se recusou a me dar o número do gargalo | Gate de sanidade: a skill não calcula em cima de base ruim | é comportamento correto, e te poupou de um número confiante e errado. Ela vai dizer o que corrigir primeiro — normalmente duplicidade, valor vazio ou etapa sem critério. Corrija e rode de novo |
 
 **Se nada resolver:** cole a sua planilha numa conversa e peça: *"calcule a conversão entre etapas, o forecast e o motivo de perda mais frequente destes deals, e me diga qual é o gargalo."*
 
@@ -169,4 +220,5 @@ Responda com os seus dados reais:
 |---|---|
 | ▶️ Fazer | monte a planilha de 6 colunas e preencha com os deals que você tem hoje — leva 20 minutos |
 | 📖 Ler | [guia-gatilhos-e-cards-parados.md](guia-gatilhos-e-cards-parados.md) — pra limpar o funil antes de somar o forecast |
-| 🚑 Se travar | o catálogo MT1–MT8 acima |
+| ▶️ Fazer (Aula 2) | com a planilha preenchida, rode `/diagnostico-gargalos-funil` — ela calcula tudo isto com o seu dado e entrega uma calculadora onde você simula cenário |
+| 🚑 Se travar | o catálogo MT1–MT11 acima |
