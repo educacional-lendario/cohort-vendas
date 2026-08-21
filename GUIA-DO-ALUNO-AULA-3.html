@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia do Aluno · Cohort de Vendas · Aula 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&family=Rajdhani:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --background: #0A0A0A;
+    --card: #0F0F0F;
+    --raised: #262626;
+    --border: #262626;
+    --foreground: #E5E5E5;
+    --muted-foreground: #999999;
+    --primary: #C9B298;
+    --primary-light: #D9CBB9;
+    --primary-deep: #8D7556;
+    --primary-foreground: #1A1A1A;
+    --status-success: #23E169;
+    --font-body: 'Source Serif 4', Georgia, serif;
+    --font-ui: Inter, 'Source Sans Pro', system-ui, sans-serif;
+    --font-display: Rajdhani, Inter, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+  #progress {
+    position: fixed; top: 0; left: 0; height: 2px; width: 0;
+    background: var(--primary);
+    box-shadow: 0 0 15px rgba(201, 178, 152, 0.6);
+    z-index: 100;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 64px 32px 96px; }
+
+  .hero {
+    text-align: center;
+    padding: 32px 0 56px;
+    border-bottom: 1px solid var(--raised);
+    margin-bottom: 56px;
+  }
+  .hero .kicker {
+    display: inline-block;
+    font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--primary);
+    padding: 6px 16px;
+    border: 1px solid var(--primary-deep);
+    border-radius: 9999px;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+  .hero h1 em {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--primary);
+  }
+  .hero .subtitle {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    color: var(--muted-foreground);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+  }
+  .hero .lead {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 1.3rem;
+    color: var(--foreground);
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-radius: 0.75rem;
+    padding: 20px 24px;
+    margin: 48px auto;
+    max-width: 720px;
+  }
+  .toc-label {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    margin-bottom: 12px;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 20px;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+  .toc ol li { color: var(--muted-foreground); }
+  .toc ol li a { color: var(--foreground); text-decoration: none; transition: color 0.15s ease; }
+  .toc ol li a:hover { color: var(--primary); }
+
+  section { margin: 80px 0; scroll-margin-top: 32px; }
+  .section-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+  section h2 em { font-family: var(--font-body); font-style: normal; font-weight: 400; color: var(--primary); }
+  section h3 { font-family: var(--font-ui); font-size: 1.25rem; font-weight: 600; margin: 32px 0 12px; }
+  section p { margin: 16px 0; }
+  section strong { color: var(--primary-light); font-weight: 600; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    margin: 32px 0;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-radius: 1rem;
+    transition: border-color 0.2s ease;
+  }
+  .step:hover { border-color: var(--primary-deep); }
+  .step-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--primary); line-height: 1; }
+  .step-content h3 { margin-top: 0; margin-bottom: 8px; }
+  .step-content p { margin: 8px 0; font-family: var(--font-ui); font-size: 0.95rem; color: var(--muted-foreground); }
+  .step-content code {
+    font-family: var(--font-mono);
+    background: var(--raised);
+    color: var(--primary-light);
+    padding: 2px 8px;
+    border-radius: 0.25rem;
+    font-size: 0.85em;
+  }
+
+  .command-block {
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-radius: 0.75rem;
+    padding: 20px 88px 20px 24px;
+    margin: 16px 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--foreground);
+    overflow-x: auto;
+    position: relative;
+  }
+  .command-block::before { content: "$"; color: var(--primary); margin-right: 12px; font-weight: 700; }
+  .command-block.slash::before { content: none; margin-right: 0; }
+
+  .copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--raised);
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    padding: 5px 10px;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .copy-btn:hover { border-color: var(--primary); color: var(--primary-light); }
+  .copy-btn.copied { border-color: var(--primary); color: var(--primary); }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 32px 0; }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--raised);
+    border-left: 2px solid var(--primary);
+    border-radius: 0.75rem;
+    padding: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .skill-card:hover { transform: translateY(-2px); border-color: var(--primary-light); }
+  .skill-card .skill-name { font-family: var(--font-mono); font-size: 0.95rem; color: var(--primary); font-weight: 700; margin-bottom: 12px; }
+  .skill-card .skill-what { font-family: var(--font-ui); font-size: 0.9rem; color: var(--foreground); margin: 0 0 12px; line-height: 1.5; }
+  .skill-card .skill-out { font-family: var(--font-ui); font-size: 0.8rem; color: var(--muted-foreground); padding-top: 12px; border-top: 1px solid var(--raised); margin: 0; }
+  .skill-card .skill-out strong { color: var(--primary); font-weight: 600; }
+
+  .bloco { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 28px; margin: 24px 0; }
+  .bloco .bloco-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--raised); }
+  .bloco .bloco-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+  .bloco .bloco-time { font-family: var(--font-ui); font-size: 0.85rem; color: var(--muted-foreground); letter-spacing: 0.06em; }
+  .bloco h3 { margin: 0 0 16px; font-size: 1.4rem; }
+  .bloco .bloco-action { background: rgba(201, 178, 152, 0.06); border: 1px solid var(--primary-deep); border-radius: 0.5rem; padding: 14px 88px 14px 18px; margin: 16px 0; font-family: var(--font-mono); font-size: 0.9rem; position: relative; }
+  .bloco .bloco-result { font-family: var(--font-ui); font-size: 0.9rem; color: var(--muted-foreground); margin: 12px 0 0; }
+  .bloco .bloco-result strong { color: var(--primary); }
+
+  .rule {
+    display: grid; grid-template-columns: 32px 1fr; gap: 16px; align-items: flex-start;
+    padding: 20px; background: var(--card); border-left: 2px solid var(--primary); border-radius: 0.5rem; margin: 16px 0;
+  }
+  .rule-icon { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1; }
+  .rule h3 { margin: 0 0 4px; font-family: var(--font-ui); font-size: 1rem; font-weight: 700; }
+  .rule p { margin: 4px 0 0; font-family: var(--font-ui); font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.5; }
+
+  .cohort-map { background: var(--card); border: 1px solid var(--raised); border-radius: 1rem; padding: 28px; margin: 32px 0; }
+  .cohort-map .aula { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 0.5rem; margin: 6px 0; font-family: var(--font-ui); font-size: 0.95rem; transition: background 0.2s ease; }
+  .cohort-map .aula.atual { background: rgba(201, 178, 152, 0.08); border: 1px solid var(--primary-deep); }
+  .cohort-map .aula-num { font-family: var(--font-display); font-weight: 700; color: var(--primary); min-width: 60px; }
+  .cohort-map .aula-name { flex: 1; color: var(--foreground); font-weight: 600; }
+  .cohort-map .aula-status { font-size: 0.7rem; color: var(--muted-foreground); letter-spacing: 0.06em; text-transform: uppercase; }
+  .cohort-map .aula.atual .aula-status { color: var(--primary); font-weight: 700; }
+
+  /* Stack diagram */
+  .stack-diagram { margin: 40px 0; }
+  .stack-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 8px 0; }
+  .stack-node {
+    background: var(--card); border: 1px solid var(--raised); border-radius: 0.75rem;
+    padding: 16px 24px; font-family: var(--font-ui); font-size: 0.9rem; font-weight: 600;
+    text-align: center; min-width: 160px; transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .stack-node:hover { border-color: var(--primary); transform: translateY(-2px); }
+  .stack-node .node-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); margin-bottom: 6px; display: block; }
+  .stack-node .node-name { color: var(--foreground); }
+  .stack-node .node-role { font-size: 0.78rem; color: var(--muted-foreground); font-weight: 400; margin-top: 4px; }
+  .stack-node.highlight { border-color: var(--primary); background: rgba(201, 178, 152, 0.05); }
+  .stack-connector { width: 2px; height: 32px; background: var(--primary-deep); margin: 0 auto; position: relative; }
+  .stack-connector::after { content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid var(--primary-deep); }
+  .stack-connector-h { width: 32px; height: 2px; background: var(--primary-deep); position: relative; flex-shrink: 0; }
+  .stack-connector-h::after { content: ''; position: absolute; right: -4px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 6px solid var(--primary-deep); }
+
+  /* Flow diagram */
+  .flow { margin: 32px 0; }
+  .flow-step {
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 20px; margin: 4px 0;
+    background: var(--card); border: 1px solid var(--raised); border-radius: 0.5rem;
+    font-family: var(--font-ui); font-size: 0.9rem;
+    transition: border-color 0.15s ease;
+  }
+  .flow-step:hover { border-color: var(--primary-deep); }
+  .flow-icon { font-family: var(--font-display); font-weight: 700; color: var(--primary); min-width: 28px; font-size: 1.1rem; }
+  .flow-label { flex: 1; color: var(--foreground); }
+  .flow-tool { font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary-deep); background: rgba(201,178,152,0.08); padding: 2px 8px; border-radius: 0.25rem; white-space: nowrap; }
+  .flow-connector-v { width: 2px; height: 16px; background: var(--primary-deep); margin: 0 0 0 32px; }
+  .flow-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 4px 0 4px 32px; }
+  .flow-branch-item {
+    padding: 12px 16px; background: var(--card); border: 1px solid var(--raised); border-radius: 0.5rem;
+    font-family: var(--font-ui); font-size: 0.85rem;
+  }
+  .flow-branch-item .branch-label { color: var(--primary); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .flow-branch-item p { margin: 0; color: var(--muted-foreground); font-size: 0.82rem; line-height: 1.4; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-family: var(--font-ui); font-size: 0.85rem; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--raised); }
+  th { color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; }
+  td { color: var(--foreground); }
+
+  .callout {
+    background: rgba(201, 178, 152, 0.06); border: 1px solid var(--primary-deep); border-radius: 0.75rem;
+    padding: 20px 24px; margin: 24px 0; font-family: var(--font-ui); font-size: 0.9rem;
+  }
+  .callout strong { color: var(--primary); }
+  .callout p { margin: 8px 0; color: var(--muted-foreground); }
+
+  .cta-final { text-align: center; margin: 96px 0 32px; padding: 48px 32px; background: var(--card); border: 1px solid var(--primary-deep); border-radius: 1.5rem; }
+  .cta-final h2 { font-family: var(--font-display); font-size: 2.2rem; margin: 0 0 16px; }
+  .cta-final h2 em { font-family: var(--font-body); font-style: normal; color: var(--primary); font-weight: 400; }
+  .cta-final p { font-family: var(--font-body); font-style: normal; color: var(--muted-foreground); max-width: 50ch; margin: 16px auto 24px; }
+  .cta-final .command-block { max-width: 480px; margin: 0 auto; text-align: left; }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">Cohort de Vendas · Aula 3</span>
+    <h1>FUPs, Cadencia &amp; <em>Automacao</em></h1>
+    <p class="subtitle">Academia Lendaria · Adavio</p>
+    <p class="lead">Voce sai desta aula com as cadencias de follow-up montadas com copy real, a estrutura do CRM no ClickUp configurada pra classificar respostas, e os workflows no n8n conectando tudo: lead cai no WhatsApp, entra no ClickUp, recebe a cadencia certa, e o vendedor so atende quem respondeu.</p>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-label">Voce vai ler aqui</div>
+    <ol>
+      <li><a href="#secao-1">O que voce vai sair construindo</a></li>
+      <li><a href="#secao-2">A stack e a logica: quem faz o que</a></li>
+      <li><a href="#secao-3">A esteira de entrada (o coracao da automacao)</a></li>
+      <li><a href="#secao-4">Onde voce esta no cohort</a></li>
+      <li><a href="#secao-5">O que voce precisa antes de comecar</a></li>
+      <li><a href="#secao-6">As 3 skills da aula</a></li>
+      <li><a href="#secao-7">Fluxo da aula (4 horas)</a></li>
+      <li><a href="#secao-perdido">Se voce se perder</a></li>
+      <li><a href="#secao-9">As regras de ouro</a></li>
+    </ol>
+  </nav>
+
+  <!-- PARTE 1 -->
+  <section id="secao-1">
+    <div class="section-num">Parte 1</div>
+    <h2>O que voce vai sair <em>construindo</em></h2>
+    <p>Esta aula resolve um problema so: <strong>processo desenhado e CRM organizado nao servem de nada se o vendedor esquece de mandar FUP, manda a mensagem errada, ou nao sabe quem atender primeiro</strong>. Ao final, voce tem tres coisas prontas pra rodar:</p>
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Cadencias de FUP com copy real</h3>
+        <p>Cada etapa do funil com sua sequencia de toques, timing calibrado pelo seu ticket e ciclo de venda, copy variando de angulo a cada toque (nunca repetindo a mesma mensagem), cadencia anti-no-show, templates de resposta por tipo de reacao do lead, e regras de nurture. Tudo texto puro, gerado pelo <code>/cadencia-copys</code>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>CRM estruturado no ClickUp</h3>
+        <p>Spaces, listas, statuses, custom fields, views e automacoes nativas do ClickUp montadas pelo <code>/estrutura-clickup</code>. O CRM fica pronto pra receber os leads, classificar respostas por status, e alimentar a fila do vendedor.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Workflows automatizados no n8n Cloud</h3>
+        <p>4 workflows conectando ClickUp + Uzapi gerados pelo <code>/workflow-n8n</code>: esteira de entrada (webhook), cadencia programada (cron), classificador de respostas (Switch por palavras-chave), e alerta da fila pro vendedor. Tudo com checklist de lancamento passo a passo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 2: Stack -->
+  <section id="secao-2">
+    <div class="section-num">Parte 2</div>
+    <h2>A stack e a logica: <em>quem faz o que</em></h2>
+
+    <div class="callout">
+      <strong>Claude monta, n8n executa.</strong>
+      <p>O Claude Code e o arquiteto — ele desenha as cadencias, gera o copy, define a estrutura do CRM, monta os workflows. O n8n e o pedreiro — ele executa tudo isso no automatico, sem precisar chamar IA em tempo real. Toda a inteligencia e "assada" na hora de construir.</p>
+    </div>
+
+    <div class="stack-diagram">
+      <div class="stack-row">
+        <div class="stack-node highlight">
+          <span class="node-label">ARQUITETO (usa na aula)</span>
+          <div class="node-name">Claude Code</div>
+          <div class="node-role">Gera copy, estrutura CRM, monta workflows, define regras</div>
+        </div>
+      </div>
+      <div class="stack-connector"></div>
+      <div class="stack-row">
+        <div class="stack-node highlight">
+          <span class="node-label">EXECUTOR (roda no automatico)</span>
+          <div class="node-name">n8n (via Railway)</div>
+          <div class="node-role">Conecta tudo, dispara por tempo, classifica por regra, escuta webhooks</div>
+        </div>
+      </div>
+      <div class="stack-connector"></div>
+      <div class="stack-row">
+        <div class="stack-node">
+          <span class="node-label">CRM</span>
+          <div class="node-name">ClickUp</div>
+          <div class="node-role">Cards por lead, status por etapa, fila do vendedor</div>
+        </div>
+        <div class="stack-connector-h"></div>
+        <div class="stack-node">
+          <span class="node-label">CANAL</span>
+          <div class="node-name">Uzapi</div>
+          <div class="node-role">WhatsApp API dedicada, envio e recebimento</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 3: Esteira -->
+  <section id="secao-3">
+    <div class="section-num">Parte 3</div>
+    <h2>A esteira de entrada: <em>o coracao da automacao</em></h2>
+    <p>Nao importa de onde o lead veio — anuncio, indicacao, mensagem espontanea. Se chegou no WhatsApp, cai na esteira. O webhook do Uzapi e a unica porta de entrada.</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-icon">1</div>
+        <div class="flow-label">Lead manda mensagem no WhatsApp</div>
+        <span class="flow-tool">WhatsApp</span>
+      </div>
+      <div class="flow-connector-v"></div>
+      <div class="flow-step">
+        <div class="flow-icon">2</div>
+        <div class="flow-label">Uzapi recebe e dispara webhook pro n8n</div>
+        <span class="flow-tool">Uzapi</span>
+      </div>
+      <div class="flow-connector-v"></div>
+      <div class="flow-step">
+        <div class="flow-icon">3</div>
+        <div class="flow-label">n8n busca no ClickUp: esse telefone ja existe no funil?</div>
+        <span class="flow-tool">n8n + ClickUp</span>
+      </div>
+      <div class="flow-connector-v"></div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">Nao existe</div>
+          <p>Cria card novo no ClickUp com status "Lead Novo", inicia Cadencia de Abertura, envia primeiro toque via Uzapi</p>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">Ja existe</div>
+          <p>Roda o classificador de respostas (palavras-chave via Switch), detecta a intencao, executa a acao correspondente, atualiza o card</p>
+        </div>
+      </div>
+      <div class="flow-connector-v"></div>
+      <div class="flow-step">
+        <div class="flow-icon">4</div>
+        <div class="flow-label">Se interesse ou caso ambiguo: alerta o vendedor no WhatsApp</div>
+        <span class="flow-tool">Uzapi</span>
+      </div>
+      <div class="flow-connector-v"></div>
+      <div class="flow-step">
+        <div class="flow-icon">5</div>
+        <div class="flow-label">Se silencio: cadencia continua no proximo toque programado</div>
+        <span class="flow-tool">n8n (cron)</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Agente auxiliar de melhoria (opcional)</strong>
+      <p>Periodicamente (1x por semana), voce exporta os dados do ClickUp e cola no Claude Code pra ele analisar: "quais cadencias estao funcionando? onde estou perdendo lead? qual toque ninguem responde?". O Claude identifica padroes e sugere ajustes no copy, timing ou canal. A inteligencia e do Claude, o dado e do ClickUp.</p>
+    </div>
+  </section>
+
+  <!-- PARTE 4: Cohort map -->
+  <section id="secao-4">
+    <div class="section-num">Parte 4</div>
+    <h2>Onde voce esta <em>no cohort</em></h2>
+    <div class="cohort-map">
+      <div class="aula">
+        <div class="aula-num">Aula 1</div>
+        <div class="aula-name">Processo Comercial &amp; Playbook com IA</div>
+        <div class="aula-status">Concluida</div>
+      </div>
+      <div class="aula">
+        <div class="aula-num">Aula 2</div>
+        <div class="aula-name">CRM &amp; Gestao de Pipeline com IA</div>
+        <div class="aula-status">Concluida</div>
+      </div>
+      <div class="aula atual">
+        <div class="aula-num">Aula 3</div>
+        <div class="aula-name">FUPs, Cadencia &amp; Automacao</div>
+        <div class="aula-status">Voce esta aqui</div>
+      </div>
+      <div class="aula">
+        <div class="aula-num">Aula 4</div>
+        <div class="aula-name">Automacao e Fechamento com IA</div>
+        <div class="aula-status">Proxima</div>
+      </div>
+    </div>
+    <p>As 3 skills desta aula puxam contexto do que voce ja gerou na Aula 1 (regua de comunicacao, playbook de objecoes) e Aula 2 (CRM organizado, lead scoring). Se voce nao rodou as aulas anteriores, cada skill faz as perguntas minimas antes de continuar.</p>
+  </section>
+
+  <!-- PARTE 5: O que precisa -->
+  <section id="secao-5">
+    <div class="section-num">Parte 5</div>
+    <h2>O que voce precisa <em>antes de comecar</em></h2>
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Claude Code aberto na pasta do projeto</h3>
+        <p>E por aqui que voce roda as skills. Se ja fez as aulas anteriores, e a mesma pasta. As 3 skills novas ja estao la.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>Contas necessarias (nao precisa de todas pra comecar)</h3>
+        <table>
+          <tr><th>Servico</th><th>URL</th><th>Pra que</th><th>Quando precisa</th></tr>
+          <tr><td>Railway</td><td>railway.com</td><td>Hospedar o n8n (1 clique, trial gratis)</td><td>Skill 3 (/workflow-n8n)</td></tr>
+          <tr><td>ClickUp</td><td>clickup.com</td><td>CRM com cards por lead</td><td>Skill 2 (/estrutura-clickup) e Skill 3</td></tr>
+          <tr><td>Uzapi</td><td>uzapi.com.br</td><td>WhatsApp API dedicada</td><td>Skill 3 (/workflow-n8n)</td></tr>
+        </table>
+        <p>A Skill 1 (<code>/cadencia-copys</code>) funciona <strong>sem nenhuma conta</strong> — o Claude Code gera todo o copy, voce so precisa de texto. A Skill 2 (<code>/estrutura-clickup</code>) so precisa do ClickUp. A Skill 3 (<code>/workflow-n8n</code>) precisa das tres contas.</p>
+        <p><strong>Importante:</strong> Uzapi (uzapi.com.br) e Uazapi (uazapi.dev) sao servicos <strong>diferentes</strong>. Ambos funcionam, mas a API e diferente. A Skill 3 cobre os dois — so escolher qual voce usa.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3>Documentacao de referencia (pra consultar durante e depois)</h3>
+        <table>
+          <tr><th>Servico</th><th>O que consultar</th><th>Link</th></tr>
+          <tr><td>Railway (n8n)</td><td>Template de deploy 1-clique</td><td>railway.com/template/n8n</td></tr>
+          <tr><td>n8n</td><td>Documentacao de nodes</td><td>docs.n8n.io</td></tr>
+          <tr><td>ClickUp API</td><td>Referencia da API v2</td><td>clickup.com/api</td></tr>
+          <tr><td>Uazapi</td><td>Documentacao da API (Swagger/OpenAPI)</td><td>docs.uazapi.com</td></tr>
+          <tr><td>Uazapi</td><td>Spec OpenAPI completo (JSON)</td><td>github.com/jonesfernandess/uazapi-cli (arquivo uazapi-openapi.json)</td></tr>
+          <tr><td>Uzapi</td><td>Documentacao da API (Swagger)</td><td>api.uzapi.com.br/docs</td></tr>
+        </table>
+        <p>Voce nao precisa ler essas docs pra rodar as skills — o Claude Code ja sabe tudo. Mas se quiser entender o que esta por baixo, ou precisar debugar um workflow depois da aula, essas sao as fontes oficiais.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Sobre o n8n — onde ele roda</h3>
+        <p>Nesta aula usamos o <strong>Railway</strong> pra hospedar o n8n porque e deploy em 1 clique com trial gratis ($5 de credito, sem cartao). Mas o n8n e open source e roda em qualquer lugar. Voce nao esta preso ao Railway.</p>
+        <table>
+          <tr><th>Opcao</th><th>Custo</th><th>Dificuldade</th><th>Pra quem</th></tr>
+          <tr><td>Railway (usamos na aula)</td><td>Trial gratis, depois ~$5/mes</td><td>1 clique</td><td>Quem quer subir rapido sem configurar servidor</td></tr>
+          <tr><td>n8n Cloud</td><td>$24/mes</td><td>1 clique</td><td>Quem prefere a solucao oficial e gerenciada do n8n</td></tr>
+          <tr><td>VPS propria (DigitalOcean, Contabo, Oracle)</td><td>$5-7/mes (Oracle tem tier gratis)</td><td>Media (precisa de SSH e Docker)</td><td>Quem ja tem experiencia com servidor</td></tr>
+          <tr><td>npx n8n (local)</td><td>Gratis</td><td>Facil</td><td>Pra testar e aprender, mas so roda com o PC ligado</td></tr>
+        </table>
+        <p>O que muda entre essas opcoes e ONDE o n8n roda, nao COMO. Os workflows, nodes, e configuracoes sao identicos em qualquer ambiente. Se voce comecar no Railway e depois quiser migrar pra uma VPS, e so exportar e importar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 6: Skills -->
+  <section id="secao-6">
+    <div class="section-num">Parte 6</div>
+    <h2>As 3 skills <em>da aula</em></h2>
+    <p>Cada skill e um especialista. Elas rodam em sequencia: primeiro o copy, depois a estrutura do CRM, por ultimo os workflows que conectam tudo.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-name">1 · /cadencia-copys</div>
+        <p class="skill-what">Especialista em copywriting. Gera TODO o texto das cadencias: toques com angulos diferentes por etapa do funil, templates de resposta por tipo de reacao (interesse, objecao, confirmacao, recusa), cadencia anti-no-show e sequencia de nurture. Nenhuma ferramenta envolvida — so texto puro.</p>
+        <p class="skill-out"><strong>Output:</strong> cadencias completas com copy real + templates de resposta + anti-no-show + nurture.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">2 · /estrutura-clickup</div>
+        <p class="skill-what">Especialista em ClickUp. Monta a estrutura do CRM: spaces, listas, statuses, custom fields, views e automacoes nativas. Define a fila de priorizacao e o dashboard do vendedor. Nenhum copy, nenhum n8n — so a arquitetura do CRM.</p>
+        <p class="skill-out"><strong>Output:</strong> estrutura completa do ClickUp + views + automacoes nativas + fila do vendedor.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">3 · /workflow-n8n</div>
+        <p class="skill-what">Especialista em n8n. Monta os 4 workflows: esteira de entrada (webhook), cadencia programada (cron), classificador de respostas (Switch por palavras-chave), e alerta da fila. Conecta ClickUp + Uzapi. Inclui checklist de lancamento e plano de 4 semanas.</p>
+        <p class="skill-out"><strong>Output:</strong> 4 workflows documentados node por node + checklist + plano de lancamento.</p>
+      </div>
+    </div>
+
+    <h3>Mentes por tras da aula</h3>
+    <table>
+      <tr><th>Mente</th><th>Framework</th><th>Onde aparece</th></tr>
+      <tr><td>Jeb Blount</td><td>Fanatical Prospecting</td><td>Disciplina de cadencia, copy por toque</td></tr>
+      <tr><td>Aaron Ross</td><td>Predictable Revenue</td><td>Separacao SDR/AE, esteira escalavel</td></tr>
+      <tr><td>Chet Holmes</td><td>The Ultimate Sales Machine</td><td>Automacao consistente, pipeline nunca para</td></tr>
+      <tr><td>Keenan</td><td>Gap Selling</td><td>Priorizacao por gap na resposta do lead</td></tr>
+    </table>
+  </section>
+
+  <!-- PARTE 7: Fluxo da aula -->
+  <section id="secao-7">
+    <div class="section-num">Parte 7</div>
+    <h2>Fluxo da <em>aula</em> (4 horas)</h2>
+
+    <h3>Hora 1 (0:00 - 1:00) — Fundamento</h3>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 1.1</span><span class="bloco-time">15 min</span></div>
+      <h3>Abertura — O problema que cadencia resolve</h3>
+      <p>80% dos vendedores desistem no 2o toque. 80% das vendas acontecem entre o 5o e o 12o. A maioria dos times nao tem cadencia definida — manda quando lembra, repete a mesma mensagem, e para de seguir o lead antes da hora.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 1.2</span><span class="bloco-time">25 min</span></div>
+      <h3>Os 5 principios de cadencia que converte</h3>
+      <p>1. Angulo diferente por toque (nunca repetir a mesma mensagem). 2. Timing calibrado pelo ticket (quanto maior o ticket, mais espaco entre toques). 3. Cadencia tem prazo (ultimo toque definido, depois vai pra nurture). 4. Classificar a resposta antes de agir (interesse, objecao, confirmacao, recusa). 5. Automacao nao fala por cima de humano (se o vendedor ja esta em conversa, o robo para).</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 1.3</span><span class="bloco-time">10 min</span></div>
+      <h3>A stack — Claude Code monta, n8n executa</h3>
+      <p>Claude Code e o arquiteto que gera tudo na aula. n8n e o executor que roda no automatico (hospedado no Railway com 1 clique). ClickUp e o CRM. Uzapi e o canal WhatsApp. Tres skills, tres especialistas, tres HTMLs de saida.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 1.4</span><span class="bloco-time">10 min</span></div>
+      <h3>A esteira de entrada</h3>
+      <p>Lead cai no WhatsApp, Uzapi dispara webhook, n8n verifica no ClickUp, cria ou classifica. A logica completa que os workflows vao executar — apresentada aqui como visao geral antes de construir.</p>
+    </div>
+
+    <h3>Hora 2 (1:00 - 2:00) — Copy das cadencias</h3>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 2.1</span><span class="bloco-time">10 min</span></div>
+      <h3>Como pensar cadencias pro seu negocio</h3>
+      <p>Metodo, nao receita. Como adaptar os principios pro seu ticket, ciclo de venda, e tipo de lead. Quais cadencias o seu funil precisa (abertura, reengajamento, anti-no-show, nurture) e como cada uma tem um objetivo diferente.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 2.2</span><span class="bloco-time">40 min</span></div>
+      <h3>Mao na massa — Cadencias com copy real</h3>
+      <p>O Claude Code gera todas as cadencias com copy real, timing calibrado, templates de resposta por tipo de reacao, cadencia anti-no-show e sequencia de nurture. Tudo o que o n8n vai precisar pra disparar.</p>
+      <div class="bloco-action">/cadencia-copys</div>
+      <p class="bloco-result">Saida: <strong>cadencia-copys-{negocio}.html</strong> — todo o copy pronto.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 2.3</span><span class="bloco-time">10 min</span></div>
+      <h3>Review — 2-3 alunos mostram cadencias</h3>
+      <p>Alunos compartilham o que o Claude gerou. Discussao de angulos, timing, e como o copy se adapta a cada tipo de negocio.</p>
+    </div>
+
+    <div class="callout">
+      <strong>Intervalo — 5 min</strong>
+      <p>Pausa rapida antes de entrar na parte tecnica.</p>
+    </div>
+
+    <h3>Hora 3 (2:05 - 3:05) — ClickUp e classificacao</h3>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 3.1</span><span class="bloco-time">15 min</span></div>
+      <h3>Como classificar respostas sem IA</h3>
+      <p>Palavras-chave, node Switch no n8n, e por que a ordem importa. O classificador nao precisa ser perfeito — precisa acertar os casos comuns (80%+) e escalar os ambiguos pro humano. Quando a regra nao sabe, ela alerta, nunca chuta.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 3.2</span><span class="bloco-time">30 min</span></div>
+      <h3>Mao na massa — Estrutura do ClickUp</h3>
+      <p>O Claude Code monta a estrutura completa do CRM no ClickUp: spaces, listas, statuses, custom fields, views, automacoes nativas, e a fila de priorizacao do vendedor.</p>
+      <div class="bloco-action">/estrutura-clickup</div>
+      <p class="bloco-result">Saida: <strong>estrutura-clickup-{negocio}.html</strong> — CRM pronto pra configurar.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 3.3</span><span class="bloco-time">15 min</span></div>
+      <h3>Como o n8n funciona</h3>
+      <p>Visao geral, nao tutorial. Nodes, conexoes, triggers, webhooks, cron, Switch, IF. O suficiente pra entender o que o workflow vai fazer antes de construir.</p>
+    </div>
+
+    <h3>Hora 4 (3:05 - 4:00) — n8n e lancamento</h3>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 4.1</span><span class="bloco-time">10 min</span></div>
+      <h3>Os 4 workflows + plano de 4 semanas</h3>
+      <p>Visao geral dos 4 workflows que o Claude vai gerar: esteira de entrada (webhook), cadencia programada (cron), classificador (Switch), alerta da fila. E o plano de lancamento: semana 1 com 5 leads de teste, semana 2 com leads reais, semana 3 todas as cadencias, semana 4 otimizacao com dados.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 4.2</span><span class="bloco-time">30 min</span></div>
+      <h3>Mao na massa — Workflows no n8n</h3>
+      <p>O Claude Code gera os 4 workflows documentados node por node, o setup do ClickUp e Uzapi, variaveis de ambiente, e o checklist de lancamento completo.</p>
+      <div class="bloco-action">/workflow-n8n</div>
+      <p class="bloco-result">Saida: <strong>workflow-n8n-{negocio}.html</strong> — pacote da Aula 3 fechado.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 4.3</span><span class="bloco-time">10 min</span></div>
+      <h3>Review — O que cada aluno sai levando</h3>
+      <p>Inventario dos 3 HTMLs gerados na aula: cadencia-copys (todo o copy), estrutura-clickup (CRM pronto), workflow-n8n (automacao completa). Como os tres se conectam e o que fazer com cada um amanha.</p>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-header"><span class="bloco-num">Bloco 4.4</span><span class="bloco-time">5 min</span></div>
+      <h3>Encerramento</h3>
+      <p>O que fazer amanha: configurar o ClickUp, testar o primeiro workflow com 5 leads, e rodar o plano de 4 semanas. Conexao com a Aula 4: automacao de fechamento e otimizacao com dados reais.</p>
+    </div>
+  </section>
+
+  <!-- Se perder -->
+  <section id="secao-perdido">
+    <div class="section-num">Parte 7.5</div>
+    <h2>Se voce se <em>perder</em></h2>
+    <p>Em qualquer skill, pergunte <strong>"me mostra onde eu estou"</strong>. Todas respondem com:</p>
+    <div class="rule">
+      <div class="rule-icon">1</div>
+      <div><h3>Onde voce esta</h3><p>Qual skill, qual numero, dentro da sequencia da Aula 3.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">2</div>
+      <div><h3>Por que voce esta ali</h3><p>O papel daquela skill: o que o Claude monta aqui e o que o n8n vai executar depois.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">3</div>
+      <div><h3>O que voce esta construindo</h3><p>Os nomes exatos dos arquivos de saida (.html).</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">4</div>
+      <div><h3>O que falta</h3><p>A lista de informacao que voce ainda precisa dar.</p></div>
+    </div>
+  </section>
+
+  <!-- Regras de ouro -->
+  <section id="secao-9">
+    <div class="section-num">Parte 8</div>
+    <h2>As regras de <em>ouro</em></h2>
+    <div class="rule">
+      <div class="rule-icon">01</div>
+      <div><h3>Claude monta, n8n executa</h3><p>Toda a inteligencia (copy, estrutura, workflows) e gerada pelo Claude Code na hora de construir. Cada skill e um especialista: /cadencia-copys gera o texto, /estrutura-clickup monta o CRM, /workflow-n8n conecta tudo. O n8n roda a logica pronta, sem chamar IA em tempo real.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">02</div>
+      <div><h3>Cada toque com angulo diferente</h3><p>Toque 1 e apresentacao, toque 2 e pergunta, toque 3 e prova, toque 4 e valor gratuito, toque 5 e escassez honesta. Mensagem igual em toques diferentes e ignorada com frequencia crescente.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">03</div>
+      <div><h3>A esteira de entrada e o centro de tudo</h3><p>Todo lead que chega no WhatsApp cai na esteira: se nao existe no ClickUp, cria card e comeca a cadencia. Se ja existe, classifica e age. Nenhuma mensagem se perde.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">04</div>
+      <div><h3>Classificador nao precisa ser perfeito</h3><p>Precisa acertar os casos comuns (80%+) e escalar os ambiguos pro humano. Quando a regra nao sabe, ela alerta, nunca chuta. "Nao classificado" vai pro vendedor.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">05</div>
+      <div><h3>Horario comercial, sempre</h3><p>Nenhum disparo automatico fora do horario configurado (padrao: 8h-20h). Lead que recebe mensagem as 23h nao confia no processo.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">06</div>
+      <div><h3>Cadencia sem prazo e spam</h3><p>Toda cadencia tem um ultimo toque. Depois dele, o lead vai pra nutricao, nao fica recebendo toque pra sempre.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">07</div>
+      <div><h3>Lead que volta e do mesmo dono</h3><p>Se o lead responde durante a nutricao, o funil reabre com o mesmo vendedor original. Nunca cai pra alguem aleatorio.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">08</div>
+      <div><h3>Escale em 4 semanas, nao no primeiro dia</h3><p>Semana 1: 5 leads de teste. Semana 2: leads reais. Semana 3: todas as cadencias. Semana 4: otimizacao com dados reais via Claude Code.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">09</div>
+      <div><h3>Rate limit no Uzapi</h3><p>Maximo 1 mensagem por segundo. O workflow ja vem com essa limitacao.</p></div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">10</div>
+      <div><h3>Nicho regulado muda tudo</h3><p>Nenhum copy automatico pode prometer resultado, cura ou garantia. As mesmas regras das aulas anteriores.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-final">
+    <h2>Pronto pra <em>automatizar</em>?</h2>
+    <p>Abra o Claude Code e rode o primeiro comando. O copy das cadencias e o ponto de partida — todo o texto que o n8n vai disparar sai daqui.</p>
+    <div class="command-block slash">/cadencia-copys</div>
+  </div>
+</div>
+
+<script>
+  var bar = document.getElementById('progress');
+  function updateBar() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  document.addEventListener('scroll', updateBar);
+  updateBar();
+
+  function getCopyText(el) {
+    var clone = el.cloneNode(true);
+    clone.querySelectorAll('br').forEach(function (br) { br.replaceWith('\n'); });
+    clone.querySelectorAll('.copy-btn').forEach(function (btn) { btn.remove(); });
+    return clone.textContent.trim();
+  }
+
+  document.querySelectorAll('.command-block, .bloco-action').forEach(function (block) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.setAttribute('aria-label', 'Copiar comando');
+    btn.textContent = 'Copiar';
+    btn.addEventListener('click', function () {
+      var text = getCopyText(block);
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copiado!';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 1500);
+      }).catch(function () {
+        btn.textContent = 'Selecione o texto';
+        setTimeout(function () { btn.textContent = 'Copiar'; }, 1500);
+      });
+    });
+    block.appendChild(btn);
+  });
+</script>
+
+</body>
+</html>
