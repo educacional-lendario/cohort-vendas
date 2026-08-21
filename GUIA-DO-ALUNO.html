@@ -365,7 +365,7 @@
       <div class="step-num">1A</div>
       <div class="step-content">
         <h3>Projeto novo: clone este repo</h3>
-        <div class="command-block">git clone https://github.com/educacional-lendario/cohort-vendas.git<br>cd cohort-vendas</div>
+        <div class="command-block">git clone https://github.com/marketingLendario/cohort-vendas.git<br>cd cohort-vendas</div>
         <p>Cria a pasta <code>cohort-vendas</code> com tudo dentro (as duas aulas). Pule pro passo 2.</p>
       </div>
     </div>
@@ -374,7 +374,7 @@
       <div class="step-content">
         <h3>Já tenho um projeto, só as skills dentro dele</h3>
         <p>Não clone o repo por cima do seu projeto. Clone numa pasta temporária, copie as skills e a pasta de templates, apague a temporária:</p>
-        <div class="command-block">cd /caminho/do/seu/projeto<br>git clone https://github.com/educacional-lendario/cohort-vendas.git /tmp/cohort-vendas-temp<br>mkdir -p .claude/skills .agents/skills templates squads<br>cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/<br>cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/<br>cp -R /tmp/cohort-vendas-temp/templates/. templates/<br>cp -R /tmp/cohort-vendas-temp/squads/. squads/<br>rm -rf /tmp/cohort-vendas-temp</div>
+        <div class="command-block">cd /caminho/do/seu/projeto<br>git clone https://github.com/marketingLendario/cohort-vendas.git /tmp/cohort-vendas-temp<br>mkdir -p .claude/skills .agents/skills templates squads<br>cp -R /tmp/cohort-vendas-temp/.claude/skills/. .claude/skills/<br>cp -R /tmp/cohort-vendas-temp/.agents/skills/. .agents/skills/<br>cp -R /tmp/cohort-vendas-temp/templates/. templates/<br>cp -R /tmp/cohort-vendas-temp/squads/. squads/<br>rm -rf /tmp/cohort-vendas-temp</div>
         <p><strong>Atenção pra esses dois detalhes:</strong> copiar só as pastas de skills e esquecer a pasta <code>templates/</code> faz a Central de Entregas nunca aparecer, é de lá que a primeira skill de cada aula copia o painel pra raiz do seu projeto. Esquecer a pasta <code>squads/</code> faz o Bônus 3 (<code>/squad-sales-bonus</code>) não encontrar nenhuma mente pra ler, é de lá que essa skill aplica os frameworks reais. Isso adiciona as 11 skills (8 da Aula 1 + 3 da Aula 2) ao lado do que você já tem, sem mexer no resto do projeto. <strong>Sem terminal/git?</strong> Baixe o ZIP no GitHub (botão verde "Code → Download ZIP"), extraia, e arraste as pastas <code>skills</code> de dentro de <code>.claude</code> e <code>.agents</code>, mais as pastas <code>templates</code> e <code>squads</code> inteiras, pra dentro do seu projeto (crie as pastas <code>.claude</code> e <code>.agents</code> primeiro se não existirem).</p>
       </div>
     </div>

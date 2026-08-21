@@ -2,7 +2,7 @@
 
 > **Estou perdido em:** "abri o documento e cada mensagem vem com uma etiqueta esquisita: *slippery slide (Joe Sugarman)*, *níveis de sofisticação de Schwartz*, *PAS*. Eu não sei o que é nada disso — e não sei se devo mexer no texto".
 > **O que você vai ter no final:** entender cada etiqueta, saber o que ela está fazendo naquela mensagem, e conseguir julgar se a peça ficou boa ou se precisa de ajuste.
-> **Fontes cruzadas:** o `SKILL.md` da `/discovery-script` (Passo 1.5, "Roteiro por canal, com copywriting de verdade", e Passo 1.6, a auditoria obrigatória) — de onde saem literalmente todas as etiquetas · a "Mentes por trás desta skill" do mesmo arquivo · pesquisa sobre os frameworks citados (consultada em 03/08/2026), com a origem de cada um confirmada.
+> **Fontes cruzadas:** o `SKILL.md` da `/discovery-script` (Passo 1.5, "Roteiro por canal, com copywriting de verdade", e Passo 1.6, a auditoria obrigatória) — de onde saem literalmente todas as etiquetas · o `SKILL.md` da `/playbook-vendas-vivo` (Passo 3, a regra de cobertura total e as técnicas por canal; Passo 3.5, as 8 checagens obrigatórias) · a "Mentes por trás desta skill" dos dois arquivos · pesquisa sobre os frameworks citados (consultada em 03/08/2026), com a origem de cada um confirmada.
 
 ## Pré-requisitos (confira ANTES)
 
@@ -84,6 +84,19 @@ Número e caso concreto convencem; adjetivo não. É o mesmo princípio do "sem 
 
 ⚠️ **Se você ainda não tem número**, não invente e não use adjetivo pra tapar o buraco. Use prova de processo (mostre como funciona) ou credencial. É a estratégia que o seu próprio funil já prevê quando não há caso.
 
+### Gary Bencivenga — prova específica em vez de afirmação
+
+Bencivenga é a etiqueta que aparece principalmente nas peças de **e-mail**, e a diferença dele pro Halbert é sutil e útil: Halbert cobra que você seja **específico**; Bencivenga cobra que você **prove**.
+
+| ❌ Afirmação genérica | ✅ Prova específica |
+|---|---|
+| "somos referência no setor" | "as 3 metalúrgicas que fizeram isso estão no estudo em anexo, com o antes e o depois" |
+| "nosso método funciona" | "de 14 clientes que rodaram o processo completo, 11 bateram a meta no segundo trimestre" |
+
+**Por que o e-mail e não o WhatsApp:** o formato aguenta uma prova a mais sem parecer insistente. No WhatsApp, a mesma densidade vira parede de texto.
+
+⚠️ **O assunto do e-mail é copy própria, não rótulo.** Ele decide sozinho se o resto será lido. Se o seu documento traz **duas variações de assunto** por e-mail, é de propósito: é pra você testar uma contra a outra, não pra escolher a que soa mais bonita.
+
 ## As etiquetas de FECHAMENTO
 
 ### Dan Kennedy — urgência real, nunca escassez fabricada
@@ -108,6 +121,42 @@ Hopkins escreveu *Scientific Advertising* e é a base do **Passo 1.6**, a audito
 
 ⚠️ **No seu documento vai ter uma nota de auditoria** dizendo o que foi encontrado e corrigido — ou confirmando que nada foi. Vale ler: é ali que você descobre os vícios que a IA quase cometeu no seu texto.
 
+## As mesmas etiquetas aparecem no playbook de objeções (Skill 5)
+
+Este guia nasceu do discovery script. Mas a Skill 5 (`/playbook-vendas-vivo`) passou a escrever copy de verdade também — com as mesmas etiquetas, a mesma auditoria e uma regra de cobertura própria.
+
+### A regra de cobertura: todas, não uma amostra
+
+O playbook não entrega "um exemplo de cada tipo de objeção". Ele entrega **toda objeção × todo canal**:
+
+> Se o seu negócio tem 6 objeções mapeadas e 3 canais reais, o documento sai com **18 peças escritas** — não 6.
+
+⚠️ **Como conferir em 10 segundos:** conte as suas objeções, conte os seus canais, multiplique. Se o número de peças for menor, faltou coisa — e o prompt de correção está na seção "Peça pra IA" abaixo.
+
+### Quem escreve o quê, por canal
+
+| Canal | O que muda na peça | Etiqueta esperada |
+|---|---|---|
+| **Call** | resposta completa, com pausa tática entre as etapas do D.E.E.P. | o framework da objeção (D.E.E.P., Empatia Tática, Feel-Felt-Found, Reformulação) |
+| **WhatsApp / DM** | corta a explicação, **mantém** o rótulo e a pergunta calibrada | Halbert / Carlton |
+| **E-mail** | cabe uma prova concreta a mais, e o assunto vira copy própria | Bencivenga |
+
+⚠️ **A forma muda por canal; a substância, nunca.** Todas as variações têm que soar como a **mesma pessoa falando** — é aí que entra o mecanismo único de conversão que a Skill 2 nomeou. Se as três versões parecem escritas por três pessoas diferentes, a peça falhou mesmo que cada uma esteja boa sozinha.
+
+### O Passo 3.5 — a mesma auditoria, agora no playbook
+
+O playbook tem a sua própria rodada obrigatória de auditoria (o **Passo 3.5**), com o **mesmo checklist de 8 itens** do Passo 1.6 do discovery. Nenhuma peça é entregue sem passar.
+
+O item que mais pega, e vale você conhecer pra reconhecer no seu texto:
+
+> **"Não é apenas X, é Y"** — em qualquer variação (*"não foi X, foi Y"*, *"isso é X, não é Y"*). É o vício mais comum, e ele reaparece mesmo em texto escrito por gente diferente.
+
+**Se o ambiente tiver clones de copywriter disponíveis**, a skill delega: cada peça vai pro clone mais adequado ao tipo de objeção e ao canal, e a auditoria vai pro clone do Hopkins. Nesse caso o documento diz **qual clone escreveu qual peça** — isso não é enfeite, é o que te permite cobrar consistência depois. **Se não houver**, a skill aplica a técnica ela mesma, sempre nomeando o autor por trás de cada peça.
+
+### O botão "Copiar"
+
+No HTML do playbook, cada peça de WhatsApp, DM e e-mail tem um botão que copia só o texto da mensagem. Mesmo padrão do discovery script. É feito pra ficar aberto durante a operação, não pra ler uma vez.
+
 ## Tabela de bolso — a etiqueta e o que checar
 
 | Se a etiqueta diz… | Cheque isto na peça |
@@ -117,9 +166,11 @@ Hopkins escreveu *Scientific Advertising* e é a base do **Passo 1.6**, a audito
 | PAS | tem os três movimentos, ou pulou a agitação? |
 | Collier | a primeira frase fala dele ou de você? |
 | Halbert / Carlton | tem número e caso, ou só adjetivo? |
+| Bencivenga | a afirmação vem com prova junto, ou só afirma? |
 | Kennedy / urgência | o prazo é verdadeiro? |
 | Sugarman / slippery slide | dá vontade de parar no meio? |
 | Hopkins / auditoria | leu a nota de auditoria do documento? |
+| (sem etiqueta, vale sempre) | as três versões da mesma peça soam como a mesma pessoa? |
 
 ## Peça pra IA
 
@@ -130,6 +181,9 @@ Hopkins escreveu *Scientific Advertising* e é a base do **Passo 1.6**, a audito
 | **Ajustar sem quebrar** | "Quero mudar o tom desta mensagem pra [descreva], mas **mantendo a técnica** de [nome]. Reescreva e me diga o que você preservou e por quê: [cole]" |
 | **Adaptar pro meu jeito de falar** | "Reescreva todas as peças do meu discovery script no meu tom. Eu falo assim: [cole 3 mensagens reais suas]. Mantenha a estrutura e a técnica de cada uma, troque só a voz." |
 | **Testar assunto de e-mail** | "Pros e-mails do meu documento, me dê 2 variações de assunto cada: uma testando curiosidade, outra testando especificidade. Diga qual você apostaria e por quê." |
+| **Conferir a cobertura do playbook** | "No meu `playbook-objecoes-{negocio}.md`, conte quantas objeções estão mapeadas e quantos canais eu opero. O documento tem uma peça escrita pra cada combinação? Liste exatamente quais objeção × canal estão faltando." |
+| **Completar o que faltou** | "Faltaram estas combinações no meu playbook: [cole a lista]. Escreva cada peça faltante usando o framework já definido pra aquela objeção e a técnica de canal correspondente (Halbert/Carlton no WhatsApp, Bencivenga no e-mail). Depois rode a auditoria de 8 itens em cada uma." |
+| **Checar a voz única** | "Cole as três versões (call, WhatsApp, e-mail) da mesma objeção do meu playbook. Elas soam como a mesma pessoa falando? Se não, aponte onde a voz quebra e corrija — sem mudar a substância de nenhuma." |
 
 ## Teste de sucesso
 
@@ -140,6 +194,8 @@ Abra o seu `discovery-script-{negocio}.md`, escolha **uma** peça de WhatsApp e 
 3. A primeira frase fala do problema **dele**, ou de você?
 
 **Funcionou se:** você respondeu as três. Se travou na 2, a peça provavelmente cita a técnica sem aplicá-la — use o prompt "julgar se a peça ficou boa".
+
+**Já rodou a Skill 5?** Some a conta de cobertura: quantas objeções × quantos canais = quantas peças o `playbook-objecoes-{negocio}.md` deveria ter. **Funcionou se** o número bate. Se não bate, faltou peça — e é a coisa mais fácil de corrigir deste guia inteiro.
 
 ## POSSÍVEIS ERROS — catálogo
 
@@ -153,6 +209,10 @@ Abra o seu `discovery-script-{negocio}.md`, escolha **uma** peça de WhatsApp e 
 | CP6 | A skill entregou só um exemplo por canal | Ela deveria escrever **uma peça por linha da régua** | peça: *"escreva a peça de cada toque da régua, não só um exemplo por canal"* — é o que o Passo 1.5 manda |
 | CP7 | Não sei se posso mudar o texto | Insegurança | pode e deve. Só peça pra manter a técnica ao ajustar — o prompt "ajustar sem quebrar" faz isso |
 | CP8 | Meu nicho é regulado e a copy promete demais | A auditoria pega isso, mas confira | a flag `nicho_regulado` calibra tudo. Se passou promessa absoluta, é erro — reporte e mande corrigir |
+| CP9 | O playbook trouxe uma peça por tipo de objeção, não uma por objeção × canal | Cobertura parcial — a regra é cobertura total | conte objeções × canais e compare com o número de peças. Use o prompt "conferir a cobertura do playbook" e depois o "completar o que faltou" |
+| CP10 | As três versões da mesma objeção parecem de pessoas diferentes | Faltou o mecanismo único de conversão amarrando a voz | 1) confira se a Skill 2 nomeou o seu mecanismo 2) se não nomeou, nomeie agora, mesmo que provisório 3) use o prompt "checar a voz única" |
+| CP11 | A peça diz "não é só um script, é um método" e soa estranho | É o item 3 da auditoria: a construção "não é X, é Y" | é o vício mais comum de todos, e ele passa mesmo com auditoria. Peça a reescrita afirmando direto o que a coisa **é**, sem negar nada antes |
+| CP12 | O documento cita o clone que escreveu cada peça e eu não sei o que fazer com isso | É rastreabilidade, não enfeite | serve pra você cobrar consistência: se as peças de um mesmo clone ficaram fracas, peça a reescrita **daquele conjunto**, em vez de mandar refazer o playbook inteiro |
 
 **Se nada resolver:** cole a peça e a etiqueta numa conversa e peça *"me explique o que essa técnica faria aqui, e o que está faltando"*.
 
@@ -162,4 +222,5 @@ Abra o seu `discovery-script-{negocio}.md`, escolha **uma** peça de WhatsApp e 
 |---|---|
 | ▶️ Fazer | abra uma peça de WhatsApp do seu documento e rode o Teste de sucesso |
 | 📖 Ler | [guia-revisar-e-corrigir.md](../04-operacao/guia-revisar-e-corrigir.md) — a auditoria de 8 itens que roda em toda peça |
-| 🚑 Se travar | o catálogo CP1–CP8 acima |
+| ▶️ Fazer | faça a conta de cobertura do playbook: objeções × canais. Leva 30 segundos e é o defeito mais comum |
+| 🚑 Se travar | o catálogo CP1–CP12 acima |

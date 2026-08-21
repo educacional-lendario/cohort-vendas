@@ -2,7 +2,7 @@
 
 > **Estou perdido em:** "qual é a diferença entre a aula de funil do marketing e esta aqui? Parece a mesma coisa com nome diferente".
 > **O que você vai ter no final:** os três funis separados na sua cabeça de uma vez por todas, sabendo qual documento resolve qual problema — e por que misturar os três é o erro que mais confunde a turma.
-> **Fontes cruzadas:** o `docs/SKILLS-INDEX.md` deste repo (seção *"Cuidado com a confusão 'funil comercial' x 'funil de vendas'"*, escrita justamente porque o aluno pergunta) · o `SKILL.md` da `/escada-de-ofertas` (Passo 4, "Conectar de volta ao funil comercial") · a Aula 1 ao vivo, onde essa foi a pergunta mais direta que apareceu no chat · pesquisa sobre a passagem de bastão entre marketing e vendas (consultada em 03/08/2026), que quantifica o custo de fazer essa entrega errado.
+> **Fontes cruzadas:** o `docs/SKILLS-INDEX.md` deste repo (seção *"Cuidado com a confusão 'funil comercial' x 'funil de vendas'"*, escrita justamente porque o aluno pergunta) · o `SKILL.md` da `/escada-de-ofertas` (Passo 4, "Conectar de volta ao funil comercial") · o `SKILL.md` da `/montagem-higiene-crm` (Passo 2, a tradução etapa → stage) e da `/diagnostico-gargalos-funil` (Passos 2 e 3, coorte vs estoque e gargalo aparente vs causa real) · a Aula 1 ao vivo, onde essa foi a pergunta mais direta que apareceu no chat · pesquisa sobre a passagem de bastão entre marketing e vendas (consultada em 03/08/2026), que quantifica o custo de fazer essa entrega errado.
 
 ## Pré-requisitos (confira ANTES)
 
@@ -63,6 +63,29 @@ Essa passagem de bastão é onde mais se perde dinheiro em B2B, e ela é medíve
 ⚠️ **A causa nº 1 desse desperdício é banal:** marketing e vendas **nunca escreveram** o que conta como lead pronto. Sem essa definição acordada por escrito, o marketing entrega o que acha e o comercial rejeita o que quer — e ninguém aprende nada.
 
 É exatamente isso que o **contrato de dados** da Skill 1 resolve: ele define, por escrito, o que precisa vir preenchido quando o lead entra no comercial (nome, cargo, origem, o que ele já sabe). E a referência de **1 hora** para o primeiro contato, que aparece no seu processo, vem daí — não é capricho.
+
+## O funil comercial depois que vira CRM (Aula 2)
+
+O funil comercial da Skill 1 é um **documento**. Na Aula 2 ele vira **estrutura numa ferramenta** — e a tradução é literal, item por item:
+
+| No documento da Aula 1 | Vira, no CRM |
+|---|---|
+| cada **etapa** do funil | um **stage** (estágio, coluna — o nome muda por ferramenta) |
+| cada **critério de saída (VCA)** | um **campo customizado** — e, onde a ferramenta permitir, uma **trava de avanço**: o card não muda de etapa sem o campo preenchido |
+| cada item do **contrato de dados** | um campo obrigatório naquela etapa |
+| a origem **Seeds / Nets / Spears** | um campo ou tag de origem |
+| — | um campo de **responsável** pelo deal, se mais de uma pessoa mexe no CRM |
+
+⚠️ **A diferença entre campo informativo e trava de avanço é o guia inteiro em uma linha.** Campo informativo detecta o problema depois; trava de avanço impede ele. Uma etapa cujo critério de saída é só informativo é a mesma "etapa decorativa" que o funil da Aula 1 já alertava — ela continua existindo, só que agora com nome de stage.
+
+**E a conversão entre etapas?** É a Skill 3 da Aula 2 (`/diagnostico-gargalos-funil`). Duas coisas de lá valem saber já ao desenhar o funil:
+
+- **Conversão de coorte ≠ conversão de estoque.** Coorte é: *dos negócios que entraram nesta etapa nos últimos 90 dias, quantos avançaram*. Estoque é: *quantos estão na etapa seguinte dividido por quantos estão nesta agora*. A primeira mede conversão de verdade; a segunda é fallback, serve pra apontar onde olhar primeiro, não pra cravar número.
+- **Conversão de estoque acima de 100% não é um funil bom, é um sinal de defeito.** Matematicamente, chegar mais negócio na etapa seguinte do que existe na atual só acontece quando entrou lote sem passar de verdade pela etapa anterior. É a assinatura de uma etapa decorativa.
+
+⚠️ **A etapa com pior conversão não é necessariamente a culpada.** Ela pode estar só recebendo negócio malqualificado da etapa anterior. Isso tem nome: **gargalo aparente** na etapa N, **causa real** na etapa N-1. Antes de mexer na etapa que parece ruim, olhe a de trás — ela tem critério de saída claro, ou é comum ver vários cards avançando de uma vez?
+
+Nada disso muda o desenho do seu funil. Muda o que você exige dele: **etapa boa é etapa com critério de saída verificável**, porque é isso que torna a conversão legível depois.
 
 ## E a escada de ofertas, onde entra?
 
@@ -147,6 +170,8 @@ Responda estas três, com suas palavras:
 | FU5 | Achar que esta aula substitui o Cohort de Marketing | Você fica sem canal de aquisição: o funil comercial mais lindo do mundo sem lead entrando não vende nada | são aulas de cohorts diferentes, complementares. O offerbook do marketing é o melhor insumo desta aula — veja [guia-offerbook-do-marketing.md](../03-insumos/guia-offerbook-do-marketing.md) |
 | FU6 | Chamar de "funil de vendas" e não saber qual dos dois é | Conversa com o time vira ruído: cada um entende uma coisa | adote o vocabulário do repo: **funil comercial** (deal) e **escada de ofertas** (portfólio). Nunca "funil de vendas" solto |
 | FU7 | Registrar o mesmo cliente como um único deal eterno que nunca fecha | Forecast quebrado e histórico ilegível | cada compra (ou tentativa) é um deal próprio. Cliente que sobe de degrau abre deal novo |
+| FU8 | Criar no CRM etapas com nome diferente das que você desenhou na Skill 1 | A Aula 2 inteira lê o funil pelas etapas: se os nomes divergem, a conversão sai errada e o gargalo aponta pro lugar errado | traduza etapa por etapa, mantendo o nome. Se o CRM já tinha estrutura própria, a Skill 1 da Aula 2 **adapta** em vez de recriar — mas ela precisa que você diga qual etapa antiga corresponde a qual nova |
+| FU9 | Comemorar uma etapa com conversão acima de 100% | Você está lendo estoque como se fosse conversão, e o número esconde uma etapa decorativa | acima de 100% é sinal de avanço em lote, não de eficiência. Confira se aquela etapa tem critério de saída de verdade — veja a seção do CRM acima |
 
 ## Pronto. Próximos passos
 
@@ -154,4 +179,5 @@ Responda estas três, com suas palavras:
 |---|---|
 | ▶️ Fazer | se você tem mais de um produto, anote quais são — a Skill 6 vai pedir |
 | 📖 Ler | [guia-bant-gpct-spin.md](guia-bant-gpct-spin.md) — os frameworks que as skills 3 e 4 usam |
-| 🚑 Se travar | o catálogo FU1–FU7 acima |
+| ▶️ Fazer (Aula 2) | com o funil desenhado, rode `/montagem-higiene-crm` — é ele que traduz etapa por etapa pra dentro da sua ferramenta |
+| 🚑 Se travar | o catálogo FU1–FU9 acima |

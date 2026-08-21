@@ -1,6 +1,6 @@
 # GUIA E DEPOIS — os documentos estão prontos. E agora?
 
-> **Estou perdido em:** "rodei as 7 skills, tenho os documentos… e agora? O que eu faço na segunda-feira de manhã?".
+> **Estou perdido em:** "rodei as skills da Aula 1, tenho os documentos… e agora? O que eu faço na segunda-feira de manhã?".
 > **O que você vai ter no final:** o plano dos primeiros 30 dias — quem executa, o que automatizar (e o que não), quando rodar de novo, e o que levar pra Aula 2.
 > **Fontes cruzadas:** o `SKILL.md` da `/qualificacao-bant-gpct` (Passo 5, o protocolo de validação humana antes de automação) e da `/playbook-vendas-vivo` (Passo 4, cadência de manutenção com dono nomeado) e da `/desenho-processo-comercial` (Passo 2, revisão trimestral e gatilhos de processo) · o `docs/workflow.md` (o que a Aula 1 NÃO faz) · a Aula 1 ao vivo, onde a professora fechou explicando o que é da Aula 3 e por que não automatizar agora · pesquisa sobre por que processo comercial documentado não pega no time (consultada em 03/08/2026).
 
@@ -100,6 +100,25 @@ O `docs/workflow.md` é explícito sobre o que **não** é da Aula 1:
 
 Da aula, sobre automação: *"vocês podem sentir falta — ah, mas eu queria automatizar mais. Então, só pra deixar vocês mais calmos: vai ser [na aula três]."* E, sobre o fechamento: *"na aula quatro, o Marcondes vai trazer inclusive essa parte de proposta de fechamento."*
 
+## O handoff pra Aula 2, documento por documento
+
+A Aula 2 já saiu, e ela **não recomeça do zero**: cada skill de lá abre lendo o que você produziu aqui. Chegue com estes quatro documentos à mão.
+
+| O que você tem da Aula 1 | Vira, na Aula 2 | Em qual skill |
+|---|---|---|
+| **As etapas do funil** + os critérios de saída (VCA) | os **stages** do pipeline + um campo customizado por critério — e, onde a ferramenta deixar, uma **trava de avanço** | `/montagem-higiene-crm` |
+| **O contrato de dados** por etapa | os campos obrigatórios de cada etapa | `/montagem-higiene-crm` |
+| A origem **Seeds / Nets / Spears** | um campo de origem — e o **Critério 3** da pontuação depende dele | `/montagem-higiene-crm` → `/lead-scoring-ia` |
+| **A qualificação** (BANT/GPCT, ICP, escala de pontos) | os 7 critérios de pontuação com pontos fixos e a régua de temperatura | `/lead-scoring-ia` |
+| **O ciclo de venda** que você declarou na Skill 1 | o corte de "card zumbi" — e ela usa o **teto** da faixa, não a média | `/montagem-higiene-crm` |
+| **A flag `nicho_regulado`** | o gate de compliance dos campos e tags do CRM | as três |
+
+⚠️ **A Aula 2 é sequencial de verdade.** `/montagem-higiene-crm` → `/lead-scoring-ia` → `/diagnostico-gargalos-funil`, nessa ordem: sem a base limpa não há dado confiável pra pontuar, e sem etapa confiável não há conversão pra calcular. A terceira skill **se recusa** a te dar um número de gargalo se a base estiver ruim — e isso é o comportamento certo, não um erro.
+
+**A boa notícia sobre a Semana 1:** a planilha de 6 colunas que você montou lá em cima não é trabalho jogado fora. Ela é exatamente o insumo da Aula 2 — se o seu CRM não tiver API, é o CSV dela que as skills leem. **Planilha é caminho padrão na Aula 2, não exceção.**
+
+⚠️ **Você não precisa contratar CRM nenhum pra fazer a Aula 2.** E não é hora de trocar de ferramenta: a própria Aula 2 entrega o critério de decisão de migração, e a regra de sequência é não migrar antes de rodar um ciclo de calibração na ferramenta que você já tem.
+
 ## Quando rodar as skills de novo
 
 Não é "rodou uma vez, acabou". A ordem de prioridade:
@@ -192,8 +211,10 @@ Responda com honestidade:
 | DP5 | Os deals ficam parados e ninguém percebe | Os gatilhos existem no documento mas não em lugar nenhum operacional | crie um lembrete semanal simples: *"quais cards não se moveram há 7 dias?"*. Não precisa de automação pra isso |
 | DP6 | O playbook ficou desatualizado em 3 meses | É o destino de todo playbook sem cadência | agende a revisão trimestral **agora**, no calendário, com o dono nomeado. *"Um playbook estático é pior que não ter playbook: passa segurança falsa"* |
 | DP7 | Estou perdendo deal pro concorrente e não sei por quê | Motivo da perda não está sendo categorizado | torne o motivo obrigatório na saída. Sem ele, *"80 perdidos, 1 venda"* não tem leitura nenhuma |
-| DP8 | Não sei o que levar pra Aula 2 | Falta clareza do handoff | leve os 5 documentos do fluxo principal: as **etapas** viram os estágios do CRM, e a **régua de comunicação** vira a especificação das automações e templates de mensagem |
-| DP9 | Rodei tudo mas meu negócio ainda não vende | A Aula 1 resolve o processo, não a aquisição | processo comercial sem lead entrando não vende. A captação é o Cohort de Marketing — veja [guia-os-tres-funis.md](../02-conhecimento-minimo/guia-os-tres-funis.md) |
+| DP8 | Não sei o que levar pra Aula 2 | Falta clareza do handoff | veja a tabela "O handoff pra Aula 2" acima. Em uma linha: **etapas + critérios de saída** viram os stages e os campos, **a origem Seeds/Nets/Spears** vira o Critério 3 da pontuação, **a qualificação** vira os 7 critérios, e **o ciclo de venda** vira o corte de card zumbi. Leve também a planilha da Semana 1: ela é o CSV que as skills leem se o seu CRM não tiver API |
+| DP9 | Quero começar a Aula 2 mas não tenho CRM | Achar que CRM é pré-requisito | não é. Planilha é caminho padrão na Aula 2, não exceção. E **não troque de ferramenta agora** — a própria aula entrega as 3 perguntas de decisão de migração, e a regra é não migrar antes de rodar um ciclo de calibração no que você já tem |
+| DP10 | Rodei a Aula 2 fora de ordem e nada bateu | As três skills de lá são sequenciais de verdade | `/montagem-higiene-crm` → `/lead-scoring-ia` → `/diagnostico-gargalos-funil`. Sem base limpa não há dado pra pontuar; sem etapa confiável não há conversão pra calcular. Volte pra primeira |
+| DP11 | Rodei tudo mas meu negócio ainda não vende | A Aula 1 resolve o processo, não a aquisição | processo comercial sem lead entrando não vende. A captação é o Cohort de Marketing — veja [guia-os-tres-funis.md](../02-conhecimento-minimo/guia-os-tres-funis.md) |
 
 **Se nada resolver:** leve o caso pro PS de tira-dúvidas do cohort, com o documento em mãos e o ponto específico que travou.
 
@@ -204,4 +225,5 @@ Responda com honestidade:
 | ▶️ Fazer | nomeie os donos, leve as etapas pra uma planilha e ligue a gravação das calls — os três hoje, em menos de 1 hora |
 | 📖 Ler | os três guias que detalham a operação do dia a dia: [gatilhos-e-cards-parados](guia-gatilhos-e-cards-parados.md) · [onboarding-e-pos-venda](guia-onboarding-e-pos-venda.md) · [metricas-do-comercial](guia-metricas-do-comercial.md) |
 | 📖 Ler | quando tiver 3-5 calls gravadas, volte em [guia-insumos-reais.md](../03-insumos/guia-insumos-reais.md) e re-rode as Skills 4 e 5 |
-| 🚑 Se travar | o catálogo DP1–DP9 acima, ou o [roteador de guias](../README.md) |
+| ▶️ Fazer (Aula 2) | com os 4 documentos e a planilha em mãos, rode `/montagem-higiene-crm` — é a porta de entrada, e ela lê tudo que você fez aqui |
+| 🚑 Se travar | o catálogo DP1–DP11 acima, ou o [roteador de guias](../README.md) |
